@@ -1,0 +1,17 @@
+:root {
+  --zw-canvas: #131313;
+  --zw-surface: #2d2d2d;
+  --zw-border: #3d3d3d;
+  --zw-ink: #ffffff;
+  --zw-ink-muted: #949494;
+  --zw-accent: #3cffd0;
+  --zw-accent-alt: #5200ff;
+  --zw-radius: 2px;
+}
+
+.zw-card {
+  background: var(--zw-surface);
+  color: var(--zw-ink);
+  border: 1px solid var(--zw-border);
+  border-radius: var(--zw-radius);
+}

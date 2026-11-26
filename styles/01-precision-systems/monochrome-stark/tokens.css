@@ -1,0 +1,18 @@
+:root {
+  --ms-canvas: #ffffff;
+  --ms-surface: #fafafa;
+  --ms-border: #ebebeb;
+  --ms-ink: #171717;
+  --ms-ink-muted: #666666;
+  --ms-accent: #171717;
+  --ms-accent-alt: #0070f3;
+  --ms-error: #ee0000;
+  --ms-radius: 6px;
+}
+
+.ms-cell {
+  background: var(--ms-surface);
+  color: var(--ms-ink);
+  border: 1px solid var(--ms-border);
+  border-radius: var(--ms-radius);
+}

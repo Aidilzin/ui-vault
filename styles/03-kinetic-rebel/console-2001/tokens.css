@@ -1,0 +1,18 @@
+:root {
+  --c01-canvas: #21242e;
+  --c01-surface: #dedede;
+  --c01-border: #3d4f97;
+  --c01-ink: #ffffff;
+  --c01-ink-dark: #21242e;
+  --c01-ink-muted: #9fbee7;
+  --c01-accent: #e60012;
+  --c01-accent-alt: #f68d1f;
+  --c01-radius: 10px;
+}
+
+.c01-module {
+  background: var(--c01-surface);
+  color: var(--c01-ink-dark);
+  border: 2px solid var(--c01-border);
+  border-radius: var(--c01-radius);
+}

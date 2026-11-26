@@ -1,0 +1,19 @@
+:root {
+  --md-canvas: #0f1011;
+  --md-surface: #141516;
+  --md-elevated: #191a1b;
+  --md-border: #23252a;
+  --md-ink: #f7f8f8;
+  --md-ink-secondary: #d0d6e0;
+  --md-ink-muted: #8a8f98;
+  --md-accent: #5e6ad2;
+  --md-accent-alt: #828fff;
+  --md-radius: 6px;
+}
+
+.md-panel {
+  background: var(--md-surface);
+  color: var(--md-ink);
+  border: 1px solid var(--md-border);
+  border-radius: var(--md-radius);
+}

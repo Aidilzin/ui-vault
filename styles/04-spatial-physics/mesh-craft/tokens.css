@@ -1,0 +1,17 @@
+:root {
+  --mc-canvas: #f6f9fc;
+  --mc-surface: #ffffff;
+  --mc-border: #e3e8ee;
+  --mc-ink: #0d253d;
+  --mc-ink-muted: #64748d;
+  --mc-accent: #533afd;
+  --mc-accent-alt: #665efd;
+  --mc-radius: 8px;
+}
+
+.mc-card {
+  background: var(--mc-surface);
+  color: var(--mc-ink);
+  border: 1px solid var(--mc-border);
+  border-radius: var(--mc-radius);
+}

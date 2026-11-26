@@ -8,7 +8,10 @@
                 "fui-tactical",
                 "neo-swiss",
                 "editorial-mono",
-                "industrial-hardware"
+                "industrial-hardware",
+                "monolith-dark",
+                "telemetry-fault",
+                "monochrome-stark"
             ]
         },
         "02-retro-compute": {
@@ -16,7 +19,8 @@
             "dna": "1-bit dithering, ASCII/glyph grids, vintage window chrome, CRT grain",
             "styles": [
                 "ditherpunk",
-                "os-core"
+                "os-core",
+                "retro-web-96"
             ]
         },
         "03-kinetic-rebel": {
@@ -24,7 +28,9 @@
             "dna": "Oversized expressive display type, hard zero-blur shadows, raw grids, chrome accents",
             "styles": [
                 "neo-brutalism",
-                "acid-y2k"
+                "acid-y2k",
+                "console-2001",
+                "zine-wire"
             ]
         },
         "04-spatial-physics": {
@@ -32,13 +38,17 @@
             "dna": "Optical refraction, depth sorting, mass/inertia springs, specular lighting",
             "styles": [
                 "liquid-glass",
-                "ambient-orbit"
+                "ambient-orbit",
+                "command-dark",
+                "mesh-craft"
             ]
         },
         "05-editorial-organic": {
             "label": "Editorial Organic",
             "dna": "Warm paper substrates, literary serif/sans pairings, organic tactile ink, calm publication grids",
-            "styles": []
+            "styles": [
+                "warm-manuscript"
+            ]
         }
     },
     "mechanics": [
@@ -515,6 +525,156 @@
             ],
             "clashesWith": [
                 "os-core"
+            ]
+        },
+        {
+            "id": "monolith-dark",
+            "kind": "style",
+            "cluster": "01-precision-systems",
+            "path": "styles/01-precision-systems/monolith-dark/STYLE.md",
+            "registryItem": "style-monolith-dark",
+            "pairsWith": [
+                "border-spotlight",
+                "scramble-text",
+                "sibling-dim",
+                "flip-card"
+            ],
+            "clashesWith": [
+                "neo-brutalism",
+                "console-2001"
+            ]
+        },
+        {
+            "id": "telemetry-fault",
+            "kind": "style",
+            "cluster": "01-precision-systems",
+            "path": "styles/01-precision-systems/telemetry-fault/STYLE.md",
+            "registryItem": "style-telemetry-fault",
+            "pairsWith": [
+                "scramble-text",
+                "border-spotlight",
+                "flip-card"
+            ],
+            "clashesWith": [
+                "warm-manuscript",
+                "liquid-glass"
+            ]
+        },
+        {
+            "id": "monochrome-stark",
+            "kind": "style",
+            "cluster": "01-precision-systems",
+            "path": "styles/01-precision-systems/monochrome-stark/STYLE.md",
+            "registryItem": "style-monochrome-stark",
+            "pairsWith": [
+                "split-reveal",
+                "sibling-dim",
+                "variable-proximity",
+                "marquee-hover-row"
+            ],
+            "clashesWith": [
+                "acid-y2k",
+                "console-2001"
+            ]
+        },
+        {
+            "id": "retro-web-96",
+            "kind": "style",
+            "cluster": "02-retro-compute",
+            "path": "styles/02-retro-compute/retro-web-96/STYLE.md",
+            "registryItem": "style-retro-web-96",
+            "pairsWith": [
+                "bayer-dither",
+                "scramble-text",
+                "flip-card"
+            ],
+            "clashesWith": [
+                "liquid-glass",
+                "mesh-craft"
+            ]
+        },
+        {
+            "id": "console-2001",
+            "kind": "style",
+            "cluster": "03-kinetic-rebel",
+            "path": "styles/03-kinetic-rebel/console-2001/STYLE.md",
+            "registryItem": "style-console-2001",
+            "pairsWith": [
+                "spring-tilt-card",
+                "glare-hover",
+                "velocity-skew"
+            ],
+            "clashesWith": [
+                "monochrome-stark",
+                "warm-manuscript"
+            ]
+        },
+        {
+            "id": "zine-wire",
+            "kind": "style",
+            "cluster": "03-kinetic-rebel",
+            "path": "styles/03-kinetic-rebel/zine-wire/STYLE.md",
+            "registryItem": "style-zine-wire",
+            "pairsWith": [
+                "marquee-hover-row",
+                "velocity-skew",
+                "variable-proximity",
+                "split-reveal"
+            ],
+            "clashesWith": [
+                "warm-manuscript",
+                "liquid-glass"
+            ]
+        },
+        {
+            "id": "command-dark",
+            "kind": "style",
+            "cluster": "04-spatial-physics",
+            "path": "styles/04-spatial-physics/command-dark/STYLE.md",
+            "registryItem": "style-command-dark",
+            "pairsWith": [
+                "border-spotlight",
+                "glare-hover",
+                "magnetic-button",
+                "liquid-glass-filter"
+            ],
+            "clashesWith": [
+                "retro-web-96",
+                "neo-brutalism"
+            ]
+        },
+        {
+            "id": "mesh-craft",
+            "kind": "style",
+            "cluster": "04-spatial-physics",
+            "path": "styles/04-spatial-physics/mesh-craft/STYLE.md",
+            "registryItem": "style-mesh-craft",
+            "pairsWith": [
+                "spring-tilt-card",
+                "glare-hover",
+                "magnetic-button",
+                "split-reveal"
+            ],
+            "clashesWith": [
+                "ditherpunk",
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "warm-manuscript",
+            "kind": "style",
+            "cluster": "05-editorial-organic",
+            "path": "styles/05-editorial-organic/warm-manuscript/STYLE.md",
+            "registryItem": "style-warm-manuscript",
+            "pairsWith": [
+                "split-reveal",
+                "sibling-dim",
+                "flip-card"
+            ],
+            "clashesWith": [
+                "acid-y2k",
+                "telemetry-fault",
+                "zine-wire"
             ]
         }
     ],

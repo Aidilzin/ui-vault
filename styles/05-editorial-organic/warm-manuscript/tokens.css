@@ -1,0 +1,17 @@
+:root {
+  --wm-canvas: #faf9f5;
+  --wm-surface: #f5f0e8;
+  --wm-border: #e6dfd8;
+  --wm-ink: #141413;
+  --wm-ink-muted: #6c6a64;
+  --wm-accent: #cc785c;
+  --wm-accent-alt: #a9583e;
+  --wm-radius: 10px;
+}
+
+.wm-page {
+  background: var(--wm-surface);
+  color: var(--wm-ink);
+  border: 1px solid var(--wm-border);
+  border-radius: var(--wm-radius);
+}

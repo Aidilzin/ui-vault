@@ -220,6 +220,204 @@
                     "target": "~/src/styles/ambient-orbit.tokens.css"
                 }
             ]
+        },
+        {
+            "name": "style-monolith-dark",
+            "type": "registry:item",
+            "title": "Monolith Dark Style",
+            "description": "Stepped nocturnal charcoal surfaces with 1px hairlines and restrained indigo focus.",
+            "categories": [
+                "01-precision-systems",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "01-precision-systems/monolith-dark/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "01-precision-systems/monolith-dark/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/monolith-dark.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-telemetry-fault",
+            "type": "registry:item",
+            "title": "Telemetry Fault Style",
+            "description": "Deep plum-black observability console with electric lime and rose diagnostic signals.",
+            "categories": [
+                "01-precision-systems",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "01-precision-systems/telemetry-fault/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "01-precision-systems/telemetry-fault/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/telemetry-fault.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-monochrome-stark",
+            "type": "registry:item",
+            "title": "Monochrome Stark Style",
+            "description": "Binary black-and-white Swiss minimalism with sharp 1px grid rules and blue focus.",
+            "categories": [
+                "01-precision-systems",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "01-precision-systems/monochrome-stark/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "01-precision-systems/monochrome-stark/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/monochrome-stark.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-retro-web-96",
+            "type": "registry:item",
+            "title": "Retro Web 96 Style",
+            "description": "Mid-90s directory chrome with flat table rules, classic cobalt links, and 0px radii.",
+            "categories": [
+                "02-retro-compute",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "02-retro-compute/retro-web-96/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "02-retro-compute/retro-web-96/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/retro-web-96.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-console-2001",
+            "type": "registry:item",
+            "title": "Console 2001 Style",
+            "description": "Early-2000s molded hardware entertainment UI with saturated primary color blocks.",
+            "categories": [
+                "03-kinetic-rebel",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "03-kinetic-rebel/console-2001/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "03-kinetic-rebel/console-2001/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/console-2001.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-zine-wire",
+            "type": "registry:item",
+            "title": "Zine Wire Style",
+            "description": "Cyber-editorial feed with charcoal grounds, electric mint highlights, and hyper-violet rules.",
+            "categories": [
+                "03-kinetic-rebel",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "03-kinetic-rebel/zine-wire/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "03-kinetic-rebel/zine-wire/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/zine-wire.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-command-dark",
+            "type": "registry:item",
+            "title": "Command Dark Style",
+            "description": "Keyboard-first floating launcher with translucent obsidian panes and crimson accents.",
+            "categories": [
+                "04-spatial-physics",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "04-spatial-physics/command-dark/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "04-spatial-physics/command-dark/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/command-dark.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-mesh-craft",
+            "type": "registry:item",
+            "title": "Mesh Craft Style",
+            "description": "Porcelain editorial cards and deep slate ink paired with luminous indigo mesh accents.",
+            "categories": [
+                "04-spatial-physics",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "04-spatial-physics/mesh-craft/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "04-spatial-physics/mesh-craft/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/mesh-craft.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-warm-manuscript",
+            "type": "registry:item",
+            "title": "Warm Manuscript Style",
+            "description": "Warm parchment substrates, soft carbon ink, literary typography, and terracotta accents.",
+            "categories": [
+                "05-editorial-organic",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "05-editorial-organic/warm-manuscript/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "05-editorial-organic/warm-manuscript/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/warm-manuscript.tokens.css"
+                }
+            ]
         }
     ]
 }

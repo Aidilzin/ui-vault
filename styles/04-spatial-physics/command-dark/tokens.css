@@ -1,0 +1,18 @@
+:root {
+  --cd-canvas: #07080a;
+  --cd-surface: #101111;
+  --cd-elevated: #242728;
+  --cd-border: #434345;
+  --cd-ink: #ffffff;
+  --cd-ink-muted: #9c9c9d;
+  --cd-accent: #ff6363;
+  --cd-accent-alt: #e8e8e8;
+  --cd-radius: 10px;
+}
+
+.cd-launcher {
+  background: var(--cd-surface);
+  color: var(--cd-ink);
+  border: 1px solid var(--cd-border);
+  border-radius: var(--cd-radius);
+}

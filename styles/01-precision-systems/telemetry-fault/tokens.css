@@ -1,0 +1,18 @@
+:root {
+  --tf-canvas: #150f23;
+  --tf-surface: #1f1633;
+  --tf-border: #362d59;
+  --tf-ink: #ffffff;
+  --tf-ink-muted: #cfcfdb;
+  --tf-accent: #6a5fc1;
+  --tf-accent-ok: #c2ef4e;
+  --tf-accent-fault: #fa7faa;
+  --tf-radius: 6px;
+}
+
+.tf-console {
+  background: var(--tf-surface);
+  color: var(--tf-ink);
+  border: 1px solid var(--tf-border);
+  border-radius: var(--tf-radius);
+}

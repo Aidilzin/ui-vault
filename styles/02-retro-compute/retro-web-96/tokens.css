@@ -1,0 +1,19 @@
+:root {
+  --rw-canvas: #ffffff;
+  --rw-surface: #c0d4a7;
+  --rw-surface-alt: #a5b8c0;
+  --rw-border: #000000;
+  --rw-ink: #000000;
+  --rw-ink-muted: #333333;
+  --rw-accent: #0000ee;
+  --rw-accent-alt: #e91d2a;
+  --rw-accent-warn: #fcc20f;
+  --rw-radius: 0px;
+}
+
+.rw-table-cell {
+  background: var(--rw-surface);
+  color: var(--rw-ink);
+  border: 1px solid var(--rw-border);
+  border-radius: var(--rw-radius);
+}
