@@ -726,6 +726,72 @@
                     "target": "~/src/styles/eight-bit-arcade.tokens.css"
                 }
             ]
+        },
+        {
+            "name": "style-code-forge",
+            "type": "registry:item",
+            "title": "Code Forge Style",
+            "description": "Code-collaboration dark neutral palette with WCAG-verified borders and syntactic diff greens/reds.",
+            "categories": [
+                "01-precision-systems",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "01-precision-systems/code-forge/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "01-precision-systems/code-forge/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/code-forge.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-perceptual-scale",
+            "type": "registry:item",
+            "title": "Perceptual Scale Style",
+            "description": "Mathematical 12-step perceptual color scale with solid/soft/surface component hierarchy.",
+            "categories": [
+                "05-modern-craft",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "05-modern-craft/perceptual-scale/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "05-modern-craft/perceptual-scale/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/perceptual-scale.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-transit-precision",
+            "type": "registry:item",
+            "title": "Transit Precision Style",
+            "description": "AAA-contrast European rail signage aesthetic with tabular timetables and signal red wayfinding.",
+            "categories": [
+                "01-precision-systems",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "01-precision-systems/transit-precision/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "01-precision-systems/transit-precision/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/transit-precision.tokens.css"
+                }
+            ]
         }
     ]
 }

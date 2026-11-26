@@ -1041,6 +1041,70 @@
                     "type": "registry:ui"
                 }
             ]
+        },
+        {
+            "name": "spring-number-flow",
+            "type": "registry:ui",
+            "title": "Bidirectional Spring Number Flow",
+            "description": "Directional per-digit numeric transition supporting dynamic formatted digit enter/exit.",
+            "categories": [
+                "micro-feedback",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "micro-feedback/spring-number-flow.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "velocity-dismiss-drawer",
+            "type": "registry:ui",
+            "title": "Velocity Drag-to-Dismiss Drawer",
+            "description": "Interactive sheet supporting pointer drag, rubber-band resistance, and velocity snap dismiss.",
+            "categories": [
+                "layout-morph",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "layout-morph/velocity-dismiss-drawer.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "stacked-toast-deck",
+            "type": "registry:ui",
+            "title": "Stacked Hover-Expand Toast Deck",
+            "description": "Depth-stacked notifications fanning out smoothly on hover with click-to-dismiss.",
+            "categories": [
+                "micro-feedback",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "micro-feedback/stacked-toast-deck.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "magnetic-copy-spell",
+            "type": "registry:ui",
+            "title": "Magnetic Copy Checkmark Spell",
+            "description": "Tactile copy trigger with SVG checkmark transition and subtle radial confirmation ring.",
+            "categories": [
+                "micro-feedback",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "micro-feedback/magnetic-copy-spell.tsx",
+                    "type": "registry:ui"
+                }
+            ]
         }
     ]
 }

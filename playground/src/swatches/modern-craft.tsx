@@ -126,4 +126,22 @@ export const modernCraftSwatches: Record<string, () => ReactNode> = {
       </div>
     </div>
   ),
+
+  "perceptual-scale": () => (
+    <div style={{ height: "100%", background: "#fcfcfd", color: "#1c2024", padding: 14, display: "flex", flexDirection: "column", justifyContent: "space-between", fontFamily: "var(--font-sans)" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontFamily: "var(--font-mono)", fontSize: 9, color: "#60646c" }}>
+        <span>12-STEP PERCEPTUAL</span>
+        <span style={{ color: "#5b5bd6", fontWeight: 700 }}>IRIS-9</span>
+      </div>
+      <div style={{ display: "flex", gap: 3 }}>
+        {["#fcfcfd", "#f9f9fb", "#eff0f3", "#d8d9e0", "#eef0ff", "#5b5bd6", "#1c2024"].map((c, i) => (
+          <span key={i} style={{ flex: 1, height: 22, borderRadius: 4, background: c, border: "1px solid #d8d9e0" }} />
+        ))}
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <span style={{ background: "#5b5bd6", color: "#ffffff", padding: "4px 11px", borderRadius: 6, fontSize: 10, fontWeight: 600 }}>Solid Step 9</span>
+        <span style={{ background: "#eef0ff", color: "#5b5bd6", padding: "4px 10px", borderRadius: 6, fontSize: 10, fontWeight: 600 }}>Soft Step 3</span>
+      </div>
+    </div>
+  ),
 };

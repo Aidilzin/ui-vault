@@ -188,4 +188,41 @@ export const precisionSystemsSwatches: Record<string, () => ReactNode> = {
       </div>
     </div>
   ),
+
+  "code-forge": () => (
+    <div style={{ height: "100%", background: "#0d1117", color: "#e6edf3", padding: 14, display: "flex", flexDirection: "column", justifyContent: "space-between", fontFamily: "var(--font-mono)" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 10 }}>
+        <span style={{ color: "#2f81f7", fontWeight: 600 }}>main · PR #105</span>
+        <span style={{ background: "#238636", color: "#ffffff", padding: "1px 7px", borderRadius: 999, fontSize: 9 }}>MERGED</span>
+      </div>
+      <div style={{ background: "#161b22", border: "1px solid #30363d", borderRadius: 6, padding: "7px 9px", fontSize: 10, lineHeight: 1.45 }}>
+        <div style={{ color: "#f85149", background: "rgba(248,81,73,0.12)", padding: "0 4px" }}>- tier: optional</div>
+        <div style={{ color: "#3fb950", background: "rgba(63,185,80,0.12)", padding: "0 4px" }}>+ tier: &quot;production&quot;</div>
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 9, color: "#8b949e" }}>
+        <span>WCAG VERIFIED DIFFS</span>
+        <span>#0D1117 / #30363D</span>
+      </div>
+    </div>
+  ),
+
+  "transit-precision": () => (
+    <div style={{ height: "100%", background: "#ffffff", color: "#282d37", display: "flex", flexDirection: "column", justifyContent: "space-between", fontFamily: "var(--font-sans)" }}>
+      <div style={{ height: 5, background: "#ec0016", width: "100%" }} />
+      <div style={{ padding: "8px 14px 14px", flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <span style={{ fontWeight: 800, fontSize: 13, letterSpacing: "-0.02em" }}>ICE 624 · BERLIN</span>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: 9, color: "#408335", fontWeight: 700 }}>ON TIME</span>
+        </div>
+        <div style={{ background: "#f0f3f5", border: "1px solid #c7cfd6", borderRadius: 4, padding: "8px 10px", display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: 11 }}>
+          <span>PLAT 07</span>
+          <span style={{ fontWeight: 700 }}>14:28 → 18:10</span>
+        </div>
+        <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: 9, color: "#646973" }}>
+          <span>AAA WAYFINDING</span>
+          <span style={{ color: "#ec0016", fontWeight: 700 }}>#EC0016</span>
+        </div>
+      </div>
+    </div>
+  ),
 };

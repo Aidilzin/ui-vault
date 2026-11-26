@@ -7,6 +7,9 @@ import { TactilePressBadge } from "@vault/animations/micro-feedback/tactile-pres
 import { KineticStatusPill } from "@vault/animations/micro-feedback/kinetic-status-pill";
 import { TactilePushButton } from "@vault/animations/micro-feedback/tactile-push-button";
 import { OdometerTicker } from "@vault/animations/micro-feedback/odometer-ticker";
+import { SpringNumberFlow } from "@vault/animations/micro-feedback/spring-number-flow";
+import { StackedToastDeck } from "@vault/animations/micro-feedback/stacked-toast-deck";
+import { MagneticCopySpell } from "@vault/animations/micro-feedback/magnetic-copy-spell";
 import type { DemoMap, DemoProps } from "./types";
 
 function ClickSparkDemo() {
@@ -113,4 +116,7 @@ export const microFeedbackDemos: DemoMap = {
   "kinetic-status-pill": KineticStatusPillDemo,
   "tactile-push-button": TactilePushButtonDemo,
   "odometer-ticker": OdometerTickerDemo,
+  "spring-number-flow": () => <SpringNumberFlow />,
+  "stacked-toast-deck": () => <StackedToastDeck />,
+  "magnetic-copy-spell": () => <MagneticCopySpell />,
 };

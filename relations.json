@@ -12,7 +12,9 @@
                 "telemetry-fault",
                 "monochrome-stark",
                 "dark-gallery-index",
-                "swiss-type-foundry"
+                "swiss-type-foundry",
+                "code-forge",
+                "transit-precision"
             ]
         },
         "02-retro-compute": {
@@ -55,7 +57,8 @@
                 "mesh-craft",
                 "bento-grid",
                 "aurora-mesh",
-                "tactile-soft"
+                "tactile-soft",
+                "perceptual-scale"
             ]
         },
         "06-editorial-warm": {
@@ -2128,6 +2131,154 @@
                 "acid-y2k",
                 "phosphor-terminal"
             ]
+        },
+        {
+            "id": "code-forge",
+            "kind": "style",
+            "cluster": "01-precision-systems",
+            "tier": "production",
+            "path": "styles/01-precision-systems/code-forge/STYLE.md",
+            "registryItem": "style-code-forge",
+            "pairsWith": [
+                "inline-code-diff",
+                "tool-call-step",
+                "spotlight-tabs",
+                "sibling-dim"
+            ],
+            "clashesWith": [
+                "acid-y2k",
+                "console-2001",
+                "zine-wire"
+            ]
+        },
+        {
+            "id": "perceptual-scale",
+            "kind": "style",
+            "cluster": "05-modern-craft",
+            "tier": "production",
+            "path": "styles/05-modern-craft/perceptual-scale/STYLE.md",
+            "registryItem": "style-perceptual-scale",
+            "pairsWith": [
+                "spotlight-tabs",
+                "blur-fade",
+                "velocity-dismiss-drawer",
+                "stacked-toast-deck"
+            ],
+            "clashesWith": [
+                "ditherpunk",
+                "neo-brutalism"
+            ]
+        },
+        {
+            "id": "transit-precision",
+            "kind": "style",
+            "cluster": "01-precision-systems",
+            "tier": "production",
+            "path": "styles/01-precision-systems/transit-precision/STYLE.md",
+            "registryItem": "style-transit-precision",
+            "pairsWith": [
+                "split-flap-clock",
+                "count-up",
+                "scroll-progress-bar",
+                "tactile-press-badge"
+            ],
+            "clashesWith": [
+                "liquid-glass",
+                "acid-y2k",
+                "pastel-playful"
+            ]
+        },
+        {
+            "id": "spring-number-flow",
+            "kind": "animation",
+            "mechanic": "micro-feedback",
+            "tier": "production",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-value",
+            "path": "animations/micro-feedback/spring-number-flow.tsx",
+            "registryItem": "spring-number-flow",
+            "pairsWith": [
+                "monolith-dark",
+                "mesh-craft",
+                "bento-grid",
+                "perceptual-scale"
+            ],
+            "clashesWith": [
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "velocity-dismiss-drawer",
+            "kind": "animation",
+            "mechanic": "layout-morph",
+            "tier": "production",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-drawer",
+            "path": "animations/layout-morph/velocity-dismiss-drawer.tsx",
+            "registryItem": "velocity-dismiss-drawer",
+            "pairsWith": [
+                "perceptual-scale",
+                "tactile-soft",
+                "command-dark",
+                "bento-grid"
+            ],
+            "clashesWith": [
+                "retro-web-96",
+                "os-core"
+            ]
+        },
+        {
+            "id": "stacked-toast-deck",
+            "kind": "animation",
+            "mechanic": "micro-feedback",
+            "tier": "production",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-stack",
+            "path": "animations/micro-feedback/stacked-toast-deck.tsx",
+            "registryItem": "stacked-toast-deck",
+            "pairsWith": [
+                "monolith-dark",
+                "perceptual-scale",
+                "code-forge",
+                "tactile-soft"
+            ],
+            "clashesWith": [
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "magnetic-copy-spell",
+            "kind": "animation",
+            "mechanic": "micro-feedback",
+            "tier": "viral",
+            "engine": [
+                "svg",
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-check",
+            "path": "animations/micro-feedback/magnetic-copy-spell.tsx",
+            "registryItem": "magnetic-copy-spell",
+            "pairsWith": [
+                "fui-tactical",
+                "monolith-dark",
+                "code-forge",
+                "phosphor-terminal"
+            ],
+            "clashesWith": []
         }
     ],
     "hybrids": [

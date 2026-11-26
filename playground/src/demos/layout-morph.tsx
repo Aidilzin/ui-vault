@@ -7,6 +7,7 @@ import { SpotlightTabs } from "@vault/animations/layout-morph/spotlight-tabs";
 import { BlurFade } from "@vault/animations/layout-morph/blur-fade";
 import { StackedCardDeck } from "@vault/animations/layout-morph/stacked-card-deck";
 import { AccordionGallery } from "@vault/animations/layout-morph/accordion-gallery";
+import { VelocityDismissDrawer } from "@vault/animations/layout-morph/velocity-dismiss-drawer";
 import type { DemoMap, DemoProps } from "./types";
 
 function FlipCardDemo() {
@@ -175,4 +176,5 @@ export const layoutMorphDemos: DemoMap = {
   "blur-fade": BlurFadeDemo,
   "stacked-card-deck": () => <StackedCardDeck />,
   "accordion-gallery": () => <AccordionGallery />,
+  "velocity-dismiss-drawer": () => <VelocityDismissDrawer />,
 };

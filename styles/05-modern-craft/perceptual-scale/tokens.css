@@ -1,0 +1,21 @@
+/**
+ * Distilled from Radix Themes (`https://github.com/radix-ui/themes`, MIT License).
+ */
+:root {
+  --ps-canvas: #fcfcfd;
+  --ps-surface: #f9f9fb;
+  --ps-surface-hover: #eff0f3;
+  --ps-border: #d8d9e0;
+  --ps-ink: #1c2024;
+  --ps-ink-muted: #60646c;
+  --ps-accent: #5b5bd6;
+  --ps-accent-soft: #eef0ff;
+  --ps-radius: 8px;
+}
+
+.ps-surface {
+  background: var(--ps-surface);
+  color: var(--ps-ink);
+  border: 1px solid var(--ps-border);
+  border-radius: var(--ps-radius);
+}

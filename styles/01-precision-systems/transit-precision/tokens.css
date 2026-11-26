@@ -1,0 +1,20 @@
+/**
+ * Distilled from DB UX Design System (`https://github.com/db-ux-design-system/core-web`, Apache-2.0 License).
+ */
+:root {
+  --tp-canvas: #ffffff;
+  --tp-surface: #f0f3f5;
+  --tp-border: #c7cfd6;
+  --tp-ink: #282d37;
+  --tp-ink-muted: #646973;
+  --tp-accent: #ec0016;
+  --tp-accent-ok: #408335;
+  --tp-radius: 4px;
+}
+
+.tp-board {
+  background: var(--tp-surface);
+  color: var(--tp-ink);
+  border: 1px solid var(--tp-border);
+  border-radius: var(--tp-radius);
+}

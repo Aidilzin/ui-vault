@@ -1,0 +1,21 @@
+/**
+ * Distilled from GitHub Primer Primitives (`https://github.com/primer/primitives`, MIT License).
+ */
+:root {
+  --cf-canvas: #0d1117;
+  --cf-surface: #161b22;
+  --cf-border: #30363d;
+  --cf-ink: #e6edf3;
+  --cf-ink-muted: #8b949e;
+  --cf-accent: #2f81f7;
+  --cf-accent-add: #3fb950;
+  --cf-accent-del: #f85149;
+  --cf-radius: 6px;
+}
+
+.cf-panel {
+  background: var(--cf-surface);
+  color: var(--cf-ink);
+  border: 1px solid var(--cf-border);
+  border-radius: var(--cf-radius);
+}

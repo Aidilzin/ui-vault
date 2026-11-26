@@ -5,7 +5,7 @@
 [![Live Playground](https://img.shields.io/badge/Playground-Live-38bdf8?style=flat-square&labelColor=0f1115)](https://aidilzin.github.io/ui-vault/)
 [![Deploy Playground](https://img.shields.io/github/actions/workflow/status/Aidilzin/ui-vault/deploy-playground.yml?branch=main&style=flat-square&label=Pages&labelColor=0f1115)](https://github.com/Aidilzin/ui-vault/actions/workflows/deploy-playground.yml)
 <!-- VAULT:BADGE:START -->
-[![Registry Items](https://img.shields.io/badge/Registry-33%20styles%20%C2%B7%2065%20animations-34d399?style=flat-square&labelColor=0f1115)](./relations.json)
+[![Registry Items](https://img.shields.io/badge/Registry-36%20styles%20%C2%B7%2069%20animations-34d399?style=flat-square&labelColor=0f1115)](./relations.json)
 <!-- VAULT:BADGE:END -->
 [![License: MIT](https://img.shields.io/badge/License-MIT-8b94a3?style=flat-square&labelColor=0f1115)](./LICENSE)
 
@@ -77,7 +77,7 @@ npm run dev:playground
 ## Live Catalog
 
 <!-- VAULT:STYLES:START -->
-### Styles by Aesthetic Cluster (33)
+### Styles by Aesthetic Cluster (36)
 
 | Cluster | Tier | Style ID | Key Pairings | `shadcn` Install |
 | :--- | :--- | :--- | :--- | :--- |
@@ -89,6 +89,8 @@ npm run dev:playground
 | `01-precision-systems` | `production` | `monochrome-stark` | `split-reveal`, `sibling-dim`, `variable-proximity`, `marquee-hover-row` | `npx shadcn@latest add Aidilzin/ui-vault/style-monochrome-stark` |
 | `01-precision-systems` | `viral` | `dark-gallery-index` | `border-spotlight`, `spotlight-tabs`, `glare-hover`, `sibling-dim` | `npx shadcn@latest add Aidilzin/ui-vault/style-dark-gallery-index` |
 | `01-precision-systems` | `production` | `swiss-type-foundry` | `variable-proximity`, `split-reveal`, `text-roll`, `marquee-hover-row` | `npx shadcn@latest add Aidilzin/ui-vault/style-swiss-type-foundry` |
+| `01-precision-systems` | `production` | `code-forge` | `inline-code-diff`, `tool-call-step`, `spotlight-tabs`, `sibling-dim` | `npx shadcn@latest add Aidilzin/ui-vault/style-code-forge` |
+| `01-precision-systems` | `production` | `transit-precision` | `split-flap-clock`, `count-up`, `scroll-progress-bar`, `tactile-press-badge` | `npx shadcn@latest add Aidilzin/ui-vault/style-transit-precision` |
 | `02-retro-compute` | `experimental` | `ditherpunk` | `bayer-dither`, `scramble-text`, `ascii-filter` | `npx shadcn@latest add Aidilzin/ui-vault/style-ditherpunk` |
 | `02-retro-compute` | `experimental` | `os-core` | `scramble-text`, `flip-card`, `bayer-dither` | `npx shadcn@latest add Aidilzin/ui-vault/style-os-core` |
 | `02-retro-compute` | `experimental` | `retro-web-96` | `bayer-dither`, `scramble-text`, `flip-card` | `npx shadcn@latest add Aidilzin/ui-vault/style-retro-web-96` |
@@ -108,6 +110,7 @@ npm run dev:playground
 | `05-modern-craft` | `production` | `bento-grid` | `border-spotlight`, `count-up`, `split-reveal`, `sibling-dim` | `npx shadcn@latest add Aidilzin/ui-vault/style-bento-grid` |
 | `05-modern-craft` | `viral` | `aurora-mesh` | `border-beam`, `shiny-text`, `glare-hover`, `spotlight-tabs` | `npx shadcn@latest add Aidilzin/ui-vault/style-aurora-mesh` |
 | `05-modern-craft` | `production` | `tactile-soft` | `spotlight-tabs`, `tactile-press-badge`, `blur-text`, `sibling-dim` | `npx shadcn@latest add Aidilzin/ui-vault/style-tactile-soft` |
+| `05-modern-craft` | `production` | `perceptual-scale` | `spotlight-tabs`, `blur-fade`, `velocity-dismiss-drawer`, `stacked-toast-deck` | `npx shadcn@latest add Aidilzin/ui-vault/style-perceptual-scale` |
 | `06-editorial-warm` | `production` | `warm-manuscript` | `split-reveal`, `sibling-dim`, `flip-card` | `npx shadcn@latest add Aidilzin/ui-vault/style-warm-manuscript` |
 | `06-editorial-warm` | `production` | `archival-paper` | `sibling-dim`, `spotlight-tabs`, `scroll-progress-bar`, `make-way-grid` | `npx shadcn@latest add Aidilzin/ui-vault/style-archival-paper` |
 | `06-editorial-warm` | `production` | `tactile-studio-warm` | `blur-text`, `sibling-dim`, `progressive-blur-edge`, `spotlight-tabs` | `npx shadcn@latest add Aidilzin/ui-vault/style-tactile-studio-warm` |
@@ -117,7 +120,7 @@ npm run dev:playground
 <!-- VAULT:STYLES:END -->
 
 <!-- VAULT:ANIMATIONS:START -->
-### Animations by Mechanic (65)
+### Animations by Mechanic (69)
 
 | Animation | Mechanic | Tier | Engine | Perf Tier | Reduced Motion Fallback | Registry Item |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -186,6 +189,10 @@ npm run dev:playground
 | Flex Accordion Gallery | `layout-morph` | `viral` | `react`, `css` | `low` | `instant-flex` | `accordion-gallery` |
 | 3D Split-Flap Display | `text-kinetic` | `viral` | `react`, `css` | `low` | `instant-digit` | `split-flap-clock` |
 | 3D Perspective Hardcover Book | `physics-optics` | `viral` | `react`, `css` | `low` | `static-book` | `perspective-book` |
+| Bidirectional Spring Number Flow | `micro-feedback` | `production` | `react`, `css` | `low` | `instant-value` | `spring-number-flow` |
+| Velocity Drag-to-Dismiss Drawer | `layout-morph` | `production` | `react`, `css` | `low` | `instant-drawer` | `velocity-dismiss-drawer` |
+| Stacked Hover-Expand Toast Deck | `micro-feedback` | `production` | `react`, `css` | `low` | `instant-stack` | `stacked-toast-deck` |
+| Magnetic Copy Checkmark Spell | `micro-feedback` | `viral` | `svg`, `react`, `css` | `low` | `instant-check` | `magnetic-copy-spell` |
 <!-- VAULT:ANIMATIONS:END -->
 
 <!-- VAULT:HYBRIDS:START -->
