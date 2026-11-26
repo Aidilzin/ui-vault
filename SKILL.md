@@ -7,8 +7,8 @@ description: Curated visual design styles, tokens, and experimental web animatio
 
 Follow these steps whenever styling an interface or adding motion from this vault:
 
-1. **Read `relations.json` first.** Locate the requested style, cluster, or hybrid recipe before writing any CSS or JSX.
-2. **Check compatibility.** Verify `pairsWith` and never mix entries listed in `clashesWith` unless the user explicitly asks for an intentional clash.
+1. **Read `relations.json` first.** Locate the requested style, cluster, tier (`production` | `viral` | `experimental`), or hybrid recipe before writing any CSS or JSX.
+2. **Respect tier boundaries & compatibility.** Default to `production` base styles for mainstream SaaS/apps, layer at most 1–2 restrained `viral` accents, and reserve `experimental` aesthetics for portfolios, creative labs, or explicit user requests. Verify `pairsWith` and never mix entries listed in `clashesWith` unless explicitly asked.
 3. **Load the full spec.** Read the target style's `STYLE.md` and `tokens.css` (if present) and treat them as the visual source of truth for surfaces, borders, typography, and forbidden anti-patterns.
 4. **Reuse or install animations.** Prefer components already in `animations/` (or install them via `npx shadcn@latest add <owner>/ui-vault/<item>`). If an animation is not yet in the vault, check `externalRegistries` in `relations.json` before hand-rolling code.
 5. **Enforce motion hygiene.** Every animation must:
@@ -22,7 +22,7 @@ Use this repeatable pipeline whenever adding a new aesthetic or motion primitive
 
 ### Adding a Style (Live URL -> Vault)
 1. **Extract tokens with Dembrandt MCP.** Run the configured `dembrandt` MCP server against a reference URL to capture palette, surface hierarchy, typography, borders, radii, and shadow rules.
-2. **Assign a cluster.** Place the style under one of the 4 clusters in `relations.json` (`01-precision-systems`, `02-retro-compute`, `03-kinetic-rebel`, `04-spatial-physics`).
+2. **Assign a cluster & tier.** Place the style under one of the 6 clusters in `relations.json` (`01-precision-systems`, `02-retro-compute`, `03-kinetic-rebel`, `04-spatial-physics`, `05-modern-craft`, `06-editorial-warm`) and assign a required `tier` (`production`, `viral`, or `experimental`).
 3. **Author the spec.** Create `styles/<cluster>/<style-id>/STYLE.md` (YAML frontmatter + `Core Tokens & Surfaces`, `Typography & Layout`, and `Forbidden Anti-Patterns`) and optional `tokens.css`.
 4. **Register metadata.** Add the style node to `relations.json` (with `pairsWith` / `clashesWith`), `styles/registry.json`, and root `registry.json`.
 5. **Wire into Playground.** Import `STYLE.md?raw` in `playground/src/lib/vault-data.ts` and add an authentic mini-UI swatch in `playground/src/components/StyleSwatches.tsx`.

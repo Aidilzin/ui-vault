@@ -1,5 +1,5 @@
 {
-    "version": "1.2.0",
+    "version": "1.3.0",
     "clusters": {
         "01-precision-systems": {
             "label": "Precision Systems",
@@ -9,7 +9,6 @@
                 "neo-swiss",
                 "editorial-mono",
                 "industrial-hardware",
-                "monolith-dark",
                 "telemetry-fault",
                 "monochrome-stark",
                 "dark-gallery-index",
@@ -43,17 +42,29 @@
             "styles": [
                 "liquid-glass",
                 "ambient-orbit",
-                "command-dark",
-                "mesh-craft"
+                "command-dark"
             ]
         },
-        "05-editorial-organic": {
-            "label": "Editorial Organic",
-            "dna": "Warm paper substrates, literary serif/sans pairings, organic tactile ink, calm publication grids",
+        "05-modern-craft": {
+            "label": "Modern Craft",
+            "dna": "High-craft SaaS & viral product design — modular bento grids, obsidian dark craft, luminous aurora meshes, soft tactile surfaces",
+            "styles": [
+                "monolith-dark",
+                "mesh-craft",
+                "bento-grid",
+                "aurora-mesh",
+                "tactile-soft"
+            ]
+        },
+        "06-editorial-warm": {
+            "label": "Editorial Warm",
+            "dna": "Warm print editorial, monochrome research galleries, and playful tactile paper surfaces",
             "styles": [
                 "warm-manuscript",
                 "archival-paper",
-                "tactile-studio-warm"
+                "tactile-studio-warm",
+                "monochrome-gallery",
+                "pastel-playful"
             ]
         }
     },
@@ -81,7 +92,8 @@
             "clashesWith": [
                 "liquid-glass",
                 "neo-brutalism"
-            ]
+            ],
+            "tier": "viral"
         },
         {
             "id": "neo-swiss",
@@ -98,7 +110,8 @@
             "clashesWith": [
                 "liquid-glass",
                 "acid-y2k"
-            ]
+            ],
+            "tier": "production"
         },
         {
             "id": "editorial-mono",
@@ -116,7 +129,8 @@
                 "liquid-glass",
                 "neo-brutalism",
                 "acid-y2k"
-            ]
+            ],
+            "tier": "production"
         },
         {
             "id": "industrial-hardware",
@@ -133,7 +147,8 @@
             "clashesWith": [
                 "liquid-glass",
                 "acid-y2k"
-            ]
+            ],
+            "tier": "viral"
         },
         {
             "id": "ditherpunk",
@@ -148,7 +163,8 @@
             ],
             "clashesWith": [
                 "liquid-glass"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "os-core",
@@ -164,7 +180,8 @@
             "clashesWith": [
                 "liquid-glass",
                 "neo-swiss"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "neo-brutalism",
@@ -181,7 +198,8 @@
             "clashesWith": [
                 "fui-tactical",
                 "liquid-glass"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "acid-y2k",
@@ -198,7 +216,8 @@
             "clashesWith": [
                 "neo-swiss",
                 "os-core"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "liquid-glass",
@@ -215,7 +234,8 @@
             "clashesWith": [
                 "ditherpunk",
                 "neo-brutalism"
-            ]
+            ],
+            "tier": "viral"
         },
         {
             "id": "ambient-orbit",
@@ -231,7 +251,8 @@
             "clashesWith": [
                 "neo-brutalism",
                 "os-core"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "magnetic-button",
@@ -251,7 +272,8 @@
             ],
             "clashesWith": [
                 "os-core"
-            ]
+            ],
+            "tier": "viral"
         },
         {
             "id": "border-spotlight",
@@ -273,7 +295,8 @@
             ],
             "clashesWith": [
                 "neo-brutalism"
-            ]
+            ],
+            "tier": "viral"
         },
         {
             "id": "sibling-dim",
@@ -290,7 +313,8 @@
                 "neo-swiss",
                 "fui-tactical"
             ],
-            "clashesWith": []
+            "clashesWith": [],
+            "tier": "production"
         },
         {
             "id": "scramble-text",
@@ -309,7 +333,8 @@
                 "os-core",
                 "ambient-orbit"
             ],
-            "clashesWith": []
+            "clashesWith": [],
+            "tier": "viral"
         },
         {
             "id": "split-reveal",
@@ -327,7 +352,8 @@
                 "neo-swiss",
                 "neo-brutalism"
             ],
-            "clashesWith": []
+            "clashesWith": [],
+            "tier": "production"
         },
         {
             "id": "variable-proximity",
@@ -346,7 +372,8 @@
                 "neo-brutalism",
                 "acid-y2k"
             ],
-            "clashesWith": []
+            "clashesWith": [],
+            "tier": "experimental"
         },
         {
             "id": "flip-card",
@@ -365,7 +392,8 @@
                 "neo-swiss",
                 "fui-tactical"
             ],
-            "clashesWith": []
+            "clashesWith": [],
+            "tier": "production"
         },
         {
             "id": "velocity-skew",
@@ -386,7 +414,8 @@
             "clashesWith": [
                 "fui-tactical",
                 "os-core"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "bayer-dither",
@@ -406,7 +435,8 @@
             ],
             "clashesWith": [
                 "liquid-glass"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "ascii-filter",
@@ -426,7 +456,8 @@
             ],
             "clashesWith": [
                 "liquid-glass"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "orbital-canvas",
@@ -446,7 +477,8 @@
             "clashesWith": [
                 "neo-brutalism",
                 "os-core"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "liquid-glass-filter",
@@ -466,7 +498,8 @@
             "clashesWith": [
                 "ditherpunk",
                 "neo-brutalism"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "spring-tilt-card",
@@ -487,7 +520,8 @@
             "clashesWith": [
                 "os-core",
                 "neo-swiss"
-            ]
+            ],
+            "tier": "viral"
         },
         {
             "id": "glare-hover",
@@ -509,7 +543,8 @@
             "clashesWith": [
                 "ditherpunk",
                 "neo-brutalism"
-            ]
+            ],
+            "tier": "viral"
         },
         {
             "id": "marquee-hover-row",
@@ -531,13 +566,14 @@
             ],
             "clashesWith": [
                 "os-core"
-            ]
+            ],
+            "tier": "viral"
         },
         {
             "id": "monolith-dark",
             "kind": "style",
-            "cluster": "01-precision-systems",
-            "path": "styles/01-precision-systems/monolith-dark/STYLE.md",
+            "cluster": "05-modern-craft",
+            "path": "styles/05-modern-craft/monolith-dark/STYLE.md",
             "registryItem": "style-monolith-dark",
             "pairsWith": [
                 "border-spotlight",
@@ -548,7 +584,8 @@
             "clashesWith": [
                 "neo-brutalism",
                 "console-2001"
-            ]
+            ],
+            "tier": "production"
         },
         {
             "id": "telemetry-fault",
@@ -564,7 +601,8 @@
             "clashesWith": [
                 "warm-manuscript",
                 "liquid-glass"
-            ]
+            ],
+            "tier": "production"
         },
         {
             "id": "monochrome-stark",
@@ -581,7 +619,8 @@
             "clashesWith": [
                 "acid-y2k",
                 "console-2001"
-            ]
+            ],
+            "tier": "production"
         },
         {
             "id": "retro-web-96",
@@ -597,7 +636,8 @@
             "clashesWith": [
                 "liquid-glass",
                 "mesh-craft"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "console-2001",
@@ -613,7 +653,8 @@
             "clashesWith": [
                 "monochrome-stark",
                 "warm-manuscript"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "zine-wire",
@@ -630,7 +671,8 @@
             "clashesWith": [
                 "warm-manuscript",
                 "liquid-glass"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "command-dark",
@@ -647,13 +689,14 @@
             "clashesWith": [
                 "retro-web-96",
                 "neo-brutalism"
-            ]
+            ],
+            "tier": "viral"
         },
         {
             "id": "mesh-craft",
             "kind": "style",
-            "cluster": "04-spatial-physics",
-            "path": "styles/04-spatial-physics/mesh-craft/STYLE.md",
+            "cluster": "05-modern-craft",
+            "path": "styles/05-modern-craft/mesh-craft/STYLE.md",
             "registryItem": "style-mesh-craft",
             "pairsWith": [
                 "spring-tilt-card",
@@ -664,13 +707,14 @@
             "clashesWith": [
                 "ditherpunk",
                 "retro-web-96"
-            ]
+            ],
+            "tier": "production"
         },
         {
             "id": "warm-manuscript",
             "kind": "style",
-            "cluster": "05-editorial-organic",
-            "path": "styles/05-editorial-organic/warm-manuscript/STYLE.md",
+            "cluster": "06-editorial-warm",
+            "path": "styles/06-editorial-warm/warm-manuscript/STYLE.md",
             "registryItem": "style-warm-manuscript",
             "pairsWith": [
                 "split-reveal",
@@ -681,7 +725,8 @@
                 "acid-y2k",
                 "telemetry-fault",
                 "zine-wire"
-            ]
+            ],
+            "tier": "production"
         },
         {
             "id": "star-border",
@@ -703,7 +748,8 @@
             "clashesWith": [
                 "neo-brutalism",
                 "retro-web-96"
-            ]
+            ],
+            "tier": "viral"
         },
         {
             "id": "magnet-lines",
@@ -724,7 +770,8 @@
             ],
             "clashesWith": [
                 "warm-manuscript"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "crosshair-reticle",
@@ -746,7 +793,8 @@
             "clashesWith": [
                 "warm-manuscript",
                 "liquid-glass"
-            ]
+            ],
+            "tier": "viral"
         },
         {
             "id": "border-beam",
@@ -768,7 +816,8 @@
             "clashesWith": [
                 "neo-brutalism",
                 "ditherpunk"
-            ]
+            ],
+            "tier": "viral"
         },
         {
             "id": "shiny-text",
@@ -790,7 +839,8 @@
             "clashesWith": [
                 "ditherpunk",
                 "retro-web-96"
-            ]
+            ],
+            "tier": "viral"
         },
         {
             "id": "blur-text",
@@ -811,7 +861,8 @@
             ],
             "clashesWith": [
                 "ditherpunk"
-            ]
+            ],
+            "tier": "production"
         },
         {
             "id": "text-roll",
@@ -830,7 +881,8 @@
                 "editorial-mono",
                 "industrial-hardware"
             ],
-            "clashesWith": []
+            "clashesWith": [],
+            "tier": "production"
         },
         {
             "id": "pixel-card",
@@ -851,7 +903,8 @@
             "clashesWith": [
                 "liquid-glass",
                 "warm-manuscript"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "elastic-slider",
@@ -872,7 +925,8 @@
             ],
             "clashesWith": [
                 "retro-web-96"
-            ]
+            ],
+            "tier": "viral"
         },
         {
             "id": "dock-magnify",
@@ -894,7 +948,8 @@
             "clashesWith": [
                 "os-core",
                 "retro-web-96"
-            ]
+            ],
+            "tier": "viral"
         },
         {
             "id": "scroll-progress-bar",
@@ -914,7 +969,8 @@
                 "warm-manuscript",
                 "monochrome-stark"
             ],
-            "clashesWith": []
+            "clashesWith": [],
+            "tier": "production"
         },
         {
             "id": "click-spark",
@@ -934,7 +990,8 @@
             ],
             "clashesWith": [
                 "warm-manuscript"
-            ]
+            ],
+            "tier": "viral"
         },
         {
             "id": "count-up",
@@ -953,7 +1010,8 @@
                 "monolith-dark",
                 "industrial-hardware"
             ],
-            "clashesWith": []
+            "clashesWith": [],
+            "tier": "production"
         },
         {
             "id": "hold-to-confirm",
@@ -972,7 +1030,8 @@
                 "telemetry-fault",
                 "industrial-hardware"
             ],
-            "clashesWith": []
+            "clashesWith": [],
+            "tier": "production"
         },
         {
             "id": "kinetic-card-trail",
@@ -994,7 +1053,8 @@
             "clashesWith": [
                 "fui-tactical",
                 "os-core"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "make-way-grid",
@@ -1014,7 +1074,8 @@
                 "industrial-hardware",
                 "warm-manuscript"
             ],
-            "clashesWith": []
+            "clashesWith": [],
+            "tier": "production"
         },
         {
             "id": "pixel-hover-grid",
@@ -1035,7 +1096,8 @@
             "clashesWith": [
                 "warm-manuscript",
                 "liquid-glass"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "crt-grain-overlay",
@@ -1058,7 +1120,8 @@
             "clashesWith": [
                 "mesh-craft",
                 "monochrome-stark"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "svg-turbulence-hover",
@@ -1080,7 +1143,8 @@
             "clashesWith": [
                 "os-core",
                 "retro-web-96"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "elastic-column-scroll",
@@ -1101,13 +1165,14 @@
             ],
             "clashesWith": [
                 "os-core"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "archival-paper",
             "kind": "style",
-            "cluster": "05-editorial-organic",
-            "path": "styles/05-editorial-organic/archival-paper/STYLE.md",
+            "cluster": "06-editorial-warm",
+            "path": "styles/06-editorial-warm/archival-paper/STYLE.md",
             "registryItem": "style-archival-paper",
             "pairsWith": [
                 "sibling-dim",
@@ -1118,13 +1183,14 @@
             "clashesWith": [
                 "acid-y2k",
                 "console-2001"
-            ]
+            ],
+            "tier": "production"
         },
         {
             "id": "tactile-studio-warm",
             "kind": "style",
-            "cluster": "05-editorial-organic",
-            "path": "styles/05-editorial-organic/tactile-studio-warm/STYLE.md",
+            "cluster": "06-editorial-warm",
+            "path": "styles/06-editorial-warm/tactile-studio-warm/STYLE.md",
             "registryItem": "style-tactile-studio-warm",
             "pairsWith": [
                 "blur-text",
@@ -1135,7 +1201,8 @@
             "clashesWith": [
                 "zine-wire",
                 "retro-web-96"
-            ]
+            ],
+            "tier": "production"
         },
         {
             "id": "dark-gallery-index",
@@ -1152,7 +1219,8 @@
             "clashesWith": [
                 "retro-web-96",
                 "warm-manuscript"
-            ]
+            ],
+            "tier": "viral"
         },
         {
             "id": "avant-poster",
@@ -1169,7 +1237,8 @@
             "clashesWith": [
                 "liquid-glass",
                 "warm-manuscript"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "swiss-type-foundry",
@@ -1186,7 +1255,8 @@
             "clashesWith": [
                 "liquid-glass",
                 "console-2001"
-            ]
+            ],
+            "tier": "production"
         },
         {
             "id": "phosphor-terminal",
@@ -1203,7 +1273,8 @@
             "clashesWith": [
                 "warm-manuscript",
                 "mesh-craft"
-            ]
+            ],
+            "tier": "experimental"
         },
         {
             "id": "spotlight-tabs",
@@ -1223,7 +1294,8 @@
                 "archival-paper",
                 "dark-gallery-index"
             ],
-            "clashesWith": []
+            "clashesWith": [],
+            "tier": "production"
         },
         {
             "id": "progressive-blur-edge",
@@ -1245,7 +1317,8 @@
             "clashesWith": [
                 "ditherpunk",
                 "retro-web-96"
-            ]
+            ],
+            "tier": "production"
         },
         {
             "id": "tactile-press-badge",
@@ -1264,7 +1337,8 @@
                 "fui-tactical",
                 "monolith-dark"
             ],
-            "clashesWith": []
+            "clashesWith": [],
+            "tier": "production"
         },
         {
             "id": "kinetic-status-pill",
@@ -1284,7 +1358,98 @@
                 "telemetry-fault",
                 "command-dark"
             ],
-            "clashesWith": []
+            "clashesWith": [],
+            "tier": "production"
+        },
+        {
+            "id": "bento-grid",
+            "kind": "style",
+            "cluster": "05-modern-craft",
+            "tier": "production",
+            "path": "styles/05-modern-craft/bento-grid/STYLE.md",
+            "registryItem": "style-bento-grid",
+            "pairsWith": [
+                "border-spotlight",
+                "count-up",
+                "split-reveal",
+                "sibling-dim"
+            ],
+            "clashesWith": [
+                "ditherpunk",
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "aurora-mesh",
+            "kind": "style",
+            "cluster": "05-modern-craft",
+            "tier": "viral",
+            "path": "styles/05-modern-craft/aurora-mesh/STYLE.md",
+            "registryItem": "style-aurora-mesh",
+            "pairsWith": [
+                "border-beam",
+                "shiny-text",
+                "glare-hover",
+                "spotlight-tabs"
+            ],
+            "clashesWith": [
+                "retro-web-96",
+                "neo-brutalism"
+            ]
+        },
+        {
+            "id": "tactile-soft",
+            "kind": "style",
+            "cluster": "05-modern-craft",
+            "tier": "production",
+            "path": "styles/05-modern-craft/tactile-soft/STYLE.md",
+            "registryItem": "style-tactile-soft",
+            "pairsWith": [
+                "spotlight-tabs",
+                "tactile-press-badge",
+                "blur-text",
+                "sibling-dim"
+            ],
+            "clashesWith": [
+                "acid-y2k",
+                "ditherpunk"
+            ]
+        },
+        {
+            "id": "monochrome-gallery",
+            "kind": "style",
+            "cluster": "06-editorial-warm",
+            "tier": "production",
+            "path": "styles/06-editorial-warm/monochrome-gallery/STYLE.md",
+            "registryItem": "style-monochrome-gallery",
+            "pairsWith": [
+                "sibling-dim",
+                "scroll-progress-bar",
+                "spotlight-tabs",
+                "make-way-grid"
+            ],
+            "clashesWith": [
+                "acid-y2k",
+                "zine-wire"
+            ]
+        },
+        {
+            "id": "pastel-playful",
+            "kind": "style",
+            "cluster": "06-editorial-warm",
+            "tier": "viral",
+            "path": "styles/06-editorial-warm/pastel-playful/STYLE.md",
+            "registryItem": "style-pastel-playful",
+            "pairsWith": [
+                "dock-magnify",
+                "click-spark",
+                "tactile-press-badge",
+                "flip-card"
+            ],
+            "clashesWith": [
+                "fui-tactical",
+                "telemetry-fault"
+            ]
         }
     ],
     "hybrids": [
@@ -1424,5 +1589,10 @@
         "motion-primitives": "https://motion-primitives.com/c/{name}.json",
         "animate-ui": "https://animate-ui.com/r/{name}.json",
         "magicui": "https://magicui.design/r/{name}.json"
-    }
+    },
+    "tiers": [
+        "production",
+        "viral",
+        "experimental"
+    ]
 }

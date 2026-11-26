@@ -7,6 +7,7 @@ import {
   X,
 } from "lucide-react";
 import {
+  TIER_LIST,
   clusterList,
   formatNodeLabel,
   getShadcnAddCommand,
@@ -15,6 +16,7 @@ import {
   styleRawById,
   type ClusterId,
   type StyleNode,
+  type TierId,
 } from "../lib/vault-data";
 import { parseStyleMarkdown } from "../lib/markdown";
 import { StyleSwatch } from "./StyleSwatches";
@@ -48,6 +50,7 @@ export function StylesGallery({
   onJumpToNode,
 }: StylesGalleryProps) {
   const [selectedCluster, setSelectedCluster] = useState<ClusterId | "all">("all");
+  const [selectedTier, setSelectedTier] = useState<TierId | "all">("all");
   const [sortByName, setSortByName] = useState(false);
 
   useEffect(() => {
@@ -76,10 +79,12 @@ export function StylesGallery({
           .map((id) => nodeById.get(id))
           .filter((n): n is StyleNode => Boolean(n && n.kind === "style"))
           .filter((style) => {
+            if (selectedTier !== "all" && style.tier !== selectedTier) return false;
             if (!q) return true;
             const doc = parsedStyles.get(style.id);
             const hay = [
               style.id,
+              style.tier,
               doc?.title ?? "",
               doc?.summary ?? "",
               cluster.id,
@@ -97,7 +102,7 @@ export function StylesGallery({
         return { cluster, styles };
       })
       .filter((entry) => entry.styles.length > 0);
-  }, [searchQuery, parsedStyles, selectedCluster, sortByName]);
+  }, [searchQuery, parsedStyles, selectedCluster, selectedTier, sortByName]);
 
   const activeStyle = activeStyleId
     ? (nodeById.get(activeStyleId) as StyleNode | undefined)
@@ -147,7 +152,33 @@ export function StylesGallery({
         </div>
 
         <div className="filter-group">
-          <span className="filter-label">Sort</span>
+          <span className="filter-label">Tier</span>
+          <button
+            type="button"
+            className="pill-btn"
+            data-active={selectedTier === "all"}
+            onClick={() => setSelectedTier("all")}
+          >
+            all
+          </button>
+          {TIER_LIST.map((tier) => {
+            const count = styleNodes.filter((s) => s.tier === tier).length;
+            return (
+              <button
+                key={tier}
+                type="button"
+                className="pill-btn"
+                data-active={selectedTier === tier}
+                onClick={() => setSelectedTier(tier)}
+              >
+                {tier} ({count})
+              </button>
+            );
+          })}
+
+          <span className="filter-label" style={{ marginLeft: 8 }}>
+            Sort
+          </span>
           <button
             type="button"
             className="pill-btn"
@@ -202,11 +233,21 @@ export function StylesGallery({
                     </div>
 
                     <div className="anim-card-meta">
-                      <div style={{ display: "flex", justifyContent: "space-between", gap: 8, alignItems: "baseline" }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", gap: 8, alignItems: "center" }}>
                         <h3 style={{ margin: 0, fontSize: 15, fontWeight: 600 }}>
                           {doc?.title ?? formatNodeLabel(style.id)}
                         </h3>
-                        <span className="anim-card-id">{style.id}</span>
+                        <span
+                          className={`badge ${
+                            style.tier === "production"
+                              ? "badge-emerald"
+                              : style.tier === "viral"
+                                ? "badge-cyan"
+                                : "badge-amber"
+                          }`}
+                        >
+                          {style.tier}
+                        </span>
                       </div>
 
                       {doc?.summary && (

@@ -24,7 +24,12 @@ export type ClusterId =
   | "02-retro-compute"
   | "03-kinetic-rebel"
   | "04-spatial-physics"
-  | "05-editorial-organic";
+  | "05-modern-craft"
+  | "06-editorial-warm";
+
+export type TierId = "production" | "viral" | "experimental";
+
+export const TIER_LIST: TierId[] = ["production", "viral", "experimental"];
 
 export type MechanicId =
   | "cursor-reactive"
@@ -46,6 +51,7 @@ export interface StyleNode {
   id: string;
   kind: "style";
   cluster: ClusterId;
+  tier: TierId;
   path: string;
   registryItem: string;
   pairsWith: string[];
@@ -56,6 +62,7 @@ export interface AnimationNode {
   id: string;
   kind: "animation";
   mechanic: MechanicId;
+  tier: TierId;
   engine: string[];
   perfTier: "low" | "medium" | "high";
   reducedMotion: string;

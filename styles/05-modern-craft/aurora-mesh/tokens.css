@@ -1,0 +1,18 @@
+:root {
+  --am-canvas: #06060a;
+  --am-surface: #101012;
+  --am-border: #26282b;
+  --am-ink: #fcfdff;
+  --am-ink-muted: #888e90;
+  --am-accent: #3b9eff;
+  --am-accent-alt: #11ff99;
+  --am-accent-warm: #ff801f;
+  --am-radius: 8px;
+}
+
+.am-panel {
+  background: var(--am-surface);
+  color: var(--am-ink);
+  border: 1px solid var(--am-border);
+  border-radius: var(--am-radius);
+}

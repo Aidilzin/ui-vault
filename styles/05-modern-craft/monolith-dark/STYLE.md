@@ -2,7 +2,7 @@
 id: monolith-dark
 name: Monolith Dark / Precision Issue Canvas
 kind: style
-cluster: 01-precision-systems
+cluster: 05-modern-craft
 pairs_with: [border-spotlight, scramble-text, sibling-dim, flip-card]
 clashes_with: [neo-brutalism, console-2001]
 ---

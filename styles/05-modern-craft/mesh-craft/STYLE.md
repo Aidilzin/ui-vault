@@ -2,7 +2,7 @@
 id: mesh-craft
 name: Mesh Craft / Luminous Editorial Surface
 kind: style
-cluster: 04-spatial-physics
+cluster: 05-modern-craft
 pairs_with: [spring-tilt-card, glare-hover, magnetic-button, split-reveal]
 clashes_with: [ditherpunk, retro-web-96]
 ---

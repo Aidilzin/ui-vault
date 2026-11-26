@@ -24,12 +24,16 @@ if (!relations || !stylesReg || !animsReg) {
 
 const clusterIds = new Set(Object.keys(relations.clusters ?? {}));
 const mechanicIds = new Set(relations.mechanics ?? []);
+const validTiers = new Set(relations.tiers ?? ["production", "viral", "experimental"]);
 const nodes = relations.nodes ?? [];
 
-// 1. Duplicate ID / registryItem check
+// 1. Duplicate ID / registryItem / tier check
 const nodeById = new Map();
 const seenRegistryItems = new Set();
 for (const node of nodes) {
+  if (!node.tier || !validTiers.has(node.tier)) {
+    errors.push(`Node "${node.id}" has missing or invalid tier: "${node.tier}"`);
+  }
   if (nodeById.has(node.id)) {
     errors.push(`Duplicate node id in relations.json: "${node.id}"`);
   }

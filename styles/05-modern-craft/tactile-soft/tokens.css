@@ -1,0 +1,19 @@
+:root {
+  --ts-canvas: #ffffff;
+  --ts-surface: #ffffff;
+  --ts-border: #dddddd;
+  --ts-ink: #222222;
+  --ts-ink-muted: #6a6a6a;
+  --ts-accent: #ff385c;
+  --ts-accent-alt: #e00b41;
+  --ts-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  --ts-radius: 14px;
+}
+
+.ts-card {
+  background: var(--ts-surface);
+  color: var(--ts-ink);
+  border: 1px solid var(--ts-border);
+  box-shadow: var(--ts-shadow);
+  border-radius: var(--ts-radius);
+}

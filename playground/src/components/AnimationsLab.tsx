@@ -1,12 +1,14 @@
 import { useMemo, useState } from "react";
 import { Code2, Cpu, Terminal } from "lucide-react";
 import {
+  TIER_LIST,
   animationNodes,
   formatNodeLabel,
   getShadcnAddCommand,
   vaultRelations,
   type AnimationNode,
   type MechanicId,
+  type TierId,
 } from "../lib/vault-data";
 import { LazyStage } from "./LazyStage";
 import { animationDemoRegistry } from "../demos";
@@ -43,6 +45,7 @@ export function AnimationsLab({
   onJumpToNode,
 }: AnimationsLabProps) {
   const [selectedMechanic, setSelectedMechanic] = useState<MechanicId | "all">("all");
+  const [selectedTier, setSelectedTier] = useState<TierId | "all">("all");
   const [selectedPerf, setSelectedPerf] = useState<"all" | "low" | "medium">("all");
   const [sortMode, setSortMode] = useState<SortMode>("newest");
   const [visibleLimit, setVisibleLimit] = useState(PAGE_SIZE);
@@ -54,6 +57,9 @@ export function AnimationsLab({
       if (selectedMechanic !== "all" && node.mechanic !== selectedMechanic) {
         return false;
       }
+      if (selectedTier !== "all" && node.tier !== selectedTier) {
+        return false;
+      }
       if (selectedPerf !== "all" && node.perfTier !== selectedPerf) {
         return false;
       }
@@ -62,6 +68,7 @@ export function AnimationsLab({
         node.id,
         formatNodeLabel(node.id),
         node.mechanic,
+        node.tier,
         node.perfTier,
         node.reducedMotion,
         ...node.engine,
@@ -81,7 +88,7 @@ export function AnimationsLab({
       );
     }
     return list;
-  }, [searchQuery, selectedMechanic, selectedPerf, focusedAnimationId, sortMode]);
+  }, [searchQuery, selectedMechanic, selectedTier, selectedPerf, focusedAnimationId, sortMode]);
 
   const visibleItems = filtered.slice(0, visibleLimit);
   const hasMore = visibleItems.length < filtered.length;
@@ -148,7 +155,39 @@ export function AnimationsLab({
         </div>
 
         <div className="filter-group">
-          <span className="filter-label">Perf</span>
+          <span className="filter-label">Tier</span>
+          <button
+            type="button"
+            className="pill-btn"
+            data-active={selectedTier === "all"}
+            onClick={() => {
+              setSelectedTier("all");
+              setVisibleLimit(PAGE_SIZE);
+            }}
+          >
+            all
+          </button>
+          {TIER_LIST.map((tier) => {
+            const count = animationNodes.filter((a) => a.tier === tier).length;
+            return (
+              <button
+                key={tier}
+                type="button"
+                className="pill-btn"
+                data-active={selectedTier === tier}
+                onClick={() => {
+                  setSelectedTier(tier);
+                  setVisibleLimit(PAGE_SIZE);
+                }}
+              >
+                {tier} ({count})
+              </button>
+            );
+          })}
+
+          <span className="filter-label" style={{ marginLeft: 8 }}>
+            Perf
+          </span>
           {(["all", "low", "medium"] as const).map((tier) => (
             <button
               key={tier}
@@ -198,6 +237,17 @@ export function AnimationsLab({
                     </div>
 
                     <div style={{ display: "flex", gap: 4, flexWrap: "wrap", justifyContent: "flex-end" }}>
+                      <span
+                        className={`badge ${
+                          anim.tier === "production"
+                            ? "badge-emerald"
+                            : anim.tier === "viral"
+                              ? "badge-cyan"
+                              : "badge-amber"
+                        }`}
+                      >
+                        {anim.tier}
+                      </span>
                       <span className="badge badge-cyan">{anim.mechanic}</span>
                       <span
                         className={`badge ${

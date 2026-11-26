@@ -2,7 +2,7 @@
 id: warm-manuscript
 name: Warm Manuscript / Tactile Parchment
 kind: style
-cluster: 05-editorial-organic
+cluster: 06-editorial-warm
 pairs_with: [split-reveal, sibling-dim, flip-card]
 clashes_with: [acid-y2k, telemetry-fault, zine-wire]
 ---

@@ -1,0 +1,18 @@
+:root {
+  --pp-canvas: #f7f7f5;
+  --pp-surface: #f4ecd6;
+  --pp-border: #1f1d3d;
+  --pp-ink: #000000;
+  --pp-ink-muted: #1f1d3d;
+  --pp-accent: #c5b0f4;
+  --pp-accent-alt: #dceeb1;
+  --pp-accent-peach: #f3c9b6;
+  --pp-radius: 12px;
+}
+
+.pp-canvas-card {
+  background: var(--pp-surface);
+  color: var(--pp-ink);
+  border: 1.5px solid var(--pp-border);
+  border-radius: var(--pp-radius);
+}

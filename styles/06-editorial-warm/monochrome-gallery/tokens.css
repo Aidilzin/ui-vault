@@ -1,0 +1,17 @@
+:root {
+  --mg-canvas: #ffffff;
+  --mg-surface: #f7f7f5;
+  --mg-border: #e6e6e4;
+  --mg-ink: #0a1530;
+  --mg-ink-muted: #787774;
+  --mg-accent: #0075de;
+  --mg-accent-alt: #dd5b00;
+  --mg-radius: 6px;
+}
+
+.mg-block {
+  background: var(--mg-surface);
+  color: var(--mg-ink);
+  border: 1px solid var(--mg-border);
+  border-radius: var(--mg-radius);
+}

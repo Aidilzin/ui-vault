@@ -2,7 +2,7 @@
 id: tactile-studio-warm
 name: Tactile Studio Warm / Curated Canvas
 kind: style
-cluster: 05-editorial-organic
+cluster: 06-editorial-warm
 pairs_with: [blur-text, sibling-dim, progressive-blur-edge, spotlight-tabs]
 clashes_with: [zine-wire, retro-web-96]
 ---

@@ -1,0 +1,17 @@
+:root {
+  --bg-canvas: #f5f5f7;
+  --bg-surface: #ffffff;
+  --bg-border: #e0e0e0;
+  --bg-ink: #1d1d1f;
+  --bg-ink-muted: #7a7a7a;
+  --bg-accent: #0071e3;
+  --bg-accent-alt: #2997ff;
+  --bg-radius: 18px;
+}
+
+.bg-tile {
+  background: var(--bg-surface);
+  color: var(--bg-ink);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--bg-radius);
+}

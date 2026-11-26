@@ -35,7 +35,7 @@ const badgeLine = `[![Registry Items](https://img.shields.io/badge/Registry-${st
 const stylesLines = [
   `### Styles by Aesthetic Cluster (${styleNodes.length})`,
   "",
-  "| Cluster | Cluster DNA | Style ID | Key Pairings | `shadcn` Install |",
+  "| Cluster | Tier | Style ID | Key Pairings | `shadcn` Install |",
   "| :--- | :--- | :--- | :--- | :--- |",
 ];
 for (const [clusterId, meta] of Object.entries(relations.clusters)) {
@@ -44,7 +44,7 @@ for (const [clusterId, meta] of Object.entries(relations.clusters)) {
     if (!node) continue;
     const pairings = (node.pairsWith ?? []).map((p) => `\`${p}\``).join(", ");
     stylesLines.push(
-      `| \`${clusterId}\` | ${meta.dna} | \`${node.id}\` | ${pairings} | \`npx shadcn@latest add Aidilzin/ui-vault/${node.registryItem}\` |`
+      `| \`${clusterId}\` | \`${node.tier}\` | \`${node.id}\` | ${pairings} | \`npx shadcn@latest add Aidilzin/ui-vault/${node.registryItem}\` |`
     );
   }
 }
@@ -52,14 +52,14 @@ for (const [clusterId, meta] of Object.entries(relations.clusters)) {
 const animLines = [
   `### Animations by Mechanic (${animNodes.length})`,
   "",
-  "| Animation | Mechanic | Engine | Perf Tier | Reduced Motion Fallback | Registry Item |",
-  "| :--- | :--- | :--- | :--- | :--- | :--- |",
+  "| Animation | Mechanic | Tier | Engine | Perf Tier | Reduced Motion Fallback | Registry Item |",
+  "| :--- | :--- | :--- | :--- | :--- | :--- | :--- |",
 ];
 for (const anim of animNodes) {
   const title = animTitleByName.get(anim.registryItem) ?? anim.id;
   const engines = (anim.engine ?? []).map((e) => `\`${e}\``).join(", ");
   animLines.push(
-    `| ${title} | \`${anim.mechanic}\` | ${engines} | \`${anim.perfTier}\` | \`${anim.reducedMotion}\` | \`${anim.registryItem}\` |`
+    `| ${title} | \`${anim.mechanic}\` | \`${anim.tier}\` | ${engines} | \`${anim.perfTier}\` | \`${anim.reducedMotion}\` | \`${anim.registryItem}\` |`
   );
 }
 

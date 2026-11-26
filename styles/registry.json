@@ -227,17 +227,17 @@
             "title": "Monolith Dark Style",
             "description": "Stepped nocturnal charcoal surfaces with 1px hairlines and restrained indigo focus.",
             "categories": [
-                "01-precision-systems",
+                "05-modern-craft",
                 "style"
             ],
             "files": [
                 {
-                    "path": "01-precision-systems/monolith-dark/STYLE.md",
+                    "path": "05-modern-craft/monolith-dark/STYLE.md",
                     "type": "registry:file",
                     "target": "~/DESIGN.md"
                 },
                 {
-                    "path": "01-precision-systems/monolith-dark/tokens.css",
+                    "path": "05-modern-craft/monolith-dark/tokens.css",
                     "type": "registry:file",
                     "target": "~/src/styles/monolith-dark.tokens.css"
                 }
@@ -381,17 +381,17 @@
             "title": "Mesh Craft Style",
             "description": "Porcelain editorial cards and deep slate ink paired with luminous indigo mesh accents.",
             "categories": [
-                "04-spatial-physics",
+                "05-modern-craft",
                 "style"
             ],
             "files": [
                 {
-                    "path": "04-spatial-physics/mesh-craft/STYLE.md",
+                    "path": "05-modern-craft/mesh-craft/STYLE.md",
                     "type": "registry:file",
                     "target": "~/DESIGN.md"
                 },
                 {
-                    "path": "04-spatial-physics/mesh-craft/tokens.css",
+                    "path": "05-modern-craft/mesh-craft/tokens.css",
                     "type": "registry:file",
                     "target": "~/src/styles/mesh-craft.tokens.css"
                 }
@@ -403,17 +403,17 @@
             "title": "Warm Manuscript Style",
             "description": "Warm parchment substrates, soft carbon ink, literary typography, and terracotta accents.",
             "categories": [
-                "05-editorial-organic",
+                "06-editorial-warm",
                 "style"
             ],
             "files": [
                 {
-                    "path": "05-editorial-organic/warm-manuscript/STYLE.md",
+                    "path": "06-editorial-warm/warm-manuscript/STYLE.md",
                     "type": "registry:file",
                     "target": "~/DESIGN.md"
                 },
                 {
-                    "path": "05-editorial-organic/warm-manuscript/tokens.css",
+                    "path": "06-editorial-warm/warm-manuscript/tokens.css",
                     "type": "registry:file",
                     "target": "~/src/styles/warm-manuscript.tokens.css"
                 }
@@ -425,17 +425,17 @@
             "title": "Archival Paper Style",
             "description": "Quiet museum-grade research paper canvas with crisp block frames and deep cobalt accents.",
             "categories": [
-                "05-editorial-organic",
+                "06-editorial-warm",
                 "style"
             ],
             "files": [
                 {
-                    "path": "05-editorial-organic/archival-paper/STYLE.md",
+                    "path": "06-editorial-warm/archival-paper/STYLE.md",
                     "type": "registry:file",
                     "target": "~/DESIGN.md"
                 },
                 {
-                    "path": "05-editorial-organic/archival-paper/tokens.css",
+                    "path": "06-editorial-warm/archival-paper/tokens.css",
                     "type": "registry:file",
                     "target": "~/src/styles/archival-paper.tokens.css"
                 }
@@ -447,17 +447,17 @@
             "title": "Tactile Studio Warm Style",
             "description": "Warm alabaster and stone-tinted editorial moodboard aesthetic with calm 150-200ms motion.",
             "categories": [
-                "05-editorial-organic",
+                "06-editorial-warm",
                 "style"
             ],
             "files": [
                 {
-                    "path": "05-editorial-organic/tactile-studio-warm/STYLE.md",
+                    "path": "06-editorial-warm/tactile-studio-warm/STYLE.md",
                     "type": "registry:file",
                     "target": "~/DESIGN.md"
                 },
                 {
-                    "path": "05-editorial-organic/tactile-studio-warm/tokens.css",
+                    "path": "06-editorial-warm/tactile-studio-warm/tokens.css",
                     "type": "registry:file",
                     "target": "~/src/styles/tactile-studio-warm.tokens.css"
                 }
@@ -548,6 +548,116 @@
                     "path": "02-retro-compute/phosphor-terminal/tokens.css",
                     "type": "registry:file",
                     "target": "~/src/styles/phosphor-terminal.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-bento-grid",
+            "type": "registry:item",
+            "title": "Bento Grid Style",
+            "description": "Modular light-studio bento tiles with generous radii and crisp cobalt focus.",
+            "categories": [
+                "05-modern-craft",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "05-modern-craft/bento-grid/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "05-modern-craft/bento-grid/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/bento-grid.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-aurora-mesh",
+            "type": "registry:item",
+            "title": "Aurora Mesh Style",
+            "description": "Pitch obsidian canvas with restrained luminous aurora edge blooms and razor hairlines.",
+            "categories": [
+                "05-modern-craft",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "05-modern-craft/aurora-mesh/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "05-modern-craft/aurora-mesh/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/aurora-mesh.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-tactile-soft",
+            "type": "registry:item",
+            "title": "Tactile Soft Style",
+            "description": "Warm diffuse-elevation white cards, friendly pill filters, and coral-rose accents.",
+            "categories": [
+                "05-modern-craft",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "05-modern-craft/tactile-soft/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "05-modern-craft/tactile-soft/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/tactile-soft.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-monochrome-gallery",
+            "type": "registry:item",
+            "title": "Monochrome Gallery Style",
+            "description": "Calm document workspace paper with quiet stone blocks and restrained cobalt focus.",
+            "categories": [
+                "06-editorial-warm",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "06-editorial-warm/monochrome-gallery/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "06-editorial-warm/monochrome-gallery/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/monochrome-gallery.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-pastel-playful",
+            "type": "registry:item",
+            "title": "Pastel Playful Style",
+            "description": "Collaborative creative canvas pairing warm paper, crisp dark ink, and pastel blocks.",
+            "categories": [
+                "06-editorial-warm",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "06-editorial-warm/pastel-playful/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "06-editorial-warm/pastel-playful/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/pastel-playful.tokens.css"
                 }
             ]
         }

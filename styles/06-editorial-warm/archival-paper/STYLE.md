@@ -2,7 +2,7 @@
 id: archival-paper
 name: Archival Paper / Research Index
 kind: style
-cluster: 05-editorial-organic
+cluster: 06-editorial-warm
 pairs_with: [sibling-dim, spotlight-tabs, scroll-progress-bar, make-way-grid]
 clashes_with: [acid-y2k, console-2001]
 ---
