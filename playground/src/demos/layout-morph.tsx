@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { ArrowDownUp, Layers } from "lucide-react";
+import { ArrowDownUp, Layers, RotateCcw } from "lucide-react";
 import { FlipCard } from "@vault/animations/layout-morph/flip-card";
 import { VelocitySkew } from "@vault/animations/layout-morph/velocity-skew";
 import { MakeWayGrid } from "@vault/animations/layout-morph/make-way-grid";
 import { SpotlightTabs } from "@vault/animations/layout-morph/spotlight-tabs";
+import { BlurFade } from "@vault/animations/layout-morph/blur-fade";
 import type { DemoMap, DemoProps } from "./types";
 
 function FlipCardDemo() {
@@ -136,9 +137,38 @@ function SpotlightTabsDemo() {
   );
 }
 
+function BlurFadeDemo({ motionEpoch }: DemoProps) {
+  const [replay, setReplay] = useState(0);
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
+      <BlurFade key={`${replay}-${motionEpoch}`}>
+        <div
+          style={{
+            padding: "14px 18px",
+            background: "#15181e",
+            border: "1px solid var(--fui-border-strong)",
+            borderRadius: 6,
+            textAlign: "center",
+          }}
+        >
+          <div className="fui-mono-label" style={{ color: "var(--fui-signal-active)" }}>
+            BLUR-FADE CONTAINER
+          </div>
+          <div style={{ marginTop: 4, fontSize: 13 }}>Clean optical card entrance</div>
+        </div>
+      </BlurFade>
+      <button type="button" className="btn-fui" onClick={() => setReplay((k) => k + 1)}>
+        <RotateCcw size={11} />
+        <span>Replay</span>
+      </button>
+    </div>
+  );
+}
+
 export const layoutMorphDemos: DemoMap = {
   "flip-card": FlipCardDemo,
   "velocity-skew": VelocitySkewDemo,
   "make-way-grid": MakeWayGridDemo,
   "spotlight-tabs": SpotlightTabsDemo,
+  "blur-fade": BlurFadeDemo,
 };

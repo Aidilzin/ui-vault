@@ -2,6 +2,8 @@ import { useRef } from "react";
 import { ScrollProgressBar } from "@vault/animations/scroll-driven/scroll-progress-bar";
 import { ElasticColumnScroll } from "@vault/animations/scroll-driven/elastic-column-scroll";
 import { ProgressiveBlurEdge } from "@vault/animations/scroll-driven/progressive-blur-edge";
+import { InfiniteMarquee } from "@vault/animations/scroll-driven/infinite-marquee";
+import { ScrollStickyScale } from "@vault/animations/scroll-driven/scroll-sticky-scale";
 import type { DemoMap, DemoProps } from "./types";
 
 function ScrollProgressBarDemo() {
@@ -64,8 +66,26 @@ function ProgressiveBlurEdgeDemo() {
   );
 }
 
+function InfiniteMarqueeDemo() {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8, width: "100%" }}>
+      <InfiniteMarquee
+        items={["PRECISION", "MODERN CRAFT", "SPATIAL", "EDITORIAL", "RETRO", "KINETIC"]}
+        durationSec={12}
+      />
+      <span className="fui-mono-label">Hover strip to pause seamless loop</span>
+    </div>
+  );
+}
+
+function ScrollStickyScaleDemo({ motionEpoch }: DemoProps) {
+  return <ScrollStickyScale key={motionEpoch} />;
+}
+
 export const scrollDrivenDemos: DemoMap = {
   "scroll-progress-bar": ScrollProgressBarDemo,
   "elastic-column-scroll": ElasticColumnScrollDemo,
   "progressive-blur-edge": ProgressiveBlurEdgeDemo,
+  "infinite-marquee": InfiniteMarqueeDemo,
+  "scroll-sticky-scale": ScrollStickyScaleDemo,
 };

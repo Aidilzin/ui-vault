@@ -9,6 +9,7 @@ import {
 import { ElasticSlider } from "@vault/animations/physics-optics/elastic-slider";
 import { DockMagnify } from "@vault/animations/physics-optics/dock-magnify";
 import { SvgTurbulenceHover } from "@vault/animations/physics-optics/svg-turbulence-hover";
+import { AnimatedConnectorBeam } from "@vault/animations/physics-optics/animated-connector-beam";
 import { Compass, Cpu, Layers, Sparkles, Terminal } from "lucide-react";
 import type { DemoMap, DemoProps } from "./types";
 
@@ -194,6 +195,10 @@ function SvgTurbulenceHoverDemo({ motionEpoch }: DemoProps) {
   );
 }
 
+function AnimatedConnectorBeamDemo() {
+  return <AnimatedConnectorBeam fromLabel="APP" toLabel="UI-VAULT" />;
+}
+
 export const physicsOpticsDemos: DemoMap = {
   "liquid-glass-filter": LiquidGlassDemo,
   "spring-tilt-card": SpringTiltCardDemo,
@@ -201,4 +206,5 @@ export const physicsOpticsDemos: DemoMap = {
   "elastic-slider": ElasticSliderDemo,
   "dock-magnify": DockMagnifyDemo,
   "svg-turbulence-hover": SvgTurbulenceHoverDemo,
+  "animated-connector-beam": AnimatedConnectorBeamDemo,
 };

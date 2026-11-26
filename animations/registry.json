@@ -625,6 +625,118 @@
                     "type": "registry:ui"
                 }
             ]
+        },
+        {
+            "name": "animated-connector-beam",
+            "type": "registry:ui",
+            "title": "Animated Connector Beam",
+            "description": "SVG cubic-bezier signal pulses flowing smoothly between two nodes.",
+            "categories": [
+                "physics-optics",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "physics-optics/animated-connector-beam.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "blur-fade",
+            "type": "registry:ui",
+            "title": "Optical Blur-Fade Container",
+            "description": "Smooth opacity, vertical slide, and optical blur reveal for cards and sections.",
+            "categories": [
+                "layout-morph",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "layout-morph/blur-fade.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "infinite-marquee",
+            "type": "registry:ui",
+            "title": "Infinite Edge-Fade Marquee",
+            "description": "Seamless horizontal infinite strip with pause-on-hover and CSS edge-fade mask.",
+            "categories": [
+                "scroll-driven",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "scroll-driven/infinite-marquee.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "tactile-push-button",
+            "type": "registry:ui",
+            "title": "Tactile 3D Push Button",
+            "description": "Mechanical keycap-style push button with physical bottom lip depression.",
+            "categories": [
+                "micro-feedback",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "micro-feedback/tactile-push-button.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "aurora-mesh-bg",
+            "type": "registry:ui",
+            "title": "Ambient Aurora Mesh Backdrop",
+            "description": "Slow-drifting multi-stop CSS aurora backdrop with static reduced-motion freeze.",
+            "categories": [
+                "shader-canvas",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "shader-canvas/aurora-mesh-bg.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "scroll-sticky-scale",
+            "type": "registry:ui",
+            "title": "Scroll Sticky Scale Card",
+            "description": "Scroll-linked card container that smoothly scales and elevates with scroll progress.",
+            "categories": [
+                "scroll-driven",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "scroll-driven/scroll-sticky-scale.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "odometer-ticker",
+            "type": "registry:ui",
+            "title": "Odometer Digit-Wheel Ticker",
+            "description": "Vertical rolling digit-wheel numeric counter with tabular-nums alignment.",
+            "categories": [
+                "micro-feedback",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "micro-feedback/odometer-ticker.tsx",
+                    "type": "registry:ui"
+                }
+            ]
         }
     ]
 }

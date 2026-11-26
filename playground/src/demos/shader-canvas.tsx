@@ -8,6 +8,7 @@ import {
 import { PixelCard } from "@vault/animations/shader-canvas/pixel-card";
 import { PixelHoverGrid } from "@vault/animations/shader-canvas/pixel-hover-grid";
 import { CrtGrainOverlay } from "@vault/animations/shader-canvas/crt-grain-overlay";
+import { AuroraMeshBg } from "@vault/animations/shader-canvas/aurora-mesh-bg";
 import type { DemoMap, DemoProps } from "./types";
 
 const SAMPLE_ORBIT_HUBS: OrbitHub[] = [
@@ -195,6 +196,19 @@ function CrtGrainOverlayDemo({ motionEpoch }: DemoProps) {
   );
 }
 
+function AuroraMeshBgDemo() {
+  return (
+    <AuroraMeshBg style={{ width: "100%", maxWidth: 320, padding: "28px 20px", textAlign: "center" }}>
+      <div className="fui-mono-label" style={{ color: "#fcfdff" }}>
+        AMBIENT AURORA MESH
+      </div>
+      <div style={{ marginTop: 4, fontSize: 13, color: "#cbd5e1" }}>
+        Slow drifting multi-stop dark horizon
+      </div>
+    </AuroraMeshBg>
+  );
+}
+
 export const shaderCanvasDemos: DemoMap = {
   "bayer-dither": BayerDitherDemo,
   "ascii-filter": AsciiFilterDemo,
@@ -202,4 +216,5 @@ export const shaderCanvasDemos: DemoMap = {
   "pixel-card": PixelCardDemo,
   "pixel-hover-grid": PixelHoverGridDemo,
   "crt-grain-overlay": CrtGrainOverlayDemo,
+  "aurora-mesh-bg": AuroraMeshBgDemo,
 };

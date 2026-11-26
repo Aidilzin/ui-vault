@@ -1450,6 +1450,165 @@
                 "fui-tactical",
                 "telemetry-fault"
             ]
+        },
+        {
+            "id": "animated-connector-beam",
+            "kind": "animation",
+            "mechanic": "physics-optics",
+            "tier": "viral",
+            "engine": [
+                "svg",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-connector",
+            "path": "animations/physics-optics/animated-connector-beam.tsx",
+            "registryItem": "animated-connector-beam",
+            "pairsWith": [
+                "monolith-dark",
+                "aurora-mesh",
+                "fui-tactical",
+                "bento-grid"
+            ],
+            "clashesWith": [
+                "retro-web-96",
+                "neo-brutalism"
+            ]
+        },
+        {
+            "id": "blur-fade",
+            "kind": "animation",
+            "mechanic": "layout-morph",
+            "tier": "production",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-visible",
+            "path": "animations/layout-morph/blur-fade.tsx",
+            "registryItem": "blur-fade",
+            "pairsWith": [
+                "warm-manuscript",
+                "bento-grid",
+                "tactile-soft",
+                "monochrome-gallery"
+            ],
+            "clashesWith": [
+                "ditherpunk"
+            ]
+        },
+        {
+            "id": "infinite-marquee",
+            "kind": "animation",
+            "mechanic": "scroll-driven",
+            "tier": "viral",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-strip",
+            "path": "animations/scroll-driven/infinite-marquee.tsx",
+            "registryItem": "infinite-marquee",
+            "pairsWith": [
+                "aurora-mesh",
+                "bento-grid",
+                "mesh-craft",
+                "editorial-mono"
+            ],
+            "clashesWith": [
+                "os-core"
+            ]
+        },
+        {
+            "id": "tactile-push-button",
+            "kind": "animation",
+            "mechanic": "micro-feedback",
+            "tier": "production",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-press",
+            "path": "animations/micro-feedback/tactile-push-button.tsx",
+            "registryItem": "tactile-push-button",
+            "pairsWith": [
+                "industrial-hardware",
+                "pastel-playful",
+                "warm-manuscript",
+                "tactile-soft"
+            ],
+            "clashesWith": [
+                "liquid-glass"
+            ]
+        },
+        {
+            "id": "aurora-mesh-bg",
+            "kind": "animation",
+            "mechanic": "shader-canvas",
+            "tier": "viral",
+            "engine": [
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-aurora-frame",
+            "path": "animations/shader-canvas/aurora-mesh-bg.tsx",
+            "registryItem": "aurora-mesh-bg",
+            "pairsWith": [
+                "aurora-mesh",
+                "command-dark",
+                "liquid-glass"
+            ],
+            "clashesWith": [
+                "ditherpunk",
+                "retro-web-96",
+                "neo-brutalism"
+            ]
+        },
+        {
+            "id": "scroll-sticky-scale",
+            "kind": "animation",
+            "mechanic": "scroll-driven",
+            "tier": "viral",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-scale",
+            "path": "animations/scroll-driven/scroll-sticky-scale.tsx",
+            "registryItem": "scroll-sticky-scale",
+            "pairsWith": [
+                "bento-grid",
+                "mesh-craft",
+                "editorial-mono"
+            ],
+            "clashesWith": [
+                "os-core"
+            ]
+        },
+        {
+            "id": "odometer-ticker",
+            "kind": "animation",
+            "mechanic": "micro-feedback",
+            "tier": "production",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-value",
+            "path": "animations/micro-feedback/odometer-ticker.tsx",
+            "registryItem": "odometer-ticker",
+            "pairsWith": [
+                "bento-grid",
+                "fui-tactical",
+                "monolith-dark",
+                "telemetry-fault"
+            ],
+            "clashesWith": []
         }
     ],
     "hybrids": [
@@ -1582,6 +1741,61 @@
                 "progressive-blur-edge"
             ],
             "bestFor": "Design directories, creative portfolios, media browsers"
+        },
+        {
+            "id": "saas-obsidian-craft",
+            "name": "SaaS Obsidian Craft",
+            "baseStyle": "monolith-dark",
+            "accents": [
+                "border-beam",
+                "spotlight-tabs",
+                "animated-connector-beam"
+            ],
+            "bestFor": "Production B2B SaaS dashboards with restrained viral focus accents"
+        },
+        {
+            "id": "warm-editorial-press",
+            "name": "Warm Editorial Press",
+            "baseStyle": "warm-manuscript",
+            "accents": [
+                "split-reveal",
+                "tactile-push-button",
+                "blur-fade"
+            ],
+            "bestFor": "AI writing workspaces, calm essays, and human-centered docs"
+        },
+        {
+            "id": "bento-product-launch",
+            "name": "Bento Product Launch",
+            "baseStyle": "bento-grid",
+            "accents": [
+                "border-spotlight",
+                "odometer-ticker",
+                "scroll-sticky-scale"
+            ],
+            "bestFor": "Hardware/product launch pages and modular feature showcases"
+        },
+        {
+            "id": "aurora-ai-landing",
+            "name": "Aurora AI Landing",
+            "baseStyle": "aurora-mesh",
+            "accents": [
+                "aurora-mesh-bg",
+                "infinite-marquee",
+                "shiny-text"
+            ],
+            "bestFor": "Dark developer marketing pages and viral AI product launches"
+        },
+        {
+            "id": "playful-canvas-studio",
+            "name": "Playful Canvas Studio",
+            "baseStyle": "pastel-playful",
+            "accents": [
+                "dock-magnify",
+                "tactile-push-button",
+                "click-spark"
+            ],
+            "bestFor": "Collaborative creative tools, whiteboards, and design playgrounds"
         }
     ],
     "externalRegistries": {

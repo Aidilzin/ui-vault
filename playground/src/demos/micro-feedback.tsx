@@ -5,6 +5,8 @@ import { CountUp } from "@vault/animations/micro-feedback/count-up";
 import { HoldToConfirm } from "@vault/animations/micro-feedback/hold-to-confirm";
 import { TactilePressBadge } from "@vault/animations/micro-feedback/tactile-press-badge";
 import { KineticStatusPill } from "@vault/animations/micro-feedback/kinetic-status-pill";
+import { TactilePushButton } from "@vault/animations/micro-feedback/tactile-push-button";
+import { OdometerTicker } from "@vault/animations/micro-feedback/odometer-ticker";
 import type { DemoMap, DemoProps } from "./types";
 
 function ClickSparkDemo() {
@@ -75,10 +77,40 @@ function KineticStatusPillDemo() {
   );
 }
 
+function TactilePushButtonDemo() {
+  const [clicks, setClicks] = useState(0);
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
+      <TactilePushButton onClick={() => setClicks((c) => c + 1)} />
+      <span className="fui-mono-label">Press count: {clicks}</span>
+    </div>
+  );
+}
+
+function OdometerTickerDemo() {
+  const [val, setVal] = useState(1482);
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
+      <div style={{ fontSize: 28, fontWeight: 700, color: "var(--fui-signal-active)" }}>
+        <OdometerTicker value={val} padLength={4} />
+      </div>
+      <button
+        type="button"
+        className="btn-fui"
+        onClick={() => setVal((v) => (v + 137) % 9999)}
+      >
+        <span>Increment (+137)</span>
+      </button>
+    </div>
+  );
+}
+
 export const microFeedbackDemos: DemoMap = {
   "click-spark": ClickSparkDemo,
   "count-up": CountUpDemo,
   "hold-to-confirm": HoldToConfirmDemo,
   "tactile-press-badge": TactilePressBadgeDemo,
   "kinetic-status-pill": KineticStatusPillDemo,
+  "tactile-push-button": TactilePushButtonDemo,
+  "odometer-ticker": OdometerTickerDemo,
 };
