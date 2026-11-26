@@ -209,6 +209,38 @@
                     "type": "registry:ui"
                 }
             ]
+        },
+        {
+            "name": "glare-hover",
+            "type": "registry:ui",
+            "title": "Specular Glare Hover",
+            "description": "Directional glossy light streak and 1px rim glint sweeping across a surface on pointer interaction.",
+            "categories": [
+                "physics-optics",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "physics-optics/glare-hover.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "marquee-hover-row",
+            "type": "registry:ui",
+            "title": "Kinetic Marquee Hover Row",
+            "description": "Editorial menu row that reveals a GPU-composited infinite scrolling marquee strip on hover or focus.",
+            "categories": [
+                "text-kinetic",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "text-kinetic/marquee-hover-row.tsx",
+                    "type": "registry:ui"
+                }
+            ]
         }
     ]
 }

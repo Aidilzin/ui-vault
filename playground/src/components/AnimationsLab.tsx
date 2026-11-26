@@ -14,6 +14,7 @@ import "@vault/animations/cursor-reactive/sibling-dim.css";
 import { ScrambleText } from "@vault/animations/text-kinetic/scramble-text";
 import { SplitReveal } from "@vault/animations/text-kinetic/split-reveal";
 import { VariableProximity } from "@vault/animations/text-kinetic/variable-proximity";
+import { MarqueeHoverRow } from "@vault/animations/text-kinetic/marquee-hover-row";
 import { FlipCard } from "@vault/animations/layout-morph/flip-card";
 import { VelocitySkew } from "@vault/animations/layout-morph/velocity-skew";
 import { BayerDither } from "@vault/animations/shader-canvas/bayer-dither";
@@ -24,6 +25,11 @@ import {
 } from "@vault/animations/shader-canvas/orbital-canvas";
 import { LiquidGlassSurface } from "@vault/animations/physics-optics/liquid-glass-filter";
 import { SpringTiltCard } from "@vault/animations/physics-optics/spring-tilt-card";
+import {
+  GlareHover,
+  type GlareMode,
+  type GlareVariant,
+} from "@vault/animations/physics-optics/glare-hover";
 
 import {
   animationNodes,
@@ -117,6 +123,8 @@ export function AnimationsLab({
   const [ditherAnimate, setDitherAnimate] = useState(true);
   const [asciiAnimate, setAsciiAnimate] = useState(true);
   const [orbitLightBg, setOrbitLightBg] = useState(false);
+  const [glareMode, setGlareMode] = useState<GlareMode>("hover");
+  const [glareVariant, setGlareVariant] = useState<GlareVariant>("streak");
 
   const filtered = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
@@ -609,6 +617,100 @@ export function AnimationsLab({
               Move pointer across corners to inspect damped perspective rotation.
             </div>
           </SpringTiltCard>
+        );
+
+      case "glare-hover":
+        return (
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10, width: "100%" }}>
+            <GlareHover
+              key={`${glareMode}-${glareVariant}-${motionEpoch}`}
+              width="100%"
+              background="linear-gradient(135deg, #131824 0%, #0b0e15 100%)"
+              borderColor="rgba(56, 189, 248, 0.28)"
+              borderRadius="6px"
+              glareColor="#38bdf8"
+              glareOpacity={0.55}
+              variant={glareVariant}
+              mode={glareMode}
+              rimGlint
+              style={{ maxWidth: 310, padding: "18px 20px", textAlign: "left" }}
+            >
+              <div style={{ width: "100%" }}>
+                <div className="fui-mono-label" style={{ color: "var(--fui-signal-active)" }}>
+                  SPECULAR SWEEP // {glareVariant.toUpperCase()}
+                </div>
+                <div style={{ fontSize: 15, fontWeight: 600, marginTop: 6 }}>
+                  GlareHover Surface
+                </div>
+                <div style={{ fontSize: 12, color: "var(--fui-ink-muted)", marginTop: 4 }}>
+                  Hover across to trigger directional light streak &amp; 1px rim glint.
+                </div>
+              </div>
+            </GlareHover>
+
+            <div style={{ display: "flex", gap: 6, flexWrap: "wrap", justifyContent: "center" }}>
+              <button
+                type="button"
+                className="btn-fui"
+                onClick={() =>
+                  setGlareMode((m) => (m === "hover" ? "follow" : "hover"))
+                }
+              >
+                <span>Mode: {glareMode}</span>
+              </button>
+              <button
+                type="button"
+                className="btn-fui"
+                onClick={() =>
+                  setGlareVariant((v) =>
+                    v === "streak" ? "twin" : v === "twin" ? "sheen" : "streak"
+                  )
+                }
+              >
+                <span>Variant: {glareVariant}</span>
+              </button>
+            </div>
+          </div>
+        );
+
+      case "marquee-hover-row":
+        return (
+          <div style={{ width: "100%", maxWidth: 340, display: "flex", flexDirection: "column", gap: 8 }}>
+            <div
+              style={{
+                border: "1px solid var(--fui-border-strong)",
+                borderRadius: 3,
+                overflow: "hidden",
+                background: "#0f1115",
+              }}
+            >
+              <MarqueeHoverRow
+                index="01"
+                label="PRECISION SYSTEMS"
+                accentBg="#38bdf8"
+                accentInk="#090a0c"
+                durationSec={6.5}
+              />
+              <MarqueeHoverRow
+                index="02"
+                label="KINETIC REBEL"
+                accentBg="#f36458"
+                accentInk="#090a0c"
+                durationSec={5.5}
+              />
+              <MarqueeHoverRow
+                index="03"
+                label="SPATIAL PHYSICS"
+                accentBg="#34d399"
+                accentInk="#090a0c"
+                durationSec={6}
+                style={{ borderBottom: "none" }}
+              />
+            </div>
+            <span className="fui-mono-label" style={{ textAlign: "center" }}>
+              Hover or Tab-focus any row to trigger marquee strip
+            </span>
+          </div>
         );
 
       default:

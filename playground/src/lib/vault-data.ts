@@ -2,6 +2,8 @@ import relationsJson from "@vault/relations.json";
 
 import fuiTacticalStyleRaw from "@vault/styles/01-precision-systems/fui-tactical/STYLE.md?raw";
 import neoSwissStyleRaw from "@vault/styles/01-precision-systems/neo-swiss/STYLE.md?raw";
+import editorialMonoStyleRaw from "@vault/styles/01-precision-systems/editorial-mono/STYLE.md?raw";
+import industrialHardwareStyleRaw from "@vault/styles/01-precision-systems/industrial-hardware/STYLE.md?raw";
 import ditherpunkStyleRaw from "@vault/styles/02-retro-compute/ditherpunk/STYLE.md?raw";
 import osCoreStyleRaw from "@vault/styles/02-retro-compute/os-core/STYLE.md?raw";
 import neoBrutalismStyleRaw from "@vault/styles/03-kinetic-rebel/neo-brutalism/STYLE.md?raw";
@@ -15,6 +17,7 @@ import siblingDimRaw from "@vault/animations/cursor-reactive/sibling-dim.css?raw
 import scrambleTextRaw from "@vault/animations/text-kinetic/scramble-text.tsx?raw";
 import splitRevealRaw from "@vault/animations/text-kinetic/split-reveal.tsx?raw";
 import variableProximityRaw from "@vault/animations/text-kinetic/variable-proximity.tsx?raw";
+import marqueeHoverRowRaw from "@vault/animations/text-kinetic/marquee-hover-row.tsx?raw";
 import flipCardRaw from "@vault/animations/layout-morph/flip-card.tsx?raw";
 import velocitySkewRaw from "@vault/animations/layout-morph/velocity-skew.tsx?raw";
 import bayerDitherRaw from "@vault/animations/shader-canvas/bayer-dither.tsx?raw";
@@ -22,6 +25,7 @@ import asciiFilterRaw from "@vault/animations/shader-canvas/ascii-filter.tsx?raw
 import orbitalCanvasRaw from "@vault/animations/shader-canvas/orbital-canvas.tsx?raw";
 import liquidGlassFilterRaw from "@vault/animations/physics-optics/liquid-glass-filter.tsx?raw";
 import springTiltCardRaw from "@vault/animations/physics-optics/spring-tilt-card.tsx?raw";
+import glareHoverRaw from "@vault/animations/physics-optics/glare-hover.tsx?raw";
 
 import bookmarksRaw from "@vault/references/bookmarks.md?raw";
 
@@ -111,6 +115,8 @@ export const nodeById = new Map<string, VaultNode>(
 export const styleRawById: Record<string, string> = {
   "fui-tactical": fuiTacticalStyleRaw,
   "neo-swiss": neoSwissStyleRaw,
+  "editorial-mono": editorialMonoStyleRaw,
+  "industrial-hardware": industrialHardwareStyleRaw,
   ditherpunk: ditherpunkStyleRaw,
   "os-core": osCoreStyleRaw,
   "neo-brutalism": neoBrutalismStyleRaw,
@@ -126,6 +132,7 @@ export const animationRawById: Record<string, string> = {
   "scramble-text": scrambleTextRaw,
   "split-reveal": splitRevealRaw,
   "variable-proximity": variableProximityRaw,
+  "marquee-hover-row": marqueeHoverRowRaw,
   "flip-card": flipCardRaw,
   "velocity-skew": velocitySkewRaw,
   "bayer-dither": bayerDitherRaw,
@@ -133,6 +140,7 @@ export const animationRawById: Record<string, string> = {
   "orbital-canvas": orbitalCanvasRaw,
   "liquid-glass-filter": liquidGlassFilterRaw,
   "spring-tilt-card": springTiltCardRaw,
+  "glare-hover": glareHoverRaw,
 };
 
 export const bookmarksMarkdown = bookmarksRaw;

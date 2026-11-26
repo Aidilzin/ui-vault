@@ -1,0 +1,47 @@
+:root {
+  --em-canvas: #0b0b0b;
+  --em-surface: #212121;
+  --em-border: #353535;
+  --em-border-subtle: #212121;
+  --em-ink: #ffffff;
+  --em-ink-secondary: #b9b9b9;
+  --em-ink-muted: #797979;
+  --em-cta: #f36458;
+  --em-interactive: #0052ef;
+  --em-signal-ok: #19d600;
+  --em-signal-error: #dd0000;
+  --em-surface-inverted: #ededed;
+  --em-radius-sm: 3px;
+  --em-radius-md: 6px;
+  --em-radius-pill: 9999px;
+}
+
+.em-surface {
+  background: var(--em-surface);
+  border: 1px solid var(--em-border);
+  border-radius: var(--em-radius-md);
+}
+
+.em-eyebrow {
+  font-family: "IBM Plex Mono", "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--em-ink-muted);
+}
+
+.em-cta-pill {
+  background: var(--em-cta);
+  color: var(--em-ink);
+  border: none;
+  border-radius: var(--em-radius-pill);
+  transition: background-color 140ms ease;
+}
+
+.em-cta-pill:hover,
+.em-cta-pill:focus-visible {
+  background: var(--em-interactive);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--em-interactive);
+}

@@ -171,6 +171,227 @@ export function StyleSwatch({ styleId }: StyleSwatchProps) {
         </div>
       );
 
+    case "editorial-mono":
+      return (
+        <div
+          style={{
+            height: "100%",
+            background: "#0b0b0b",
+            color: "#ffffff",
+            padding: 15,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            fontFamily: "var(--font-sans)",
+          }}
+        >
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <span
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 10,
+                fontWeight: 600,
+                letterSpacing: "0.08em",
+                color: "#797979",
+              }}
+            >
+              CONTENT ARCHITECTURE // 01
+            </span>
+            <span
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 9,
+                color: "#19d600",
+                border: "1px solid #353535",
+                background: "#212121",
+                padding: "1px 6px",
+                borderRadius: 3,
+              }}
+            >
+              ACHROMATIC
+            </span>
+          </div>
+
+          <div
+            style={{
+              fontSize: 26,
+              fontWeight: 500,
+              lineHeight: 1.02,
+              letterSpacing: "-0.045em",
+              color: "#ffffff",
+            }}
+          >
+            Structured stage.
+            <span style={{ color: "#b9b9b9" }}> Dark press.</span>
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 8,
+              paddingTop: 10,
+              borderTop: "1px solid #212121",
+            }}
+          >
+            <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+              <span
+                style={{
+                  background: "#f36458",
+                  color: "#ffffff",
+                  padding: "4px 12px",
+                  borderRadius: 9999,
+                  fontSize: 10,
+                  fontWeight: 500,
+                }}
+              >
+                Start building
+              </span>
+              <span
+                style={{
+                  background: "#212121",
+                  border: "1px solid #353535",
+                  color: "#b9b9b9",
+                  padding: "3px 10px",
+                  borderRadius: 5,
+                  fontSize: 10,
+                }}
+              >
+                Docs
+              </span>
+            </div>
+            <span
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 9,
+                color: "#0052ef",
+              }}
+            >
+              HOVER #0052EF
+            </span>
+          </div>
+        </div>
+      );
+
+    case "industrial-hardware":
+      return (
+        <div
+          style={{
+            height: "100%",
+            background: "#f1f2f2",
+            color: "#000000",
+            padding: 14,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            fontFamily: "var(--font-sans)",
+          }}
+        >
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <span
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 10,
+                color: "#4d4d4d",
+                letterSpacing: "0.06em",
+              }}
+            >
+              UNIT-04 // FIELD DECK
+            </span>
+            <span
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 9,
+                background: "#e5e5e5",
+                border: "1px solid #b2b2b2",
+                borderRadius: 1000,
+                padding: "1px 8px",
+                color: "#272727",
+              }}
+            >
+              0PX SHADOW
+            </span>
+          </div>
+
+          <div
+            style={{
+              background: "#e5e5e5",
+              border: "1px solid #b2b2b2",
+              borderRadius: 3,
+              padding: "10px 12px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 10,
+            }}
+          >
+            <div>
+              <div style={{ fontSize: 18, fontWeight: 300, lineHeight: 1.1 }}>
+                48.0 <span style={{ fontWeight: 700, fontSize: 13 }}>kHz</span>
+              </div>
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, color: "#4d4d4d", marginTop: 2 }}>
+                200MS EASE-IN
+              </div>
+            </div>
+
+            <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+              {[
+                { bg: "#b81d13", label: "REC" },
+                { bg: "#0071bb", label: "MOD" },
+                { bg: "#006837", label: "RUN" },
+              ].map((knob) => (
+                <div
+                  key={knob.label}
+                  style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 3 }}
+                >
+                  <span
+                    style={{
+                      width: 24,
+                      height: 24,
+                      borderRadius: "50%",
+                      background: knob.bg,
+                      border: "1px solid #272727",
+                      display: "grid",
+                      placeItems: "center",
+                    }}
+                  >
+                    <span
+                      style={{
+                        width: 6,
+                        height: 6,
+                        borderRadius: "50%",
+                        background: "#f5f5f5",
+                      }}
+                    />
+                  </span>
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 8, color: "#4d4d4d" }}>
+                    {knob.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div
+              style={{
+                width: "58%",
+                height: 6,
+                background: "#cdcece",
+                borderRadius: 1000,
+                overflow: "hidden",
+              }}
+            >
+              <div style={{ width: "68%", height: "100%", background: "#000000", borderRadius: 1000 }} />
+            </div>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: 9, color: "#4d4d4d" }}>
+              #F1F2F2 / #B81D13
+            </span>
+          </div>
+        </div>
+      );
+
     case "ditherpunk":
       return (
         <div

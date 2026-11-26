@@ -41,6 +41,50 @@
             ]
         },
         {
+            "name": "style-editorial-mono",
+            "type": "registry:item",
+            "title": "Editorial Mono Style",
+            "description": "Dark-first achromatic editorial surface with compressed display typography, mono eyebrows, and coral-red pill CTAs.",
+            "categories": [
+                "01-precision-systems",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "01-precision-systems/editorial-mono/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "01-precision-systems/editorial-mono/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/editorial-mono.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-industrial-hardware",
+            "type": "registry:item",
+            "title": "Industrial Hardware Style",
+            "description": "Anodized light-aluminum chassis aesthetic with zero drop shadows, color-coded tactile encoders, and crisp 200ms/500ms motion curves.",
+            "categories": [
+                "01-precision-systems",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "01-precision-systems/industrial-hardware/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "01-precision-systems/industrial-hardware/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/industrial-hardware.tokens.css"
+                }
+            ]
+        },
+        {
             "name": "style-ditherpunk",
             "type": "registry:item",
             "title": "Ditherpunk Style",

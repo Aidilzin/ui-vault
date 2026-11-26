@@ -1,0 +1,48 @@
+:root {
+  --ih-canvas: #f1f2f2;
+  --ih-surface-light: #f5f5f5;
+  --ih-surface-bay: #e5e5e5;
+  --ih-surface-hover: #cdcece;
+  --ih-field-bg: #ffffff;
+  --ih-ink: #000000;
+  --ih-ink-dark: #272727;
+  --ih-ink-muted: #4d4d4d;
+  --ih-ink-subtle: #767676;
+  --ih-border: #b2b2b2;
+  --ih-signal-red: #b81d13;
+  --ih-signal-blue: #0071bb;
+  --ih-signal-green: #006837;
+  --ih-radius-chassis: 3px;
+  --ih-radius-key: 8px;
+  --ih-radius-pill: 1000px;
+  --ih-duration-fast: 200ms;
+  --ih-duration-reveal: 500ms;
+  --ih-ease-control: ease-in;
+  --ih-ease-reveal: ease-out;
+}
+
+.ih-chassis {
+  background: var(--ih-canvas);
+  color: var(--ih-ink);
+  border: 1px solid var(--ih-border);
+  border-radius: var(--ih-radius-chassis);
+  box-shadow: none;
+}
+
+.ih-key {
+  background: var(--ih-surface-bay);
+  color: var(--ih-ink);
+  border: 1px solid var(--ih-border);
+  border-radius: var(--ih-radius-key);
+  transition: transform var(--ih-duration-fast) var(--ih-ease-control),
+    background-color var(--ih-duration-fast) var(--ih-ease-control);
+}
+
+.ih-key:hover {
+  background: var(--ih-surface-hover);
+}
+
+.ih-encoder {
+  border-radius: var(--ih-radius-pill);
+  border: 1px solid var(--ih-ink-dark);
+}

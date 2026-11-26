@@ -6,7 +6,9 @@
             "dna": "1px hairlines, monospace micro-labels, corner crosshairs, tight structural grids",
             "styles": [
                 "fui-tactical",
-                "neo-swiss"
+                "neo-swiss",
+                "editorial-mono",
+                "industrial-hardware"
             ]
         },
         "02-retro-compute": {
@@ -69,6 +71,41 @@
                 "variable-proximity",
                 "velocity-skew",
                 "sibling-dim"
+            ],
+            "clashesWith": [
+                "liquid-glass",
+                "acid-y2k"
+            ]
+        },
+        {
+            "id": "editorial-mono",
+            "kind": "style",
+            "cluster": "01-precision-systems",
+            "path": "styles/01-precision-systems/editorial-mono/STYLE.md",
+            "registryItem": "style-editorial-mono",
+            "pairsWith": [
+                "split-reveal",
+                "variable-proximity",
+                "border-spotlight",
+                "sibling-dim"
+            ],
+            "clashesWith": [
+                "liquid-glass",
+                "neo-brutalism",
+                "acid-y2k"
+            ]
+        },
+        {
+            "id": "industrial-hardware",
+            "kind": "style",
+            "cluster": "01-precision-systems",
+            "path": "styles/01-precision-systems/industrial-hardware/STYLE.md",
+            "registryItem": "style-industrial-hardware",
+            "pairsWith": [
+                "flip-card",
+                "magnetic-button",
+                "sibling-dim",
+                "scramble-text"
             ],
             "clashesWith": [
                 "liquid-glass",
@@ -427,6 +464,50 @@
             "clashesWith": [
                 "os-core",
                 "neo-swiss"
+            ]
+        },
+        {
+            "id": "glare-hover",
+            "kind": "animation",
+            "mechanic": "physics-optics",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-surface",
+            "path": "animations/physics-optics/glare-hover.tsx",
+            "registryItem": "glare-hover",
+            "pairsWith": [
+                "liquid-glass",
+                "acid-y2k",
+                "fui-tactical"
+            ],
+            "clashesWith": [
+                "ditherpunk",
+                "neo-brutalism"
+            ]
+        },
+        {
+            "id": "marquee-hover-row",
+            "kind": "animation",
+            "mechanic": "text-kinetic",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-highlight",
+            "path": "animations/text-kinetic/marquee-hover-row.tsx",
+            "registryItem": "marquee-hover-row",
+            "pairsWith": [
+                "neo-swiss",
+                "neo-brutalism",
+                "acid-y2k",
+                "editorial-mono"
+            ],
+            "clashesWith": [
+                "os-core"
             ]
         }
     ],
