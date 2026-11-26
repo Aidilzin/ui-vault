@@ -1,0 +1,286 @@
+{
+  "generatedAt": "2026-11-27T02:51:00+08:00",
+  "baseline": {
+    "styles": 10,
+    "animations": 15,
+    "hybrids": 3
+  },
+  "dependencyPolicy": "zero-dep React + CSS + Canvas + SVG + WAAPI",
+  "excludedSources": [
+    {
+      "source": "originui.com/r/registry.json",
+      "reason": "Returned 200 text/html SPA fallback instead of JSON"
+    }
+  ],
+  "batches": {
+    "A_design_md": [
+      {
+        "id": "monolith-dark",
+        "sourceRepo": "VoltAgent/awesome-design-md",
+        "sourcePath": "design-md/linear.app/DESIGN.md",
+        "cluster": "01-precision-systems",
+        "rationale": "Ultra-low-contrast dark precision surfaces, 1px hairline separation, subtle indigo focus"
+      },
+      {
+        "id": "telemetry-fault",
+        "sourceRepo": "VoltAgent/awesome-design-md",
+        "sourcePath": "design-md/sentry/DESIGN.md",
+        "cluster": "01-precision-systems",
+        "rationale": "High-density observability/error console with deep plum-violet chrome and crisp fault indicators"
+      },
+      {
+        "id": "monochrome-stark",
+        "sourceRepo": "VoltAgent/awesome-design-md",
+        "sourcePath": "design-md/vercel/DESIGN.md",
+        "cluster": "01-precision-systems",
+        "rationale": "Binary black/white Swiss minimalism with sharp borders and zero decorative color"
+      },
+      {
+        "id": "retro-web-96",
+        "sourceRepo": "VoltAgent/awesome-design-md",
+        "sourcePath": "design-md/dell-1996/DESIGN.md",
+        "cluster": "02-retro-compute",
+        "rationale": "Authentic 1996 industrial web directory chrome, classic cobalt links, and flat table rules"
+      },
+      {
+        "id": "console-2001",
+        "sourceRepo": "VoltAgent/awesome-design-md",
+        "sourcePath": "design-md/nintendo-2001/DESIGN.md",
+        "cluster": "03-kinetic-rebel",
+        "rationale": "Early-2000s consumer console UI with bold primary color blocks, chunky bevel pills, and kinetic badges"
+      },
+      {
+        "id": "zine-wire",
+        "sourceRepo": "VoltAgent/awesome-design-md",
+        "sourcePath": "design-md/theverge/DESIGN.md",
+        "cluster": "03-kinetic-rebel",
+        "rationale": "High-voltage cyber-editorial news grid with neon highlighter rules and stark display typography"
+      },
+      {
+        "id": "command-dark",
+        "sourceRepo": "VoltAgent/awesome-design-md",
+        "sourcePath": "design-md/raycast/DESIGN.md",
+        "cluster": "04-spatial-physics",
+        "rationale": "Floating dark command launcher surfaces with translucent depth and warm crimson/amber accents"
+      },
+      {
+        "id": "mesh-craft",
+        "sourceRepo": "VoltAgent/awesome-design-md",
+        "sourcePath": "design-md/stripe/DESIGN.md",
+        "cluster": "04-spatial-physics",
+        "rationale": "Luminous multi-hue ambient mesh backdrops paired with crisp high-craft editorial cards"
+      },
+      {
+        "id": "warm-manuscript",
+        "sourceRepo": "VoltAgent/awesome-design-md",
+        "sourcePath": "design-md/claude/DESIGN.md",
+        "cluster": "05-editorial-organic",
+        "rationale": "Warm parchment/linen paper canvas, literary serif + humanist sans pairing, terracotta accent"
+      }
+    ],
+    "B_open_registries": [
+      {
+        "id": "star-border",
+        "sourceRegistry": "reactbits",
+        "sourceUrl": "https://reactbits.dev/r/StarBorder-TS-CSS.json",
+        "mechanic": "cursor-reactive",
+        "license": "MIT"
+      },
+      {
+        "id": "magnet-lines",
+        "sourceRegistry": "reactbits",
+        "sourceUrl": "https://reactbits.dev/r/MagnetLines-TS-CSS.json",
+        "mechanic": "cursor-reactive",
+        "license": "MIT"
+      },
+      {
+        "id": "crosshair-reticle",
+        "sourceRegistry": "reactbits",
+        "sourceUrl": "https://reactbits.dev/r/Crosshair-TS-CSS.json",
+        "mechanic": "cursor-reactive",
+        "license": "MIT"
+      },
+      {
+        "id": "border-beam",
+        "sourceRegistry": "magicui",
+        "sourceUrl": "https://magicui.design/r/border-beam.json",
+        "mechanic": "cursor-reactive",
+        "license": "MIT"
+      },
+      {
+        "id": "shiny-text",
+        "sourceRegistry": "reactbits",
+        "sourceUrl": "https://reactbits.dev/r/ShinyText-TS-CSS.json",
+        "mechanic": "text-kinetic",
+        "license": "MIT"
+      },
+      {
+        "id": "blur-text",
+        "sourceRegistry": "reactbits",
+        "sourceUrl": "https://reactbits.dev/r/BlurText-TS-CSS.json",
+        "mechanic": "text-kinetic",
+        "license": "MIT"
+      },
+      {
+        "id": "text-roll",
+        "sourceRegistry": "motion-primitives",
+        "sourceUrl": "https://motion-primitives.com/c/text-roll.json",
+        "mechanic": "text-kinetic",
+        "license": "MIT"
+      },
+      {
+        "id": "pixel-card",
+        "sourceRegistry": "reactbits",
+        "sourceUrl": "https://reactbits.dev/r/PixelCard-TS-CSS.json",
+        "mechanic": "shader-canvas",
+        "license": "MIT"
+      },
+      {
+        "id": "elastic-slider",
+        "sourceRegistry": "reactbits",
+        "sourceUrl": "https://reactbits.dev/r/ElasticSlider-TS-CSS.json",
+        "mechanic": "physics-optics",
+        "license": "MIT"
+      },
+      {
+        "id": "dock-magnify",
+        "sourceRegistry": "reactbits",
+        "sourceUrl": "https://reactbits.dev/r/Dock-TS-CSS.json",
+        "mechanic": "physics-optics",
+        "license": "MIT"
+      },
+      {
+        "id": "scroll-progress-bar",
+        "sourceRegistry": "magicui",
+        "sourceUrl": "https://magicui.design/r/scroll-progress.json",
+        "mechanic": "scroll-driven",
+        "license": "MIT"
+      },
+      {
+        "id": "click-spark",
+        "sourceRegistry": "reactbits",
+        "sourceUrl": "https://reactbits.dev/r/ClickSpark-TS-CSS.json",
+        "mechanic": "micro-feedback",
+        "license": "MIT"
+      },
+      {
+        "id": "count-up",
+        "sourceRegistry": "reactbits",
+        "sourceUrl": "https://reactbits.dev/r/CountUp-TS-CSS.json",
+        "mechanic": "micro-feedback",
+        "license": "MIT"
+      },
+      {
+        "id": "hold-to-confirm",
+        "sourceRegistry": "kokonutui",
+        "sourceUrl": "https://kokonutui.com/r/hold-button.json",
+        "mechanic": "micro-feedback",
+        "license": "MIT"
+      }
+    ],
+    "C_codrops": [
+      {
+        "id": "kinetic-card-trail",
+        "sourceRepo": "codrops/ImageTrailEffects",
+        "mechanic": "cursor-reactive",
+        "approach": "Clean-room velocity-gated floating swatch trail with decay rotation"
+      },
+      {
+        "id": "make-way-grid",
+        "sourceRepo": "codrops/MakeWayGridEffect",
+        "mechanic": "layout-morph",
+        "approach": "Clean-room WAAPI FLIP grid where neighboring tiles make way for the active card"
+      },
+      {
+        "id": "pixel-hover-grid",
+        "sourceRepo": "codrops/HoverGrid",
+        "mechanic": "shader-canvas",
+        "approach": "Clean-room Canvas pixel-block dissolve/reveal grid driven by pointer proximity"
+      },
+      {
+        "id": "crt-grain-overlay",
+        "sourceRepo": "codrops/CSSMarqueeMenu",
+        "mechanic": "shader-canvas",
+        "approach": "Clean-room stepped-transform procedural CRT/film grain noise surface"
+      },
+      {
+        "id": "svg-turbulence-hover",
+        "sourceRepo": "codrops/SVGImageHover",
+        "mechanic": "physics-optics",
+        "approach": "Clean-room SVG feTurbulence + feDisplacementMap ripple hover distortion"
+      },
+      {
+        "id": "elastic-column-scroll",
+        "sourceRepo": "codrops/ElasticGridScroll",
+        "mechanic": "scroll-driven",
+        "approach": "Clean-room multi-column scroll inertia offset with staggered column lag"
+      }
+    ],
+    "D_live_galleries": {
+      "styles": [
+        {
+          "id": "archival-paper",
+          "sourceUrl": "https://www.are.na",
+          "cluster": "05-editorial-organic",
+          "extractionMethod": "dembrandt-mcp + get_motion"
+        },
+        {
+          "id": "tactile-studio-warm",
+          "sourceUrl": "https://www.cosmos.so",
+          "cluster": "05-editorial-organic",
+          "extractionMethod": "dembrandt-mcp + get_motion"
+        },
+        {
+          "id": "dark-gallery-index",
+          "sourceUrl": "https://godly.website",
+          "cluster": "01-precision-systems",
+          "extractionMethod": "dembrandt-mcp + get_motion"
+        },
+        {
+          "id": "avant-poster",
+          "sourceUrl": "https://www.hoverstat.es",
+          "cluster": "03-kinetic-rebel",
+          "extractionMethod": "dembrandt-mcp + get_motion"
+        },
+        {
+          "id": "swiss-type-foundry",
+          "sourceUrl": "https://pangrampangram.com",
+          "cluster": "01-precision-systems",
+          "extractionMethod": "dembrandt-mcp + get_motion"
+        },
+        {
+          "id": "phosphor-terminal",
+          "sourceUrl": "https://www.warp.dev",
+          "cluster": "02-retro-compute",
+          "extractionMethod": "dembrandt-mcp + get_motion"
+        }
+      ],
+      "animations": [
+        {
+          "id": "spotlight-tabs",
+          "sourceInspiration": "60fps.design / Ripplix segmented control pattern",
+          "mechanic": "layout-morph",
+          "approach": "Sliding active pill indicator with crisp 180ms cubic-bezier(0.22, 1, 0.36, 1)"
+        },
+        {
+          "id": "progressive-blur-edge",
+          "sourceInspiration": "60fps.design / iOS & spatial scroll fade pattern",
+          "mechanic": "scroll-driven",
+          "approach": "Multi-step CSS mask-image + backdrop-filter progressive edge fade"
+        },
+        {
+          "id": "tactile-press-badge",
+          "sourceInspiration": "Ripplix physical micro-detent counter",
+          "mechanic": "micro-feedback",
+          "approach": "120ms tactile detent press with tabular-nums tick"
+        },
+        {
+          "id": "kinetic-status-pill",
+          "sourceInspiration": "60fps.design live telemetry pill morph",
+          "mechanic": "micro-feedback",
+          "approach": "Smooth width/state morphing status pill (idle -> syncing -> nominal)"
+        }
+      ]
+    }
+  }
+}

@@ -1321,6 +1321,102 @@
                 "magnetic-button"
             ],
             "bestFor": "Floating command palettes, spatial toolbars, audio/hardware web apps"
+        },
+        {
+            "id": "issue-command-center",
+            "name": "Issue Command Center",
+            "baseStyle": "monolith-dark",
+            "accents": [
+                "command-dark",
+                "spotlight-tabs",
+                "border-beam",
+                "kinetic-status-pill"
+            ],
+            "bestFor": "Issue trackers, keyboard-first SaaS workspaces, linear-style productivity apps"
+        },
+        {
+            "id": "observability-console",
+            "name": "Observability Fault Console",
+            "baseStyle": "telemetry-fault",
+            "accents": [
+                "fui-tactical",
+                "scramble-text",
+                "count-up",
+                "hold-to-confirm"
+            ],
+            "bestFor": "APM dashboards, incident response consoles, CI/CD trace viewers"
+        },
+        {
+            "id": "type-specimen-press",
+            "name": "Type Specimen Press",
+            "baseStyle": "swiss-type-foundry",
+            "accents": [
+                "neo-swiss",
+                "variable-proximity",
+                "text-roll",
+                "marquee-hover-row"
+            ],
+            "bestFor": "Type foundries, design studios, editorial campaign launches"
+        },
+        {
+            "id": "warm-research-reader",
+            "name": "Warm Research Reader",
+            "baseStyle": "warm-manuscript",
+            "accents": [
+                "archival-paper",
+                "blur-text",
+                "scroll-progress-bar",
+                "make-way-grid"
+            ],
+            "bestFor": "Long-form AI notebooks, research libraries, quiet reading apps"
+        },
+        {
+            "id": "cyber-zine-magazine",
+            "name": "Cyber Zine Magazine",
+            "baseStyle": "zine-wire",
+            "accents": [
+                "avant-poster",
+                "kinetic-card-trail",
+                "velocity-skew",
+                "click-spark"
+            ],
+            "bestFor": "Culture publications, music festivals, interactive media feeds"
+        },
+        {
+            "id": "phosphor-cli-workbench",
+            "name": "Phosphor CLI Workbench",
+            "baseStyle": "phosphor-terminal",
+            "accents": [
+                "ditherpunk",
+                "crt-grain-overlay",
+                "ascii-filter",
+                "kinetic-status-pill"
+            ],
+            "bestFor": "Developer terminals, retro-futuristic docs, hacker/CTF portals"
+        },
+        {
+            "id": "tactile-hardware-deck",
+            "name": "Tactile Hardware Deck",
+            "baseStyle": "industrial-hardware",
+            "accents": [
+                "monochrome-stark",
+                "elastic-slider",
+                "tactile-press-badge",
+                "crosshair-reticle"
+            ],
+            "bestFor": "Web audio synthesizers, hardware companions, industrial IoT controls"
+        },
+        {
+            "id": "spatial-curated-gallery",
+            "name": "Spatial Curated Gallery",
+            "baseStyle": "dark-gallery-index",
+            "accents": [
+                "liquid-glass",
+                "glare-hover",
+                "dock-magnify",
+                "progressive-blur-edge"
+            ],
+            "bestFor": "Design directories, creative portfolios, media browsers"
         }
     ],
     "externalRegistries": {
