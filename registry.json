@@ -1,0 +1,9 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "ui-vault",
+  "homepage": "https://github.com/Aidilzin/ui-vault",
+  "include": [
+    "styles/registry.json",
+    "animations/registry.json"
+  ]
+}

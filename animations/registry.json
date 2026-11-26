@@ -1,0 +1,214 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "items": [
+        {
+            "name": "magnetic-button",
+            "type": "registry:ui",
+            "title": "Magnetic Button",
+            "description": "Button that subtly pulls toward the pointer on hover and springs back cleanly.",
+            "categories": [
+                "cursor-reactive",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "cursor-reactive/magnetic-button.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "border-spotlight",
+            "type": "registry:ui",
+            "title": "Mouse-Tracking Border Spotlight",
+            "description": "Radial cursor-tracking specular glow across dark surfaces.",
+            "categories": [
+                "cursor-reactive",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "cursor-reactive/border-spotlight.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "sibling-dim",
+            "type": "registry:item",
+            "title": "Sibling Dim Grid",
+            "description": "Pure CSS :has() utility dimming non-hovered sibling cards.",
+            "categories": [
+                "cursor-reactive",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "cursor-reactive/sibling-dim.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/sibling-dim.css"
+                }
+            ]
+        },
+        {
+            "name": "scramble-text",
+            "type": "registry:ui",
+            "title": "Scramble / Decrypt Text",
+            "description": "Glyph-cycling text reveal for status changes and telemetry labels.",
+            "categories": [
+                "text-kinetic",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "text-kinetic/scramble-text.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "split-reveal",
+            "type": "registry:ui",
+            "title": "Masked Split-Text Reveal",
+            "description": "Word or character slide-up reveal clipped by overflow masks.",
+            "categories": [
+                "text-kinetic",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "text-kinetic/split-reveal.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "variable-proximity",
+            "type": "registry:ui",
+            "title": "Variable Font Proximity",
+            "description": "Dynamically modulates variable font weight based on pointer distance.",
+            "categories": [
+                "text-kinetic",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "text-kinetic/variable-proximity.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "flip-card",
+            "type": "registry:ui",
+            "title": "FLIP Layout Morph Card",
+            "description": "Zero-dependency First-Last-Invert-Play layout transition wrapper.",
+            "categories": [
+                "layout-morph",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "layout-morph/flip-card.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "velocity-skew",
+            "type": "registry:ui",
+            "title": "Scroll Velocity Skew",
+            "description": "Applies damped vertical skew driven by window scroll speed.",
+            "categories": [
+                "layout-morph",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "layout-morph/velocity-skew.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "bayer-dither",
+            "type": "registry:ui",
+            "title": "Bayer Dither Canvas",
+            "description": "4x4 ordered Bayer dithering 1-bit pixel canvas renderer.",
+            "categories": [
+                "shader-canvas",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "shader-canvas/bayer-dither.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "ascii-filter",
+            "type": "registry:ui",
+            "title": "ASCII Wave Filter",
+            "description": "Real-time density-mapped ASCII character field renderer.",
+            "categories": [
+                "shader-canvas",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "shader-canvas/ascii-filter.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "orbital-canvas",
+            "type": "registry:ui",
+            "title": "2.5D Orbital Constellation Canvas",
+            "description": "HiDPI 2.5D tilted elliptical orbit visualization with Phyllotaxis clusters and hover-freeze damping.",
+            "categories": [
+                "shader-canvas",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "shader-canvas/orbital-canvas.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "liquid-glass-filter",
+            "type": "registry:ui",
+            "title": "Liquid Glass Surface",
+            "description": "Translucent optical surface with SVG displacement filter and specular top highlight.",
+            "categories": [
+                "physics-optics",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "physics-optics/liquid-glass-filter.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "spring-tilt-card",
+            "type": "registry:ui",
+            "title": "Spring 3D Tilt Card",
+            "description": "Damped 3D perspective card responding to pointer coordinates.",
+            "categories": [
+                "physics-optics",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "physics-optics/spring-tilt-card.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        }
+    ]
+}

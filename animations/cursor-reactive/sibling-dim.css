@@ -1,0 +1,14 @@
+/* Apply .sibling-dim-group to any grid/flex list to dim non-hovered siblings */
+.sibling-dim-group > * {
+  transition: opacity 180ms ease, filter 180ms ease;
+}
+
+.sibling-dim-group:has(> *:hover) > *:not(:hover) {
+  opacity: 0.38;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sibling-dim-group > * {
+    transition: none;
+  }
+}

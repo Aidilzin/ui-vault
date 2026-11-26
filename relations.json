@@ -1,0 +1,475 @@
+{
+    "version": "1.1.0",
+    "clusters": {
+        "01-precision-systems": {
+            "label": "Precision Systems",
+            "dna": "1px hairlines, monospace micro-labels, corner crosshairs, tight structural grids",
+            "styles": [
+                "fui-tactical",
+                "neo-swiss"
+            ]
+        },
+        "02-retro-compute": {
+            "label": "Retro Compute",
+            "dna": "1-bit dithering, ASCII/glyph grids, vintage window chrome, CRT grain",
+            "styles": [
+                "ditherpunk",
+                "os-core"
+            ]
+        },
+        "03-kinetic-rebel": {
+            "label": "Kinetic Rebel",
+            "dna": "Oversized expressive display type, hard zero-blur shadows, raw grids, chrome accents",
+            "styles": [
+                "neo-brutalism",
+                "acid-y2k"
+            ]
+        },
+        "04-spatial-physics": {
+            "label": "Spatial Physics",
+            "dna": "Optical refraction, depth sorting, mass/inertia springs, specular lighting",
+            "styles": [
+                "liquid-glass",
+                "ambient-orbit"
+            ]
+        }
+    },
+    "mechanics": [
+        "cursor-reactive",
+        "text-kinetic",
+        "layout-morph",
+        "shader-canvas",
+        "physics-optics"
+    ],
+    "nodes": [
+        {
+            "id": "fui-tactical",
+            "kind": "style",
+            "cluster": "01-precision-systems",
+            "path": "styles/01-precision-systems/fui-tactical/STYLE.md",
+            "registryItem": "style-fui-tactical",
+            "pairsWith": [
+                "scramble-text",
+                "border-spotlight",
+                "orbital-canvas"
+            ],
+            "clashesWith": [
+                "liquid-glass",
+                "neo-brutalism"
+            ]
+        },
+        {
+            "id": "neo-swiss",
+            "kind": "style",
+            "cluster": "01-precision-systems",
+            "path": "styles/01-precision-systems/neo-swiss/STYLE.md",
+            "registryItem": "style-neo-swiss",
+            "pairsWith": [
+                "split-reveal",
+                "variable-proximity",
+                "velocity-skew",
+                "sibling-dim"
+            ],
+            "clashesWith": [
+                "liquid-glass",
+                "acid-y2k"
+            ]
+        },
+        {
+            "id": "ditherpunk",
+            "kind": "style",
+            "cluster": "02-retro-compute",
+            "path": "styles/02-retro-compute/ditherpunk/STYLE.md",
+            "registryItem": "style-ditherpunk",
+            "pairsWith": [
+                "bayer-dither",
+                "scramble-text",
+                "ascii-filter"
+            ],
+            "clashesWith": [
+                "liquid-glass"
+            ]
+        },
+        {
+            "id": "os-core",
+            "kind": "style",
+            "cluster": "02-retro-compute",
+            "path": "styles/02-retro-compute/os-core/STYLE.md",
+            "registryItem": "style-os-core",
+            "pairsWith": [
+                "scramble-text",
+                "flip-card",
+                "bayer-dither"
+            ],
+            "clashesWith": [
+                "liquid-glass",
+                "neo-swiss"
+            ]
+        },
+        {
+            "id": "neo-brutalism",
+            "kind": "style",
+            "cluster": "03-kinetic-rebel",
+            "path": "styles/03-kinetic-rebel/neo-brutalism/STYLE.md",
+            "registryItem": "style-neo-brutalism",
+            "pairsWith": [
+                "velocity-skew",
+                "variable-proximity",
+                "bayer-dither",
+                "split-reveal"
+            ],
+            "clashesWith": [
+                "fui-tactical",
+                "liquid-glass"
+            ]
+        },
+        {
+            "id": "acid-y2k",
+            "kind": "style",
+            "cluster": "03-kinetic-rebel",
+            "path": "styles/03-kinetic-rebel/acid-y2k/STYLE.md",
+            "registryItem": "style-acid-y2k",
+            "pairsWith": [
+                "variable-proximity",
+                "velocity-skew",
+                "ascii-filter",
+                "border-spotlight"
+            ],
+            "clashesWith": [
+                "neo-swiss",
+                "os-core"
+            ]
+        },
+        {
+            "id": "liquid-glass",
+            "kind": "style",
+            "cluster": "04-spatial-physics",
+            "path": "styles/04-spatial-physics/liquid-glass/STYLE.md",
+            "registryItem": "style-liquid-glass",
+            "pairsWith": [
+                "liquid-glass-filter",
+                "magnetic-button",
+                "spring-tilt-card",
+                "border-spotlight"
+            ],
+            "clashesWith": [
+                "ditherpunk",
+                "neo-brutalism"
+            ]
+        },
+        {
+            "id": "ambient-orbit",
+            "kind": "style",
+            "cluster": "04-spatial-physics",
+            "path": "styles/04-spatial-physics/ambient-orbit/STYLE.md",
+            "registryItem": "style-ambient-orbit",
+            "pairsWith": [
+                "orbital-canvas",
+                "border-spotlight",
+                "scramble-text"
+            ],
+            "clashesWith": [
+                "neo-brutalism",
+                "os-core"
+            ]
+        },
+        {
+            "id": "magnetic-button",
+            "kind": "animation",
+            "mechanic": "cursor-reactive",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "disabled-pull",
+            "path": "animations/cursor-reactive/magnetic-button.tsx",
+            "registryItem": "magnetic-button",
+            "pairsWith": [
+                "liquid-glass",
+                "neo-swiss"
+            ],
+            "clashesWith": [
+                "os-core"
+            ]
+        },
+        {
+            "id": "border-spotlight",
+            "kind": "animation",
+            "mechanic": "cursor-reactive",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-border",
+            "path": "animations/cursor-reactive/border-spotlight.tsx",
+            "registryItem": "border-spotlight",
+            "pairsWith": [
+                "fui-tactical",
+                "liquid-glass",
+                "ambient-orbit",
+                "acid-y2k"
+            ],
+            "clashesWith": [
+                "neo-brutalism"
+            ]
+        },
+        {
+            "id": "sibling-dim",
+            "kind": "animation",
+            "mechanic": "cursor-reactive",
+            "engine": [
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-opacity",
+            "path": "animations/cursor-reactive/sibling-dim.css",
+            "registryItem": "sibling-dim",
+            "pairsWith": [
+                "neo-swiss",
+                "fui-tactical"
+            ],
+            "clashesWith": []
+        },
+        {
+            "id": "scramble-text",
+            "kind": "animation",
+            "mechanic": "text-kinetic",
+            "engine": [
+                "react"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-text-swap",
+            "path": "animations/text-kinetic/scramble-text.tsx",
+            "registryItem": "scramble-text",
+            "pairsWith": [
+                "fui-tactical",
+                "ditherpunk",
+                "os-core",
+                "ambient-orbit"
+            ],
+            "clashesWith": []
+        },
+        {
+            "id": "split-reveal",
+            "kind": "animation",
+            "mechanic": "text-kinetic",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-visible",
+            "path": "animations/text-kinetic/split-reveal.tsx",
+            "registryItem": "split-reveal",
+            "pairsWith": [
+                "neo-swiss",
+                "neo-brutalism"
+            ],
+            "clashesWith": []
+        },
+        {
+            "id": "variable-proximity",
+            "kind": "animation",
+            "mechanic": "text-kinetic",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-weight",
+            "path": "animations/text-kinetic/variable-proximity.tsx",
+            "registryItem": "variable-proximity",
+            "pairsWith": [
+                "neo-swiss",
+                "neo-brutalism",
+                "acid-y2k"
+            ],
+            "clashesWith": []
+        },
+        {
+            "id": "flip-card",
+            "kind": "animation",
+            "mechanic": "layout-morph",
+            "engine": [
+                "react",
+                "waapi"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-layout",
+            "path": "animations/layout-morph/flip-card.tsx",
+            "registryItem": "flip-card",
+            "pairsWith": [
+                "os-core",
+                "neo-swiss",
+                "fui-tactical"
+            ],
+            "clashesWith": []
+        },
+        {
+            "id": "velocity-skew",
+            "kind": "animation",
+            "mechanic": "layout-morph",
+            "engine": [
+                "react"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "disabled-skew",
+            "path": "animations/layout-morph/velocity-skew.tsx",
+            "registryItem": "velocity-skew",
+            "pairsWith": [
+                "neo-swiss",
+                "neo-brutalism",
+                "acid-y2k"
+            ],
+            "clashesWith": [
+                "fui-tactical",
+                "os-core"
+            ]
+        },
+        {
+            "id": "bayer-dither",
+            "kind": "animation",
+            "mechanic": "shader-canvas",
+            "engine": [
+                "canvas"
+            ],
+            "perfTier": "medium",
+            "reducedMotion": "static-dither-frame",
+            "path": "animations/shader-canvas/bayer-dither.tsx",
+            "registryItem": "bayer-dither",
+            "pairsWith": [
+                "ditherpunk",
+                "neo-brutalism",
+                "os-core"
+            ],
+            "clashesWith": [
+                "liquid-glass"
+            ]
+        },
+        {
+            "id": "ascii-filter",
+            "kind": "animation",
+            "mechanic": "shader-canvas",
+            "engine": [
+                "react"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-ascii-frame",
+            "path": "animations/shader-canvas/ascii-filter.tsx",
+            "registryItem": "ascii-filter",
+            "pairsWith": [
+                "ditherpunk",
+                "acid-y2k",
+                "fui-tactical"
+            ],
+            "clashesWith": [
+                "liquid-glass"
+            ]
+        },
+        {
+            "id": "orbital-canvas",
+            "kind": "animation",
+            "mechanic": "shader-canvas",
+            "engine": [
+                "canvas"
+            ],
+            "perfTier": "medium",
+            "reducedMotion": "static-constellation",
+            "path": "animations/shader-canvas/orbital-canvas.tsx",
+            "registryItem": "orbital-canvas",
+            "pairsWith": [
+                "ambient-orbit",
+                "fui-tactical"
+            ],
+            "clashesWith": [
+                "neo-brutalism",
+                "os-core"
+            ]
+        },
+        {
+            "id": "liquid-glass-filter",
+            "kind": "animation",
+            "mechanic": "physics-optics",
+            "engine": [
+                "svg",
+                "css"
+            ],
+            "perfTier": "medium",
+            "reducedMotion": "opaque-fallback",
+            "path": "animations/physics-optics/liquid-glass-filter.tsx",
+            "registryItem": "liquid-glass-filter",
+            "pairsWith": [
+                "liquid-glass"
+            ],
+            "clashesWith": [
+                "ditherpunk",
+                "neo-brutalism"
+            ]
+        },
+        {
+            "id": "spring-tilt-card",
+            "kind": "animation",
+            "mechanic": "physics-optics",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "flat-card",
+            "path": "animations/physics-optics/spring-tilt-card.tsx",
+            "registryItem": "spring-tilt-card",
+            "pairsWith": [
+                "liquid-glass",
+                "acid-y2k"
+            ],
+            "clashesWith": [
+                "os-core",
+                "neo-swiss"
+            ]
+        }
+    ],
+    "hybrids": [
+        {
+            "id": "tactical-space",
+            "name": "Tactical Space Dashboard",
+            "baseStyle": "fui-tactical",
+            "accents": [
+                "ambient-orbit",
+                "scramble-text",
+                "border-spotlight",
+                "orbital-canvas"
+            ],
+            "bestFor": "Developer dashboards, telemetry maps, CLI/workspace visualizers"
+        },
+        {
+            "id": "editorial-dither",
+            "name": "Editorial Dither Brutalism",
+            "baseStyle": "neo-brutalism",
+            "accents": [
+                "ditherpunk",
+                "bayer-dither",
+                "velocity-skew"
+            ],
+            "bestFor": "Portfolios, interactive essays, experimental landing pages"
+        },
+        {
+            "id": "precision-glass",
+            "name": "Precision Optical HUD",
+            "baseStyle": "fui-tactical",
+            "accents": [
+                "liquid-glass",
+                "liquid-glass-filter",
+                "magnetic-button"
+            ],
+            "bestFor": "Floating command palettes, spatial toolbars, audio/hardware web apps"
+        }
+    ],
+    "externalRegistries": {
+        "react-bits": "https://reactbits.dev/r/{name}.json",
+        "motion-primitives": "https://motion-primitives.com/c/{name}.json",
+        "animate-ui": "https://animate-ui.com/r/{name}.json",
+        "magicui": "https://magicui.design/r/{name}.json"
+    }
+}

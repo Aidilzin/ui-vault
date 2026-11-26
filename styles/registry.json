@@ -1,0 +1,146 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "items": [
+        {
+            "name": "style-fui-tactical",
+            "type": "registry:item",
+            "title": "FUI Tactical Style",
+            "description": "Precision 1px hairline HUD aesthetic with monospace telemetry tokens and anti-slop guardrails.",
+            "categories": [
+                "01-precision-systems",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "01-precision-systems/fui-tactical/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "01-precision-systems/fui-tactical/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/fui-tactical.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-neo-swiss",
+            "type": "registry:item",
+            "title": "Neo-Swiss Grid Style",
+            "description": "Exposed hairline grids, bold Neo-Grotesk scale contrast, and disciplined negative space.",
+            "categories": [
+                "01-precision-systems",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "01-precision-systems/neo-swiss/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                }
+            ]
+        },
+        {
+            "name": "style-ditherpunk",
+            "type": "registry:item",
+            "title": "Ditherpunk Style",
+            "description": "1-bit Bayer dithering and high-contrast retro compute aesthetic spec.",
+            "categories": [
+                "02-retro-compute",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "02-retro-compute/ditherpunk/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                }
+            ]
+        },
+        {
+            "name": "style-os-core",
+            "type": "registry:item",
+            "title": "OS-Core Style",
+            "description": "Classic desktop OS chrome, beveled window borders, and crisp bitmap/monospace UI spec.",
+            "categories": [
+                "02-retro-compute",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "02-retro-compute/os-core/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                }
+            ]
+        },
+        {
+            "name": "style-neo-brutalism",
+            "type": "registry:item",
+            "title": "Neo-Brutalism Style",
+            "description": "Thick ink borders, hard zero-blur offset shadows, and bold flat color blocks.",
+            "categories": [
+                "03-kinetic-rebel",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "03-kinetic-rebel/neo-brutalism/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                }
+            ]
+        },
+        {
+            "name": "style-acid-y2k",
+            "type": "registry:item",
+            "title": "Acid Graphics & Y2K Chrome Style",
+            "description": "Pitch-black backdrops paired with liquid chrome lettering and high-voltage cyber accents.",
+            "categories": [
+                "03-kinetic-rebel",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "03-kinetic-rebel/acid-y2k/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                }
+            ]
+        },
+        {
+            "name": "style-liquid-glass",
+            "type": "registry:item",
+            "title": "Liquid Glass Style",
+            "description": "Refractive optical surfaces paired with restrained spring-damper tactile feedback.",
+            "categories": [
+                "04-spatial-physics",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "04-spatial-physics/liquid-glass/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                }
+            ]
+        },
+        {
+            "name": "style-ambient-orbit",
+            "type": "registry:item",
+            "title": "2.5D Ambient Orbit Style",
+            "description": "Depth-sorted elliptical radar aesthetic with hover-to-freeze damping and sparse semantic alerts.",
+            "categories": [
+                "04-spatial-physics",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "04-spatial-physics/ambient-orbit/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                }
+            ]
+        }
+    ]
+}

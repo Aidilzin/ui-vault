@@ -1,0 +1,29 @@
+:root {
+    --fui-canvas: #090a0c;
+    --fui-surface: #0f1115;
+    --fui-elevated: #15181e;
+    --fui-border: rgba(255, 255, 255, 0.08);
+    --fui-border-strong: rgba(255, 255, 255, 0.16);
+    --fui-ink: #e8ecf2;
+    --fui-ink-muted: #8b94a3;
+    --fui-ink-faint: #586170;
+    --fui-signal-active: #38bdf8;
+    --fui-signal-warn: #f59e0b;
+    --fui-signal-fault: #f43f5e;
+    --fui-signal-ok: #34d399;
+    --fui-radius: 4px;
+}
+
+.fui-panel {
+    background: var(--fui-surface);
+    border: 1px solid var(--fui-border);
+    border-radius: var(--fui-radius);
+}
+
+.fui-mono-label {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--fui-ink-muted);
+}
