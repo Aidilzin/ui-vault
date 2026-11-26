@@ -1,0 +1,18 @@
+:root {
+  --ay-canvas: #050507;
+  --ay-surface: #0e0f14;
+  --ay-ink: #f8fafc;
+  --ay-ink-muted: #94a3b8;
+  --ay-border: rgba(204, 255, 0, 0.28);
+  --ay-accent: #ccff00;
+  --ay-accent-magenta: #ff00a8;
+  --ay-chrome: linear-gradient(135deg, #ffffff 0%, #7c8496 45%, #f8fafc 55%, #272b36 100%);
+  --ay-radius: 2px;
+}
+
+.ay-frame {
+  background: var(--ay-surface);
+  color: var(--ay-ink);
+  border: 1px solid var(--ay-border);
+  border-radius: var(--ay-radius);
+}

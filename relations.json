@@ -1,5 +1,5 @@
 {
-    "version": "1.1.0",
+    "version": "1.2.0",
     "clusters": {
         "01-precision-systems": {
             "label": "Precision Systems",
@@ -34,6 +34,11 @@
                 "liquid-glass",
                 "ambient-orbit"
             ]
+        },
+        "05-editorial-organic": {
+            "label": "Editorial Organic",
+            "dna": "Warm paper substrates, literary serif/sans pairings, organic tactile ink, calm publication grids",
+            "styles": []
         }
     },
     "mechanics": [
@@ -41,7 +46,9 @@
         "text-kinetic",
         "layout-morph",
         "shader-canvas",
-        "physics-optics"
+        "physics-optics",
+        "scroll-driven",
+        "micro-feedback"
     ],
     "nodes": [
         {

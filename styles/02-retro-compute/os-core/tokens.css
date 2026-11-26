@@ -1,0 +1,23 @@
+:root {
+  --os-canvas: #008080;
+  --os-surface: #d4d0c8;
+  --os-chrome: #c0c0c0;
+  --os-ink: #111111;
+  --os-ink-muted: #404040;
+  --os-titlebar: #000080;
+  --os-bevel-light: #ffffff;
+  --os-bevel-dark: #404040;
+  --os-border: #404040;
+  --os-accent: #000080;
+  --os-radius: 0px;
+}
+
+.os-window {
+  background: var(--os-surface);
+  color: var(--os-ink);
+  border-top: 2px solid var(--os-bevel-light);
+  border-left: 2px solid var(--os-bevel-light);
+  border-right: 2px solid var(--os-bevel-dark);
+  border-bottom: 2px solid var(--os-bevel-dark);
+  border-radius: var(--os-radius);
+}

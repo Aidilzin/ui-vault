@@ -4,7 +4,9 @@
 
 [![Live Playground](https://img.shields.io/badge/Playground-Live-38bdf8?style=flat-square&labelColor=0f1115)](https://aidilzin.github.io/ui-vault/)
 [![Deploy Playground](https://img.shields.io/github/actions/workflow/status/Aidilzin/ui-vault/deploy-playground.yml?branch=main&style=flat-square&label=Pages&labelColor=0f1115)](https://github.com/Aidilzin/ui-vault/actions/workflows/deploy-playground.yml)
+<!-- VAULT:BADGE:START -->
 [![Registry Items](https://img.shields.io/badge/Registry-10%20styles%20%C2%B7%2015%20animations-34d399?style=flat-square&labelColor=0f1115)](./relations.json)
+<!-- VAULT:BADGE:END -->
 [![License: MIT](https://img.shields.io/badge/License-MIT-8b94a3?style=flat-square&labelColor=0f1115)](./LICENSE)
 
 A curated, zero-bloat collection of experimental UI style specifications, CSS token files, strict-TypeScript React animations, and a machine-readable compatibility graph (`relations.json`). Every animation ships with an explicit `prefers-reduced-motion` fallback and installs directly from GitHub with zero build server required.
@@ -74,6 +76,7 @@ npm run dev:playground
 
 ## Live Catalog
 
+<!-- VAULT:STYLES:START -->
 ### Styles by Aesthetic Cluster (10)
 
 | Cluster | Cluster DNA | Style ID | Key Pairings | `shadcn` Install |
@@ -88,7 +91,9 @@ npm run dev:playground
 | `03-kinetic-rebel` | Oversized expressive display type, hard zero-blur shadows, raw grids, chrome accents | `acid-y2k` | `variable-proximity`, `velocity-skew`, `ascii-filter`, `border-spotlight` | `npx shadcn@latest add Aidilzin/ui-vault/style-acid-y2k` |
 | `04-spatial-physics` | Optical refraction, depth sorting, mass/inertia springs, specular lighting | `liquid-glass` | `liquid-glass-filter`, `magnetic-button`, `spring-tilt-card`, `border-spotlight` | `npx shadcn@latest add Aidilzin/ui-vault/style-liquid-glass` |
 | `04-spatial-physics` | Optical refraction, depth sorting, mass/inertia springs, specular lighting | `ambient-orbit` | `orbital-canvas`, `border-spotlight`, `scramble-text` | `npx shadcn@latest add Aidilzin/ui-vault/style-ambient-orbit` |
+<!-- VAULT:STYLES:END -->
 
+<!-- VAULT:ANIMATIONS:START -->
 ### Animations by Mechanic (15)
 
 | Animation | Mechanic | Engine | Perf Tier | Reduced Motion Fallback | Registry Item |
@@ -99,7 +104,6 @@ npm run dev:playground
 | Scramble / Decrypt Text | `text-kinetic` | `react` | `low` | `instant-text-swap` | `scramble-text` |
 | Masked Split-Text Reveal | `text-kinetic` | `react`, `css` | `low` | `instant-visible` | `split-reveal` |
 | Variable Font Proximity | `text-kinetic` | `react`, `css` | `low` | `static-weight` | `variable-proximity` |
-| Kinetic Marquee Hover Row | `text-kinetic` | `react`, `css` | `low` | `static-highlight` | `marquee-hover-row` |
 | FLIP Layout Morph Card | `layout-morph` | `react`, `waapi` | `low` | `instant-layout` | `flip-card` |
 | Scroll Velocity Skew | `layout-morph` | `react` | `low` | `disabled-skew` | `velocity-skew` |
 | Bayer Dither Canvas | `shader-canvas` | `canvas` | `medium` | `static-dither-frame` | `bayer-dither` |
@@ -108,7 +112,10 @@ npm run dev:playground
 | Liquid Glass Surface | `physics-optics` | `svg`, `css` | `medium` | `opaque-fallback` | `liquid-glass-filter` |
 | Spring 3D Tilt Card | `physics-optics` | `react`, `css` | `low` | `flat-card` | `spring-tilt-card` |
 | Specular Glare Hover | `physics-optics` | `react`, `css` | `low` | `static-surface` | `glare-hover` |
+| Kinetic Marquee Hover Row | `text-kinetic` | `react`, `css` | `low` | `static-highlight` | `marquee-hover-row` |
+<!-- VAULT:ANIMATIONS:END -->
 
+<!-- VAULT:HYBRIDS:START -->
 ### Proven Hybrid Recipes (3)
 
 | Recipe | Stack (`baseStyle` + `accents`) | Best For | Combined `shadcn` Install |
@@ -116,6 +123,7 @@ npm run dev:playground
 | **Tactical Space Dashboard** (`tactical-space`) | `fui-tactical` + `ambient-orbit`, `scramble-text`, `border-spotlight`, `orbital-canvas` | Developer dashboards, telemetry maps, CLI/workspace visualizers | `npx shadcn@latest add Aidilzin/ui-vault/style-fui-tactical Aidilzin/ui-vault/style-ambient-orbit Aidilzin/ui-vault/scramble-text Aidilzin/ui-vault/border-spotlight Aidilzin/ui-vault/orbital-canvas` |
 | **Editorial Dither Brutalism** (`editorial-dither`) | `neo-brutalism` + `ditherpunk`, `bayer-dither`, `velocity-skew` | Portfolios, interactive essays, experimental landing pages | `npx shadcn@latest add Aidilzin/ui-vault/style-neo-brutalism Aidilzin/ui-vault/style-ditherpunk Aidilzin/ui-vault/bayer-dither Aidilzin/ui-vault/velocity-skew` |
 | **Precision Optical HUD** (`precision-glass`) | `fui-tactical` + `liquid-glass`, `liquid-glass-filter`, `magnetic-button` | Floating command palettes, spatial toolbars, audio/hardware web apps | `npx shadcn@latest add Aidilzin/ui-vault/style-fui-tactical Aidilzin/ui-vault/style-liquid-glass Aidilzin/ui-vault/liquid-glass-filter Aidilzin/ui-vault/magnetic-button` |
+<!-- VAULT:HYBRIDS:END -->
 
 ---
 

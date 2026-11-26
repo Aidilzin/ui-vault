@@ -1,0 +1,17 @@
+:root {
+  --dp-canvas: #f2f0e6;
+  --dp-surface: #e6e4dc;
+  --dp-ink: #0b0c0a;
+  --dp-ink-muted: #3a3c36;
+  --dp-border: #0b0c0a;
+  --dp-accent: #ff4d00;
+  --dp-accent-alt: #ccff00;
+  --dp-radius: 0px;
+}
+
+.dp-frame {
+  background: var(--dp-canvas);
+  color: var(--dp-ink);
+  border: 2px solid var(--dp-border);
+  border-radius: var(--dp-radius);
+}

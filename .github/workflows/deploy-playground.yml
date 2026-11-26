@@ -40,6 +40,9 @@ jobs:
       - name: Validate shadcn registry
         run: npm run validate:registry
 
+      - name: Run vault parity check
+        run: npm run check:vault
+
       - name: Install playground dependencies
         run: npm --prefix playground ci
 

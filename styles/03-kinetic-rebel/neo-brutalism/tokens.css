@@ -1,0 +1,21 @@
+:root {
+  --nb-canvas: #fffdf5;
+  --nb-surface: #ffffff;
+  --nb-ink: #000000;
+  --nb-ink-muted: #222222;
+  --nb-border: #000000;
+  --nb-accent: #ffde00;
+  --nb-accent-coral: #ff5c5c;
+  --nb-accent-blue: #3b82f6;
+  --nb-accent-mint: #22c55e;
+  --nb-shadow: 4px 4px 0 #000000;
+  --nb-radius: 0px;
+}
+
+.nb-card {
+  background: var(--nb-surface);
+  color: var(--nb-ink);
+  border: 2px solid var(--nb-border);
+  box-shadow: var(--nb-shadow);
+  border-radius: var(--nb-radius);
+}

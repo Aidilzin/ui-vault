@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   AlertTriangle,
   CheckCircle2,
@@ -13,6 +13,7 @@ import {
   nodeById,
   styleNodes,
   styleRawById,
+  type ClusterId,
   type StyleNode,
 } from "../lib/vault-data";
 import { parseStyleMarkdown } from "../lib/markdown";
@@ -46,6 +47,9 @@ export function StylesGallery({
   onCopy,
   onJumpToNode,
 }: StylesGalleryProps) {
+  const [selectedCluster, setSelectedCluster] = useState<ClusterId | "all">("all");
+  const [sortByName, setSortByName] = useState(false);
+
   useEffect(() => {
     if (!activeStyleId) return;
     const onKey = (e: KeyboardEvent) => {
@@ -66,8 +70,9 @@ export function StylesGallery({
   const filteredClusters = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
     return clusterList
+      .filter((cluster) => selectedCluster === "all" || cluster.id === selectedCluster)
       .map((cluster) => {
-        const styles = cluster.styles
+        let styles = cluster.styles
           .map((id) => nodeById.get(id))
           .filter((n): n is StyleNode => Boolean(n && n.kind === "style"))
           .filter((style) => {
@@ -86,10 +91,13 @@ export function StylesGallery({
               .toLowerCase();
             return hay.includes(q);
           });
+        if (sortByName) {
+          styles = [...styles].sort((a, b) => a.id.localeCompare(b.id));
+        }
         return { cluster, styles };
       })
       .filter((entry) => entry.styles.length > 0);
-  }, [searchQuery, parsedStyles]);
+  }, [searchQuery, parsedStyles, selectedCluster, sortByName]);
 
   const activeStyle = activeStyleId
     ? (nodeById.get(activeStyleId) as StyleNode | undefined)
@@ -102,10 +110,61 @@ export function StylesGallery({
         <div>
           <h1 className="section-title">Styles Gallery</h1>
           <p className="section-subtitle">
-            {styleNodes.length} aesthetic systems grouped across 4 structural clusters. Click any swatch to inspect its full <code>STYLE.md</code> specification.
+            {styleNodes.length} aesthetic systems grouped across{" "}
+            {clusterList.filter((c) => c.styles.length > 0).length} active clusters. Click any swatch to inspect its full <code>STYLE.md</code> specification.
           </p>
         </div>
-        <span className="badge badge-cyan">4 CLUSTERS // {styleNodes.length} STYLES</span>
+        <span className="badge badge-cyan">
+          {clusterList.filter((c) => c.styles.length > 0).length} CLUSTERS // {styleNodes.length} STYLES
+        </span>
+      </div>
+
+      <div className="filter-row">
+        <div className="filter-group">
+          <span className="filter-label">Cluster</span>
+          <button
+            type="button"
+            className="pill-btn"
+            data-active={selectedCluster === "all"}
+            onClick={() => setSelectedCluster("all")}
+          >
+            all ({styleNodes.length})
+          </button>
+          {clusterList.map((cluster) => {
+            if (cluster.styles.length === 0) return null;
+            return (
+              <button
+                key={cluster.id}
+                type="button"
+                className="pill-btn"
+                data-active={selectedCluster === cluster.id}
+                onClick={() => setSelectedCluster(cluster.id)}
+              >
+                {cluster.label} ({cluster.styles.length})
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="filter-group">
+          <span className="filter-label">Sort</span>
+          <button
+            type="button"
+            className="pill-btn"
+            data-active={!sortByName}
+            onClick={() => setSortByName(false)}
+          >
+            curated
+          </button>
+          <button
+            type="button"
+            className="pill-btn"
+            data-active={sortByName}
+            onClick={() => setSortByName(true)}
+          >
+            name
+          </button>
+        </div>
       </div>
 
       {filteredClusters.length === 0 ? (

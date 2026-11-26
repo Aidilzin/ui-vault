@@ -6,6 +6,8 @@
     "scripts": {
         "typecheck": "tsc --noEmit",
         "validate:registry": "npx shadcn@latest registry validate",
+        "check:vault": "node scripts/check-vault.mjs",
+        "sync:readme": "node scripts/sync-readme.mjs",
         "dev:playground": "npm --prefix playground run dev",
         "build:playground": "npm --prefix playground run build"
     },

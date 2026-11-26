@@ -37,6 +37,11 @@
                     "path": "01-precision-systems/neo-swiss/STYLE.md",
                     "type": "registry:file",
                     "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "01-precision-systems/neo-swiss/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/neo-swiss.tokens.css"
                 }
             ]
         },
@@ -98,6 +103,11 @@
                     "path": "02-retro-compute/ditherpunk/STYLE.md",
                     "type": "registry:file",
                     "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "02-retro-compute/ditherpunk/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/ditherpunk.tokens.css"
                 }
             ]
         },
@@ -115,6 +125,11 @@
                     "path": "02-retro-compute/os-core/STYLE.md",
                     "type": "registry:file",
                     "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "02-retro-compute/os-core/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/os-core.tokens.css"
                 }
             ]
         },
@@ -132,6 +147,11 @@
                     "path": "03-kinetic-rebel/neo-brutalism/STYLE.md",
                     "type": "registry:file",
                     "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "03-kinetic-rebel/neo-brutalism/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/neo-brutalism.tokens.css"
                 }
             ]
         },
@@ -149,6 +169,11 @@
                     "path": "03-kinetic-rebel/acid-y2k/STYLE.md",
                     "type": "registry:file",
                     "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "03-kinetic-rebel/acid-y2k/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/acid-y2k.tokens.css"
                 }
             ]
         },
@@ -166,6 +191,11 @@
                     "path": "04-spatial-physics/liquid-glass/STYLE.md",
                     "type": "registry:file",
                     "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "04-spatial-physics/liquid-glass/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/liquid-glass.tokens.css"
                 }
             ]
         },
@@ -183,6 +213,11 @@
                     "path": "04-spatial-physics/ambient-orbit/STYLE.md",
                     "type": "registry:file",
                     "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "04-spatial-physics/ambient-orbit/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/ambient-orbit.tokens.css"
                 }
             ]
         }

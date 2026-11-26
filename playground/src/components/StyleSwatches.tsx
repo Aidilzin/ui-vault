@@ -1,3 +1,5 @@
+import { TokenSwatch } from "./TokenSwatch";
+
 interface StyleSwatchProps {
   styleId: string;
 }
@@ -795,6 +797,6 @@ export function StyleSwatch({ styleId }: StyleSwatchProps) {
       );
 
     default:
-      return null;
+      return <TokenSwatch styleId={styleId} />;
   }
 }

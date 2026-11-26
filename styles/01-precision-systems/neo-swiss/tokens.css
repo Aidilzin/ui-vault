@@ -1,0 +1,17 @@
+:root {
+  --ns-canvas: #f5f4f0;
+  --ns-surface: #ffffff;
+  --ns-ink: #111111;
+  --ns-ink-muted: #555555;
+  --ns-border: rgba(17, 17, 17, 0.14);
+  --ns-accent: #ff3b00;
+  --ns-accent-alt: #0047ff;
+  --ns-radius: 0px;
+}
+
+.ns-grid-cell {
+  background: var(--ns-canvas);
+  color: var(--ns-ink);
+  border: 1px solid var(--ns-border);
+  border-radius: var(--ns-radius);
+}

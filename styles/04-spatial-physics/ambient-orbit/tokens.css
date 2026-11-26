@@ -1,0 +1,17 @@
+:root {
+  --ao-canvas: #06070a;
+  --ao-surface: #111318;
+  --ao-ink: #e8ecf2;
+  --ao-ink-muted: #7a8494;
+  --ao-border: rgba(255, 255, 255, 0.09);
+  --ao-accent: #38bdf8;
+  --ao-core-rim: rgba(255, 224, 178, 0.78);
+  --ao-radius: 4px;
+}
+
+.ao-radar {
+  background: var(--ao-canvas);
+  color: var(--ao-ink);
+  border: 1px solid var(--ao-border);
+  border-radius: var(--ao-radius);
+}
