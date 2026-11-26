@@ -97,7 +97,23 @@ export function OrbitalCanvas({
                 })
                 .sort((a, b) => a.z - b.z);
 
+            const drawCenterCore = () => {
+                ctx.fillStyle = "#020204";
+                ctx.strokeStyle = "rgba(255, 224, 178, 0.78)";
+                ctx.lineWidth = 1.2;
+                ctx.beginPath();
+                ctx.arc(cx, cy, 13, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.stroke();
+            };
+
+            let coreDrawn = false;
             for (const node of projected) {
+                if (!coreDrawn && node.z >= 0) {
+                    drawCenterCore();
+                    coreDrawn = true;
+                }
+
                 const scale = 0.8 + ((node.z + 1) / 2) * 0.3;
                 const alpha = 0.42 + ((node.z + 1) / 2) * 0.58;
 
@@ -121,14 +137,9 @@ export function OrbitalCanvas({
                 ctx.restore();
             }
 
-            // Center core
-            ctx.fillStyle = "#020204";
-            ctx.strokeStyle = "rgba(255, 224, 178, 0.78)";
-            ctx.lineWidth = 1.2;
-            ctx.beginPath();
-            ctx.arc(cx, cy, 13, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.stroke();
+            if (!coreDrawn) {
+                drawCenterCore();
+            }
 
             rafId = requestAnimationFrame(draw);
         };

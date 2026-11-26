@@ -5,7 +5,9 @@
     "type": "module",
     "scripts": {
         "typecheck": "tsc --noEmit",
-        "validate:registry": "npx shadcn@latest registry validate"
+        "validate:registry": "npx shadcn@latest registry validate",
+        "dev:playground": "npm --prefix playground run dev",
+        "build:playground": "npm --prefix playground run build"
     },
     "devDependencies": {
         "@types/react": "^19.0.0",
