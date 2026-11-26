@@ -1,0 +1,18 @@
+:root {
+  --wp-canvas: #f8f6f1;
+  --wp-surface: #f2efe8;
+  --wp-border: rgba(20, 19, 17, 0.18);
+  --wp-ink: #141311;
+  --wp-ink-muted: #6b665c;
+  --wp-accent: #c83e2b;
+  --wp-accent-alt: #141311;
+  --wp-radius: 0px;
+}
+
+.wp-rule {
+  background: var(--wp-canvas);
+  color: var(--wp-ink);
+  border-top: 1px solid var(--wp-border);
+  border-bottom: 1px solid var(--wp-border);
+  border-radius: var(--wp-radius);
+}

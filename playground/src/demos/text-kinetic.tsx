@@ -7,6 +7,7 @@ import { MarqueeHoverRow } from "@vault/animations/text-kinetic/marquee-hover-ro
 import { ShinyText } from "@vault/animations/text-kinetic/shiny-text";
 import { BlurText } from "@vault/animations/text-kinetic/blur-text";
 import { TextRoll } from "@vault/animations/text-kinetic/text-roll";
+import { SplitFlapClock } from "@vault/animations/text-kinetic/split-flap-clock";
 import type { DemoMap, DemoProps } from "./types";
 
 function ScrambleTextDemo({ motionEpoch }: DemoProps) {
@@ -226,4 +227,5 @@ export const textKineticDemos: DemoMap = {
   "shiny-text": ShinyTextDemo,
   "blur-text": BlurTextDemo,
   "text-roll": TextRollDemo,
+  "split-flap-clock": () => <SplitFlapClock />,
 };

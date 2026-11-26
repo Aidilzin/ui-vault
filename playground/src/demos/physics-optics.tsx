@@ -13,6 +13,7 @@ import { AnimatedConnectorBeam } from "@vault/animations/physics-optics/animated
 import { HolographicFoilCard } from "@vault/animations/physics-optics/holographic-foil-card";
 import { LampHorizonGlow } from "@vault/animations/physics-optics/lamp-horizon-glow";
 import { GooeyPillNav } from "@vault/animations/physics-optics/gooey-pill-nav";
+import { PerspectiveBook } from "@vault/animations/physics-optics/perspective-book";
 import { Compass, Cpu, Layers, Sparkles, Terminal } from "lucide-react";
 import type { DemoMap, DemoProps } from "./types";
 
@@ -241,4 +242,5 @@ export const physicsOpticsDemos: DemoMap = {
   "holographic-foil-card": HolographicFoilCardDemo,
   "lamp-horizon-glow": LampHorizonGlowDemo,
   "gooey-pill-nav": GooeyPillNavDemo,
+  "perspective-book": () => <PerspectiveBook />,
 };

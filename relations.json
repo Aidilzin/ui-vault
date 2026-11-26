@@ -22,7 +22,8 @@
                 "ditherpunk",
                 "os-core",
                 "retro-web-96",
-                "phosphor-terminal"
+                "phosphor-terminal",
+                "eight-bit-arcade"
             ]
         },
         "03-kinetic-rebel": {
@@ -42,7 +43,8 @@
             "styles": [
                 "liquid-glass",
                 "ambient-orbit",
-                "command-dark"
+                "command-dark",
+                "orbital-ceramic"
             ]
         },
         "05-modern-craft": {
@@ -64,7 +66,8 @@
                 "archival-paper",
                 "tactile-studio-warm",
                 "monochrome-gallery",
-                "pastel-playful"
+                "pastel-playful",
+                "wordmark-press"
             ]
         }
     },
@@ -1948,6 +1951,182 @@
                 "fui-tactical",
                 "neo-swiss",
                 "ditherpunk"
+            ]
+        },
+        {
+            "id": "wordmark-press",
+            "kind": "style",
+            "cluster": "06-editorial-warm",
+            "tier": "experimental",
+            "path": "styles/06-editorial-warm/wordmark-press/STYLE.md",
+            "registryItem": "style-wordmark-press",
+            "pairsWith": [
+                "rotary-type-dial",
+                "split-reveal",
+                "variable-proximity",
+                "text-roll"
+            ],
+            "clashesWith": [
+                "liquid-glass",
+                "console-2001",
+                "acid-y2k"
+            ]
+        },
+        {
+            "id": "orbital-ceramic",
+            "kind": "style",
+            "cluster": "04-spatial-physics",
+            "tier": "viral",
+            "path": "styles/04-spatial-physics/orbital-ceramic/STYLE.md",
+            "registryItem": "style-orbital-ceramic",
+            "pairsWith": [
+                "eclipse-orb",
+                "border-spotlight",
+                "progressive-blur-edge",
+                "blur-fade"
+            ],
+            "clashesWith": [
+                "neo-brutalism",
+                "ditherpunk",
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "eight-bit-arcade",
+            "kind": "style",
+            "cluster": "02-retro-compute",
+            "tier": "experimental",
+            "path": "styles/02-retro-compute/eight-bit-arcade/STYLE.md",
+            "registryItem": "style-eight-bit-arcade",
+            "pairsWith": [
+                "bayer-dither",
+                "pixel-card",
+                "pixel-hover-grid",
+                "click-spark"
+            ],
+            "clashesWith": [
+                "liquid-glass",
+                "warm-manuscript",
+                "tactile-soft"
+            ]
+        },
+        {
+            "id": "eclipse-orb",
+            "kind": "animation",
+            "mechanic": "shader-canvas",
+            "tier": "viral",
+            "engine": [
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-orb",
+            "path": "animations/shader-canvas/eclipse-orb.tsx",
+            "registryItem": "eclipse-orb",
+            "pairsWith": [
+                "orbital-ceramic",
+                "ambient-orbit",
+                "aurora-mesh",
+                "monolith-dark"
+            ],
+            "clashesWith": [
+                "neo-brutalism",
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "rotary-type-dial",
+            "kind": "animation",
+            "mechanic": "cursor-reactive",
+            "tier": "experimental",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "stepped-dial",
+            "path": "animations/cursor-reactive/rotary-type-dial.tsx",
+            "registryItem": "rotary-type-dial",
+            "pairsWith": [
+                "wordmark-press",
+                "industrial-hardware",
+                "neo-swiss",
+                "swiss-type-foundry"
+            ],
+            "clashesWith": [
+                "tactile-soft",
+                "pastel-playful"
+            ]
+        },
+        {
+            "id": "accordion-gallery",
+            "kind": "animation",
+            "mechanic": "layout-morph",
+            "tier": "viral",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-flex",
+            "path": "animations/layout-morph/accordion-gallery.tsx",
+            "registryItem": "accordion-gallery",
+            "pairsWith": [
+                "tactile-studio-warm",
+                "dark-gallery-index",
+                "bento-grid",
+                "editorial-mono"
+            ],
+            "clashesWith": [
+                "os-core",
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "split-flap-clock",
+            "kind": "animation",
+            "mechanic": "text-kinetic",
+            "tier": "viral",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-digit",
+            "path": "animations/text-kinetic/split-flap-clock.tsx",
+            "registryItem": "split-flap-clock",
+            "pairsWith": [
+                "industrial-hardware",
+                "fui-tactical",
+                "retro-web-96",
+                "editorial-mono"
+            ],
+            "clashesWith": [
+                "liquid-glass",
+                "warm-manuscript"
+            ]
+        },
+        {
+            "id": "perspective-book",
+            "kind": "animation",
+            "mechanic": "physics-optics",
+            "tier": "viral",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-book",
+            "path": "animations/physics-optics/perspective-book.tsx",
+            "registryItem": "perspective-book",
+            "pairsWith": [
+                "warm-manuscript",
+                "archival-paper",
+                "monochrome-gallery",
+                "bento-grid"
+            ],
+            "clashesWith": [
+                "acid-y2k",
+                "phosphor-terminal"
             ]
         }
     ],

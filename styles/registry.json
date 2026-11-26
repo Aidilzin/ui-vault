@@ -660,6 +660,72 @@
                     "target": "~/src/styles/pastel-playful.tokens.css"
                 }
             ]
+        },
+        {
+            "name": "style-wordmark-press",
+            "type": "registry:item",
+            "title": "Wordmark Press Style",
+            "description": "Zero-box pure typography system where controls and ornaments are set in words and hairlines.",
+            "categories": [
+                "06-editorial-warm",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "06-editorial-warm/wordmark-press/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "06-editorial-warm/wordmark-press/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/wordmark-press.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-orbital-ceramic",
+            "type": "registry:item",
+            "title": "Orbital Ceramic Style",
+            "description": "Matte basalt ceramic surfaces paired with diffused solar halo orbs and luminous hairline seams.",
+            "categories": [
+                "04-spatial-physics",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "04-spatial-physics/orbital-ceramic/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "04-spatial-physics/orbital-ceramic/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/orbital-ceramic.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-eight-bit-arcade",
+            "type": "registry:item",
+            "title": "8-Bit Arcade Style",
+            "description": "Stepped pixel-notched arcade borders, CRT navy grounds, and segmented 8-bit HUD palettes.",
+            "categories": [
+                "02-retro-compute",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "02-retro-compute/eight-bit-arcade/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "02-retro-compute/eight-bit-arcade/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/eight-bit-arcade.tokens.css"
+                }
+            ]
         }
     ]
 }

@@ -5,6 +5,7 @@ import { MagnetLines } from "@vault/animations/cursor-reactive/magnet-lines";
 import { CrosshairReticle } from "@vault/animations/cursor-reactive/crosshair-reticle";
 import { BorderBeam } from "@vault/animations/cursor-reactive/border-beam";
 import { KineticCardTrail } from "@vault/animations/cursor-reactive/kinetic-card-trail";
+import { RotaryTypeDial } from "@vault/animations/cursor-reactive/rotary-type-dial";
 import "@vault/animations/cursor-reactive/sibling-dim.css";
 import type { DemoMap } from "./types";
 
@@ -159,4 +160,5 @@ export const cursorReactiveDemos: DemoMap = {
   "crosshair-reticle": CrosshairReticleDemo,
   "border-beam": BorderBeamDemo,
   "kinetic-card-trail": KineticCardTrailDemo,
+  "rotary-type-dial": () => <RotaryTypeDial />,
 };

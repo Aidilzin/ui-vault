@@ -11,6 +11,7 @@ import { CrtGrainOverlay } from "@vault/animations/shader-canvas/crt-grain-overl
 import { AuroraMeshBg } from "@vault/animations/shader-canvas/aurora-mesh-bg";
 import { SvgRipplePulse } from "@vault/animations/shader-canvas/svg-ripple-pulse";
 import { MeteorShower } from "@vault/animations/shader-canvas/meteor-shower";
+import { EclipseOrb } from "@vault/animations/shader-canvas/eclipse-orb";
 import type { DemoMap, DemoProps } from "./types";
 
 const SAMPLE_ORBIT_HUBS: OrbitHub[] = [
@@ -234,4 +235,5 @@ export const shaderCanvasDemos: DemoMap = {
   "aurora-mesh-bg": AuroraMeshBgDemo,
   "svg-ripple-pulse": SvgRipplePulseDemo,
   "meteor-shower": MeteorShowerDemo,
+  "eclipse-orb": () => <EclipseOrb />,
 };

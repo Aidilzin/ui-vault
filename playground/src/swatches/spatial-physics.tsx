@@ -77,4 +77,19 @@ export const spatialPhysicsSwatches: Record<string, () => ReactNode> = {
       </div>
     </div>
   ),
+
+  "orbital-ceramic": () => (
+    <div style={{ height: "100%", background: "#0c0d10", color: "#f1efe9", padding: 14, display: "flex", flexDirection: "column", justifyContent: "space-between", fontFamily: "var(--font-sans)", position: "relative", overflow: "hidden" }}>
+      <div aria-hidden="true" style={{ position: "absolute", right: -16, top: -16, width: 96, height: 96, borderRadius: "50%", background: "radial-gradient(circle, rgba(232,168,100,0.45) 0%, rgba(122,167,217,0.18) 55%, transparent 72%)", filter: "blur(8px)" }} />
+      <div style={{ position: "relative", zIndex: 1, fontFamily: "var(--font-mono)", fontSize: 9, color: "#8e8c87" }}>CERAMIC // HALO SEAM</div>
+      <div style={{ position: "relative", zIndex: 1, background: "#14161b", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 12, padding: "10px 12px" }}>
+        <div style={{ fontSize: 15, fontWeight: 600 }}>Sculpted Quiet Orb</div>
+        <div style={{ fontSize: 10, color: "#8e8c87", marginTop: 2 }}>Diffused corona light on matte basalt</div>
+      </div>
+      <div style={{ position: "relative", zIndex: 1, display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: 9 }}>
+        <span style={{ color: "#e8a864" }}>● CORONA #E8A864</span>
+        <span style={{ color: "#7aa7d9" }}>12PX RADIUS</span>
+      </div>
+    </div>
+  ),
 };

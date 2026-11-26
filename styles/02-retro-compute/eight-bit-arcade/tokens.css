@@ -1,0 +1,18 @@
+:root {
+  --eb-canvas: #111226;
+  --eb-surface: #1c1e3a;
+  --eb-border: #ffffff;
+  --eb-ink: #ffffff;
+  --eb-ink-muted: #a4a8d4;
+  --eb-accent: #ffd43b;
+  --eb-accent-ok: #40c057;
+  --eb-accent-hp: #fa5252;
+  --eb-radius: 0px;
+}
+
+.eb-box {
+  background: var(--eb-surface);
+  color: var(--eb-ink);
+  border: 2px solid var(--eb-border);
+  border-radius: var(--eb-radius);
+}

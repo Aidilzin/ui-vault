@@ -92,4 +92,20 @@ export const editorialWarmSwatches: Record<string, () => ReactNode> = {
       </div>
     </div>
   ),
+
+  "wordmark-press": () => (
+    <div style={{ height: "100%", background: "#f8f6f1", color: "#141311", padding: 14, display: "flex", flexDirection: "column", justifyContent: "space-between", fontFamily: "Georgia, serif" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: 9, color: "#6b665c", borderBottom: "1px solid rgba(20,19,17,0.18)", paddingBottom: 6 }}>
+        <span>01 / 04 · WORDMARK</span>
+        <span style={{ color: "#c83e2b" }}>[INDEX]</span>
+      </div>
+      <div style={{ fontSize: 22, fontWeight: 400, letterSpacing: "-0.02em", lineHeight: 1.05 }}>
+        Type alone,<br />zero boxes.
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: 10, borderTop: "1px solid rgba(20,19,17,0.18)", paddingTop: 6 }}>
+        <span style={{ color: "#c83e2b", fontWeight: 600 }}>[OPEN SPEC →]</span>
+        <span style={{ color: "#6b665c" }}>0PX RADIUS</span>
+      </div>
+    </div>
+  ),
 };

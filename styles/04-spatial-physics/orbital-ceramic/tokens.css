@@ -1,0 +1,17 @@
+:root {
+  --oc-canvas: #0c0d10;
+  --oc-surface: #14161b;
+  --oc-border: rgba(255, 255, 255, 0.1);
+  --oc-ink: #f1efe9;
+  --oc-ink-muted: #8e8c87;
+  --oc-accent: #e8a864;
+  --oc-accent-alt: #7aa7d9;
+  --oc-radius: 12px;
+}
+
+.oc-panel {
+  background: var(--oc-surface);
+  color: var(--oc-ink);
+  border: 1px solid var(--oc-border);
+  border-radius: var(--oc-radius);
+}

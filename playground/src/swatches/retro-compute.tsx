@@ -97,4 +97,25 @@ export const retroComputeSwatches: Record<string, () => ReactNode> = {
       </div>
     </div>
   ),
+
+  "eight-bit-arcade": () => (
+    <div style={{ height: "100%", background: "#111226", color: "#ffffff", padding: 14, display: "flex", flexDirection: "column", justifyContent: "space-between", fontFamily: "var(--font-mono)" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 10, fontWeight: 700 }}>
+        <span style={{ color: "#ffd43b" }}>1UP 004200</span>
+        <span style={{ color: "#fa5252" }}>♥♥♥</span>
+      </div>
+      <div style={{ background: "#1c1e3a", border: "2px solid #ffffff", boxShadow: "4px 4px 0 #000000", padding: "10px 12px" }}>
+        <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.06em" }}>STAGE 02 // READY</div>
+        <div style={{ marginTop: 6, display: "flex", gap: 3 }}>
+          {[1, 1, 1, 1, 0].map((v, i) => (
+            <span key={i} style={{ flex: 1, height: 6, background: v ? "#40c057" : "#2f335c" }} />
+          ))}
+        </div>
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 9, color: "#a4a8d4" }}>
+        <span>STEPPED PIXEL HUD</span>
+        <span style={{ color: "#ffd43b" }}>PRESS START</span>
+      </div>
+    </div>
+  ),
 };

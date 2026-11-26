@@ -961,6 +961,86 @@
                     "type": "registry:ui"
                 }
             ]
+        },
+        {
+            "name": "eclipse-orb",
+            "type": "registry:ui",
+            "title": "Eclipse Corona Orb",
+            "description": "Layered planetary eclipse halo orb with gentle breathing luminance.",
+            "categories": [
+                "shader-canvas",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "shader-canvas/eclipse-orb.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "rotary-type-dial",
+            "type": "registry:ui",
+            "title": "Rotary Typographic Dial",
+            "description": "Pointer-rotatable radial dial with crisp angular ticks and tabular readout.",
+            "categories": [
+                "cursor-reactive",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "cursor-reactive/rotary-type-dial.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "accordion-gallery",
+            "type": "registry:ui",
+            "title": "Flex Accordion Gallery",
+            "description": "Horizontal expanding strip where hovered or selected panel widens smoothly.",
+            "categories": [
+                "layout-morph",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "layout-morph/accordion-gallery.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "split-flap-clock",
+            "type": "registry:ui",
+            "title": "3D Split-Flap Display",
+            "description": "Mid-hinged 3D perspective airport split-flap digit flip board.",
+            "categories": [
+                "text-kinetic",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "text-kinetic/split-flap-clock.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "perspective-book",
+            "type": "registry:ui",
+            "title": "3D Perspective Hardcover Book",
+            "description": "CSS 3D hardcover book with spine, page block edges, and cover tilt on hover.",
+            "categories": [
+                "physics-optics",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "physics-optics/perspective-book.tsx",
+                    "type": "registry:ui"
+                }
+            ]
         }
     ]
 }
