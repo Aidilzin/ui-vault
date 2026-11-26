@@ -737,6 +737,118 @@
                     "type": "registry:ui"
                 }
             ]
+        },
+        {
+            "name": "streaming-token-text",
+            "type": "registry:ui",
+            "title": "Streaming Token Text & Citations",
+            "description": "Token-by-token LLM stream reveal with interactive hoverable inline citation pills.",
+            "categories": [
+                "ai-agentic",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "ai-agentic/streaming-token-text.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "reasoning-trace",
+            "type": "registry:ui",
+            "title": "Reasoning Trace Accordion",
+            "description": "Collapsible LLM thinking trace with animated duration timer and live shimmer header.",
+            "categories": [
+                "ai-agentic",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "ai-agentic/reasoning-trace.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "tool-call-step",
+            "type": "registry:ui",
+            "title": "Agent Tool-Call Step Row",
+            "description": "Interactive tool execution row transitioning across pending, running, success, and error states.",
+            "categories": [
+                "ai-agentic",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "ai-agentic/tool-call-step.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "agent-approval-card",
+            "type": "registry:ui",
+            "title": "Agent Approval Permission Gate",
+            "description": "Human-in-the-loop approval card with command scope preview and Approve/Deny lock.",
+            "categories": [
+                "ai-agentic",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "ai-agentic/agent-approval-card.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "inline-code-diff",
+            "type": "registry:ui",
+            "title": "Inline Agent Code Diff",
+            "description": "Unified code diff preview with +/- gutters and interactive Accept/Reject hunk state.",
+            "categories": [
+                "ai-agentic",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "ai-agentic/inline-code-diff.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "slash-prompt-composer",
+            "type": "registry:ui",
+            "title": "Slash Prompt Composer",
+            "description": "AI prompt input bar with removable context chips and live / slash-command menu.",
+            "categories": [
+                "ai-agentic",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "ai-agentic/slash-prompt-composer.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "chain-of-thought-rail",
+            "type": "registry:ui",
+            "title": "Chain-of-Thought Execution Rail",
+            "description": "Vertical connected multi-step agent timeline with active pulse beacon.",
+            "categories": [
+                "ai-agentic",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "ai-agentic/chain-of-thought-rail.tsx",
+                    "type": "registry:ui"
+                }
+            ]
         }
     ]
 }

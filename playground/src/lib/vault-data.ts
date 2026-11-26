@@ -38,7 +38,8 @@ export type MechanicId =
   | "shader-canvas"
   | "physics-optics"
   | "scroll-driven"
-  | "micro-feedback";
+  | "micro-feedback"
+  | "ai-agentic";
 
 export interface ClusterMeta {
   id: ClusterId;

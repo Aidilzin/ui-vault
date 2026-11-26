@@ -28,8 +28,8 @@ Use this repeatable pipeline whenever adding a new aesthetic or motion primitive
 5. **Wire into Playground.** Import `STYLE.md?raw` in `playground/src/lib/vault-data.ts` and add an authentic mini-UI swatch in `playground/src/components/StyleSwatches.tsx`.
 
 ### Adding an Animation
-1. **Assign a mechanic.** Place the primitive under `animations/<mechanic>/<animation-id>.tsx` (or `.css`) using one of the 5 mechanics (`cursor-reactive`, `text-kinetic`, `layout-morph`, `shader-canvas`, `physics-optics`).
-2. **Enforce constraints.** Keep dependencies minimal, avoid breaking existing public APIs, and implement an explicit `prefers-reduced-motion: reduce` fallback.
+1. **Assign a mechanic.** Place the primitive under `animations/<mechanic>/<animation-id>.tsx` (or `.css`) using one of the 8 mechanics (`cursor-reactive`, `text-kinetic`, `layout-morph`, `shader-canvas`, `physics-optics`, `scroll-driven`, `micro-feedback`, `ai-agentic`).
+2. **Enforce constraints & license hygiene.** Only adapt verified open-source (`MIT`, `Apache-2.0`, `ISC`) registries or author `clean-room` implementations; exclude paid/Commons-Clause code. Keep dependencies minimal, avoid breaking existing public APIs, and implement an explicit `prefers-reduced-motion: reduce` fallback.
 3. **Register metadata.** Add the animation node to `relations.json` (`engine`, `perfTier`, `reducedMotion`, `pairsWith`, `clashesWith`), `animations/registry.json`, and root `registry.json`.
 4. **Wire into Playground.** Import the live component and `?raw` source in `playground/src/lib/vault-data.ts` and `playground/src/components/AnimationsLab.tsx`.
 

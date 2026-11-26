@@ -5,6 +5,7 @@ import { shaderCanvasDemos } from "./shader-canvas";
 import { physicsOpticsDemos } from "./physics-optics";
 import { scrollDrivenDemos } from "./scroll-driven";
 import { microFeedbackDemos } from "./micro-feedback";
+import { aiAgenticDemos } from "./ai-agentic";
 import type { DemoMap } from "./types";
 
 export const animationDemoRegistry: DemoMap = {
@@ -15,4 +16,5 @@ export const animationDemoRegistry: DemoMap = {
   ...physicsOpticsDemos,
   ...scrollDrivenDemos,
   ...microFeedbackDemos,
+  ...aiAgenticDemos,
 };

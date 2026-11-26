@@ -1,5 +1,5 @@
 {
-    "version": "1.3.0",
+    "version": "1.4.0",
     "clusters": {
         "01-precision-systems": {
             "label": "Precision Systems",
@@ -75,7 +75,8 @@
         "shader-canvas",
         "physics-optics",
         "scroll-driven",
-        "micro-feedback"
+        "micro-feedback",
+        "ai-agentic"
     ],
     "nodes": [
         {
@@ -1609,6 +1610,173 @@
                 "telemetry-fault"
             ],
             "clashesWith": []
+        },
+        {
+            "id": "streaming-token-text",
+            "kind": "animation",
+            "mechanic": "ai-agentic",
+            "tier": "production",
+            "engine": [
+                "react"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-text",
+            "path": "animations/ai-agentic/streaming-token-text.tsx",
+            "registryItem": "streaming-token-text",
+            "pairsWith": [
+                "monolith-dark",
+                "warm-manuscript",
+                "fui-tactical",
+                "monochrome-gallery"
+            ],
+            "clashesWith": [
+                "acid-y2k",
+                "console-2001"
+            ]
+        },
+        {
+            "id": "reasoning-trace",
+            "kind": "animation",
+            "mechanic": "ai-agentic",
+            "tier": "production",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-header",
+            "path": "animations/ai-agentic/reasoning-trace.tsx",
+            "registryItem": "reasoning-trace",
+            "pairsWith": [
+                "monolith-dark",
+                "warm-manuscript",
+                "fui-tactical",
+                "editorial-mono"
+            ],
+            "clashesWith": [
+                "neo-brutalism",
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "tool-call-step",
+            "kind": "animation",
+            "mechanic": "ai-agentic",
+            "tier": "production",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-state",
+            "path": "animations/ai-agentic/tool-call-step.tsx",
+            "registryItem": "tool-call-step",
+            "pairsWith": [
+                "fui-tactical",
+                "monolith-dark",
+                "telemetry-fault",
+                "phosphor-terminal"
+            ],
+            "clashesWith": [
+                "pastel-playful",
+                "tactile-soft"
+            ]
+        },
+        {
+            "id": "agent-approval-card",
+            "kind": "animation",
+            "mechanic": "ai-agentic",
+            "tier": "production",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-state",
+            "path": "animations/ai-agentic/agent-approval-card.tsx",
+            "registryItem": "agent-approval-card",
+            "pairsWith": [
+                "fui-tactical",
+                "monolith-dark",
+                "command-dark",
+                "telemetry-fault"
+            ],
+            "clashesWith": [
+                "acid-y2k",
+                "zine-wire"
+            ]
+        },
+        {
+            "id": "inline-code-diff",
+            "kind": "animation",
+            "mechanic": "ai-agentic",
+            "tier": "production",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-state",
+            "path": "animations/ai-agentic/inline-code-diff.tsx",
+            "registryItem": "inline-code-diff",
+            "pairsWith": [
+                "monolith-dark",
+                "fui-tactical",
+                "phosphor-terminal",
+                "monochrome-stark"
+            ],
+            "clashesWith": [
+                "tactile-soft",
+                "console-2001"
+            ]
+        },
+        {
+            "id": "slash-prompt-composer",
+            "kind": "animation",
+            "mechanic": "ai-agentic",
+            "tier": "production",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-menu",
+            "path": "animations/ai-agentic/slash-prompt-composer.tsx",
+            "registryItem": "slash-prompt-composer",
+            "pairsWith": [
+                "command-dark",
+                "monolith-dark",
+                "warm-manuscript",
+                "monochrome-gallery"
+            ],
+            "clashesWith": [
+                "retro-web-96",
+                "ditherpunk"
+            ]
+        },
+        {
+            "id": "chain-of-thought-rail",
+            "kind": "animation",
+            "mechanic": "ai-agentic",
+            "tier": "viral",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-rail",
+            "path": "animations/ai-agentic/chain-of-thought-rail.tsx",
+            "registryItem": "chain-of-thought-rail",
+            "pairsWith": [
+                "fui-tactical",
+                "monolith-dark",
+                "aurora-mesh",
+                "editorial-mono"
+            ],
+            "clashesWith": [
+                "os-core",
+                "retro-web-96"
+            ]
         }
     ],
     "hybrids": [

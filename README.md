@@ -5,7 +5,7 @@
 [![Live Playground](https://img.shields.io/badge/Playground-Live-38bdf8?style=flat-square&labelColor=0f1115)](https://aidilzin.github.io/ui-vault/)
 [![Deploy Playground](https://img.shields.io/github/actions/workflow/status/Aidilzin/ui-vault/deploy-playground.yml?branch=main&style=flat-square&label=Pages&labelColor=0f1115)](https://github.com/Aidilzin/ui-vault/actions/workflows/deploy-playground.yml)
 <!-- VAULT:BADGE:START -->
-[![Registry Items](https://img.shields.io/badge/Registry-30%20styles%20%C2%B7%2046%20animations-34d399?style=flat-square&labelColor=0f1115)](./relations.json)
+[![Registry Items](https://img.shields.io/badge/Registry-30%20styles%20%C2%B7%2053%20animations-34d399?style=flat-square&labelColor=0f1115)](./relations.json)
 <!-- VAULT:BADGE:END -->
 [![License: MIT](https://img.shields.io/badge/License-MIT-8b94a3?style=flat-square&labelColor=0f1115)](./LICENSE)
 
@@ -114,7 +114,7 @@ npm run dev:playground
 <!-- VAULT:STYLES:END -->
 
 <!-- VAULT:ANIMATIONS:START -->
-### Animations by Mechanic (46)
+### Animations by Mechanic (53)
 
 | Animation | Mechanic | Tier | Engine | Perf Tier | Reduced Motion Fallback | Registry Item |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -164,6 +164,13 @@ npm run dev:playground
 | Ambient Aurora Mesh Backdrop | `shader-canvas` | `viral` | `css` | `low` | `static-aurora-frame` | `aurora-mesh-bg` |
 | Scroll Sticky Scale Card | `scroll-driven` | `viral` | `react`, `css` | `low` | `static-scale` | `scroll-sticky-scale` |
 | Odometer Digit-Wheel Ticker | `micro-feedback` | `production` | `react`, `css` | `low` | `instant-value` | `odometer-ticker` |
+| Streaming Token Text & Citations | `ai-agentic` | `production` | `react` | `low` | `instant-text` | `streaming-token-text` |
+| Reasoning Trace Accordion | `ai-agentic` | `production` | `react`, `css` | `low` | `static-header` | `reasoning-trace` |
+| Agent Tool-Call Step Row | `ai-agentic` | `production` | `react`, `css` | `low` | `instant-state` | `tool-call-step` |
+| Agent Approval Permission Gate | `ai-agentic` | `production` | `react`, `css` | `low` | `instant-state` | `agent-approval-card` |
+| Inline Agent Code Diff | `ai-agentic` | `production` | `react`, `css` | `low` | `instant-state` | `inline-code-diff` |
+| Slash Prompt Composer | `ai-agentic` | `production` | `react`, `css` | `low` | `instant-menu` | `slash-prompt-composer` |
+| Chain-of-Thought Execution Rail | `ai-agentic` | `viral` | `react`, `css` | `low` | `static-rail` | `chain-of-thought-rail` |
 <!-- VAULT:ANIMATIONS:END -->
 
 <!-- VAULT:HYBRIDS:START -->
