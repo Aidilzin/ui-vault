@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { ScrollProgressBar } from "@vault/animations/scroll-driven/scroll-progress-bar";
 import { ElasticColumnScroll } from "@vault/animations/scroll-driven/elastic-column-scroll";
+import { ProgressiveBlurEdge } from "@vault/animations/scroll-driven/progressive-blur-edge";
 import type { DemoMap, DemoProps } from "./types";
 
 function ScrollProgressBarDemo() {
@@ -41,7 +42,30 @@ function ElasticColumnScrollDemo({ motionEpoch }: DemoProps) {
   );
 }
 
+function ProgressiveBlurEdgeDemo() {
+  return (
+    <ProgressiveBlurEdge
+      style={{
+        width: "100%",
+        maxWidth: 320,
+        border: "1px solid var(--fui-border)",
+        borderRadius: 4,
+        background: "#0f1115",
+      }}
+    >
+      <div style={{ height: 132, overflowY: "auto", padding: "10px 12px 44px", fontSize: 11, color: "var(--fui-ink-muted)" }}>
+        {Array.from({ length: 8 }, (_, idx) => (
+          <div key={idx} style={{ padding: "5px 0", borderBottom: "1px solid var(--fui-border)" }}>
+            EVENT LOG #0{idx + 1} — PROGRESSIVE MASK BLUR EDGE
+          </div>
+        ))}
+      </div>
+    </ProgressiveBlurEdge>
+  );
+}
+
 export const scrollDrivenDemos: DemoMap = {
   "scroll-progress-bar": ScrollProgressBarDemo,
   "elastic-column-scroll": ElasticColumnScrollDemo,
+  "progressive-blur-edge": ProgressiveBlurEdgeDemo,
 };

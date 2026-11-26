@@ -418,6 +418,138 @@
                     "target": "~/src/styles/warm-manuscript.tokens.css"
                 }
             ]
+        },
+        {
+            "name": "style-archival-paper",
+            "type": "registry:item",
+            "title": "Archival Paper Style",
+            "description": "Quiet museum-grade research paper canvas with crisp block frames and deep cobalt accents.",
+            "categories": [
+                "05-editorial-organic",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "05-editorial-organic/archival-paper/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "05-editorial-organic/archival-paper/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/archival-paper.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-tactile-studio-warm",
+            "type": "registry:item",
+            "title": "Tactile Studio Warm Style",
+            "description": "Warm alabaster and stone-tinted editorial moodboard aesthetic with calm 150-200ms motion.",
+            "categories": [
+                "05-editorial-organic",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "05-editorial-organic/tactile-studio-warm/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "05-editorial-organic/tactile-studio-warm/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/tactile-studio-warm.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-dark-gallery-index",
+            "type": "registry:item",
+            "title": "Dark Gallery Index Style",
+            "description": "Ultra-dark showcase index with sharp card frames, pill filters, and sparse chroma tags.",
+            "categories": [
+                "01-precision-systems",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "01-precision-systems/dark-gallery-index/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "01-precision-systems/dark-gallery-index/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/dark-gallery-index.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-avant-poster",
+            "type": "registry:item",
+            "title": "Avant Poster Style",
+            "description": "Experimental newsprint archive with stark black ink and electric ultraviolet highlights.",
+            "categories": [
+                "03-kinetic-rebel",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "03-kinetic-rebel/avant-poster/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "03-kinetic-rebel/avant-poster/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/avant-poster.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-swiss-type-foundry",
+            "type": "registry:item",
+            "title": "Swiss Type Foundry Style",
+            "description": "Gallery-white type specimen grid with extreme scale contrast and vermilion accents.",
+            "categories": [
+                "01-precision-systems",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "01-precision-systems/swiss-type-foundry/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "01-precision-systems/swiss-type-foundry/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/swiss-type-foundry.tokens.css"
+                }
+            ]
+        },
+        {
+            "name": "style-phosphor-terminal",
+            "type": "registry:item",
+            "title": "Phosphor Terminal Style",
+            "description": "Deep obsidian-violet shell chrome with phosphor-green output and acid-chartreuse cursors.",
+            "categories": [
+                "02-retro-compute",
+                "style"
+            ],
+            "files": [
+                {
+                    "path": "02-retro-compute/phosphor-terminal/STYLE.md",
+                    "type": "registry:file",
+                    "target": "~/DESIGN.md"
+                },
+                {
+                    "path": "02-retro-compute/phosphor-terminal/tokens.css",
+                    "type": "registry:file",
+                    "target": "~/src/styles/phosphor-terminal.tokens.css"
+                }
+            ]
         }
     ]
 }

@@ -561,6 +561,70 @@
                     "type": "registry:ui"
                 }
             ]
+        },
+        {
+            "name": "spotlight-tabs",
+            "type": "registry:ui",
+            "title": "Spotlight Segmented Tabs",
+            "description": "Segmented tab control with smoothly gliding active pill indicator (180ms ease-out).",
+            "categories": [
+                "layout-morph",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "layout-morph/spotlight-tabs.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "progressive-blur-edge",
+            "type": "registry:ui",
+            "title": "Progressive Blur Scroll Edge",
+            "description": "Multi-step CSS mask-image and backdrop-filter edge fade for scrollable panels.",
+            "categories": [
+                "scroll-driven",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "scroll-driven/progressive-blur-edge.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "tactile-press-badge",
+            "type": "registry:ui",
+            "title": "Tactile Detent Press Badge",
+            "description": "Crisp 120ms physical micro-detent press button with tabular-nums counter tick.",
+            "categories": [
+                "micro-feedback",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "micro-feedback/tactile-press-badge.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "kinetic-status-pill",
+            "type": "registry:ui",
+            "title": "Kinetic Morphing Status Pill",
+            "description": "Live telemetry status pill morphing smoothly across idle, syncing, and nominal states.",
+            "categories": [
+                "micro-feedback",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "micro-feedback/kinetic-status-pill.tsx",
+                    "type": "registry:ui"
+                }
+            ]
         }
     ]
 }

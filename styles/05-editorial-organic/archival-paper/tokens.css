@@ -1,0 +1,17 @@
+:root {
+  --ap-canvas: #ffffff;
+  --ap-surface: #f7f7f7;
+  --ap-border: #dedede;
+  --ap-ink: #000000;
+  --ap-ink-muted: #696969;
+  --ap-accent: #00075f;
+  --ap-accent-alt: #333333;
+  --ap-radius: 3px;
+}
+
+.ap-block {
+  background: var(--ap-surface);
+  color: var(--ap-ink);
+  border: 1px solid var(--ap-border);
+  border-radius: var(--ap-radius);
+}

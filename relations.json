@@ -11,7 +11,9 @@
                 "industrial-hardware",
                 "monolith-dark",
                 "telemetry-fault",
-                "monochrome-stark"
+                "monochrome-stark",
+                "dark-gallery-index",
+                "swiss-type-foundry"
             ]
         },
         "02-retro-compute": {
@@ -20,7 +22,8 @@
             "styles": [
                 "ditherpunk",
                 "os-core",
-                "retro-web-96"
+                "retro-web-96",
+                "phosphor-terminal"
             ]
         },
         "03-kinetic-rebel": {
@@ -30,7 +33,8 @@
                 "neo-brutalism",
                 "acid-y2k",
                 "console-2001",
-                "zine-wire"
+                "zine-wire",
+                "avant-poster"
             ]
         },
         "04-spatial-physics": {
@@ -47,7 +51,9 @@
             "label": "Editorial Organic",
             "dna": "Warm paper substrates, literary serif/sans pairings, organic tactile ink, calm publication grids",
             "styles": [
-                "warm-manuscript"
+                "warm-manuscript",
+                "archival-paper",
+                "tactile-studio-warm"
             ]
         }
     },
@@ -1096,6 +1102,189 @@
             "clashesWith": [
                 "os-core"
             ]
+        },
+        {
+            "id": "archival-paper",
+            "kind": "style",
+            "cluster": "05-editorial-organic",
+            "path": "styles/05-editorial-organic/archival-paper/STYLE.md",
+            "registryItem": "style-archival-paper",
+            "pairsWith": [
+                "sibling-dim",
+                "spotlight-tabs",
+                "scroll-progress-bar",
+                "make-way-grid"
+            ],
+            "clashesWith": [
+                "acid-y2k",
+                "console-2001"
+            ]
+        },
+        {
+            "id": "tactile-studio-warm",
+            "kind": "style",
+            "cluster": "05-editorial-organic",
+            "path": "styles/05-editorial-organic/tactile-studio-warm/STYLE.md",
+            "registryItem": "style-tactile-studio-warm",
+            "pairsWith": [
+                "blur-text",
+                "sibling-dim",
+                "progressive-blur-edge",
+                "spotlight-tabs"
+            ],
+            "clashesWith": [
+                "zine-wire",
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "dark-gallery-index",
+            "kind": "style",
+            "cluster": "01-precision-systems",
+            "path": "styles/01-precision-systems/dark-gallery-index/STYLE.md",
+            "registryItem": "style-dark-gallery-index",
+            "pairsWith": [
+                "border-spotlight",
+                "spotlight-tabs",
+                "glare-hover",
+                "sibling-dim"
+            ],
+            "clashesWith": [
+                "retro-web-96",
+                "warm-manuscript"
+            ]
+        },
+        {
+            "id": "avant-poster",
+            "kind": "style",
+            "cluster": "03-kinetic-rebel",
+            "path": "styles/03-kinetic-rebel/avant-poster/STYLE.md",
+            "registryItem": "style-avant-poster",
+            "pairsWith": [
+                "marquee-hover-row",
+                "kinetic-card-trail",
+                "velocity-skew",
+                "variable-proximity"
+            ],
+            "clashesWith": [
+                "liquid-glass",
+                "warm-manuscript"
+            ]
+        },
+        {
+            "id": "swiss-type-foundry",
+            "kind": "style",
+            "cluster": "01-precision-systems",
+            "path": "styles/01-precision-systems/swiss-type-foundry/STYLE.md",
+            "registryItem": "style-swiss-type-foundry",
+            "pairsWith": [
+                "variable-proximity",
+                "split-reveal",
+                "text-roll",
+                "marquee-hover-row"
+            ],
+            "clashesWith": [
+                "liquid-glass",
+                "console-2001"
+            ]
+        },
+        {
+            "id": "phosphor-terminal",
+            "kind": "style",
+            "cluster": "02-retro-compute",
+            "path": "styles/02-retro-compute/phosphor-terminal/STYLE.md",
+            "registryItem": "style-phosphor-terminal",
+            "pairsWith": [
+                "scramble-text",
+                "ascii-filter",
+                "crt-grain-overlay",
+                "kinetic-status-pill"
+            ],
+            "clashesWith": [
+                "warm-manuscript",
+                "mesh-craft"
+            ]
+        },
+        {
+            "id": "spotlight-tabs",
+            "kind": "animation",
+            "mechanic": "layout-morph",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-tab-switch",
+            "path": "animations/layout-morph/spotlight-tabs.tsx",
+            "registryItem": "spotlight-tabs",
+            "pairsWith": [
+                "fui-tactical",
+                "monolith-dark",
+                "archival-paper",
+                "dark-gallery-index"
+            ],
+            "clashesWith": []
+        },
+        {
+            "id": "progressive-blur-edge",
+            "kind": "animation",
+            "mechanic": "scroll-driven",
+            "engine": [
+                "css",
+                "react"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "opaque-gradient-edge",
+            "path": "animations/scroll-driven/progressive-blur-edge.tsx",
+            "registryItem": "progressive-blur-edge",
+            "pairsWith": [
+                "liquid-glass",
+                "command-dark",
+                "tactile-studio-warm"
+            ],
+            "clashesWith": [
+                "ditherpunk",
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "tactile-press-badge",
+            "kind": "animation",
+            "mechanic": "micro-feedback",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-press",
+            "path": "animations/micro-feedback/tactile-press-badge.tsx",
+            "registryItem": "tactile-press-badge",
+            "pairsWith": [
+                "industrial-hardware",
+                "fui-tactical",
+                "monolith-dark"
+            ],
+            "clashesWith": []
+        },
+        {
+            "id": "kinetic-status-pill",
+            "kind": "animation",
+            "mechanic": "micro-feedback",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-state-swap",
+            "path": "animations/micro-feedback/kinetic-status-pill.tsx",
+            "registryItem": "kinetic-status-pill",
+            "pairsWith": [
+                "fui-tactical",
+                "phosphor-terminal",
+                "telemetry-fault",
+                "command-dark"
+            ],
+            "clashesWith": []
         }
     ],
     "hybrids": [

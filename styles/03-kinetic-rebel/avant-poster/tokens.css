@@ -1,0 +1,17 @@
+:root {
+  --avp-canvas: #f1f1f1;
+  --avp-surface: #ffffff;
+  --avp-border: #000000;
+  --avp-ink: #000000;
+  --avp-ink-muted: #444444;
+  --avp-accent: #711bff;
+  --avp-accent-alt: #101010;
+  --avp-radius: 4px;
+}
+
+.avp-poster {
+  background: var(--avp-surface);
+  color: var(--avp-ink);
+  border: 1px solid var(--avp-border);
+  border-radius: var(--avp-radius);
+}

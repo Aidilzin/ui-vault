@@ -1,0 +1,17 @@
+:root {
+  --stf-canvas: #fafafa;
+  --stf-surface: #ededed;
+  --stf-border: #d4d4d4;
+  --stf-ink: #000000;
+  --stf-ink-muted: #666666;
+  --stf-accent: #ff2f00;
+  --stf-accent-alt: #000000;
+  --stf-radius: 3px;
+}
+
+.stf-specimen {
+  background: var(--stf-surface);
+  color: var(--stf-ink);
+  border: 1px solid var(--stf-border);
+  border-radius: var(--stf-radius);
+}

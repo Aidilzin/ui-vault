@@ -1,0 +1,18 @@
+:root {
+  --pt-canvas: #1a1522;
+  --pt-surface: #0b0c10;
+  --pt-border: rgba(229, 247, 212, 0.16);
+  --pt-ink: #e5f7d4;
+  --pt-ink-muted: #a5a7ad;
+  --pt-accent: #edf872;
+  --pt-accent-alt: #43c251;
+  --pt-accent-violet: #8b5cf6;
+  --pt-radius: 6px;
+}
+
+.pt-block {
+  background: var(--pt-surface);
+  color: var(--pt-ink);
+  border: 1px solid var(--pt-border);
+  border-radius: var(--pt-radius);
+}

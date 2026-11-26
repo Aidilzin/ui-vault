@@ -1,0 +1,17 @@
+:root {
+  --tsw-canvas: #fcfbfa;
+  --tsw-surface: #f2f1f0;
+  --tsw-border: #e8e6e4;
+  --tsw-ink: #0d0d0d;
+  --tsw-ink-muted: #6e6a69;
+  --tsw-accent: #232323;
+  --tsw-accent-alt: #5c5754;
+  --tsw-radius: 10px;
+}
+
+.tsw-card {
+  background: var(--tsw-surface);
+  color: var(--tsw-ink);
+  border: 1px solid var(--tsw-border);
+  border-radius: var(--tsw-radius);
+}

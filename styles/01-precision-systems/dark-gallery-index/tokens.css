@@ -1,0 +1,17 @@
+:root {
+  --dgi-canvas: #0b0b0b;
+  --dgi-surface: #141414;
+  --dgi-border: rgba(255, 255, 255, 0.12);
+  --dgi-ink: #f5f5f5;
+  --dgi-ink-muted: #8c8c8c;
+  --dgi-accent: #00e9b2;
+  --dgi-accent-alt: #ffcf00;
+  --dgi-radius: 8px;
+}
+
+.dgi-card {
+  background: var(--dgi-surface);
+  color: var(--dgi-ink);
+  border: 1px solid var(--dgi-border);
+  border-radius: var(--dgi-radius);
+}

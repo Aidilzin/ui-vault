@@ -3,6 +3,7 @@ import { ArrowDownUp, Layers } from "lucide-react";
 import { FlipCard } from "@vault/animations/layout-morph/flip-card";
 import { VelocitySkew } from "@vault/animations/layout-morph/velocity-skew";
 import { MakeWayGrid } from "@vault/animations/layout-morph/make-way-grid";
+import { SpotlightTabs } from "@vault/animations/layout-morph/spotlight-tabs";
 import type { DemoMap, DemoProps } from "./types";
 
 function FlipCardDemo() {
@@ -120,8 +121,24 @@ function MakeWayGridDemo() {
   );
 }
 
+function SpotlightTabsDemo() {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
+      <SpotlightTabs
+        tabs={[
+          { id: "overview", label: "OVERVIEW" },
+          { id: "tokens", label: "TOKENS" },
+          { id: "motion", label: "MOTION" },
+        ]}
+      />
+      <span className="fui-mono-label">Click segments to glide active pill</span>
+    </div>
+  );
+}
+
 export const layoutMorphDemos: DemoMap = {
   "flip-card": FlipCardDemo,
   "velocity-skew": VelocitySkewDemo,
   "make-way-grid": MakeWayGridDemo,
+  "spotlight-tabs": SpotlightTabsDemo,
 };
