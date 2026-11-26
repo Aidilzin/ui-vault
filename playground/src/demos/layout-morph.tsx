@@ -5,6 +5,7 @@ import { VelocitySkew } from "@vault/animations/layout-morph/velocity-skew";
 import { MakeWayGrid } from "@vault/animations/layout-morph/make-way-grid";
 import { SpotlightTabs } from "@vault/animations/layout-morph/spotlight-tabs";
 import { BlurFade } from "@vault/animations/layout-morph/blur-fade";
+import { StackedCardDeck } from "@vault/animations/layout-morph/stacked-card-deck";
 import type { DemoMap, DemoProps } from "./types";
 
 function FlipCardDemo() {
@@ -171,4 +172,5 @@ export const layoutMorphDemos: DemoMap = {
   "make-way-grid": MakeWayGridDemo,
   "spotlight-tabs": SpotlightTabsDemo,
   "blur-fade": BlurFadeDemo,
+  "stacked-card-deck": () => <StackedCardDeck />,
 };

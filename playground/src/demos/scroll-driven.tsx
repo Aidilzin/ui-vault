@@ -4,6 +4,7 @@ import { ElasticColumnScroll } from "@vault/animations/scroll-driven/elastic-col
 import { ProgressiveBlurEdge } from "@vault/animations/scroll-driven/progressive-blur-edge";
 import { InfiniteMarquee } from "@vault/animations/scroll-driven/infinite-marquee";
 import { ScrollStickyScale } from "@vault/animations/scroll-driven/scroll-sticky-scale";
+import { TracingScrollBeam } from "@vault/animations/scroll-driven/tracing-scroll-beam";
 import type { DemoMap, DemoProps } from "./types";
 
 function ScrollProgressBarDemo() {
@@ -88,4 +89,5 @@ export const scrollDrivenDemos: DemoMap = {
   "progressive-blur-edge": ProgressiveBlurEdgeDemo,
   "infinite-marquee": InfiniteMarqueeDemo,
   "scroll-sticky-scale": ScrollStickyScaleDemo,
+  "tracing-scroll-beam": () => <TracingScrollBeam />,
 };

@@ -10,6 +10,9 @@ import { ElasticSlider } from "@vault/animations/physics-optics/elastic-slider";
 import { DockMagnify } from "@vault/animations/physics-optics/dock-magnify";
 import { SvgTurbulenceHover } from "@vault/animations/physics-optics/svg-turbulence-hover";
 import { AnimatedConnectorBeam } from "@vault/animations/physics-optics/animated-connector-beam";
+import { HolographicFoilCard } from "@vault/animations/physics-optics/holographic-foil-card";
+import { LampHorizonGlow } from "@vault/animations/physics-optics/lamp-horizon-glow";
+import { GooeyPillNav } from "@vault/animations/physics-optics/gooey-pill-nav";
 import { Compass, Cpu, Layers, Sparkles, Terminal } from "lucide-react";
 import type { DemoMap, DemoProps } from "./types";
 
@@ -199,6 +202,34 @@ function AnimatedConnectorBeamDemo() {
   return <AnimatedConnectorBeam fromLabel="APP" toLabel="UI-VAULT" />;
 }
 
+function HolographicFoilCardDemo() {
+  return (
+    <HolographicFoilCard style={{ width: "100%", maxWidth: 280, padding: "20px 18px" }}>
+      <div className="fui-mono-label" style={{ color: "#38bdf8" }}>IRIDESCENT FOIL</div>
+      <div style={{ fontSize: 15, fontWeight: 700, marginTop: 4 }}>Holographic Surface</div>
+      <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 3 }}>Sweep cursor to shift spectral angle</div>
+    </HolographicFoilCard>
+  );
+}
+
+function LampHorizonGlowDemo({ motionEpoch }: DemoProps) {
+  return (
+    <LampHorizonGlow key={motionEpoch} style={{ width: "100%", maxWidth: 310 }}>
+      <div className="fui-mono-label" style={{ color: "#38bdf8" }}>OVERHEAD CONIC BEAM</div>
+      <div style={{ fontSize: 16, fontWeight: 700, marginTop: 4 }}>Lamp Horizon Reveal</div>
+    </LampHorizonGlow>
+  );
+}
+
+function GooeyPillNavDemo() {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
+      <GooeyPillNav />
+      <span className="fui-mono-label">Metaball filter isolated to background pill</span>
+    </div>
+  );
+}
+
 export const physicsOpticsDemos: DemoMap = {
   "liquid-glass-filter": LiquidGlassDemo,
   "spring-tilt-card": SpringTiltCardDemo,
@@ -207,4 +238,7 @@ export const physicsOpticsDemos: DemoMap = {
   "dock-magnify": DockMagnifyDemo,
   "svg-turbulence-hover": SvgTurbulenceHoverDemo,
   "animated-connector-beam": AnimatedConnectorBeamDemo,
+  "holographic-foil-card": HolographicFoilCardDemo,
+  "lamp-horizon-glow": LampHorizonGlowDemo,
+  "gooey-pill-nav": GooeyPillNavDemo,
 };

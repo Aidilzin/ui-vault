@@ -9,6 +9,8 @@ import { PixelCard } from "@vault/animations/shader-canvas/pixel-card";
 import { PixelHoverGrid } from "@vault/animations/shader-canvas/pixel-hover-grid";
 import { CrtGrainOverlay } from "@vault/animations/shader-canvas/crt-grain-overlay";
 import { AuroraMeshBg } from "@vault/animations/shader-canvas/aurora-mesh-bg";
+import { SvgRipplePulse } from "@vault/animations/shader-canvas/svg-ripple-pulse";
+import { MeteorShower } from "@vault/animations/shader-canvas/meteor-shower";
 import type { DemoMap, DemoProps } from "./types";
 
 const SAMPLE_ORBIT_HUBS: OrbitHub[] = [
@@ -209,6 +211,19 @@ function AuroraMeshBgDemo() {
   );
 }
 
+function SvgRipplePulseDemo() {
+  return <SvgRipplePulse color="#38bdf8" label="RADAR" />;
+}
+
+function MeteorShowerDemo() {
+  return (
+    <MeteorShower style={{ width: "100%", maxWidth: 320, padding: "28px 20px", textAlign: "center" }}>
+      <div className="fui-mono-label" style={{ color: "#38bdf8" }}>CSS METEOR STREAKS</div>
+      <div style={{ marginTop: 4, fontSize: 14, fontWeight: 600 }}>Nocturnal Trajectory Field</div>
+    </MeteorShower>
+  );
+}
+
 export const shaderCanvasDemos: DemoMap = {
   "bayer-dither": BayerDitherDemo,
   "ascii-filter": AsciiFilterDemo,
@@ -217,4 +232,6 @@ export const shaderCanvasDemos: DemoMap = {
   "pixel-hover-grid": PixelHoverGridDemo,
   "crt-grain-overlay": CrtGrainOverlayDemo,
   "aurora-mesh-bg": AuroraMeshBgDemo,
+  "svg-ripple-pulse": SvgRipplePulseDemo,
+  "meteor-shower": MeteorShowerDemo,
 };

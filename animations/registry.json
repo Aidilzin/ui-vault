@@ -849,6 +849,118 @@
                     "type": "registry:ui"
                 }
             ]
+        },
+        {
+            "name": "holographic-foil-card",
+            "type": "registry:ui",
+            "title": "Holographic Foil Card",
+            "description": "Pointer-angle spectral rainbow foil refraction layered over dark cards.",
+            "categories": [
+                "physics-optics",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "physics-optics/holographic-foil-card.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "svg-ripple-pulse",
+            "type": "registry:ui",
+            "title": "SVG Radar Ripple Pulse",
+            "description": "Concentric expanding radar/sonar SVG stroke rings radiating from a core anchor.",
+            "categories": [
+                "shader-canvas",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "shader-canvas/svg-ripple-pulse.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "meteor-shower",
+            "type": "registry:ui",
+            "title": "Nocturnal Meteor Shower",
+            "description": "Deterministic angled luminous meteor streaks falling across dark hero cards.",
+            "categories": [
+                "shader-canvas",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "shader-canvas/meteor-shower.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "lamp-horizon-glow",
+            "type": "registry:ui",
+            "title": "Lamp Horizon Spotlight",
+            "description": "Architectural overhead conic spotlight beam illuminating a hero title bar.",
+            "categories": [
+                "physics-optics",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "physics-optics/lamp-horizon-glow.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "stacked-card-deck",
+            "type": "registry:ui",
+            "title": "Z-Depth Stacked Card Deck",
+            "description": "Interactive card stack cycling front card to back with stepped scale and offset.",
+            "categories": [
+                "layout-morph",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "layout-morph/stacked-card-deck.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "tracing-scroll-beam",
+            "type": "registry:ui",
+            "title": "Vertical Tracing Scroll Beam",
+            "description": "Vertical gradient beam tracing a scrollable narrative spine.",
+            "categories": [
+                "scroll-driven",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "scroll-driven/tracing-scroll-beam.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "gooey-pill-nav",
+            "type": "registry:ui",
+            "title": "Gooey Metaball Pill Nav",
+            "description": "SVG feColorMatrix metaball nav isolating blur strictly to the background pill layer.",
+            "categories": [
+                "physics-optics",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "physics-optics/gooey-pill-nav.tsx",
+                    "type": "registry:ui"
+                }
+            ]
         }
     ]
 }

@@ -1777,6 +1777,178 @@
                 "os-core",
                 "retro-web-96"
             ]
+        },
+        {
+            "id": "holographic-foil-card",
+            "kind": "animation",
+            "mechanic": "physics-optics",
+            "tier": "viral",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-foil",
+            "path": "animations/physics-optics/holographic-foil-card.tsx",
+            "registryItem": "holographic-foil-card",
+            "pairsWith": [
+                "acid-y2k",
+                "liquid-glass",
+                "console-2001",
+                "aurora-mesh"
+            ],
+            "clashesWith": [
+                "ditherpunk",
+                "warm-manuscript",
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "svg-ripple-pulse",
+            "kind": "animation",
+            "mechanic": "shader-canvas",
+            "tier": "viral",
+            "engine": [
+                "svg",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-rings",
+            "path": "animations/shader-canvas/svg-ripple-pulse.tsx",
+            "registryItem": "svg-ripple-pulse",
+            "pairsWith": [
+                "fui-tactical",
+                "ambient-orbit",
+                "aurora-mesh",
+                "dark-gallery-index"
+            ],
+            "clashesWith": [
+                "neo-brutalism",
+                "os-core"
+            ]
+        },
+        {
+            "id": "meteor-shower",
+            "kind": "animation",
+            "mechanic": "shader-canvas",
+            "tier": "viral",
+            "engine": [
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-streaks",
+            "path": "animations/shader-canvas/meteor-shower.tsx",
+            "registryItem": "meteor-shower",
+            "pairsWith": [
+                "aurora-mesh",
+                "ambient-orbit",
+                "command-dark",
+                "monolith-dark"
+            ],
+            "clashesWith": [
+                "warm-manuscript",
+                "retro-web-96",
+                "ditherpunk"
+            ]
+        },
+        {
+            "id": "lamp-horizon-glow",
+            "kind": "animation",
+            "mechanic": "physics-optics",
+            "tier": "viral",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-glow",
+            "path": "animations/physics-optics/lamp-horizon-glow.tsx",
+            "registryItem": "lamp-horizon-glow",
+            "pairsWith": [
+                "aurora-mesh",
+                "monolith-dark",
+                "editorial-mono",
+                "dark-gallery-index"
+            ],
+            "clashesWith": [
+                "neo-brutalism",
+                "ditherpunk",
+                "tactile-soft"
+            ]
+        },
+        {
+            "id": "stacked-card-deck",
+            "kind": "animation",
+            "mechanic": "layout-morph",
+            "tier": "viral",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-cycle",
+            "path": "animations/layout-morph/stacked-card-deck.tsx",
+            "registryItem": "stacked-card-deck",
+            "pairsWith": [
+                "bento-grid",
+                "tactile-soft",
+                "pastel-playful",
+                "mesh-craft"
+            ],
+            "clashesWith": [
+                "os-core",
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "tracing-scroll-beam",
+            "kind": "animation",
+            "mechanic": "scroll-driven",
+            "tier": "viral",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "full-beam",
+            "path": "animations/scroll-driven/tracing-scroll-beam.tsx",
+            "registryItem": "tracing-scroll-beam",
+            "pairsWith": [
+                "editorial-mono",
+                "monolith-dark",
+                "aurora-mesh",
+                "warm-manuscript"
+            ],
+            "clashesWith": [
+                "os-core",
+                "console-2001"
+            ]
+        },
+        {
+            "id": "gooey-pill-nav",
+            "kind": "animation",
+            "mechanic": "physics-optics",
+            "tier": "experimental",
+            "engine": [
+                "svg",
+                "react",
+                "css"
+            ],
+            "perfTier": "medium",
+            "reducedMotion": "instant-pill",
+            "path": "animations/physics-optics/gooey-pill-nav.tsx",
+            "registryItem": "gooey-pill-nav",
+            "pairsWith": [
+                "liquid-glass",
+                "pastel-playful",
+                "acid-y2k",
+                "console-2001"
+            ],
+            "clashesWith": [
+                "fui-tactical",
+                "neo-swiss",
+                "ditherpunk"
+            ]
         }
     ],
     "hybrids": [

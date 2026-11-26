@@ -5,7 +5,7 @@
 [![Live Playground](https://img.shields.io/badge/Playground-Live-38bdf8?style=flat-square&labelColor=0f1115)](https://aidilzin.github.io/ui-vault/)
 [![Deploy Playground](https://img.shields.io/github/actions/workflow/status/Aidilzin/ui-vault/deploy-playground.yml?branch=main&style=flat-square&label=Pages&labelColor=0f1115)](https://github.com/Aidilzin/ui-vault/actions/workflows/deploy-playground.yml)
 <!-- VAULT:BADGE:START -->
-[![Registry Items](https://img.shields.io/badge/Registry-30%20styles%20%C2%B7%2053%20animations-34d399?style=flat-square&labelColor=0f1115)](./relations.json)
+[![Registry Items](https://img.shields.io/badge/Registry-30%20styles%20%C2%B7%2060%20animations-34d399?style=flat-square&labelColor=0f1115)](./relations.json)
 <!-- VAULT:BADGE:END -->
 [![License: MIT](https://img.shields.io/badge/License-MIT-8b94a3?style=flat-square&labelColor=0f1115)](./LICENSE)
 
@@ -114,7 +114,7 @@ npm run dev:playground
 <!-- VAULT:STYLES:END -->
 
 <!-- VAULT:ANIMATIONS:START -->
-### Animations by Mechanic (53)
+### Animations by Mechanic (60)
 
 | Animation | Mechanic | Tier | Engine | Perf Tier | Reduced Motion Fallback | Registry Item |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -171,6 +171,13 @@ npm run dev:playground
 | Inline Agent Code Diff | `ai-agentic` | `production` | `react`, `css` | `low` | `instant-state` | `inline-code-diff` |
 | Slash Prompt Composer | `ai-agentic` | `production` | `react`, `css` | `low` | `instant-menu` | `slash-prompt-composer` |
 | Chain-of-Thought Execution Rail | `ai-agentic` | `viral` | `react`, `css` | `low` | `static-rail` | `chain-of-thought-rail` |
+| Holographic Foil Card | `physics-optics` | `viral` | `react`, `css` | `low` | `static-foil` | `holographic-foil-card` |
+| SVG Radar Ripple Pulse | `shader-canvas` | `viral` | `svg`, `css` | `low` | `static-rings` | `svg-ripple-pulse` |
+| Nocturnal Meteor Shower | `shader-canvas` | `viral` | `css` | `low` | `static-streaks` | `meteor-shower` |
+| Lamp Horizon Spotlight | `physics-optics` | `viral` | `react`, `css` | `low` | `static-glow` | `lamp-horizon-glow` |
+| Z-Depth Stacked Card Deck | `layout-morph` | `viral` | `react`, `css` | `low` | `instant-cycle` | `stacked-card-deck` |
+| Vertical Tracing Scroll Beam | `scroll-driven` | `viral` | `react`, `css` | `low` | `full-beam` | `tracing-scroll-beam` |
+| Gooey Metaball Pill Nav | `physics-optics` | `experimental` | `svg`, `react`, `css` | `medium` | `instant-pill` | `gooey-pill-nav` |
 <!-- VAULT:ANIMATIONS:END -->
 
 <!-- VAULT:HYBRIDS:START -->
