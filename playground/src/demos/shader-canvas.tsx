@@ -6,6 +6,8 @@ import {
   type OrbitHub,
 } from "@vault/animations/shader-canvas/orbital-canvas";
 import { PixelCard } from "@vault/animations/shader-canvas/pixel-card";
+import { PixelHoverGrid } from "@vault/animations/shader-canvas/pixel-hover-grid";
+import { CrtGrainOverlay } from "@vault/animations/shader-canvas/crt-grain-overlay";
 import type { DemoMap, DemoProps } from "./types";
 
 const SAMPLE_ORBIT_HUBS: OrbitHub[] = [
@@ -167,9 +169,37 @@ function PixelCardDemo({ motionEpoch }: DemoProps) {
   );
 }
 
+function PixelHoverGridDemo({ motionEpoch }: DemoProps) {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+      <PixelHoverGrid key={motionEpoch} width={310} height={136} cellSize={16} />
+      <span className="fui-mono-label">Hover grid cells for proximity decay trail</span>
+    </div>
+  );
+}
+
+function CrtGrainOverlayDemo({ motionEpoch }: DemoProps) {
+  return (
+    <CrtGrainOverlay
+      key={motionEpoch}
+      opacity={0.22}
+      style={{ width: "100%", maxWidth: 310, padding: "24px 20px", textAlign: "center" }}
+    >
+      <div className="fui-mono-label" style={{ color: "#34d399" }}>
+        CRT // PHOSPHOR SCANLINES
+      </div>
+      <div style={{ marginTop: 6, fontSize: 15, fontWeight: 600 }}>
+        Stepped Procedural Grain
+      </div>
+    </CrtGrainOverlay>
+  );
+}
+
 export const shaderCanvasDemos: DemoMap = {
   "bayer-dither": BayerDitherDemo,
   "ascii-filter": AsciiFilterDemo,
   "orbital-canvas": OrbitalCanvasDemo,
   "pixel-card": PixelCardDemo,
+  "pixel-hover-grid": PixelHoverGridDemo,
+  "crt-grain-overlay": CrtGrainOverlayDemo,
 };

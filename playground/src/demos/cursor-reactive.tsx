@@ -4,6 +4,7 @@ import { StarBorder } from "@vault/animations/cursor-reactive/star-border";
 import { MagnetLines } from "@vault/animations/cursor-reactive/magnet-lines";
 import { CrosshairReticle } from "@vault/animations/cursor-reactive/crosshair-reticle";
 import { BorderBeam } from "@vault/animations/cursor-reactive/border-beam";
+import { KineticCardTrail } from "@vault/animations/cursor-reactive/kinetic-card-trail";
 import "@vault/animations/cursor-reactive/sibling-dim.css";
 import type { DemoMap } from "./types";
 
@@ -145,6 +146,10 @@ function BorderBeamDemo() {
   );
 }
 
+function KineticCardTrailDemo() {
+  return <KineticCardTrail style={{ maxWidth: 340 }} />;
+}
+
 export const cursorReactiveDemos: DemoMap = {
   "magnetic-button": MagneticButtonDemo,
   "border-spotlight": BorderSpotlightDemo,
@@ -153,4 +158,5 @@ export const cursorReactiveDemos: DemoMap = {
   "magnet-lines": MagnetLinesDemo,
   "crosshair-reticle": CrosshairReticleDemo,
   "border-beam": BorderBeamDemo,
+  "kinetic-card-trail": KineticCardTrailDemo,
 };

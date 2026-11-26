@@ -967,6 +967,135 @@
                 "industrial-hardware"
             ],
             "clashesWith": []
+        },
+        {
+            "id": "kinetic-card-trail",
+            "kind": "animation",
+            "mechanic": "cursor-reactive",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "disabled-trail",
+            "path": "animations/cursor-reactive/kinetic-card-trail.tsx",
+            "registryItem": "kinetic-card-trail",
+            "pairsWith": [
+                "acid-y2k",
+                "neo-brutalism",
+                "zine-wire"
+            ],
+            "clashesWith": [
+                "fui-tactical",
+                "os-core"
+            ]
+        },
+        {
+            "id": "make-way-grid",
+            "kind": "animation",
+            "mechanic": "layout-morph",
+            "engine": [
+                "react",
+                "waapi"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-layout",
+            "path": "animations/layout-morph/make-way-grid.tsx",
+            "registryItem": "make-way-grid",
+            "pairsWith": [
+                "neo-swiss",
+                "monolith-dark",
+                "industrial-hardware",
+                "warm-manuscript"
+            ],
+            "clashesWith": []
+        },
+        {
+            "id": "pixel-hover-grid",
+            "kind": "animation",
+            "mechanic": "shader-canvas",
+            "engine": [
+                "canvas"
+            ],
+            "perfTier": "medium",
+            "reducedMotion": "instant-cells",
+            "path": "animations/shader-canvas/pixel-hover-grid.tsx",
+            "registryItem": "pixel-hover-grid",
+            "pairsWith": [
+                "ditherpunk",
+                "fui-tactical",
+                "zine-wire"
+            ],
+            "clashesWith": [
+                "warm-manuscript",
+                "liquid-glass"
+            ]
+        },
+        {
+            "id": "crt-grain-overlay",
+            "kind": "animation",
+            "mechanic": "shader-canvas",
+            "engine": [
+                "canvas",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-grain-frame",
+            "path": "animations/shader-canvas/crt-grain-overlay.tsx",
+            "registryItem": "crt-grain-overlay",
+            "pairsWith": [
+                "ditherpunk",
+                "os-core",
+                "retro-web-96",
+                "acid-y2k"
+            ],
+            "clashesWith": [
+                "mesh-craft",
+                "monochrome-stark"
+            ]
+        },
+        {
+            "id": "svg-turbulence-hover",
+            "kind": "animation",
+            "mechanic": "physics-optics",
+            "engine": [
+                "svg",
+                "react"
+            ],
+            "perfTier": "medium",
+            "reducedMotion": "static-surface",
+            "path": "animations/physics-optics/svg-turbulence-hover.tsx",
+            "registryItem": "svg-turbulence-hover",
+            "pairsWith": [
+                "liquid-glass",
+                "acid-y2k",
+                "zine-wire"
+            ],
+            "clashesWith": [
+                "os-core",
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "elastic-column-scroll",
+            "kind": "animation",
+            "mechanic": "scroll-driven",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "disabled-lag",
+            "path": "animations/scroll-driven/elastic-column-scroll.tsx",
+            "registryItem": "elastic-column-scroll",
+            "pairsWith": [
+                "neo-swiss",
+                "editorial-mono",
+                "mesh-craft"
+            ],
+            "clashesWith": [
+                "os-core"
+            ]
         }
     ],
     "hybrids": [

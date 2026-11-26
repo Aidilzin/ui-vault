@@ -8,6 +8,7 @@ import {
 } from "@vault/animations/physics-optics/glare-hover";
 import { ElasticSlider } from "@vault/animations/physics-optics/elastic-slider";
 import { DockMagnify } from "@vault/animations/physics-optics/dock-magnify";
+import { SvgTurbulenceHover } from "@vault/animations/physics-optics/svg-turbulence-hover";
 import { Compass, Cpu, Layers, Sparkles, Terminal } from "lucide-react";
 import type { DemoMap, DemoProps } from "./types";
 
@@ -170,10 +171,34 @@ function DockMagnifyDemo() {
   );
 }
 
+function SvgTurbulenceHoverDemo({ motionEpoch }: DemoProps) {
+  return (
+    <SvgTurbulenceHover key={motionEpoch} maxScale={22}>
+      <div
+        style={{
+          padding: "20px 26px",
+          background: "linear-gradient(135deg, #1d2b44 0%, #0f1115 100%)",
+          border: "1px solid rgba(56, 189, 248, 0.35)",
+          borderRadius: 6,
+          textAlign: "center",
+        }}
+      >
+        <div className="fui-mono-label" style={{ color: "var(--fui-signal-active)" }}>
+          SVG FE-TURBULENCE
+        </div>
+        <div style={{ marginTop: 4, fontSize: 16, fontWeight: 700 }}>
+          HOVER FOR LIQUID RIPPLE
+        </div>
+      </div>
+    </SvgTurbulenceHover>
+  );
+}
+
 export const physicsOpticsDemos: DemoMap = {
   "liquid-glass-filter": LiquidGlassDemo,
   "spring-tilt-card": SpringTiltCardDemo,
   "glare-hover": GlareHoverDemo,
   "elastic-slider": ElasticSliderDemo,
   "dock-magnify": DockMagnifyDemo,
+  "svg-turbulence-hover": SvgTurbulenceHoverDemo,
 };

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowDownUp, Layers } from "lucide-react";
 import { FlipCard } from "@vault/animations/layout-morph/flip-card";
 import { VelocitySkew } from "@vault/animations/layout-morph/velocity-skew";
+import { MakeWayGrid } from "@vault/animations/layout-morph/make-way-grid";
 import type { DemoMap, DemoProps } from "./types";
 
 function FlipCardDemo() {
@@ -103,7 +104,24 @@ function VelocitySkewDemo({ motionEpoch }: DemoProps) {
   );
 }
 
+function MakeWayGridDemo() {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8, width: "100%" }}>
+      <MakeWayGrid
+        items={[
+          { id: "m1", title: "SEC-01", detail: "WAAPI FLIP span-2 expansion" },
+          { id: "m2", title: "SEC-02", detail: "Neighbors reflow automatically" },
+          { id: "m3", title: "SEC-03", detail: "Zero layout-thrash transforms" },
+          { id: "m4", title: "SEC-04", detail: "Click any tile to toggle" },
+        ]}
+      />
+      <span className="fui-mono-label">Click any tile to expand &amp; shift neighbors</span>
+    </div>
+  );
+}
+
 export const layoutMorphDemos: DemoMap = {
   "flip-card": FlipCardDemo,
   "velocity-skew": VelocitySkewDemo,
+  "make-way-grid": MakeWayGridDemo,
 };

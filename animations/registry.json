@@ -465,6 +465,102 @@
                     "type": "registry:ui"
                 }
             ]
+        },
+        {
+            "name": "kinetic-card-trail",
+            "type": "registry:ui",
+            "title": "Kinetic Card Trail",
+            "description": "Velocity-gated floating card trail spawning along cursor path with decay rotation.",
+            "categories": [
+                "cursor-reactive",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "cursor-reactive/kinetic-card-trail.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "make-way-grid",
+            "type": "registry:ui",
+            "title": "Make-Way FLIP Grid",
+            "description": "Interactive grid where selecting a tile expands it while neighbors make way via WAAPI FLIP.",
+            "categories": [
+                "layout-morph",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "layout-morph/make-way-grid.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "pixel-hover-grid",
+            "type": "registry:ui",
+            "title": "Pixel Hover Dissolve Grid",
+            "description": "Interactive Canvas pixel-block proximity grid with damped decay.",
+            "categories": [
+                "shader-canvas",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "shader-canvas/pixel-hover-grid.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "crt-grain-overlay",
+            "type": "registry:ui",
+            "title": "CRT Film Grain Overlay",
+            "description": "Stepped procedural canvas noise and subtle CRT scanlines with reduced-motion freeze.",
+            "categories": [
+                "shader-canvas",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "shader-canvas/crt-grain-overlay.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "svg-turbulence-hover",
+            "type": "registry:ui",
+            "title": "SVG Turbulence Hover Filter",
+            "description": "Animated SVG feTurbulence + feDisplacementMap ripple distortion on hover.",
+            "categories": [
+                "physics-optics",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "physics-optics/svg-turbulence-hover.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "elastic-column-scroll",
+            "type": "registry:ui",
+            "title": "Elastic Staggered Column Scroll",
+            "description": "Multi-column scrollable grid where adjacent columns lag at staggered inertia ratios.",
+            "categories": [
+                "scroll-driven",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "scroll-driven/elastic-column-scroll.tsx",
+                    "type": "registry:ui"
+                }
+            ]
         }
     ]
 }

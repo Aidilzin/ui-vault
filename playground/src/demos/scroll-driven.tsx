@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { ScrollProgressBar } from "@vault/animations/scroll-driven/scroll-progress-bar";
-import type { DemoMap } from "./types";
+import { ElasticColumnScroll } from "@vault/animations/scroll-driven/elastic-column-scroll";
+import type { DemoMap, DemoProps } from "./types";
 
 function ScrollProgressBarDemo() {
   const scrollBoxRef = useRef<HTMLDivElement>(null);
@@ -31,6 +32,16 @@ function ScrollProgressBarDemo() {
   );
 }
 
+function ElasticColumnScrollDemo({ motionEpoch }: DemoProps) {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6, width: "100%" }}>
+      <ElasticColumnScroll key={motionEpoch} />
+      <span className="fui-mono-label">Scroll inside box for staggered column lag</span>
+    </div>
+  );
+}
+
 export const scrollDrivenDemos: DemoMap = {
   "scroll-progress-bar": ScrollProgressBarDemo,
+  "elastic-column-scroll": ElasticColumnScrollDemo,
 };
