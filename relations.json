@@ -676,6 +676,297 @@
                 "telemetry-fault",
                 "zine-wire"
             ]
+        },
+        {
+            "id": "star-border",
+            "kind": "animation",
+            "mechanic": "cursor-reactive",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-border",
+            "path": "animations/cursor-reactive/star-border.tsx",
+            "registryItem": "star-border",
+            "pairsWith": [
+                "fui-tactical",
+                "monolith-dark",
+                "command-dark"
+            ],
+            "clashesWith": [
+                "neo-brutalism",
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "magnet-lines",
+            "kind": "animation",
+            "mechanic": "cursor-reactive",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-angles",
+            "path": "animations/cursor-reactive/magnet-lines.tsx",
+            "registryItem": "magnet-lines",
+            "pairsWith": [
+                "fui-tactical",
+                "neo-swiss",
+                "monochrome-stark"
+            ],
+            "clashesWith": [
+                "warm-manuscript"
+            ]
+        },
+        {
+            "id": "crosshair-reticle",
+            "kind": "animation",
+            "mechanic": "cursor-reactive",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "hidden-reticle",
+            "path": "animations/cursor-reactive/crosshair-reticle.tsx",
+            "registryItem": "crosshair-reticle",
+            "pairsWith": [
+                "fui-tactical",
+                "industrial-hardware",
+                "telemetry-fault"
+            ],
+            "clashesWith": [
+                "warm-manuscript",
+                "liquid-glass"
+            ]
+        },
+        {
+            "id": "border-beam",
+            "kind": "animation",
+            "mechanic": "cursor-reactive",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-border",
+            "path": "animations/cursor-reactive/border-beam.tsx",
+            "registryItem": "border-beam",
+            "pairsWith": [
+                "monolith-dark",
+                "command-dark",
+                "liquid-glass"
+            ],
+            "clashesWith": [
+                "neo-brutalism",
+                "ditherpunk"
+            ]
+        },
+        {
+            "id": "shiny-text",
+            "kind": "animation",
+            "mechanic": "text-kinetic",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-text",
+            "path": "animations/text-kinetic/shiny-text.tsx",
+            "registryItem": "shiny-text",
+            "pairsWith": [
+                "acid-y2k",
+                "liquid-glass",
+                "command-dark"
+            ],
+            "clashesWith": [
+                "ditherpunk",
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "blur-text",
+            "kind": "animation",
+            "mechanic": "text-kinetic",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-visible",
+            "path": "animations/text-kinetic/blur-text.tsx",
+            "registryItem": "blur-text",
+            "pairsWith": [
+                "editorial-mono",
+                "warm-manuscript",
+                "mesh-craft"
+            ],
+            "clashesWith": [
+                "ditherpunk"
+            ]
+        },
+        {
+            "id": "text-roll",
+            "kind": "animation",
+            "mechanic": "text-kinetic",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-text",
+            "path": "animations/text-kinetic/text-roll.tsx",
+            "registryItem": "text-roll",
+            "pairsWith": [
+                "neo-swiss",
+                "editorial-mono",
+                "industrial-hardware"
+            ],
+            "clashesWith": []
+        },
+        {
+            "id": "pixel-card",
+            "kind": "animation",
+            "mechanic": "shader-canvas",
+            "engine": [
+                "canvas"
+            ],
+            "perfTier": "medium",
+            "reducedMotion": "static-pixel-frame",
+            "path": "animations/shader-canvas/pixel-card.tsx",
+            "registryItem": "pixel-card",
+            "pairsWith": [
+                "ditherpunk",
+                "zine-wire",
+                "console-2001"
+            ],
+            "clashesWith": [
+                "liquid-glass",
+                "warm-manuscript"
+            ]
+        },
+        {
+            "id": "elastic-slider",
+            "kind": "animation",
+            "mechanic": "physics-optics",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "linear-slider",
+            "path": "animations/physics-optics/elastic-slider.tsx",
+            "registryItem": "elastic-slider",
+            "pairsWith": [
+                "industrial-hardware",
+                "liquid-glass",
+                "command-dark"
+            ],
+            "clashesWith": [
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "dock-magnify",
+            "kind": "animation",
+            "mechanic": "physics-optics",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "static-dock",
+            "path": "animations/physics-optics/dock-magnify.tsx",
+            "registryItem": "dock-magnify",
+            "pairsWith": [
+                "liquid-glass",
+                "command-dark",
+                "mesh-craft"
+            ],
+            "clashesWith": [
+                "os-core",
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "scroll-progress-bar",
+            "kind": "animation",
+            "mechanic": "scroll-driven",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-progress",
+            "path": "animations/scroll-driven/scroll-progress-bar.tsx",
+            "registryItem": "scroll-progress-bar",
+            "pairsWith": [
+                "editorial-mono",
+                "neo-swiss",
+                "warm-manuscript",
+                "monochrome-stark"
+            ],
+            "clashesWith": []
+        },
+        {
+            "id": "click-spark",
+            "kind": "animation",
+            "mechanic": "micro-feedback",
+            "engine": [
+                "canvas"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "disabled-sparks",
+            "path": "animations/micro-feedback/click-spark.tsx",
+            "registryItem": "click-spark",
+            "pairsWith": [
+                "console-2001",
+                "acid-y2k",
+                "zine-wire"
+            ],
+            "clashesWith": [
+                "warm-manuscript"
+            ]
+        },
+        {
+            "id": "count-up",
+            "kind": "animation",
+            "mechanic": "micro-feedback",
+            "engine": [
+                "react"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "instant-value",
+            "path": "animations/micro-feedback/count-up.tsx",
+            "registryItem": "count-up",
+            "pairsWith": [
+                "fui-tactical",
+                "telemetry-fault",
+                "monolith-dark",
+                "industrial-hardware"
+            ],
+            "clashesWith": []
+        },
+        {
+            "id": "hold-to-confirm",
+            "kind": "animation",
+            "mechanic": "micro-feedback",
+            "engine": [
+                "react",
+                "css"
+            ],
+            "perfTier": "low",
+            "reducedMotion": "single-click-confirm",
+            "path": "animations/micro-feedback/hold-to-confirm.tsx",
+            "registryItem": "hold-to-confirm",
+            "pairsWith": [
+                "fui-tactical",
+                "telemetry-fault",
+                "industrial-hardware"
+            ],
+            "clashesWith": []
         }
     ],
     "hybrids": [

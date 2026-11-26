@@ -241,6 +241,230 @@
                     "type": "registry:ui"
                 }
             ]
+        },
+        {
+            "name": "star-border",
+            "type": "registry:ui",
+            "title": "Star Border Glow",
+            "description": "Orbiting luminous border highlights sweeping across dark containers.",
+            "categories": [
+                "cursor-reactive",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "cursor-reactive/star-border.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "magnet-lines",
+            "type": "registry:ui",
+            "title": "Magnetic Vector Lines",
+            "description": "Grid of short vector ticks rotating smoothly to point toward the cursor.",
+            "categories": [
+                "cursor-reactive",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "cursor-reactive/magnet-lines.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "crosshair-reticle",
+            "type": "registry:ui",
+            "title": "Crosshair Coordinate Reticle",
+            "description": "Precision FUI horizontal/vertical hairlines with live X/Y telemetry.",
+            "categories": [
+                "cursor-reactive",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "cursor-reactive/crosshair-reticle.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "border-beam",
+            "type": "registry:ui",
+            "title": "Conic Border Beam",
+            "description": "Continuous rotating conic light beam tracing a 1.5px card perimeter.",
+            "categories": [
+                "cursor-reactive",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "cursor-reactive/border-beam.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "shiny-text",
+            "type": "registry:ui",
+            "title": "Metallic Shiny Text",
+            "description": "Continuous linear-gradient specular sweep across display lettering.",
+            "categories": [
+                "text-kinetic",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "text-kinetic/shiny-text.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "blur-text",
+            "type": "registry:ui",
+            "title": "Optical Blur Text Reveal",
+            "description": "Staggered word reveal transitioning from optical blur to crisp focus.",
+            "categories": [
+                "text-kinetic",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "text-kinetic/blur-text.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "text-roll",
+            "type": "registry:ui",
+            "title": "Split-Flap Text Roll",
+            "description": "Vertical slot-machine character roll on hover or focus.",
+            "categories": [
+                "text-kinetic",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "text-kinetic/text-roll.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "pixel-card",
+            "type": "registry:ui",
+            "title": "Pixel Shimmer Card",
+            "description": "Canvas pixel grid blooming outward from center on hover.",
+            "categories": [
+                "shader-canvas",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "shader-canvas/pixel-card.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "elastic-slider",
+            "type": "registry:ui",
+            "title": "Elastic Overshoot Slider",
+            "description": "Tactile range slider that stretches elastically when dragged past bounds.",
+            "categories": [
+                "physics-optics",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "physics-optics/elastic-slider.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "dock-magnify",
+            "type": "registry:ui",
+            "title": "Proximity Dock Magnification",
+            "description": "macOS-style proximity-scaled icon dock bar with smooth falloff.",
+            "categories": [
+                "physics-optics",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "physics-optics/dock-magnify.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "scroll-progress-bar",
+            "type": "registry:ui",
+            "title": "Compositor Scroll Progress Bar",
+            "description": "Ultra-thin scaleX progress ribbon bound to page or container scroll.",
+            "categories": [
+                "scroll-driven",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "scroll-driven/scroll-progress-bar.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "click-spark",
+            "type": "registry:ui",
+            "title": "Radial Click Spark",
+            "description": "Lightweight canvas spark burst radiating from pointer click coordinates.",
+            "categories": [
+                "micro-feedback",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "micro-feedback/click-spark.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "count-up",
+            "type": "registry:ui",
+            "title": "Eased Tabular Count-Up",
+            "description": "Cubic-eased tabular-nums numeric counter with instant reduced-motion fallback.",
+            "categories": [
+                "micro-feedback",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "micro-feedback/count-up.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "hold-to-confirm",
+            "type": "registry:ui",
+            "title": "Hold-to-Confirm Action Button",
+            "description": "Press-and-hold destructive confirmation button with linear fill progress.",
+            "categories": [
+                "micro-feedback",
+                "animation"
+            ],
+            "files": [
+                {
+                    "path": "micro-feedback/hold-to-confirm.tsx",
+                    "type": "registry:ui"
+                }
+            ]
         }
     ]
 }

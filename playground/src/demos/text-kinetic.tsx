@@ -4,6 +4,9 @@ import { ScrambleText } from "@vault/animations/text-kinetic/scramble-text";
 import { SplitReveal } from "@vault/animations/text-kinetic/split-reveal";
 import { VariableProximity } from "@vault/animations/text-kinetic/variable-proximity";
 import { MarqueeHoverRow } from "@vault/animations/text-kinetic/marquee-hover-row";
+import { ShinyText } from "@vault/animations/text-kinetic/shiny-text";
+import { BlurText } from "@vault/animations/text-kinetic/blur-text";
+import { TextRoll } from "@vault/animations/text-kinetic/text-roll";
 import type { DemoMap, DemoProps } from "./types";
 
 function ScrambleTextDemo({ motionEpoch }: DemoProps) {
@@ -174,9 +177,53 @@ function MarqueeHoverRowDemo() {
   );
 }
 
+function ShinyTextDemo() {
+  return (
+    <div style={{ fontSize: 22, fontWeight: 700, letterSpacing: "-0.02em" }}>
+      <ShinyText text="SPECULAR METALLIC SWEEP" speedSec={3} />
+    </div>
+  );
+}
+
+function BlurTextDemo({ motionEpoch }: DemoProps) {
+  const [replay, setReplay] = useState(0);
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
+      <div style={{ fontSize: 19, fontWeight: 600, textAlign: "center" }}>
+        <BlurText key={`${replay}-${motionEpoch}`} text="OPTICAL FOCUS REVEAL" />
+      </div>
+      <button type="button" className="btn-fui" onClick={() => setReplay((k) => k + 1)}>
+        <RotateCcw size={11} />
+        <span>Replay</span>
+      </button>
+    </div>
+  );
+}
+
+function TextRollDemo() {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+      <div
+        style={{
+          fontFamily: "var(--font-mono)",
+          fontSize: 20,
+          fontWeight: 600,
+          color: "var(--fui-signal-active)",
+        }}
+      >
+        <TextRoll text="SPLIT-FLAP ROLL" />
+      </div>
+      <span className="fui-mono-label">Hover text to roll characters vertically</span>
+    </div>
+  );
+}
+
 export const textKineticDemos: DemoMap = {
   "scramble-text": ScrambleTextDemo,
   "split-reveal": SplitRevealDemo,
   "variable-proximity": VariableProximityDemo,
   "marquee-hover-row": MarqueeHoverRowDemo,
+  "shiny-text": ShinyTextDemo,
+  "blur-text": BlurTextDemo,
+  "text-roll": TextRollDemo,
 };

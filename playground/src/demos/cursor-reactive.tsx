@@ -1,5 +1,9 @@
 import { MagneticButton } from "@vault/animations/cursor-reactive/magnetic-button";
 import { BorderSpotlight } from "@vault/animations/cursor-reactive/border-spotlight";
+import { StarBorder } from "@vault/animations/cursor-reactive/star-border";
+import { MagnetLines } from "@vault/animations/cursor-reactive/magnet-lines";
+import { CrosshairReticle } from "@vault/animations/cursor-reactive/crosshair-reticle";
+import { BorderBeam } from "@vault/animations/cursor-reactive/border-beam";
 import "@vault/animations/cursor-reactive/sibling-dim.css";
 import type { DemoMap } from "./types";
 
@@ -88,8 +92,65 @@ function SiblingDimDemo() {
   );
 }
 
+function StarBorderDemo() {
+  return (
+    <StarBorder color="#38bdf8" speedSec={4}>
+      <div style={{ padding: "12px 22px", fontFamily: "var(--font-mono)", fontSize: 12 }}>
+        ORBITING STAR BORDER
+      </div>
+    </StarBorder>
+  );
+}
+
+function MagnetLinesDemo() {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+      <MagnetLines rows={4} columns={8} lineColor="#38bdf8" lineHeight={16} />
+      <span className="fui-mono-label">Move cursor to align vector field</span>
+    </div>
+  );
+}
+
+function CrosshairReticleDemo() {
+  return (
+    <CrosshairReticle
+      style={{
+        width: "100%",
+        maxWidth: 320,
+        height: 130,
+        background: "#0f1115",
+        border: "1px solid var(--fui-border-strong)",
+        borderRadius: 4,
+        display: "grid",
+        placeItems: "center",
+      }}
+    >
+      <span className="fui-mono-label">SCAN TARGET SURFACE</span>
+    </CrosshairReticle>
+  );
+}
+
+function BorderBeamDemo() {
+  return (
+    <BorderBeam colorFrom="#38bdf8" colorTo="#34d399" durationSec={4}>
+      <div style={{ padding: "16px 22px", width: 280 }}>
+        <div className="fui-mono-label" style={{ color: "var(--fui-signal-active)" }}>
+          CONIC PERIMETER BEAM
+        </div>
+        <div style={{ marginTop: 4, fontSize: 13 }}>
+          Continuous 1.5px rotating light trace.
+        </div>
+      </div>
+    </BorderBeam>
+  );
+}
+
 export const cursorReactiveDemos: DemoMap = {
   "magnetic-button": MagneticButtonDemo,
   "border-spotlight": BorderSpotlightDemo,
   "sibling-dim": SiblingDimDemo,
+  "star-border": StarBorderDemo,
+  "magnet-lines": MagnetLinesDemo,
+  "crosshair-reticle": CrosshairReticleDemo,
+  "border-beam": BorderBeamDemo,
 };

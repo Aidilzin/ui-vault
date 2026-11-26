@@ -5,6 +5,7 @@ import {
   OrbitalCanvas,
   type OrbitHub,
 } from "@vault/animations/shader-canvas/orbital-canvas";
+import { PixelCard } from "@vault/animations/shader-canvas/pixel-card";
 import type { DemoMap, DemoProps } from "./types";
 
 const SAMPLE_ORBIT_HUBS: OrbitHub[] = [
@@ -152,8 +153,23 @@ function OrbitalCanvasDemo({ motionEpoch }: DemoProps) {
   );
 }
 
+function PixelCardDemo({ motionEpoch }: DemoProps) {
+  return (
+    <PixelCard
+      key={motionEpoch}
+      style={{ width: "100%", maxWidth: 300, padding: "26px 20px", textAlign: "center" }}
+    >
+      <div className="fui-mono-label" style={{ color: "var(--fui-signal-active)" }}>
+        CANVAS PIXEL BLOOM
+      </div>
+      <div style={{ marginTop: 6, fontSize: 13 }}>Hover card to ignite pixel shimmer</div>
+    </PixelCard>
+  );
+}
+
 export const shaderCanvasDemos: DemoMap = {
   "bayer-dither": BayerDitherDemo,
   "ascii-filter": AsciiFilterDemo,
   "orbital-canvas": OrbitalCanvasDemo,
+  "pixel-card": PixelCardDemo,
 };

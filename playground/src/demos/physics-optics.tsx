@@ -6,6 +6,9 @@ import {
   type GlareMode,
   type GlareVariant,
 } from "@vault/animations/physics-optics/glare-hover";
+import { ElasticSlider } from "@vault/animations/physics-optics/elastic-slider";
+import { DockMagnify } from "@vault/animations/physics-optics/dock-magnify";
+import { Compass, Cpu, Layers, Sparkles, Terminal } from "lucide-react";
 import type { DemoMap, DemoProps } from "./types";
 
 function LiquidGlassDemo() {
@@ -141,8 +144,36 @@ function GlareHoverDemo({ motionEpoch }: DemoProps) {
   );
 }
 
+function ElasticSliderDemo() {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10, width: "100%" }}>
+      <ElasticSlider defaultValue={62} />
+      <span className="fui-mono-label">Drag past left/right edge for elastic stretch</span>
+    </div>
+  );
+}
+
+function DockMagnifyDemo() {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
+      <DockMagnify
+        items={[
+          { id: "a", label: "Explore", icon: <Compass size={16} /> },
+          { id: "b", label: "Styles", icon: <Layers size={16} /> },
+          { id: "c", label: "Motion", icon: <Sparkles size={16} /> },
+          { id: "d", label: "Compute", icon: <Cpu size={16} /> },
+          { id: "e", label: "CLI", icon: <Terminal size={16} /> },
+        ]}
+      />
+      <span className="fui-mono-label">Sweep pointer across dock icons</span>
+    </div>
+  );
+}
+
 export const physicsOpticsDemos: DemoMap = {
   "liquid-glass-filter": LiquidGlassDemo,
   "spring-tilt-card": SpringTiltCardDemo,
   "glare-hover": GlareHoverDemo,
+  "elastic-slider": ElasticSliderDemo,
+  "dock-magnify": DockMagnifyDemo,
 };
