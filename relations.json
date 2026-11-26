@@ -2466,6 +2466,54 @@
                 "click-spark"
             ],
             "bestFor": "Collaborative creative tools, whiteboards, and design playgrounds"
+        },
+        {
+            "id": "ai-agent-workbench",
+            "name": "AI Agent Workbench",
+            "baseStyle": "monolith-dark",
+            "accents": [
+                "reasoning-trace",
+                "tool-call-step",
+                "agent-approval-card",
+                "slash-prompt-composer"
+            ],
+            "bestFor": "Autonomous coding agents, LLM copilot workspaces, human-in-the-loop chat apps"
+        },
+        {
+            "id": "code-review-forge",
+            "name": "Code Review Forge",
+            "baseStyle": "code-forge",
+            "accents": [
+                "inline-code-diff",
+                "magnetic-copy-spell",
+                "stacked-toast-deck",
+                "chain-of-thought-rail"
+            ],
+            "bestFor": "PR review tools, diff inspectors, developer CI dashboards"
+        },
+        {
+            "id": "ceramic-orbital-showcase",
+            "name": "Ceramic Orbital Showcase",
+            "baseStyle": "orbital-ceramic",
+            "accents": [
+                "eclipse-orb",
+                "holographic-foil-card",
+                "lamp-horizon-glow",
+                "tracing-scroll-beam"
+            ],
+            "bestFor": "Product launches, hardware-inspired marketing pages, design engineering portfolios"
+        },
+        {
+            "id": "perceptual-saas-suite",
+            "name": "Perceptual SaaS Suite",
+            "baseStyle": "perceptual-scale",
+            "accents": [
+                "spring-number-flow",
+                "velocity-dismiss-drawer",
+                "stacked-toast-deck",
+                "spotlight-tabs"
+            ],
+            "bestFor": "Accessible enterprise SaaS apps, billing dashboards, mobile-responsive web tools"
         }
     ],
     "externalRegistries": {

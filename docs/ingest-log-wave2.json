@@ -1,0 +1,487 @@
+{
+  "wave": 2,
+  "generatedAt": "2026-11-27T03:31:30+08:00",
+  "baselineAudit": {
+    "styles": 30,
+    "animations": 46,
+    "hybrids": 16,
+    "clusters": [
+      "01-precision-systems",
+      "02-retro-compute",
+      "03-kinetic-rebel",
+      "04-spatial-physics",
+      "05-modern-craft",
+      "06-editorial-warm"
+    ],
+    "mechanics": [
+      "cursor-reactive",
+      "text-kinetic",
+      "layout-morph",
+      "shader-canvas",
+      "physics-optics",
+      "scroll-driven",
+      "micro-feedback"
+    ]
+  },
+  "prepRequired": [
+    "relations.json — add \"ai-agentic\" to mechanics[] and bump version to 1.4.0",
+    "scripts/check-vault.mjs — ensure mechanic validation accepts \"ai-agentic\" automatically from relations.json",
+    "SKILL.md — document the ai-agentic mechanic pack and Wave-2 license hygiene rules",
+    "playground/src/lib/vault-data.ts — add \"ai-agentic\" to MechanicId union",
+    "playground/src/demos/ai-agentic.tsx — create dedicated demo module and register in playground/src/demos/index.ts",
+    "playground/src/swatches/ — add bespoke mini-UI swatches for the 6 new Wave-2 styles"
+  ],
+  "unreachableOrBlockedEndpoints": [
+    {
+      "source": "https://rareui.com/r/registry.json",
+      "status": "429 text/html",
+      "resolution": "Probed GitHub repo (swamimalode07/rare-ui) instead; LICENSE is MIT + Commons Clause v1.0, so Rare UI-inspired items are strictly marked clean-room."
+    },
+    {
+      "source": "https://veloraui.com/r/registry.json",
+      "status": "fetch failed (NXDOMAIN)",
+      "resolution": "Resolved official shadcn directory endpoint https://velora.colorlib.com/r/registry.json (200 application/json, 132 items)."
+    },
+    {
+      "source": "https://ui.aceternity.com/r/registry.json",
+      "status": "404 text/html",
+      "resolution": "Resolved official shadcn directory path https://ui.aceternity.com/registry/registry.json (200 application/json, 318 free items)."
+    },
+    {
+      "source": "Beautiful UI (no standalone registry.json in shadcn index)",
+      "status": "no machine-readable registry",
+      "resolution": "Covered Track C AI primitives cleanly via official AI Elements (registry.ai-sdk.dev, 77 items), Kibo UI (41 items), and COSS (608 items)."
+    }
+  ],
+  "skippedSummary": {
+    "duplicateOfExisting": {
+      "count": 19,
+      "examples": [
+        "@eldoraui/marquee (overlaps infinite-marquee)",
+        "@eldoraui/blur-in-text (overlaps blur-text)",
+        "@velora/aurora-background (overlaps aurora-mesh-bg)",
+        "@velora/number-ticker (overlaps count-up & odometer-ticker)",
+        "@aceternity/moving-border (overlaps border-beam & star-border)",
+        "@aceternity/spotlight (overlaps border-spotlight)",
+        "@000h-cojeev/dock (overlaps dock-magnify)",
+        "@spell/tilt-card (overlaps spring-tilt-card)",
+        "@spell/shimmer-text (overlaps shiny-text)",
+        "@8starlabs-ui/marquee (overlaps infinite-marquee)"
+      ]
+    },
+    "paidOrUnclearLicense": {
+      "count": 4,
+      "examples": [
+        "swamimalode07/rare-ui direct code copy (MIT + Commons Clause v1.0 restricts commercial resale -> converted to clean-room only)",
+        "Aceternity Pro templates (paid tier excluded)",
+        "01orbital paid blocks (excluded; MIT free core only)",
+        "shadcn-ui-blocks premium collections (paid tier excluded)"
+      ]
+    },
+    "genericCrudOrStatic": {
+      "count": 42,
+      "examples": [
+        "@coss standard accordion/alert/checkbox/input/select",
+        "@8bitcn standard button/checkbox/input/dialog",
+        "@kibo-ui standard calendar/combobox/table/rating",
+        "@eldoraui static device mockups (safari-browser, iphone-17-pro, macbook-pro)"
+      ]
+    },
+    "heavyWebglExcluded": {
+      "count": 5,
+      "examples": [
+        "@eldoraui/cobe-globe",
+        "@eldoraui/novatrix-background",
+        "@velora/vortex",
+        "@aceternity/3d-globe"
+      ]
+    }
+  },
+  "batches": {
+    "batch-e-ai-agentic": [
+      {
+        "id": "streaming-token-text",
+        "kind": "animation",
+        "mechanic": "ai-agentic",
+        "tier": "production",
+        "sourceName": "AI Elements (inline-citation) + Streaming Token Pattern",
+        "sourceUrl": "https://registry.ai-sdk.dev/inline-citation.json",
+        "license": "clean-room",
+        "dependencies": [],
+        "distinctFromExisting": "Simulates real LLM token-by-token streaming with hoverable inline citation pills [1][2] and source popovers, distinct from split-reveal or scramble-text.",
+        "proposedPairsWith": ["monolith-dark", "warm-manuscript", "fui-tactical", "monochrome-gallery"],
+        "proposedClashesWith": ["acid-y2k", "console-2001"]
+      },
+      {
+        "id": "reasoning-trace",
+        "kind": "animation",
+        "mechanic": "ai-agentic",
+        "tier": "production",
+        "sourceName": "Vercel AI Elements",
+        "sourceUrl": "https://registry.ai-sdk.dev/reasoning.json",
+        "license": "Apache-2.0",
+        "dependencies": [],
+        "distinctFromExisting": "Collapsible LLM thinking accordion with animated duration timer and live shimmer header while streaming thought tokens (upstream Radix/streamdown stripped to zero-dep).",
+        "proposedPairsWith": ["monolith-dark", "warm-manuscript", "fui-tactical", "editorial-mono"],
+        "proposedClashesWith": ["neo-brutalism", "retro-web-96"]
+      },
+      {
+        "id": "tool-call-step",
+        "kind": "animation",
+        "mechanic": "ai-agentic",
+        "tier": "production",
+        "sourceName": "Vercel AI Elements",
+        "sourceUrl": "https://registry.ai-sdk.dev/tool.json",
+        "license": "Apache-2.0",
+        "dependencies": [],
+        "distinctFromExisting": "Interactive agent tool-execution row transitioning across pending -> running -> success/error with expandable JSON args and result payload.",
+        "proposedPairsWith": ["fui-tactical", "monolith-dark", "telemetry-fault", "phosphor-terminal"],
+        "proposedClashesWith": ["pastel-playful", "tactile-soft"]
+      },
+      {
+        "id": "agent-approval-card",
+        "kind": "animation",
+        "mechanic": "ai-agentic",
+        "tier": "production",
+        "sourceName": "Vercel AI Elements",
+        "sourceUrl": "https://registry.ai-sdk.dev/confirmation.json",
+        "license": "Apache-2.0",
+        "dependencies": [],
+        "distinctFromExisting": "Human-in-the-loop permission gate displaying risk scope, command preview, and animated Approve/Reject state lock.",
+        "proposedPairsWith": ["fui-tactical", "monolith-dark", "command-dark", "telemetry-fault"],
+        "proposedClashesWith": ["acid-y2k", "zine-wire"]
+      },
+      {
+        "id": "inline-code-diff",
+        "kind": "animation",
+        "mechanic": "ai-agentic",
+        "tier": "production",
+        "sourceName": "Kibo UI / AI Elements Diff Pattern",
+        "sourceUrl": "https://www.kibo-ui.com/r/code-block.json",
+        "license": "clean-room",
+        "dependencies": [],
+        "distinctFromExisting": "Compact unified code/text diff preview with +/- gutter highlighting and interactive Accept/Reject hunk state transitions.",
+        "proposedPairsWith": ["monolith-dark", "fui-tactical", "phosphor-terminal", "monochrome-stark"],
+        "proposedClashesWith": ["tactile-soft", "console-2001"]
+      },
+      {
+        "id": "slash-prompt-composer",
+        "kind": "animation",
+        "mechanic": "ai-agentic",
+        "tier": "production",
+        "sourceName": "Vercel AI Elements",
+        "sourceUrl": "https://registry.ai-sdk.dev/prompt-input.json",
+        "license": "Apache-2.0",
+        "dependencies": [],
+        "distinctFromExisting": "AI prompt bar featuring removable context chips, live / slash-command popover selection, and keyboard-first submit feedback.",
+        "proposedPairsWith": ["command-dark", "monolith-dark", "warm-manuscript", "monochrome-gallery"],
+        "proposedClashesWith": ["retro-web-96", "ditherpunk"]
+      },
+      {
+        "id": "chain-of-thought-rail",
+        "kind": "animation",
+        "mechanic": "ai-agentic",
+        "tier": "viral",
+        "sourceName": "Vercel AI Elements",
+        "sourceUrl": "https://registry.ai-sdk.dev/chain-of-thought.json",
+        "license": "Apache-2.0",
+        "dependencies": [],
+        "distinctFromExisting": "Vertical connected multi-step agent execution rail with animated step-completion spine and active pulse beacon.",
+        "proposedPairsWith": ["fui-tactical", "monolith-dark", "aurora-mesh", "editorial-mono"],
+        "proposedClashesWith": ["os-core", "retro-web-96"]
+      }
+    ],
+    "batch-f-boutique-motion": [
+      {
+        "id": "holographic-foil-card",
+        "kind": "animation",
+        "mechanic": "physics-optics",
+        "tier": "viral",
+        "sourceName": "Eldora UI",
+        "sourceUrl": "https://eldoraui.site/r/holographic-card.json",
+        "license": "MIT",
+        "dependencies": [],
+        "distinctFromExisting": "Pointer-angle spectral rainbow foil refraction layered across a card surface, distinct from monochrome glare-hover or tilt-only spring-tilt-card.",
+        "proposedPairsWith": ["acid-y2k", "liquid-glass", "console-2001", "aurora-mesh"],
+        "proposedClashesWith": ["ditherpunk", "warm-manuscript", "retro-web-96"]
+      },
+      {
+        "id": "svg-ripple-pulse",
+        "kind": "animation",
+        "mechanic": "shader-canvas",
+        "tier": "viral",
+        "sourceName": "Eldora UI",
+        "sourceUrl": "https://eldoraui.site/r/svg-ripple-effect.json",
+        "license": "MIT",
+        "dependencies": [],
+        "distinctFromExisting": "Concentric expanding radar/sonar SVG stroke rings radiating from a core anchor, distinct from 2.5D orbital-canvas or click-spark bursts.",
+        "proposedPairsWith": ["fui-tactical", "ambient-orbit", "aurora-mesh", "dark-gallery-index"],
+        "proposedClashesWith": ["neo-brutalism", "os-core"]
+      },
+      {
+        "id": "meteor-shower",
+        "kind": "animation",
+        "mechanic": "shader-canvas",
+        "tier": "viral",
+        "sourceName": "Velora UI",
+        "sourceUrl": "https://velora.colorlib.com/r/meteors.json",
+        "license": "MIT",
+        "dependencies": [],
+        "distinctFromExisting": "Deterministic angled luminous meteor streaks falling across dark hero cards via CSS transform keyframes, distinct from aurora-mesh-bg or crt-grain-overlay.",
+        "proposedPairsWith": ["aurora-mesh", "ambient-orbit", "command-dark", "monolith-dark"],
+        "proposedClashesWith": ["warm-manuscript", "retro-web-96", "ditherpunk"]
+      },
+      {
+        "id": "lamp-horizon-glow",
+        "kind": "animation",
+        "mechanic": "physics-optics",
+        "tier": "viral",
+        "sourceName": "Velora UI",
+        "sourceUrl": "https://velora.colorlib.com/r/lamp.json",
+        "license": "MIT",
+        "dependencies": [],
+        "distinctFromExisting": "Architectural overhead conic spotlight cone illuminating a hero title bar on reveal, distinct from radial cursor-tracking border-spotlight.",
+        "proposedPairsWith": ["aurora-mesh", "monolith-dark", "editorial-mono", "dark-gallery-index"],
+        "proposedClashesWith": ["neo-brutalism", "ditherpunk", "tactile-soft"]
+      },
+      {
+        "id": "stacked-card-deck",
+        "kind": "animation",
+        "mechanic": "layout-morph",
+        "tier": "viral",
+        "sourceName": "Aceternity UI (Free Core)",
+        "sourceUrl": "https://ui.aceternity.com/registry/card-stack.json",
+        "license": "MIT",
+        "dependencies": [],
+        "distinctFromExisting": "Z-depth stacked card deck cycling front card to back with stepped scale and vertical offset, distinct from flip-card or make-way-grid.",
+        "proposedPairsWith": ["bento-grid", "tactile-soft", "pastel-playful", "mesh-craft"],
+        "proposedClashesWith": ["os-core", "retro-web-96"]
+      },
+      {
+        "id": "tracing-scroll-beam",
+        "kind": "animation",
+        "mechanic": "scroll-driven",
+        "tier": "viral",
+        "sourceName": "Aceternity UI (Free Core)",
+        "sourceUrl": "https://ui.aceternity.com/registry/tracing-beam.json",
+        "license": "MIT",
+        "dependencies": [],
+        "distinctFromExisting": "Vertical SVG gradient beam tracing down a curved narrative rail synchronized to container scroll, distinct from horizontal scroll-progress-bar.",
+        "proposedPairsWith": ["editorial-mono", "monolith-dark", "aurora-mesh", "warm-manuscript"],
+        "proposedClashesWith": ["os-core", "console-2001"]
+      },
+      {
+        "id": "gooey-pill-nav",
+        "kind": "animation",
+        "mechanic": "physics-optics",
+        "tier": "experimental",
+        "sourceName": "Rare UI (gooey-nav mechanic)",
+        "sourceUrl": "https://github.com/swamimalode07/rare-ui",
+        "license": "clean-room",
+        "dependencies": [],
+        "distinctFromExisting": "SVG feGaussianBlur + feColorMatrix alpha-threshold metaball nav where active pill organically merges between items, distinct from crisp spotlight-tabs.",
+        "proposedPairsWith": ["liquid-glass", "pastel-playful", "acid-y2k", "console-2001"],
+        "proposedClashesWith": ["fui-tactical", "neo-swiss", "ditherpunk"]
+      }
+    ],
+    "batch-g-shadcn-directory-niche": [
+      {
+        "id": "eclipse-orb",
+        "kind": "animation",
+        "mechanic": "shader-canvas",
+        "tier": "viral",
+        "sourceName": "@01orbital",
+        "sourceUrl": "https://01orbital.dev/r/eclipse-orb.json",
+        "license": "MIT",
+        "dependencies": [],
+        "distinctFromExisting": "Quiet layered planetary eclipse corona orb with gentle breathing luminance, distinct from multi-hub orbital-canvas or aurora-mesh-bg.",
+        "proposedPairsWith": ["ambient-orbit", "aurora-mesh", "monolith-dark", "command-dark"],
+        "proposedClashesWith": ["neo-brutalism", "retro-web-96"]
+      },
+      {
+        "id": "rotary-type-dial",
+        "kind": "animation",
+        "mechanic": "cursor-reactive",
+        "tier": "experimental",
+        "sourceName": "@0nlytype",
+        "sourceUrl": "https://thedirectors.agency/ui/r/dial.json",
+        "license": "MIT",
+        "dependencies": [],
+        "distinctFromExisting": "Pointer-rotatable typographic radial dial with angular tick stops and live tabular readout, distinct from linear elastic-slider.",
+        "proposedPairsWith": ["industrial-hardware", "neo-swiss", "swiss-type-foundry", "fui-tactical"],
+        "proposedClashesWith": ["tactile-soft", "pastel-playful"]
+      },
+      {
+        "id": "accordion-gallery",
+        "kind": "animation",
+        "mechanic": "layout-morph",
+        "tier": "viral",
+        "sourceName": "@000h-cojeev",
+        "sourceUrl": "https://cojeev.com/ui/r/accordion-gallery.json",
+        "license": "MIT",
+        "dependencies": [],
+        "distinctFromExisting": "Horizontal flex-ratio expanding strip where hovered/selected panel opens wide while sibling panels compress smoothly, distinct from 2D grid make-way-grid.",
+        "proposedPairsWith": ["tactile-studio-warm", "dark-gallery-index", "bento-grid", "editorial-mono"],
+        "proposedClashesWith": ["os-core", "retro-web-96"]
+      },
+      {
+        "id": "split-flap-clock",
+        "kind": "animation",
+        "mechanic": "text-kinetic",
+        "tier": "viral",
+        "sourceName": "@8starlabs-ui",
+        "sourceUrl": "https://ui.8starlabs.com/r/flip-clock.json",
+        "license": "MIT",
+        "dependencies": [],
+        "distinctFromExisting": "3D perspective mid-hinged airport split-flap card flip mechanic, distinct from vertical scroll-wheel odometer-ticker or flat text-roll.",
+        "proposedPairsWith": ["industrial-hardware", "fui-tactical", "retro-web-96", "editorial-mono"],
+        "proposedClashesWith": ["liquid-glass", "warm-manuscript"]
+      },
+      {
+        "id": "perspective-book",
+        "kind": "animation",
+        "mechanic": "physics-optics",
+        "tier": "viral",
+        "sourceName": "@spell",
+        "sourceUrl": "https://spell.sh/r/perspective-book.json",
+        "license": "MIT",
+        "dependencies": [],
+        "distinctFromExisting": "3D CSS hardcover book object with textured spine, page edges, and cover rotateY tilt on hover, distinct from flat spring-tilt-card.",
+        "proposedPairsWith": ["warm-manuscript", "archival-paper", "monochrome-gallery", "bento-grid"],
+        "proposedClashesWith": ["acid-y2k", "phosphor-terminal"]
+      },
+      {
+        "id": "onlytype-press",
+        "kind": "style",
+        "cluster": "06-editorial-warm",
+        "tier": "experimental",
+        "sourceName": "@0nlytype",
+        "sourceUrl": "https://thedirectors.agency/ui",
+        "license": "clean-room",
+        "dependencies": [],
+        "distinctFromExisting": "Radical zero-box pure-typography system where controls, ornaments, and indices are rendered exclusively with words, hairlines, and generous whitespace.",
+        "proposedPairsWith": ["rotary-type-dial", "split-reveal", "variable-proximity", "text-roll"],
+        "proposedClashesWith": ["liquid-glass", "console-2001", "acid-y2k"]
+      },
+      {
+        "id": "orbital-ceramic",
+        "kind": "style",
+        "cluster": "04-spatial-physics",
+        "tier": "viral",
+        "sourceName": "@01orbital",
+        "sourceUrl": "https://01orbital.dev",
+        "license": "clean-room",
+        "dependencies": [],
+        "distinctFromExisting": "Tactile matte ceramic dark/stone surfaces paired with soft halo orb lighting and hairline glow seams, quieter and more sculpted than liquid-glass.",
+        "proposedPairsWith": ["eclipse-orb", "border-spotlight", "progressive-blur-edge", "blur-fade"],
+        "proposedClashesWith": ["neo-brutalism", "ditherpunk", "retro-web-96"]
+      },
+      {
+        "id": "eight-bit-arcade",
+        "kind": "style",
+        "cluster": "02-retro-compute",
+        "tier": "experimental",
+        "sourceName": "@8bitcn",
+        "sourceUrl": "https://www.8bitcn.com",
+        "license": "clean-room",
+        "dependencies": [],
+        "distinctFromExisting": "Stepped pixel-notched arcade borders and chunky 8-bit game HUD palettes, distinct from monochrome 1-bit ditherpunk or gray desktop os-core.",
+        "proposedPairsWith": ["bayer-dither", "pixel-card", "pixel-hover-grid", "click-spark"],
+        "proposedClashesWith": ["liquid-glass", "warm-manuscript", "tactile-soft"]
+      }
+    ],
+    "batch-h-production-tokens-and-physics": [
+      {
+        "id": "primer-forge",
+        "kind": "style",
+        "cluster": "01-precision-systems",
+        "tier": "production",
+        "sourceName": "GitHub Primer Primitives",
+        "sourceUrl": "https://github.com/primer/primitives",
+        "license": "MIT",
+        "dependencies": [],
+        "distinctFromExisting": "Code-collaboration neutral canvas with WCAG-verified muted borders, syntactic diff greens/reds, and calm slate blue focus—purpose-built for dev workflows.",
+        "proposedPairsWith": ["inline-code-diff", "tool-call-step", "spotlight-tabs", "sibling-dim"],
+        "proposedClashesWith": ["acid-y2k", "console-2001", "zine-wire"]
+      },
+      {
+        "id": "radix-scale",
+        "kind": "style",
+        "cluster": "05-modern-craft",
+        "tier": "production",
+        "sourceName": "Radix Themes",
+        "sourceUrl": "https://github.com/radix-ui/themes",
+        "license": "MIT",
+        "dependencies": [],
+        "distinctFromExisting": "Mathematical 12-step perceptual color scale with consistent solid/soft/surface/outline component hierarchy and crisp accessible focus rings.",
+        "proposedPairsWith": ["spotlight-tabs", "blur-fade", "velocity-dismiss-drawer", "stacked-toast-deck"],
+        "proposedClashesWith": ["ditherpunk", "neo-brutalism"]
+      },
+      {
+        "id": "transit-precision",
+        "kind": "style",
+        "cluster": "01-precision-systems",
+        "tier": "production",
+        "sourceName": "DB UX Design System",
+        "sourceUrl": "https://github.com/db-ux-design-system/core-web",
+        "license": "Apache-2.0",
+        "dependencies": [],
+        "distinctFromExisting": "High-clarity European rail/transit signage aesthetic with AAA-contrast white/cool-gray timetables and unmistakable signal crimson alerts.",
+        "proposedPairsWith": ["split-flap-clock", "count-up", "scroll-progress-bar", "tactile-press-badge"],
+        "proposedClashesWith": ["liquid-glass", "acid-y2k", "pastel-playful"]
+      },
+      {
+        "id": "spring-number-flow",
+        "kind": "animation",
+        "mechanic": "micro-feedback",
+        "tier": "production",
+        "sourceName": "NumberFlow (spring digit physics)",
+        "sourceUrl": "https://number-flow.barvian.me",
+        "license": "clean-room",
+        "dependencies": [],
+        "distinctFromExisting": "Per-digit directional spring transition with dynamic digit-count enter/exit and formatted currency/unit shifting, distinct from fixed-width odometer-ticker.",
+        "proposedPairsWith": ["monolith-dark", "mesh-craft", "bento-grid", "radix-scale"],
+        "proposedClashesWith": ["retro-web-96"]
+      },
+      {
+        "id": "velocity-dismiss-drawer",
+        "kind": "animation",
+        "mechanic": "layout-morph",
+        "tier": "production",
+        "sourceName": "Vaul (velocity drag-to-dismiss drawer)",
+        "sourceUrl": "https://vaul.emilkowal.ski",
+        "license": "clean-room",
+        "dependencies": [],
+        "distinctFromExisting": "Interactive bottom/side drawer supporting pointer drag tracking, rubber-band resistance past 0, and velocity-gated snap dismiss.",
+        "proposedPairsWith": ["radix-scale", "tactile-soft", "command-dark", "bento-grid"],
+        "proposedClashesWith": ["retro-web-96", "os-core"]
+      },
+      {
+        "id": "stacked-toast-deck",
+        "kind": "animation",
+        "mechanic": "micro-feedback",
+        "tier": "production",
+        "sourceName": "Sonner (stacked toast deck physics)",
+        "sourceUrl": "https://sonner.emilkowal.ski",
+        "license": "clean-room",
+        "dependencies": [],
+        "distinctFromExisting": "Collapsed depth-stacked toast notifications that fan out smoothly on hover and support horizontal swipe-to-dismiss with spring settle.",
+        "proposedPairsWith": ["monolith-dark", "radix-scale", "primer-forge", "tactile-soft"],
+        "proposedClashesWith": ["retro-web-96"]
+      },
+      {
+        "id": "magnetic-copy-spell",
+        "kind": "animation",
+        "mechanic": "micro-feedback",
+        "tier": "viral",
+        "sourceName": "Design Spells / Bencho trigger pattern",
+        "sourceUrl": "https://www.designspells.com",
+        "license": "clean-room",
+        "dependencies": [],
+        "distinctFromExisting": "Delightful copy trigger combining crisp icon crossfade, animated SVG stroke-draw checkmark, and subtle radial confirmation ring.",
+        "proposedPairsWith": ["fui-tactical", "monolith-dark", "primer-forge", "phosphor-terminal"],
+        "proposedClashesWith": []
+      }
+    ]
+  }
+}

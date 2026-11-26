@@ -196,7 +196,7 @@ npm run dev:playground
 <!-- VAULT:ANIMATIONS:END -->
 
 <!-- VAULT:HYBRIDS:START -->
-### Proven Hybrid Recipes (16)
+### Proven Hybrid Recipes (20)
 
 | Recipe | Stack (`baseStyle` + `accents`) | Best For | Combined `shadcn` Install |
 | :--- | :--- | :--- | :--- |
@@ -216,6 +216,10 @@ npm run dev:playground
 | **Bento Product Launch** (`bento-product-launch`) | `bento-grid` + `border-spotlight`, `odometer-ticker`, `scroll-sticky-scale` | Hardware/product launch pages and modular feature showcases | `npx shadcn@latest add Aidilzin/ui-vault/style-bento-grid Aidilzin/ui-vault/border-spotlight Aidilzin/ui-vault/odometer-ticker Aidilzin/ui-vault/scroll-sticky-scale` |
 | **Aurora AI Landing** (`aurora-ai-landing`) | `aurora-mesh` + `aurora-mesh-bg`, `infinite-marquee`, `shiny-text` | Dark developer marketing pages and viral AI product launches | `npx shadcn@latest add Aidilzin/ui-vault/style-aurora-mesh Aidilzin/ui-vault/aurora-mesh-bg Aidilzin/ui-vault/infinite-marquee Aidilzin/ui-vault/shiny-text` |
 | **Playful Canvas Studio** (`playful-canvas-studio`) | `pastel-playful` + `dock-magnify`, `tactile-push-button`, `click-spark` | Collaborative creative tools, whiteboards, and design playgrounds | `npx shadcn@latest add Aidilzin/ui-vault/style-pastel-playful Aidilzin/ui-vault/dock-magnify Aidilzin/ui-vault/tactile-push-button Aidilzin/ui-vault/click-spark` |
+| **AI Agent Workbench** (`ai-agent-workbench`) | `monolith-dark` + `reasoning-trace`, `tool-call-step`, `agent-approval-card`, `slash-prompt-composer` | Autonomous coding agents, LLM copilot workspaces, human-in-the-loop chat apps | `npx shadcn@latest add Aidilzin/ui-vault/style-monolith-dark Aidilzin/ui-vault/reasoning-trace Aidilzin/ui-vault/tool-call-step Aidilzin/ui-vault/agent-approval-card Aidilzin/ui-vault/slash-prompt-composer` |
+| **Code Review Forge** (`code-review-forge`) | `code-forge` + `inline-code-diff`, `magnetic-copy-spell`, `stacked-toast-deck`, `chain-of-thought-rail` | PR review tools, diff inspectors, developer CI dashboards | `npx shadcn@latest add Aidilzin/ui-vault/style-code-forge Aidilzin/ui-vault/inline-code-diff Aidilzin/ui-vault/magnetic-copy-spell Aidilzin/ui-vault/stacked-toast-deck Aidilzin/ui-vault/chain-of-thought-rail` |
+| **Ceramic Orbital Showcase** (`ceramic-orbital-showcase`) | `orbital-ceramic` + `eclipse-orb`, `holographic-foil-card`, `lamp-horizon-glow`, `tracing-scroll-beam` | Product launches, hardware-inspired marketing pages, design engineering portfolios | `npx shadcn@latest add Aidilzin/ui-vault/style-orbital-ceramic Aidilzin/ui-vault/eclipse-orb Aidilzin/ui-vault/holographic-foil-card Aidilzin/ui-vault/lamp-horizon-glow Aidilzin/ui-vault/tracing-scroll-beam` |
+| **Perceptual SaaS Suite** (`perceptual-saas-suite`) | `perceptual-scale` + `spring-number-flow`, `velocity-dismiss-drawer`, `stacked-toast-deck`, `spotlight-tabs` | Accessible enterprise SaaS apps, billing dashboards, mobile-responsive web tools | `npx shadcn@latest add Aidilzin/ui-vault/style-perceptual-scale Aidilzin/ui-vault/spring-number-flow Aidilzin/ui-vault/velocity-dismiss-drawer Aidilzin/ui-vault/stacked-toast-deck Aidilzin/ui-vault/spotlight-tabs` |
 <!-- VAULT:HYBRIDS:END -->
 
 ---
