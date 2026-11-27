@@ -25,6 +25,7 @@ import { CrosshairReticle } from "@vault/animations/cursor-reactive/crosshair-re
 import { BorderBeam } from "@vault/animations/cursor-reactive/border-beam";
 import { KineticCardTrail } from "@vault/animations/cursor-reactive/kinetic-card-trail";
 import { RotaryTypeDial } from "@vault/animations/cursor-reactive/rotary-type-dial";
+import { TargetBracketCursor } from "@vault/animations/cursor-reactive/target-bracket-cursor";
 import "@vault/animations/cursor-reactive/sibling-dim.css";
 
 // Text-kinetic
@@ -36,6 +37,9 @@ import { ShinyText } from "@vault/animations/text-kinetic/shiny-text";
 import { BlurText } from "@vault/animations/text-kinetic/blur-text";
 import { TextRoll } from "@vault/animations/text-kinetic/text-roll";
 import { SplitFlapClock } from "@vault/animations/text-kinetic/split-flap-clock";
+import { TrueFocusFrame } from "@vault/animations/text-kinetic/true-focus-frame";
+import { TextMorphSwap } from "@vault/animations/text-kinetic/text-morph-swap";
+import { LineShadowHeading } from "@vault/animations/text-kinetic/line-shadow-heading";
 
 // Layout-morph
 import { FlipCard } from "@vault/animations/layout-morph/flip-card";
@@ -45,6 +49,9 @@ import { BlurFade } from "@vault/animations/layout-morph/blur-fade";
 import { StackedCardDeck } from "@vault/animations/layout-morph/stacked-card-deck";
 import { AccordionGallery } from "@vault/animations/layout-morph/accordion-gallery";
 import { VelocityDismissDrawer } from "@vault/animations/layout-morph/velocity-dismiss-drawer";
+import { BeforeAfterCurtain } from "@vault/animations/layout-morph/before-after-curtain";
+import { ExpandableToolbar } from "@vault/animations/layout-morph/expandable-toolbar";
+import { FolderPaperFan } from "@vault/animations/layout-morph/folder-paper-fan";
 
 // Shader-canvas
 import { PixelCard } from "@vault/animations/shader-canvas/pixel-card";
@@ -60,6 +67,7 @@ import { AnimatedConnectorBeam } from "@vault/animations/physics-optics/animated
 import { HolographicFoilCard } from "@vault/animations/physics-optics/holographic-foil-card";
 import { GooeyPillNav } from "@vault/animations/physics-optics/gooey-pill-nav";
 import { PerspectiveBook } from "@vault/animations/physics-optics/perspective-book";
+import { OpticalZoomLens } from "@vault/animations/physics-optics/optical-zoom-lens";
 
 // Scroll-driven
 import { ScrollProgressBar } from "@vault/animations/scroll-driven/scroll-progress-bar";
@@ -78,6 +86,7 @@ import { OdometerTicker } from "@vault/animations/micro-feedback/odometer-ticker
 import { SpringNumberFlow } from "@vault/animations/micro-feedback/spring-number-flow";
 import { StackedToastDeck } from "@vault/animations/micro-feedback/stacked-toast-deck";
 import { MagneticCopySpell } from "@vault/animations/micro-feedback/magnetic-copy-spell";
+import { SlideToCommit } from "@vault/animations/micro-feedback/slide-to-commit";
 
 // AI-agentic
 import { StreamingTokenText } from "@vault/animations/ai-agentic/streaming-token-text";
@@ -167,6 +176,7 @@ export function DummyNavSlot({
   const [activeLink, setActiveLink] = useState(links[0]?.id ?? "overview");
   const hasSpotlight = navIds.includes("spotlight-tabs");
   const hasGooey = navIds.includes("gooey-pill-nav");
+  const hasExpandable = navIds.includes("expandable-toolbar");
   const hasStatus = navIds.includes("kinetic-status-pill");
 
   const navContent = hasSpotlight ? (
@@ -180,6 +190,15 @@ export function DummyNavSlot({
       trackBg={theme.elevated}
       trackBorder={theme.border}
       onChange={setActiveLink}
+    />
+  ) : hasExpandable ? (
+    <ExpandableToolbar
+      accentColor={theme.accent}
+      items={links.slice(0, 3).map((l) => ({
+        id: l.id,
+        label: l.label,
+        detail: `${l.label} workspace controls synchronized with ${theme.styleId}.`,
+      }))}
     />
   ) : hasGooey ? (
     <GooeyPillNav items={links.slice(0, 4)} />
@@ -310,6 +329,29 @@ export function renderKineticText(
       return <TextRoll key={`tr-${epoch}-${text}`} text={text} />;
     case "split-flap-clock":
       return <SplitFlapClock key={`sfc-${epoch}`} />;
+    case "true-focus-frame":
+      return (
+        <TrueFocusFrame
+          key={`tff-${epoch}-${text}`}
+          sentence={text}
+          borderColor={theme.accent}
+        />
+      );
+    case "text-morph-swap":
+      return (
+        <TextMorphSwap
+          key={`tms-${epoch}`}
+          phrases={[text, "Deterministic Craft", "Zero-Dep Motion"]}
+        />
+      );
+    case "line-shadow-heading":
+      return (
+        <LineShadowHeading
+          key={`lsh-${epoch}-${text}`}
+          text={text}
+          shadowColor={theme.accent}
+        />
+      );
     default:
       return text;
   }
@@ -337,6 +379,7 @@ export function DummyHeroCta({
   const hasTactilePush = ctaIds.includes("tactile-push-button");
   const hasCopySpell = ctaIds.includes("magnetic-copy-spell");
   const hasHoldConfirm = ctaIds.includes("hold-to-confirm");
+  const hasSlideCommit = ctaIds.includes("slide-to-commit");
   const hasPressBadge = ctaIds.includes("tactile-press-badge");
   const hasClickSpark = ctaIds.includes("click-spark");
 
@@ -392,6 +435,15 @@ export function DummyHeroCta({
         <span>{primaryLabel}</span>
         <ArrowRight size={13} />
       </MagneticButton>
+    );
+  } else if (hasSlideCommit) {
+    primaryControl = (
+      <SlideToCommit
+        label={`Slide to ${primaryLabel}`}
+        committedLabel="Deployed ✓"
+        accentColor={theme.accent}
+        onCommit={onAction}
+      />
     );
   } else if (hasHoldConfirm) {
     primaryControl = (
@@ -606,6 +658,24 @@ export function DummyFeatureGrid({
   const hasSiblingDim = cardIds.includes("sibling-dim");
   const hasFlip = cardIds.includes("flip-card");
   const hasMakeWay = cardIds.includes("make-way-grid");
+  const hasFolderFan = cardIds.includes("folder-paper-fan");
+
+  if (hasFolderFan) {
+    return (
+      <SlotInspectorWrap slot="feature-cards" activeIds={cardIds} inspectSlots={inspectSlots}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 14, justifyItems: "center", padding: "8px 0" }}>
+          {features.map((f) => (
+            <FolderPaperFan
+              key={f.id}
+              label={f.tag.slice(0, 12)}
+              sheets={[f.title.slice(0, 16), f.metric, "SPEC // READY"]}
+              accentColor={theme.accent}
+            />
+          ))}
+        </div>
+      </SlotInspectorWrap>
+    );
+  }
 
   if (hasMakeWay) {
     return (
@@ -1163,6 +1233,12 @@ export function renderWorkspaceWidget(
       return <KineticCardTrail key={`kct-${epoch}`} style={{ width: "100%" }} />;
     case "elastic-column-scroll":
       return <ElasticColumnScroll key={`ecs-${epoch}`} />;
+    case "target-bracket-cursor":
+      return <TargetBracketCursor key={`tbc-${epoch}`} accentColor={theme.accent} />;
+    case "before-after-curtain":
+      return <BeforeAfterCurtain key={`bac-${epoch}`} accentColor={theme.accent} />;
+    case "optical-zoom-lens":
+      return <OpticalZoomLens key={`ozl-${epoch}`} accentColor={theme.accent} />;
     default: {
       const FallbackDemo = animationDemoRegistry[animId];
       return FallbackDemo ? <FallbackDemo key={`fb-${epoch}`} motionEpoch={epoch} /> : null;

@@ -41,13 +41,14 @@ export const SLOT_INSPECTOR_NAME: Record<SlotId, string> = {
  * website slot on the dummy site preview.
  */
 export const ANIMATION_SLOT_MAP: Record<string, SlotId> = {
-  // nav (4)
+  // nav (5)
   "spotlight-tabs": "nav",
   "gooey-pill-nav": "nav",
   "dock-magnify": "nav",
   "kinetic-status-pill": "nav",
+  "expandable-toolbar": "nav",
 
-  // hero-bg (11)
+  // hero-bg (12)
   "bayer-dither": "hero-bg",
   "aurora-mesh-bg": "hero-bg",
   "orbital-canvas": "hero-bg",
@@ -59,8 +60,9 @@ export const ANIMATION_SLOT_MAP: Record<string, SlotId> = {
   "crt-grain-overlay": "hero-bg",
   "pixel-hover-grid": "hero-bg",
   "magnet-lines": "hero-bg",
+  "flickering-telemetry-grid": "hero-bg",
 
-  // hero-title (7)
+  // hero-title (10)
   "scramble-text": "hero-title",
   "split-reveal": "hero-title",
   "variable-proximity": "hero-title",
@@ -68,21 +70,25 @@ export const ANIMATION_SLOT_MAP: Record<string, SlotId> = {
   "blur-text": "hero-title",
   "text-roll": "hero-title",
   "split-flap-clock": "hero-title",
+  "true-focus-frame": "hero-title",
+  "text-morph-swap": "hero-title",
+  "line-shadow-heading": "hero-title",
 
-  // hero-cta (6)
+  // hero-cta (7)
   "magnetic-button": "hero-cta",
   "tactile-push-button": "hero-cta",
   "magnetic-copy-spell": "hero-cta",
   "hold-to-confirm": "hero-cta",
   "tactile-press-badge": "hero-cta",
   "click-spark": "hero-cta",
+  "slide-to-commit": "hero-cta",
 
   // metrics (3)
   "count-up": "metrics",
   "odometer-ticker": "metrics",
   "spring-number-flow": "metrics",
 
-  // feature-cards (14)
+  // feature-cards (15)
   "border-spotlight": "feature-cards",
   "border-beam": "feature-cards",
   "star-border": "feature-cards",
@@ -97,6 +103,7 @@ export const ANIMATION_SLOT_MAP: Record<string, SlotId> = {
   "crosshair-reticle": "feature-cards",
   "svg-turbulence-hover": "feature-cards",
   "make-way-grid": "feature-cards",
+  "folder-paper-fan": "feature-cards",
 
   // scroll-fx (6)
   "scroll-progress-bar": "scroll-fx",
@@ -110,7 +117,7 @@ export const ANIMATION_SLOT_MAP: Record<string, SlotId> = {
   "infinite-marquee": "marquee-band",
   "marquee-hover-row": "marquee-band",
 
-  // interactive-stage (14)
+  // interactive-stage (17)
   "streaming-token-text": "interactive-stage",
   "reasoning-trace": "interactive-stage",
   "tool-call-step": "interactive-stage",
@@ -125,6 +132,9 @@ export const ANIMATION_SLOT_MAP: Record<string, SlotId> = {
   "rotary-type-dial": "interactive-stage",
   "elastic-slider": "interactive-stage",
   "kinetic-card-trail": "interactive-stage",
+  "target-bracket-cursor": "interactive-stage",
+  "before-after-curtain": "interactive-stage",
+  "optical-zoom-lens": "interactive-stage",
 
   // overlay (2)
   "velocity-dismiss-drawer": "overlay",

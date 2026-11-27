@@ -3469,6 +3469,213 @@
         "acid-y2k",
         "telemetry-fault"
       ]
+    },
+    {
+      "id": "target-bracket-cursor",
+      "kind": "animation",
+      "tier": "viral",
+      "mechanic": "cursor-reactive",
+      "engine": "react-css",
+      "perfTier": "low",
+      "reducedMotion": "instant-snap",
+      "registryItem": "target-bracket-cursor",
+      "path": "animations/cursor-reactive/target-bracket-cursor.tsx",
+      "pairsWith": [
+        "fui-tactical",
+        "blueprint-cyanotype",
+        "velvet-chrome-prism",
+        "industrial-hardware"
+      ],
+      "clashesWith": [
+        "warm-manuscript",
+        "pastel-playful"
+      ]
+    },
+    {
+      "id": "true-focus-frame",
+      "kind": "animation",
+      "tier": "viral",
+      "mechanic": "text-kinetic",
+      "engine": "react-css",
+      "perfTier": "low",
+      "reducedMotion": "static-clear-text",
+      "registryItem": "true-focus-frame",
+      "path": "animations/text-kinetic/true-focus-frame.tsx",
+      "pairsWith": [
+        "fui-tactical",
+        "monolith-dark",
+        "cinema-noir-motion",
+        "editorial-mono"
+      ],
+      "clashesWith": [
+        "retro-web-96",
+        "os-core"
+      ]
+    },
+    {
+      "id": "text-morph-swap",
+      "kind": "animation",
+      "tier": "production",
+      "mechanic": "text-kinetic",
+      "engine": "react-css",
+      "perfTier": "low",
+      "reducedMotion": "instant-swap",
+      "registryItem": "text-morph-swap",
+      "path": "animations/text-kinetic/text-morph-swap.tsx",
+      "pairsWith": [
+        "motion-slate-minimal",
+        "kinetic-studio-white",
+        "monolith-dark",
+        "perceptual-scale"
+      ],
+      "clashesWith": [
+        "eight-bit-arcade"
+      ]
+    },
+    {
+      "id": "line-shadow-heading",
+      "kind": "animation",
+      "tier": "experimental",
+      "mechanic": "text-kinetic",
+      "engine": "css-keyframes",
+      "perfTier": "low",
+      "reducedMotion": "static-hatch-shadow",
+      "registryItem": "line-shadow-heading",
+      "path": "animations/text-kinetic/line-shadow-heading.tsx",
+      "pairsWith": [
+        "risograph-print",
+        "neo-brutalism",
+        "avant-poster",
+        "swiss-type-foundry"
+      ],
+      "clashesWith": [
+        "liquid-glass",
+        "warm-manuscript"
+      ]
+    },
+    {
+      "id": "before-after-curtain",
+      "kind": "animation",
+      "tier": "production",
+      "mechanic": "layout-morph",
+      "engine": "react-pointer",
+      "perfTier": "low",
+      "reducedMotion": "direct-scrub",
+      "registryItem": "before-after-curtain",
+      "path": "animations/layout-morph/before-after-curtain.tsx",
+      "pairsWith": [
+        "motion-slate-minimal",
+        "gallery-curated-sand",
+        "dark-gallery-index",
+        "bento-grid"
+      ],
+      "clashesWith": [
+        "retro-web-96"
+      ]
+    },
+    {
+      "id": "expandable-toolbar",
+      "kind": "animation",
+      "tier": "production",
+      "mechanic": "layout-morph",
+      "engine": "react-css",
+      "perfTier": "low",
+      "reducedMotion": "instant-expand",
+      "registryItem": "expandable-toolbar",
+      "path": "animations/layout-morph/expandable-toolbar.tsx",
+      "pairsWith": [
+        "kinetic-studio-white",
+        "motion-slate-minimal",
+        "command-dark",
+        "monolith-dark"
+      ],
+      "clashesWith": [
+        "neo-brutalism",
+        "retro-web-96"
+      ]
+    },
+    {
+      "id": "folder-paper-fan",
+      "kind": "animation",
+      "tier": "viral",
+      "mechanic": "layout-morph",
+      "engine": "react-css",
+      "perfTier": "low",
+      "reducedMotion": "instant-fan",
+      "registryItem": "folder-paper-fan",
+      "path": "animations/layout-morph/folder-paper-fan.tsx",
+      "pairsWith": [
+        "tactile-soft",
+        "pastel-playful",
+        "tactile-studio-warm",
+        "os-core"
+      ],
+      "clashesWith": [
+        "phosphor-terminal",
+        "telemetry-fault"
+      ]
+    },
+    {
+      "id": "optical-zoom-lens",
+      "kind": "animation",
+      "tier": "viral",
+      "mechanic": "physics-optics",
+      "engine": "react-pointer",
+      "perfTier": "medium",
+      "reducedMotion": "direct-track",
+      "registryItem": "optical-zoom-lens",
+      "path": "animations/physics-optics/optical-zoom-lens.tsx",
+      "pairsWith": [
+        "velvet-chrome-prism",
+        "dark-gallery-index",
+        "monochrome-gallery",
+        "orbital-ceramic"
+      ],
+      "clashesWith": [
+        "retro-web-96",
+        "ditherpunk"
+      ]
+    },
+    {
+      "id": "flickering-telemetry-grid",
+      "kind": "animation",
+      "tier": "viral",
+      "mechanic": "shader-canvas",
+      "engine": "canvas-2d",
+      "perfTier": "medium",
+      "reducedMotion": "static-grid-snapshot",
+      "registryItem": "flickering-telemetry-grid",
+      "path": "animations/shader-canvas/flickering-telemetry-grid.tsx",
+      "pairsWith": [
+        "fui-tactical",
+        "monolith-dark",
+        "telemetry-fault",
+        "command-dark"
+      ],
+      "clashesWith": [
+        "warm-manuscript",
+        "pastel-playful"
+      ]
+    },
+    {
+      "id": "slide-to-commit",
+      "kind": "animation",
+      "tier": "production",
+      "mechanic": "micro-feedback",
+      "engine": "react-pointer",
+      "perfTier": "low",
+      "reducedMotion": "keyboard-click-toggle",
+      "registryItem": "slide-to-commit",
+      "path": "animations/micro-feedback/slide-to-commit.tsx",
+      "pairsWith": [
+        "kinetic-studio-white",
+        "industrial-hardware",
+        "command-dark",
+        "perceptual-scale"
+      ],
+      "clashesWith": [
+        "retro-web-96"
+      ]
     }
   ],
   "hybrids": [

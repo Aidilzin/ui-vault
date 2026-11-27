@@ -11,6 +11,7 @@ import { AuroraMeshBg } from "@vault/animations/shader-canvas/aurora-mesh-bg";
 import { SvgRipplePulse } from "@vault/animations/shader-canvas/svg-ripple-pulse";
 import { MeteorShower } from "@vault/animations/shader-canvas/meteor-shower";
 import { EclipseOrb } from "@vault/animations/shader-canvas/eclipse-orb";
+import { FlickeringTelemetryGrid } from "@vault/animations/shader-canvas/flickering-telemetry-grid";
 import { LampHorizonGlow } from "@vault/animations/physics-optics/lamp-horizon-glow";
 import { MagnetLines } from "@vault/animations/cursor-reactive/magnet-lines";
 import type { ResolvedStyleTheme } from "../lib/style-theme";
@@ -260,6 +261,19 @@ export function LabBackdropLayer({
           </div>
         );
       }
+      case "flickering-telemetry-grid":
+        return (
+          <FlickeringTelemetryGrid
+            key={`${motionEpoch}-${size.width}x${size.height}`}
+            width={size.width}
+            height={size.height}
+            squareSize={4}
+            gridGap={7}
+            color={theme.accent}
+            maxOpacity={0.42}
+            animate={!reducedMotion}
+          />
+        );
       default:
         return null;
     }

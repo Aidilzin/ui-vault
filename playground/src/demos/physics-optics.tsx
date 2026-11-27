@@ -14,6 +14,7 @@ import { HolographicFoilCard } from "@vault/animations/physics-optics/holographi
 import { LampHorizonGlow } from "@vault/animations/physics-optics/lamp-horizon-glow";
 import { GooeyPillNav } from "@vault/animations/physics-optics/gooey-pill-nav";
 import { PerspectiveBook } from "@vault/animations/physics-optics/perspective-book";
+import { OpticalZoomLens } from "@vault/animations/physics-optics/optical-zoom-lens";
 import { Compass, Cpu, Layers, Sparkles, Terminal } from "lucide-react";
 import type { DemoMap, DemoProps } from "./types";
 
@@ -243,4 +244,5 @@ export const physicsOpticsDemos: DemoMap = {
   "lamp-horizon-glow": LampHorizonGlowDemo,
   "gooey-pill-nav": GooeyPillNavDemo,
   "perspective-book": () => <PerspectiveBook />,
+  "optical-zoom-lens": () => <OpticalZoomLens style={{ width: "100%", maxWidth: 330 }} />,
 };

@@ -1,1110 +1,1270 @@
 {
-    "$schema": "https://ui.shadcn.com/schema/registry.json",
-    "items": [
-        {
-            "name": "magnetic-button",
-            "type": "registry:ui",
-            "title": "Magnetic Button",
-            "description": "Button that subtly pulls toward the pointer on hover and springs back cleanly.",
-            "categories": [
-                "cursor-reactive",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "cursor-reactive/magnetic-button.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "border-spotlight",
-            "type": "registry:ui",
-            "title": "Mouse-Tracking Border Spotlight",
-            "description": "Radial cursor-tracking specular glow across dark surfaces.",
-            "categories": [
-                "cursor-reactive",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "cursor-reactive/border-spotlight.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "sibling-dim",
-            "type": "registry:item",
-            "title": "Sibling Dim Grid",
-            "description": "Pure CSS :has() utility dimming non-hovered sibling cards.",
-            "categories": [
-                "cursor-reactive",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "cursor-reactive/sibling-dim.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/sibling-dim.css"
-                }
-            ]
-        },
-        {
-            "name": "scramble-text",
-            "type": "registry:ui",
-            "title": "Scramble / Decrypt Text",
-            "description": "Glyph-cycling text reveal for status changes and telemetry labels.",
-            "categories": [
-                "text-kinetic",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "text-kinetic/scramble-text.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "split-reveal",
-            "type": "registry:ui",
-            "title": "Masked Split-Text Reveal",
-            "description": "Word or character slide-up reveal clipped by overflow masks.",
-            "categories": [
-                "text-kinetic",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "text-kinetic/split-reveal.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "variable-proximity",
-            "type": "registry:ui",
-            "title": "Variable Font Proximity",
-            "description": "Dynamically modulates variable font weight based on pointer distance.",
-            "categories": [
-                "text-kinetic",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "text-kinetic/variable-proximity.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "flip-card",
-            "type": "registry:ui",
-            "title": "FLIP Layout Morph Card",
-            "description": "Zero-dependency First-Last-Invert-Play layout transition wrapper.",
-            "categories": [
-                "layout-morph",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "layout-morph/flip-card.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "velocity-skew",
-            "type": "registry:ui",
-            "title": "Scroll Velocity Skew",
-            "description": "Applies damped vertical skew driven by window scroll speed.",
-            "categories": [
-                "layout-morph",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "layout-morph/velocity-skew.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "bayer-dither",
-            "type": "registry:ui",
-            "title": "Bayer Dither Canvas",
-            "description": "4x4 ordered Bayer dithering 1-bit pixel canvas renderer.",
-            "categories": [
-                "shader-canvas",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "shader-canvas/bayer-dither.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "ascii-filter",
-            "type": "registry:ui",
-            "title": "ASCII Wave Filter",
-            "description": "Real-time density-mapped ASCII character field renderer.",
-            "categories": [
-                "shader-canvas",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "shader-canvas/ascii-filter.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "orbital-canvas",
-            "type": "registry:ui",
-            "title": "2.5D Orbital Constellation Canvas",
-            "description": "HiDPI 2.5D tilted elliptical orbit visualization with Phyllotaxis clusters and hover-freeze damping.",
-            "categories": [
-                "shader-canvas",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "shader-canvas/orbital-canvas.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "liquid-glass-filter",
-            "type": "registry:ui",
-            "title": "Liquid Glass Surface",
-            "description": "Translucent optical surface with SVG displacement filter and specular top highlight.",
-            "categories": [
-                "physics-optics",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "physics-optics/liquid-glass-filter.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "spring-tilt-card",
-            "type": "registry:ui",
-            "title": "Spring 3D Tilt Card",
-            "description": "Damped 3D perspective card responding to pointer coordinates.",
-            "categories": [
-                "physics-optics",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "physics-optics/spring-tilt-card.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "glare-hover",
-            "type": "registry:ui",
-            "title": "Specular Glare Hover",
-            "description": "Directional glossy light streak and 1px rim glint sweeping across a surface on pointer interaction.",
-            "categories": [
-                "physics-optics",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "physics-optics/glare-hover.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "marquee-hover-row",
-            "type": "registry:ui",
-            "title": "Kinetic Marquee Hover Row",
-            "description": "Editorial menu row that reveals a GPU-composited infinite scrolling marquee strip on hover or focus.",
-            "categories": [
-                "text-kinetic",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "text-kinetic/marquee-hover-row.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "star-border",
-            "type": "registry:ui",
-            "title": "Star Border Glow",
-            "description": "Orbiting luminous border highlights sweeping across dark containers.",
-            "categories": [
-                "cursor-reactive",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "cursor-reactive/star-border.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "magnet-lines",
-            "type": "registry:ui",
-            "title": "Magnetic Vector Lines",
-            "description": "Grid of short vector ticks rotating smoothly to point toward the cursor.",
-            "categories": [
-                "cursor-reactive",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "cursor-reactive/magnet-lines.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "crosshair-reticle",
-            "type": "registry:ui",
-            "title": "Crosshair Coordinate Reticle",
-            "description": "Precision FUI horizontal/vertical hairlines with live X/Y telemetry.",
-            "categories": [
-                "cursor-reactive",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "cursor-reactive/crosshair-reticle.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "border-beam",
-            "type": "registry:ui",
-            "title": "Conic Border Beam",
-            "description": "Continuous rotating conic light beam tracing a 1.5px card perimeter.",
-            "categories": [
-                "cursor-reactive",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "cursor-reactive/border-beam.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "shiny-text",
-            "type": "registry:ui",
-            "title": "Metallic Shiny Text",
-            "description": "Continuous linear-gradient specular sweep across display lettering.",
-            "categories": [
-                "text-kinetic",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "text-kinetic/shiny-text.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "blur-text",
-            "type": "registry:ui",
-            "title": "Optical Blur Text Reveal",
-            "description": "Staggered word reveal transitioning from optical blur to crisp focus.",
-            "categories": [
-                "text-kinetic",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "text-kinetic/blur-text.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "text-roll",
-            "type": "registry:ui",
-            "title": "Split-Flap Text Roll",
-            "description": "Vertical slot-machine character roll on hover or focus.",
-            "categories": [
-                "text-kinetic",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "text-kinetic/text-roll.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "pixel-card",
-            "type": "registry:ui",
-            "title": "Pixel Shimmer Card",
-            "description": "Canvas pixel grid blooming outward from center on hover.",
-            "categories": [
-                "shader-canvas",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "shader-canvas/pixel-card.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "elastic-slider",
-            "type": "registry:ui",
-            "title": "Elastic Overshoot Slider",
-            "description": "Tactile range slider that stretches elastically when dragged past bounds.",
-            "categories": [
-                "physics-optics",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "physics-optics/elastic-slider.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "dock-magnify",
-            "type": "registry:ui",
-            "title": "Proximity Dock Magnification",
-            "description": "macOS-style proximity-scaled icon dock bar with smooth falloff.",
-            "categories": [
-                "physics-optics",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "physics-optics/dock-magnify.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "scroll-progress-bar",
-            "type": "registry:ui",
-            "title": "Compositor Scroll Progress Bar",
-            "description": "Ultra-thin scaleX progress ribbon bound to page or container scroll.",
-            "categories": [
-                "scroll-driven",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "scroll-driven/scroll-progress-bar.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "click-spark",
-            "type": "registry:ui",
-            "title": "Radial Click Spark",
-            "description": "Lightweight canvas spark burst radiating from pointer click coordinates.",
-            "categories": [
-                "micro-feedback",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "micro-feedback/click-spark.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "count-up",
-            "type": "registry:ui",
-            "title": "Eased Tabular Count-Up",
-            "description": "Cubic-eased tabular-nums numeric counter with instant reduced-motion fallback.",
-            "categories": [
-                "micro-feedback",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "micro-feedback/count-up.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "hold-to-confirm",
-            "type": "registry:ui",
-            "title": "Hold-to-Confirm Action Button",
-            "description": "Press-and-hold destructive confirmation button with linear fill progress.",
-            "categories": [
-                "micro-feedback",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "micro-feedback/hold-to-confirm.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "kinetic-card-trail",
-            "type": "registry:ui",
-            "title": "Kinetic Card Trail",
-            "description": "Velocity-gated floating card trail spawning along cursor path with decay rotation.",
-            "categories": [
-                "cursor-reactive",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "cursor-reactive/kinetic-card-trail.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "make-way-grid",
-            "type": "registry:ui",
-            "title": "Make-Way FLIP Grid",
-            "description": "Interactive grid where selecting a tile expands it while neighbors make way via WAAPI FLIP.",
-            "categories": [
-                "layout-morph",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "layout-morph/make-way-grid.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "pixel-hover-grid",
-            "type": "registry:ui",
-            "title": "Pixel Hover Dissolve Grid",
-            "description": "Interactive Canvas pixel-block proximity grid with damped decay.",
-            "categories": [
-                "shader-canvas",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "shader-canvas/pixel-hover-grid.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "crt-grain-overlay",
-            "type": "registry:ui",
-            "title": "CRT Film Grain Overlay",
-            "description": "Stepped procedural canvas noise and subtle CRT scanlines with reduced-motion freeze.",
-            "categories": [
-                "shader-canvas",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "shader-canvas/crt-grain-overlay.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "svg-turbulence-hover",
-            "type": "registry:ui",
-            "title": "SVG Turbulence Hover Filter",
-            "description": "Animated SVG feTurbulence + feDisplacementMap ripple distortion on hover.",
-            "categories": [
-                "physics-optics",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "physics-optics/svg-turbulence-hover.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "elastic-column-scroll",
-            "type": "registry:ui",
-            "title": "Elastic Staggered Column Scroll",
-            "description": "Multi-column scrollable grid where adjacent columns lag at staggered inertia ratios.",
-            "categories": [
-                "scroll-driven",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "scroll-driven/elastic-column-scroll.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "spotlight-tabs",
-            "type": "registry:ui",
-            "title": "Spotlight Segmented Tabs",
-            "description": "Segmented tab control with smoothly gliding active pill indicator (180ms ease-out).",
-            "categories": [
-                "layout-morph",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "layout-morph/spotlight-tabs.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "progressive-blur-edge",
-            "type": "registry:ui",
-            "title": "Progressive Blur Scroll Edge",
-            "description": "Multi-step CSS mask-image and backdrop-filter edge fade for scrollable panels.",
-            "categories": [
-                "scroll-driven",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "scroll-driven/progressive-blur-edge.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "tactile-press-badge",
-            "type": "registry:ui",
-            "title": "Tactile Detent Press Badge",
-            "description": "Crisp 120ms physical micro-detent press button with tabular-nums counter tick.",
-            "categories": [
-                "micro-feedback",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "micro-feedback/tactile-press-badge.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "kinetic-status-pill",
-            "type": "registry:ui",
-            "title": "Kinetic Morphing Status Pill",
-            "description": "Live telemetry status pill morphing smoothly across idle, syncing, and nominal states.",
-            "categories": [
-                "micro-feedback",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "micro-feedback/kinetic-status-pill.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "animated-connector-beam",
-            "type": "registry:ui",
-            "title": "Animated Connector Beam",
-            "description": "SVG cubic-bezier signal pulses flowing smoothly between two nodes.",
-            "categories": [
-                "physics-optics",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "physics-optics/animated-connector-beam.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "blur-fade",
-            "type": "registry:ui",
-            "title": "Optical Blur-Fade Container",
-            "description": "Smooth opacity, vertical slide, and optical blur reveal for cards and sections.",
-            "categories": [
-                "layout-morph",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "layout-morph/blur-fade.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "infinite-marquee",
-            "type": "registry:ui",
-            "title": "Infinite Edge-Fade Marquee",
-            "description": "Seamless horizontal infinite strip with pause-on-hover and CSS edge-fade mask.",
-            "categories": [
-                "scroll-driven",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "scroll-driven/infinite-marquee.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "tactile-push-button",
-            "type": "registry:ui",
-            "title": "Tactile 3D Push Button",
-            "description": "Mechanical keycap-style push button with physical bottom lip depression.",
-            "categories": [
-                "micro-feedback",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "micro-feedback/tactile-push-button.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "aurora-mesh-bg",
-            "type": "registry:ui",
-            "title": "Ambient Aurora Mesh Backdrop",
-            "description": "Slow-drifting multi-stop CSS aurora backdrop with static reduced-motion freeze.",
-            "categories": [
-                "shader-canvas",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "shader-canvas/aurora-mesh-bg.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "scroll-sticky-scale",
-            "type": "registry:ui",
-            "title": "Scroll Sticky Scale Card",
-            "description": "Scroll-linked card container that smoothly scales and elevates with scroll progress.",
-            "categories": [
-                "scroll-driven",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "scroll-driven/scroll-sticky-scale.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "odometer-ticker",
-            "type": "registry:ui",
-            "title": "Odometer Digit-Wheel Ticker",
-            "description": "Vertical rolling digit-wheel numeric counter with tabular-nums alignment.",
-            "categories": [
-                "micro-feedback",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "micro-feedback/odometer-ticker.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "streaming-token-text",
-            "type": "registry:ui",
-            "title": "Streaming Token Text & Citations",
-            "description": "Token-by-token LLM stream reveal with interactive hoverable inline citation pills.",
-            "categories": [
-                "ai-agentic",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "ai-agentic/streaming-token-text.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "reasoning-trace",
-            "type": "registry:ui",
-            "title": "Reasoning Trace Accordion",
-            "description": "Collapsible LLM thinking trace with animated duration timer and live shimmer header.",
-            "categories": [
-                "ai-agentic",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "ai-agentic/reasoning-trace.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "tool-call-step",
-            "type": "registry:ui",
-            "title": "Agent Tool-Call Step Row",
-            "description": "Interactive tool execution row transitioning across pending, running, success, and error states.",
-            "categories": [
-                "ai-agentic",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "ai-agentic/tool-call-step.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "agent-approval-card",
-            "type": "registry:ui",
-            "title": "Agent Approval Permission Gate",
-            "description": "Human-in-the-loop approval card with command scope preview and Approve/Deny lock.",
-            "categories": [
-                "ai-agentic",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "ai-agentic/agent-approval-card.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "inline-code-diff",
-            "type": "registry:ui",
-            "title": "Inline Agent Code Diff",
-            "description": "Unified code diff preview with +/- gutters and interactive Accept/Reject hunk state.",
-            "categories": [
-                "ai-agentic",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "ai-agentic/inline-code-diff.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "slash-prompt-composer",
-            "type": "registry:ui",
-            "title": "Slash Prompt Composer",
-            "description": "AI prompt input bar with removable context chips and live / slash-command menu.",
-            "categories": [
-                "ai-agentic",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "ai-agentic/slash-prompt-composer.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "chain-of-thought-rail",
-            "type": "registry:ui",
-            "title": "Chain-of-Thought Execution Rail",
-            "description": "Vertical connected multi-step agent timeline with active pulse beacon.",
-            "categories": [
-                "ai-agentic",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "ai-agentic/chain-of-thought-rail.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "holographic-foil-card",
-            "type": "registry:ui",
-            "title": "Holographic Foil Card",
-            "description": "Pointer-angle spectral rainbow foil refraction layered over dark cards.",
-            "categories": [
-                "physics-optics",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "physics-optics/holographic-foil-card.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "svg-ripple-pulse",
-            "type": "registry:ui",
-            "title": "SVG Radar Ripple Pulse",
-            "description": "Concentric expanding radar/sonar SVG stroke rings radiating from a core anchor.",
-            "categories": [
-                "shader-canvas",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "shader-canvas/svg-ripple-pulse.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "meteor-shower",
-            "type": "registry:ui",
-            "title": "Nocturnal Meteor Shower",
-            "description": "Deterministic angled luminous meteor streaks falling across dark hero cards.",
-            "categories": [
-                "shader-canvas",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "shader-canvas/meteor-shower.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "lamp-horizon-glow",
-            "type": "registry:ui",
-            "title": "Lamp Horizon Spotlight",
-            "description": "Architectural overhead conic spotlight beam illuminating a hero title bar.",
-            "categories": [
-                "physics-optics",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "physics-optics/lamp-horizon-glow.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "stacked-card-deck",
-            "type": "registry:ui",
-            "title": "Z-Depth Stacked Card Deck",
-            "description": "Interactive card stack cycling front card to back with stepped scale and offset.",
-            "categories": [
-                "layout-morph",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "layout-morph/stacked-card-deck.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "tracing-scroll-beam",
-            "type": "registry:ui",
-            "title": "Vertical Tracing Scroll Beam",
-            "description": "Vertical gradient beam tracing a scrollable narrative spine.",
-            "categories": [
-                "scroll-driven",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "scroll-driven/tracing-scroll-beam.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "gooey-pill-nav",
-            "type": "registry:ui",
-            "title": "Gooey Metaball Pill Nav",
-            "description": "SVG feColorMatrix metaball nav isolating blur strictly to the background pill layer.",
-            "categories": [
-                "physics-optics",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "physics-optics/gooey-pill-nav.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "eclipse-orb",
-            "type": "registry:ui",
-            "title": "Eclipse Corona Orb",
-            "description": "Layered planetary eclipse halo orb with gentle breathing luminance.",
-            "categories": [
-                "shader-canvas",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "shader-canvas/eclipse-orb.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "rotary-type-dial",
-            "type": "registry:ui",
-            "title": "Rotary Typographic Dial",
-            "description": "Pointer-rotatable radial dial with crisp angular ticks and tabular readout.",
-            "categories": [
-                "cursor-reactive",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "cursor-reactive/rotary-type-dial.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "accordion-gallery",
-            "type": "registry:ui",
-            "title": "Flex Accordion Gallery",
-            "description": "Horizontal expanding strip where hovered or selected panel widens smoothly.",
-            "categories": [
-                "layout-morph",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "layout-morph/accordion-gallery.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "split-flap-clock",
-            "type": "registry:ui",
-            "title": "3D Split-Flap Display",
-            "description": "Mid-hinged 3D perspective airport split-flap digit flip board.",
-            "categories": [
-                "text-kinetic",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "text-kinetic/split-flap-clock.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "perspective-book",
-            "type": "registry:ui",
-            "title": "3D Perspective Hardcover Book",
-            "description": "CSS 3D hardcover book with spine, page block edges, and cover tilt on hover.",
-            "categories": [
-                "physics-optics",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "physics-optics/perspective-book.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "spring-number-flow",
-            "type": "registry:ui",
-            "title": "Bidirectional Spring Number Flow",
-            "description": "Directional per-digit numeric transition supporting dynamic formatted digit enter/exit.",
-            "categories": [
-                "micro-feedback",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "micro-feedback/spring-number-flow.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "velocity-dismiss-drawer",
-            "type": "registry:ui",
-            "title": "Velocity Drag-to-Dismiss Drawer",
-            "description": "Interactive sheet supporting pointer drag, rubber-band resistance, and velocity snap dismiss.",
-            "categories": [
-                "layout-morph",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "layout-morph/velocity-dismiss-drawer.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "stacked-toast-deck",
-            "type": "registry:ui",
-            "title": "Stacked Hover-Expand Toast Deck",
-            "description": "Depth-stacked notifications fanning out smoothly on hover with click-to-dismiss.",
-            "categories": [
-                "micro-feedback",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "micro-feedback/stacked-toast-deck.tsx",
-                    "type": "registry:ui"
-                }
-            ]
-        },
-        {
-            "name": "magnetic-copy-spell",
-            "type": "registry:ui",
-            "title": "Magnetic Copy Checkmark Spell",
-            "description": "Tactile copy trigger with SVG checkmark transition and subtle radial confirmation ring.",
-            "categories": [
-                "micro-feedback",
-                "animation"
-            ],
-            "files": [
-                {
-                    "path": "micro-feedback/magnetic-copy-spell.tsx",
-                    "type": "registry:ui"
-                }
-            ]
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "magnetic-button",
+      "type": "registry:ui",
+      "title": "Magnetic Button",
+      "description": "Button that subtly pulls toward the pointer on hover and springs back cleanly.",
+      "categories": [
+        "cursor-reactive",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "cursor-reactive/magnetic-button.tsx",
+          "type": "registry:ui"
         }
-    ]
+      ]
+    },
+    {
+      "name": "border-spotlight",
+      "type": "registry:ui",
+      "title": "Mouse-Tracking Border Spotlight",
+      "description": "Radial cursor-tracking specular glow across dark surfaces.",
+      "categories": [
+        "cursor-reactive",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "cursor-reactive/border-spotlight.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sibling-dim",
+      "type": "registry:item",
+      "title": "Sibling Dim Grid",
+      "description": "Pure CSS :has() utility dimming non-hovered sibling cards.",
+      "categories": [
+        "cursor-reactive",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "cursor-reactive/sibling-dim.css",
+          "type": "registry:file",
+          "target": "~/src/styles/sibling-dim.css"
+        }
+      ]
+    },
+    {
+      "name": "scramble-text",
+      "type": "registry:ui",
+      "title": "Scramble / Decrypt Text",
+      "description": "Glyph-cycling text reveal for status changes and telemetry labels.",
+      "categories": [
+        "text-kinetic",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "text-kinetic/scramble-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "split-reveal",
+      "type": "registry:ui",
+      "title": "Masked Split-Text Reveal",
+      "description": "Word or character slide-up reveal clipped by overflow masks.",
+      "categories": [
+        "text-kinetic",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "text-kinetic/split-reveal.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "variable-proximity",
+      "type": "registry:ui",
+      "title": "Variable Font Proximity",
+      "description": "Dynamically modulates variable font weight based on pointer distance.",
+      "categories": [
+        "text-kinetic",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "text-kinetic/variable-proximity.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "flip-card",
+      "type": "registry:ui",
+      "title": "FLIP Layout Morph Card",
+      "description": "Zero-dependency First-Last-Invert-Play layout transition wrapper.",
+      "categories": [
+        "layout-morph",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "layout-morph/flip-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "velocity-skew",
+      "type": "registry:ui",
+      "title": "Scroll Velocity Skew",
+      "description": "Applies damped vertical skew driven by window scroll speed.",
+      "categories": [
+        "layout-morph",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "layout-morph/velocity-skew.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bayer-dither",
+      "type": "registry:ui",
+      "title": "Bayer Dither Canvas",
+      "description": "4x4 ordered Bayer dithering 1-bit pixel canvas renderer.",
+      "categories": [
+        "shader-canvas",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "shader-canvas/bayer-dither.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ascii-filter",
+      "type": "registry:ui",
+      "title": "ASCII Wave Filter",
+      "description": "Real-time density-mapped ASCII character field renderer.",
+      "categories": [
+        "shader-canvas",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "shader-canvas/ascii-filter.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "orbital-canvas",
+      "type": "registry:ui",
+      "title": "2.5D Orbital Constellation Canvas",
+      "description": "HiDPI 2.5D tilted elliptical orbit visualization with Phyllotaxis clusters and hover-freeze damping.",
+      "categories": [
+        "shader-canvas",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "shader-canvas/orbital-canvas.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "liquid-glass-filter",
+      "type": "registry:ui",
+      "title": "Liquid Glass Surface",
+      "description": "Translucent optical surface with SVG displacement filter and specular top highlight.",
+      "categories": [
+        "physics-optics",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "physics-optics/liquid-glass-filter.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spring-tilt-card",
+      "type": "registry:ui",
+      "title": "Spring 3D Tilt Card",
+      "description": "Damped 3D perspective card responding to pointer coordinates.",
+      "categories": [
+        "physics-optics",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "physics-optics/spring-tilt-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "glare-hover",
+      "type": "registry:ui",
+      "title": "Specular Glare Hover",
+      "description": "Directional glossy light streak and 1px rim glint sweeping across a surface on pointer interaction.",
+      "categories": [
+        "physics-optics",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "physics-optics/glare-hover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "marquee-hover-row",
+      "type": "registry:ui",
+      "title": "Kinetic Marquee Hover Row",
+      "description": "Editorial menu row that reveals a GPU-composited infinite scrolling marquee strip on hover or focus.",
+      "categories": [
+        "text-kinetic",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "text-kinetic/marquee-hover-row.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "star-border",
+      "type": "registry:ui",
+      "title": "Star Border Glow",
+      "description": "Orbiting luminous border highlights sweeping across dark containers.",
+      "categories": [
+        "cursor-reactive",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "cursor-reactive/star-border.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "magnet-lines",
+      "type": "registry:ui",
+      "title": "Magnetic Vector Lines",
+      "description": "Grid of short vector ticks rotating smoothly to point toward the cursor.",
+      "categories": [
+        "cursor-reactive",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "cursor-reactive/magnet-lines.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "crosshair-reticle",
+      "type": "registry:ui",
+      "title": "Crosshair Coordinate Reticle",
+      "description": "Precision FUI horizontal/vertical hairlines with live X/Y telemetry.",
+      "categories": [
+        "cursor-reactive",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "cursor-reactive/crosshair-reticle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "border-beam",
+      "type": "registry:ui",
+      "title": "Conic Border Beam",
+      "description": "Continuous rotating conic light beam tracing a 1.5px card perimeter.",
+      "categories": [
+        "cursor-reactive",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "cursor-reactive/border-beam.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "shiny-text",
+      "type": "registry:ui",
+      "title": "Metallic Shiny Text",
+      "description": "Continuous linear-gradient specular sweep across display lettering.",
+      "categories": [
+        "text-kinetic",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "text-kinetic/shiny-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "blur-text",
+      "type": "registry:ui",
+      "title": "Optical Blur Text Reveal",
+      "description": "Staggered word reveal transitioning from optical blur to crisp focus.",
+      "categories": [
+        "text-kinetic",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "text-kinetic/blur-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "text-roll",
+      "type": "registry:ui",
+      "title": "Split-Flap Text Roll",
+      "description": "Vertical slot-machine character roll on hover or focus.",
+      "categories": [
+        "text-kinetic",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "text-kinetic/text-roll.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pixel-card",
+      "type": "registry:ui",
+      "title": "Pixel Shimmer Card",
+      "description": "Canvas pixel grid blooming outward from center on hover.",
+      "categories": [
+        "shader-canvas",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "shader-canvas/pixel-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "elastic-slider",
+      "type": "registry:ui",
+      "title": "Elastic Overshoot Slider",
+      "description": "Tactile range slider that stretches elastically when dragged past bounds.",
+      "categories": [
+        "physics-optics",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "physics-optics/elastic-slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dock-magnify",
+      "type": "registry:ui",
+      "title": "Proximity Dock Magnification",
+      "description": "macOS-style proximity-scaled icon dock bar with smooth falloff.",
+      "categories": [
+        "physics-optics",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "physics-optics/dock-magnify.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-progress-bar",
+      "type": "registry:ui",
+      "title": "Compositor Scroll Progress Bar",
+      "description": "Ultra-thin scaleX progress ribbon bound to page or container scroll.",
+      "categories": [
+        "scroll-driven",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "scroll-driven/scroll-progress-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "click-spark",
+      "type": "registry:ui",
+      "title": "Radial Click Spark",
+      "description": "Lightweight canvas spark burst radiating from pointer click coordinates.",
+      "categories": [
+        "micro-feedback",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "micro-feedback/click-spark.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "count-up",
+      "type": "registry:ui",
+      "title": "Eased Tabular Count-Up",
+      "description": "Cubic-eased tabular-nums numeric counter with instant reduced-motion fallback.",
+      "categories": [
+        "micro-feedback",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "micro-feedback/count-up.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hold-to-confirm",
+      "type": "registry:ui",
+      "title": "Hold-to-Confirm Action Button",
+      "description": "Press-and-hold destructive confirmation button with linear fill progress.",
+      "categories": [
+        "micro-feedback",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "micro-feedback/hold-to-confirm.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kinetic-card-trail",
+      "type": "registry:ui",
+      "title": "Kinetic Card Trail",
+      "description": "Velocity-gated floating card trail spawning along cursor path with decay rotation.",
+      "categories": [
+        "cursor-reactive",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "cursor-reactive/kinetic-card-trail.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "make-way-grid",
+      "type": "registry:ui",
+      "title": "Make-Way FLIP Grid",
+      "description": "Interactive grid where selecting a tile expands it while neighbors make way via WAAPI FLIP.",
+      "categories": [
+        "layout-morph",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "layout-morph/make-way-grid.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pixel-hover-grid",
+      "type": "registry:ui",
+      "title": "Pixel Hover Dissolve Grid",
+      "description": "Interactive Canvas pixel-block proximity grid with damped decay.",
+      "categories": [
+        "shader-canvas",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "shader-canvas/pixel-hover-grid.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "crt-grain-overlay",
+      "type": "registry:ui",
+      "title": "CRT Film Grain Overlay",
+      "description": "Stepped procedural canvas noise and subtle CRT scanlines with reduced-motion freeze.",
+      "categories": [
+        "shader-canvas",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "shader-canvas/crt-grain-overlay.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "svg-turbulence-hover",
+      "type": "registry:ui",
+      "title": "SVG Turbulence Hover Filter",
+      "description": "Animated SVG feTurbulence + feDisplacementMap ripple distortion on hover.",
+      "categories": [
+        "physics-optics",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "physics-optics/svg-turbulence-hover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "elastic-column-scroll",
+      "type": "registry:ui",
+      "title": "Elastic Staggered Column Scroll",
+      "description": "Multi-column scrollable grid where adjacent columns lag at staggered inertia ratios.",
+      "categories": [
+        "scroll-driven",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "scroll-driven/elastic-column-scroll.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spotlight-tabs",
+      "type": "registry:ui",
+      "title": "Spotlight Segmented Tabs",
+      "description": "Segmented tab control with smoothly gliding active pill indicator (180ms ease-out).",
+      "categories": [
+        "layout-morph",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "layout-morph/spotlight-tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progressive-blur-edge",
+      "type": "registry:ui",
+      "title": "Progressive Blur Scroll Edge",
+      "description": "Multi-step CSS mask-image and backdrop-filter edge fade for scrollable panels.",
+      "categories": [
+        "scroll-driven",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "scroll-driven/progressive-blur-edge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tactile-press-badge",
+      "type": "registry:ui",
+      "title": "Tactile Detent Press Badge",
+      "description": "Crisp 120ms physical micro-detent press button with tabular-nums counter tick.",
+      "categories": [
+        "micro-feedback",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "micro-feedback/tactile-press-badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kinetic-status-pill",
+      "type": "registry:ui",
+      "title": "Kinetic Morphing Status Pill",
+      "description": "Live telemetry status pill morphing smoothly across idle, syncing, and nominal states.",
+      "categories": [
+        "micro-feedback",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "micro-feedback/kinetic-status-pill.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "animated-connector-beam",
+      "type": "registry:ui",
+      "title": "Animated Connector Beam",
+      "description": "SVG cubic-bezier signal pulses flowing smoothly between two nodes.",
+      "categories": [
+        "physics-optics",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "physics-optics/animated-connector-beam.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "blur-fade",
+      "type": "registry:ui",
+      "title": "Optical Blur-Fade Container",
+      "description": "Smooth opacity, vertical slide, and optical blur reveal for cards and sections.",
+      "categories": [
+        "layout-morph",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "layout-morph/blur-fade.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "infinite-marquee",
+      "type": "registry:ui",
+      "title": "Infinite Edge-Fade Marquee",
+      "description": "Seamless horizontal infinite strip with pause-on-hover and CSS edge-fade mask.",
+      "categories": [
+        "scroll-driven",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "scroll-driven/infinite-marquee.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tactile-push-button",
+      "type": "registry:ui",
+      "title": "Tactile 3D Push Button",
+      "description": "Mechanical keycap-style push button with physical bottom lip depression.",
+      "categories": [
+        "micro-feedback",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "micro-feedback/tactile-push-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "aurora-mesh-bg",
+      "type": "registry:ui",
+      "title": "Ambient Aurora Mesh Backdrop",
+      "description": "Slow-drifting multi-stop CSS aurora backdrop with static reduced-motion freeze.",
+      "categories": [
+        "shader-canvas",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "shader-canvas/aurora-mesh-bg.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-sticky-scale",
+      "type": "registry:ui",
+      "title": "Scroll Sticky Scale Card",
+      "description": "Scroll-linked card container that smoothly scales and elevates with scroll progress.",
+      "categories": [
+        "scroll-driven",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "scroll-driven/scroll-sticky-scale.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "odometer-ticker",
+      "type": "registry:ui",
+      "title": "Odometer Digit-Wheel Ticker",
+      "description": "Vertical rolling digit-wheel numeric counter with tabular-nums alignment.",
+      "categories": [
+        "micro-feedback",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "micro-feedback/odometer-ticker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "streaming-token-text",
+      "type": "registry:ui",
+      "title": "Streaming Token Text & Citations",
+      "description": "Token-by-token LLM stream reveal with interactive hoverable inline citation pills.",
+      "categories": [
+        "ai-agentic",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "ai-agentic/streaming-token-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "reasoning-trace",
+      "type": "registry:ui",
+      "title": "Reasoning Trace Accordion",
+      "description": "Collapsible LLM thinking trace with animated duration timer and live shimmer header.",
+      "categories": [
+        "ai-agentic",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "ai-agentic/reasoning-trace.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tool-call-step",
+      "type": "registry:ui",
+      "title": "Agent Tool-Call Step Row",
+      "description": "Interactive tool execution row transitioning across pending, running, success, and error states.",
+      "categories": [
+        "ai-agentic",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "ai-agentic/tool-call-step.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "agent-approval-card",
+      "type": "registry:ui",
+      "title": "Agent Approval Permission Gate",
+      "description": "Human-in-the-loop approval card with command scope preview and Approve/Deny lock.",
+      "categories": [
+        "ai-agentic",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "ai-agentic/agent-approval-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "inline-code-diff",
+      "type": "registry:ui",
+      "title": "Inline Agent Code Diff",
+      "description": "Unified code diff preview with +/- gutters and interactive Accept/Reject hunk state.",
+      "categories": [
+        "ai-agentic",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "ai-agentic/inline-code-diff.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "slash-prompt-composer",
+      "type": "registry:ui",
+      "title": "Slash Prompt Composer",
+      "description": "AI prompt input bar with removable context chips and live / slash-command menu.",
+      "categories": [
+        "ai-agentic",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "ai-agentic/slash-prompt-composer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chain-of-thought-rail",
+      "type": "registry:ui",
+      "title": "Chain-of-Thought Execution Rail",
+      "description": "Vertical connected multi-step agent timeline with active pulse beacon.",
+      "categories": [
+        "ai-agentic",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "ai-agentic/chain-of-thought-rail.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "holographic-foil-card",
+      "type": "registry:ui",
+      "title": "Holographic Foil Card",
+      "description": "Pointer-angle spectral rainbow foil refraction layered over dark cards.",
+      "categories": [
+        "physics-optics",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "physics-optics/holographic-foil-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "svg-ripple-pulse",
+      "type": "registry:ui",
+      "title": "SVG Radar Ripple Pulse",
+      "description": "Concentric expanding radar/sonar SVG stroke rings radiating from a core anchor.",
+      "categories": [
+        "shader-canvas",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "shader-canvas/svg-ripple-pulse.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "meteor-shower",
+      "type": "registry:ui",
+      "title": "Nocturnal Meteor Shower",
+      "description": "Deterministic angled luminous meteor streaks falling across dark hero cards.",
+      "categories": [
+        "shader-canvas",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "shader-canvas/meteor-shower.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "lamp-horizon-glow",
+      "type": "registry:ui",
+      "title": "Lamp Horizon Spotlight",
+      "description": "Architectural overhead conic spotlight beam illuminating a hero title bar.",
+      "categories": [
+        "physics-optics",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "physics-optics/lamp-horizon-glow.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stacked-card-deck",
+      "type": "registry:ui",
+      "title": "Z-Depth Stacked Card Deck",
+      "description": "Interactive card stack cycling front card to back with stepped scale and offset.",
+      "categories": [
+        "layout-morph",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "layout-morph/stacked-card-deck.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tracing-scroll-beam",
+      "type": "registry:ui",
+      "title": "Vertical Tracing Scroll Beam",
+      "description": "Vertical gradient beam tracing a scrollable narrative spine.",
+      "categories": [
+        "scroll-driven",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "scroll-driven/tracing-scroll-beam.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "gooey-pill-nav",
+      "type": "registry:ui",
+      "title": "Gooey Metaball Pill Nav",
+      "description": "SVG feColorMatrix metaball nav isolating blur strictly to the background pill layer.",
+      "categories": [
+        "physics-optics",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "physics-optics/gooey-pill-nav.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "eclipse-orb",
+      "type": "registry:ui",
+      "title": "Eclipse Corona Orb",
+      "description": "Layered planetary eclipse halo orb with gentle breathing luminance.",
+      "categories": [
+        "shader-canvas",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "shader-canvas/eclipse-orb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "rotary-type-dial",
+      "type": "registry:ui",
+      "title": "Rotary Typographic Dial",
+      "description": "Pointer-rotatable radial dial with crisp angular ticks and tabular readout.",
+      "categories": [
+        "cursor-reactive",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "cursor-reactive/rotary-type-dial.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "accordion-gallery",
+      "type": "registry:ui",
+      "title": "Flex Accordion Gallery",
+      "description": "Horizontal expanding strip where hovered or selected panel widens smoothly.",
+      "categories": [
+        "layout-morph",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "layout-morph/accordion-gallery.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "split-flap-clock",
+      "type": "registry:ui",
+      "title": "3D Split-Flap Display",
+      "description": "Mid-hinged 3D perspective airport split-flap digit flip board.",
+      "categories": [
+        "text-kinetic",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "text-kinetic/split-flap-clock.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "perspective-book",
+      "type": "registry:ui",
+      "title": "3D Perspective Hardcover Book",
+      "description": "CSS 3D hardcover book with spine, page block edges, and cover tilt on hover.",
+      "categories": [
+        "physics-optics",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "physics-optics/perspective-book.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spring-number-flow",
+      "type": "registry:ui",
+      "title": "Bidirectional Spring Number Flow",
+      "description": "Directional per-digit numeric transition supporting dynamic formatted digit enter/exit.",
+      "categories": [
+        "micro-feedback",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "micro-feedback/spring-number-flow.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "velocity-dismiss-drawer",
+      "type": "registry:ui",
+      "title": "Velocity Drag-to-Dismiss Drawer",
+      "description": "Interactive sheet supporting pointer drag, rubber-band resistance, and velocity snap dismiss.",
+      "categories": [
+        "layout-morph",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "layout-morph/velocity-dismiss-drawer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stacked-toast-deck",
+      "type": "registry:ui",
+      "title": "Stacked Hover-Expand Toast Deck",
+      "description": "Depth-stacked notifications fanning out smoothly on hover with click-to-dismiss.",
+      "categories": [
+        "micro-feedback",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "micro-feedback/stacked-toast-deck.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "magnetic-copy-spell",
+      "type": "registry:ui",
+      "title": "Magnetic Copy Checkmark Spell",
+      "description": "Tactile copy trigger with SVG checkmark transition and subtle radial confirmation ring.",
+      "categories": [
+        "micro-feedback",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "micro-feedback/magnetic-copy-spell.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "target-bracket-cursor",
+      "type": "registry:ui",
+      "title": "Target Bracket Cursor",
+      "description": "Four animated corner-bracket reticles that magnetically snap and resize around any hovered target element.",
+      "categories": [
+        "cursor-reactive",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "cursor-reactive/target-bracket-cursor.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "true-focus-frame",
+      "type": "registry:ui",
+      "title": "True Focus Frame",
+      "description": "Animated corner-bracket focus frame stepping word-by-word across a headline while softly blurring unfocused sibling words.",
+      "categories": [
+        "text-kinetic",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "text-kinetic/true-focus-frame.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "text-morph-swap",
+      "type": "registry:ui",
+      "title": "Text Morph Swap",
+      "description": "Character-preserving cross-layout morph that smoothly transitions shared glyphs when cycling labels.",
+      "categories": [
+        "text-kinetic",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "text-kinetic/text-morph-swap.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "line-shadow-heading",
+      "type": "registry:ui",
+      "title": "Line Shadow Heading",
+      "description": "Animated diagonal hatch line-shadow offset projected behind bold display headings via CSS background-clip text.",
+      "categories": [
+        "text-kinetic",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "text-kinetic/line-shadow-heading.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "before-after-curtain",
+      "type": "registry:ui",
+      "title": "Before After Curtain",
+      "description": "Pointer- and keyboard-draggable vertical split-curtain slider for live before/after visual comparisons.",
+      "categories": [
+        "layout-morph",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "layout-morph/before-after-curtain.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "expandable-toolbar",
+      "type": "registry:ui",
+      "title": "Expandable Toolbar",
+      "description": "Compact toolbar that smoothly morphs open into contextual inline panels on selection.",
+      "categories": [
+        "layout-morph",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "layout-morph/expandable-toolbar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-paper-fan",
+      "type": "registry:ui",
+      "title": "Folder Paper Fan",
+      "description": "Tactile desktop folder container whose tucked document sheets fan outward in angled 3D perspective on hover or click.",
+      "categories": [
+        "layout-morph",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "layout-morph/folder-paper-fan.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "optical-zoom-lens",
+      "type": "registry:ui",
+      "title": "Optical Zoom Lens",
+      "description": "Circular pointer-tracking optical magnifying loupe enlarging underlying specimen details at 2x scale.",
+      "categories": [
+        "physics-optics",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "physics-optics/optical-zoom-lens.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "flickering-telemetry-grid",
+      "type": "registry:ui",
+      "title": "Flickering Telemetry Grid",
+      "description": "Full-bleed ambient Canvas hero backdrop of stochastically shimmering micro-squares.",
+      "categories": [
+        "shader-canvas",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "shader-canvas/flickering-telemetry-grid.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "slide-to-commit",
+      "type": "registry:ui",
+      "title": "Slide To Commit",
+      "description": "Horizontal pointer-drag thumb across a confirmation rail with spring snap-back and locked commit state.",
+      "categories": [
+        "micro-feedback",
+        "animation"
+      ],
+      "files": [
+        {
+          "path": "micro-feedback/slide-to-commit.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
 }

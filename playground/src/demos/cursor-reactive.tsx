@@ -6,6 +6,7 @@ import { CrosshairReticle } from "@vault/animations/cursor-reactive/crosshair-re
 import { BorderBeam } from "@vault/animations/cursor-reactive/border-beam";
 import { KineticCardTrail } from "@vault/animations/cursor-reactive/kinetic-card-trail";
 import { RotaryTypeDial } from "@vault/animations/cursor-reactive/rotary-type-dial";
+import { TargetBracketCursor } from "@vault/animations/cursor-reactive/target-bracket-cursor";
 import "@vault/animations/cursor-reactive/sibling-dim.css";
 import type { DemoMap } from "./types";
 
@@ -161,4 +162,7 @@ export const cursorReactiveDemos: DemoMap = {
   "border-beam": BorderBeamDemo,
   "kinetic-card-trail": KineticCardTrailDemo,
   "rotary-type-dial": () => <RotaryTypeDial />,
+  "target-bracket-cursor": () => (
+    <TargetBracketCursor style={{ width: "100%", maxWidth: 330 }} />
+  ),
 };

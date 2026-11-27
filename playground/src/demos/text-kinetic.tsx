@@ -8,6 +8,9 @@ import { ShinyText } from "@vault/animations/text-kinetic/shiny-text";
 import { BlurText } from "@vault/animations/text-kinetic/blur-text";
 import { TextRoll } from "@vault/animations/text-kinetic/text-roll";
 import { SplitFlapClock } from "@vault/animations/text-kinetic/split-flap-clock";
+import { TrueFocusFrame } from "@vault/animations/text-kinetic/true-focus-frame";
+import { TextMorphSwap } from "@vault/animations/text-kinetic/text-morph-swap";
+import { LineShadowHeading } from "@vault/animations/text-kinetic/line-shadow-heading";
 import type { DemoMap, DemoProps } from "./types";
 
 function ScrambleTextDemo({ motionEpoch }: DemoProps) {
@@ -228,4 +231,22 @@ export const textKineticDemos: DemoMap = {
   "blur-text": BlurTextDemo,
   "text-roll": TextRollDemo,
   "split-flap-clock": () => <SplitFlapClock />,
+  "true-focus-frame": ({ motionEpoch }) => (
+    <div style={{ fontSize: 22, fontWeight: 700, letterSpacing: "-0.02em" }}>
+      <TrueFocusFrame key={motionEpoch} sentence="Precision Kinetic Focus" />
+    </div>
+  ),
+  "text-morph-swap": ({ motionEpoch }) => (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+      <div style={{ fontSize: 24, fontWeight: 700, color: "var(--fui-signal-active)" }}>
+        <TextMorphSwap key={motionEpoch} phrases={["Deploy", "Deploying...", "Deployed"]} />
+      </div>
+      <span className="fui-mono-label">Auto-cycles or click text to morph glyphs</span>
+    </div>
+  ),
+  "line-shadow-heading": () => (
+    <div style={{ fontSize: 34, fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1 }}>
+      <LineShadowHeading text="SPECIMEN" shadowColor="#38bdf8" />
+    </div>
+  ),
 };

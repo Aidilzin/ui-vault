@@ -10,6 +10,7 @@ import { OdometerTicker } from "@vault/animations/micro-feedback/odometer-ticker
 import { SpringNumberFlow } from "@vault/animations/micro-feedback/spring-number-flow";
 import { StackedToastDeck } from "@vault/animations/micro-feedback/stacked-toast-deck";
 import { MagneticCopySpell } from "@vault/animations/micro-feedback/magnetic-copy-spell";
+import { SlideToCommit } from "@vault/animations/micro-feedback/slide-to-commit";
 import type { DemoMap, DemoProps } from "./types";
 
 function ClickSparkDemo() {
@@ -119,4 +120,10 @@ export const microFeedbackDemos: DemoMap = {
   "spring-number-flow": () => <SpringNumberFlow />,
   "stacked-toast-deck": () => <StackedToastDeck />,
   "magnetic-copy-spell": () => <MagneticCopySpell />,
+  "slide-to-commit": () => (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+      <SlideToCommit />
+      <span className="fui-mono-label">Drag thumb across rail (click to reset)</span>
+    </div>
+  ),
 };

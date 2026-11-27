@@ -12,6 +12,7 @@ import { AuroraMeshBg } from "@vault/animations/shader-canvas/aurora-mesh-bg";
 import { SvgRipplePulse } from "@vault/animations/shader-canvas/svg-ripple-pulse";
 import { MeteorShower } from "@vault/animations/shader-canvas/meteor-shower";
 import { EclipseOrb } from "@vault/animations/shader-canvas/eclipse-orb";
+import { FlickeringTelemetryGrid } from "@vault/animations/shader-canvas/flickering-telemetry-grid";
 import type { DemoMap, DemoProps } from "./types";
 
 const SAMPLE_ORBIT_HUBS: OrbitHub[] = [
@@ -236,4 +237,9 @@ export const shaderCanvasDemos: DemoMap = {
   "svg-ripple-pulse": SvgRipplePulseDemo,
   "meteor-shower": MeteorShowerDemo,
   "eclipse-orb": () => <EclipseOrb />,
+  "flickering-telemetry-grid": ({ motionEpoch }) => (
+    <div style={{ width: "100%", maxWidth: 330, height: 144, border: "1px solid var(--fui-border-strong)", borderRadius: 4, overflow: "hidden", background: "#090a0c" }}>
+      <FlickeringTelemetryGrid key={motionEpoch} squareSize={4} gridGap={6} color="#38bdf8" />
+    </div>
+  ),
 };

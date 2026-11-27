@@ -8,6 +8,9 @@ import { BlurFade } from "@vault/animations/layout-morph/blur-fade";
 import { StackedCardDeck } from "@vault/animations/layout-morph/stacked-card-deck";
 import { AccordionGallery } from "@vault/animations/layout-morph/accordion-gallery";
 import { VelocityDismissDrawer } from "@vault/animations/layout-morph/velocity-dismiss-drawer";
+import { BeforeAfterCurtain } from "@vault/animations/layout-morph/before-after-curtain";
+import { ExpandableToolbar } from "@vault/animations/layout-morph/expandable-toolbar";
+import { FolderPaperFan } from "@vault/animations/layout-morph/folder-paper-fan";
 import type { DemoMap, DemoProps } from "./types";
 
 function FlipCardDemo() {
@@ -177,4 +180,19 @@ export const layoutMorphDemos: DemoMap = {
   "stacked-card-deck": () => <StackedCardDeck />,
   "accordion-gallery": () => <AccordionGallery />,
   "velocity-dismiss-drawer": () => <VelocityDismissDrawer />,
+  "before-after-curtain": () => (
+    <BeforeAfterCurtain style={{ maxWidth: 340 }} />
+  ),
+  "expandable-toolbar": () => (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+      <ExpandableToolbar />
+      <span className="fui-mono-label">Click any toolbar action to expand inline drawer</span>
+    </div>
+  ),
+  "folder-paper-fan": () => (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
+      <FolderPaperFan />
+      <span className="fui-mono-label">Hover or click folder to fan specimen sheets</span>
+    </div>
+  ),
 };
