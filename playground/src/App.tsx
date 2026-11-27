@@ -105,14 +105,15 @@ export function App() {
     if (node.kind === "style") {
       const pairedAnims = animationNodes
         .filter((a) => getRelationStatus(node.id, a.id) === "pairs")
-        .slice(0, 2)
+        .slice(0, 3)
         .map((a) => a.id);
 
       setLabState((prev) => ({
         ...prev,
         styleId: node.id,
         animationIds: pairedAnims.length > 0 ? pairedAnims : prev.animationIds,
-        backdropId: null,
+        template:
+          node.cluster === "06-editorial-warm" ? "editorial" : prev.template,
       }));
     } else {
       const pairedStyle = styleNodes.find(
@@ -122,7 +123,8 @@ export function App() {
         ...prev,
         styleId: pairedStyle ? pairedStyle.id : prev.styleId,
         animationIds: [node.id],
-        backdropId: null,
+        template:
+          node.mechanic === "ai-agentic" ? "workbench" : prev.template,
       }));
     }
 
@@ -135,7 +137,7 @@ export function App() {
       ...prev,
       styleId: mix.styleId,
       animationIds: mix.animationIds,
-      backdropId: null,
+      template: mix.suggestedTemplate ?? prev.template,
     }));
     setActiveTab("labs");
   }, []);

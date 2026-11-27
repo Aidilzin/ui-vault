@@ -12,6 +12,7 @@ import { SvgRipplePulse } from "@vault/animations/shader-canvas/svg-ripple-pulse
 import { MeteorShower } from "@vault/animations/shader-canvas/meteor-shower";
 import { EclipseOrb } from "@vault/animations/shader-canvas/eclipse-orb";
 import { LampHorizonGlow } from "@vault/animations/physics-optics/lamp-horizon-glow";
+import { MagnetLines } from "@vault/animations/cursor-reactive/magnet-lines";
 import type { ResolvedStyleTheme } from "../lib/style-theme";
 
 interface LabBackdropLayerProps {
@@ -236,6 +237,29 @@ export function LabBackdropLayer({
             }}
           />
         );
+      case "magnet-lines": {
+        const cols = Math.max(6, Math.min(18, Math.floor(size.width / 54)));
+        const rows = Math.max(4, Math.min(10, Math.floor(size.height / 48)));
+        return (
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "grid",
+              placeItems: "center",
+              overflow: "hidden",
+            }}
+          >
+            <MagnetLines
+              key={`${motionEpoch}-${cols}x${rows}`}
+              rows={rows}
+              columns={cols}
+              lineColor={theme.accent}
+              lineHeight={18}
+            />
+          </div>
+        );
+      }
       default:
         return null;
     }

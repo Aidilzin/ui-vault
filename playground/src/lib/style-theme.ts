@@ -1,8 +1,20 @@
 import type { CSSProperties } from "react";
-import { styleTokensById } from "./vault-data";
+import { nodeById, styleTokensById, type StyleNode } from "./vault-data";
+
+export type SurfaceProfile =
+  | "precision"
+  | "swiss"
+  | "retro-os"
+  | "retro-pixel"
+  | "brutalist"
+  | "acid"
+  | "spatial-glass"
+  | "modern-bento"
+  | "editorial-warm";
 
 export interface ResolvedStyleTheme {
   styleId: string;
+  profile: SurfaceProfile;
   rawVars: Record<string, string>;
   canvas: string;
   surface: string;
@@ -28,6 +40,7 @@ export interface ResolvedStyleTheme {
   fontMono: string;
   canvasPattern?: string;
   canvasPatternSize?: string;
+  heroScrim: string;
   pairInk: string;
   pairBg: string;
   pairBorder: string;
@@ -98,7 +111,65 @@ export function getContrastInk(bg: string, fallback = "#ffffff"): string {
 export function getMutedInk(bg: string, fallback = "#8b94a3"): string {
   const lum = getRelativeLuminance(bg);
   if (lum === null) return fallback;
-  return lum > 0.48 ? "#4b5563" : "rgba(255, 255, 255, 0.7)";
+  return lum > 0.48 ? "#4b5563" : "rgba(255, 255, 255, 0.72)";
+}
+
+function hexToRgba(color: string, alpha: number, fallback: string): string {
+  const trimmed = color.trim();
+  const hex = trimmed.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i);
+  if (!hex) return fallback;
+  let h = hex[1];
+  if (h.length === 3) h = h[0] + h[0] + h[1] + h[1] + h[2] + h[2];
+  const r = parseInt(h.slice(0, 2), 16);
+  const g = parseInt(h.slice(2, 4), 16);
+  const b = parseInt(h.slice(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+function resolveSurfaceProfile(styleId: string): SurfaceProfile {
+  if (
+    styleId === "neo-swiss" ||
+    styleId === "wordmark-press" ||
+    styleId === "swiss-type-foundry"
+  ) {
+    return "swiss";
+  }
+  if (styleId === "os-core" || styleId === "retro-web-96") {
+    return "retro-os";
+  }
+  if (
+    styleId === "ditherpunk" ||
+    styleId === "eight-bit-arcade" ||
+    styleId === "phosphor-terminal"
+  ) {
+    return "retro-pixel";
+  }
+  if (styleId === "neo-brutalism" || styleId === "avant-poster") {
+    return "brutalist";
+  }
+  if (
+    styleId === "acid-y2k" ||
+    styleId === "zine-wire" ||
+    styleId === "console-2001"
+  ) {
+    return "acid";
+  }
+
+  const node = nodeById.get(styleId) as StyleNode | undefined;
+  switch (node?.cluster) {
+    case "04-spatial-physics":
+      return "spatial-glass";
+    case "05-modern-craft":
+      return "modern-bento";
+    case "06-editorial-warm":
+      return "editorial-warm";
+    case "02-retro-compute":
+      return "retro-pixel";
+    case "03-kinetic-rebel":
+      return "brutalist";
+    default:
+      return "precision";
+  }
 }
 
 const SERIF_STYLES = new Set([
@@ -114,6 +185,7 @@ const DISPLAY_STYLES = new Set([
   "console-2001",
   "swiss-type-foundry",
   "neo-swiss",
+  "zine-wire",
 ]);
 
 const MONO_STYLES = new Set([
@@ -145,6 +217,7 @@ export function resolveStyleTheme(styleId: string): ResolvedStyleTheme {
 
   const raw = styleTokensById[styleId] ?? "";
   const rawVars = parseCssCustomProps(raw);
+  const profile = resolveSurfaceProfile(styleId);
 
   const canvas = pickToken(rawVars, ["canvas", "bg", "ground"], "#0f1115");
   const surface = pickToken(
@@ -192,39 +265,41 @@ export function resolveStyleTheme(styleId: string): ResolvedStyleTheme {
     ],
     accent
   );
-  const radius = pickToken(
-    rawVars,
-    ["radius-md", "radius-chassis", "radius"],
-    "4px"
-  );
+  const radius =
+    profile === "swiss"
+      ? "0px"
+      : pickToken(rawVars, ["radius-md", "radius-chassis", "radius"], "4px");
 
   let shadow = pickToken(rawVars, ["shadow"], "none");
-  if (styleId === "neo-brutalism" && shadow === "none") {
+  if (styleId === "neo-brutalism") {
+    shadow = "5px 5px 0 #000000";
+  } else if (styleId === "avant-poster") {
     shadow = "4px 4px 0 #000000";
-  } else if (styleId === "os-core" && shadow === "none") {
+  } else if (styleId === "os-core") {
     shadow = "inset -2px -2px 0 #404040, inset 2px 2px 0 #ffffff";
-  } else if (styleId === "eight-bit-arcade" && shadow === "none") {
+  } else if (styleId === "eight-bit-arcade") {
     shadow = "3px 3px 0 #000000";
   } else if (styleId === "bento-grid" && shadow === "none") {
     shadow = "0 4px 18px rgba(0, 0, 0, 0.06)";
   } else if (styleId === "tactile-soft" && shadow === "none") {
     shadow = "0 6px 20px rgba(0, 0, 0, 0.08)";
+  } else if (profile === "spatial-glass" && shadow === "none") {
+    shadow = "inset 0 1px 0 rgba(255,255,255,0.22), 0 12px 32px rgba(0,0,0,0.34)";
+  } else if (profile === "swiss") {
+    shadow = "none";
   }
 
-  const blur = pickToken(rawVars, ["blur"], "") || null;
+  const blur =
+    pickToken(rawVars, ["blur"], "") ||
+    (profile === "spatial-glass" ? "14px" : null);
   const chrome = pickToken(rawVars, ["chrome"], "") || null;
 
   const canvasLum = getRelativeLuminance(canvas);
   const isLight = canvasLum !== null ? canvasLum > 0.48 : false;
 
-  const ink =
-    canvasLum !== null
-      ? getContrastInk(canvas, rawInk)
-      : rawInk;
+  const ink = canvasLum !== null ? getContrastInk(canvas, rawInk) : rawInk;
   const inkMuted =
-    canvasLum !== null
-      ? getMutedInk(canvas, rawInkMuted)
-      : rawInkMuted;
+    canvasLum !== null ? getMutedInk(canvas, rawInkMuted) : rawInkMuted;
 
   const surfaceLum = getRelativeLuminance(surface);
   const surfaceInk =
@@ -265,14 +340,23 @@ export function resolveStyleTheme(styleId: string): ResolvedStyleTheme {
     canvasPattern =
       "radial-gradient(rgba(11,12,10,0.12) 1px, transparent 1px)";
     canvasPatternSize = "8px 8px";
-  } else if (styleId === "liquid-glass") {
+  } else if (profile === "spatial-glass") {
     canvasPattern =
-      "radial-gradient(circle at 18% 18%, rgba(56,189,248,0.18), transparent 45%), radial-gradient(circle at 82% 76%, rgba(139,92,246,0.16), transparent 46%)";
+      "radial-gradient(circle at 16% 14%, rgba(56,189,248,0.16), transparent 44%), radial-gradient(circle at 84% 72%, rgba(139,92,246,0.14), transparent 46%)";
   }
 
-  // Contrast-safe status tokens that darken appropriately on light grounds
+  // Theme-matched radial scrim behind hero text so headings stay razor-crisp over any hero-bg
+  const heroScrim = hexToRgba(
+    canvas,
+    isLight ? 0.84 : 0.78,
+    isLight ? "rgba(255, 255, 255, 0.84)" : "rgba(9, 10, 12, 0.78)"
+  );
+
+  // Contrast-safe status tokens
   const pairInk = isLight ? "#047857" : "#34d399";
-  const pairBg = isLight ? "rgba(4, 120, 87, 0.1)" : "rgba(52, 211, 153, 0.12)";
+  const pairBg = isLight
+    ? "rgba(4, 120, 87, 0.1)"
+    : "rgba(52, 211, 153, 0.12)";
   const pairBorder = isLight
     ? "rgba(4, 120, 87, 0.35)"
     : "rgba(52, 211, 153, 0.36)";
@@ -295,6 +379,7 @@ export function resolveStyleTheme(styleId: string): ResolvedStyleTheme {
 
   const resolved: ResolvedStyleTheme = {
     styleId,
+    profile,
     rawVars,
     canvas,
     surface,
@@ -320,6 +405,7 @@ export function resolveStyleTheme(styleId: string): ResolvedStyleTheme {
     fontMono,
     canvasPattern,
     canvasPatternSize,
+    heroScrim,
     pairInk,
     pairBg,
     pairBorder,
@@ -336,13 +422,12 @@ export function resolveStyleTheme(styleId: string): ResolvedStyleTheme {
 }
 
 /**
- * Returns inline CSS custom properties scoped strictly to `.lab-stage-scope`.
+ * Returns inline CSS custom properties scoped strictly to `.dummy-site-root`.
  * Never mutates global `:root` so the outer `fui-tactical` shell stays untouched.
  */
 export function getScopedStageStyle(theme: ResolvedStyleTheme): CSSProperties {
   const vars: Record<string, string> = {
     ...theme.rawVars,
-    // Scoped Lab semantic tokens
     "--lab-canvas": theme.canvas,
     "--lab-surface": theme.surface,
     "--lab-elevated": theme.elevated,
@@ -360,6 +445,7 @@ export function getScopedStageStyle(theme: ResolvedStyleTheme): CSSProperties {
     "--lab-shadow": theme.shadow,
     "--lab-font-heading": theme.fontHeading,
     "--lab-font-body": theme.fontBody,
+    "--lab-hero-scrim": theme.heroScrim,
     "--lab-pair-ink": theme.pairInk,
     "--lab-pair-bg": theme.pairBg,
     "--lab-pair-border": theme.pairBorder,
@@ -369,7 +455,7 @@ export function getScopedStageStyle(theme: ResolvedStyleTheme): CSSProperties {
     "--lab-untested-ink": theme.untestedInk,
     "--lab-untested-bg": theme.untestedBg,
     "--lab-untested-border": theme.untestedBorder,
-    // Locally scope --fui-* tokens inside the stage subtree so imported demos adapt
+    // Locally scope --fui-* tokens inside the dummy site subtree so imported components adapt
     "--fui-canvas": theme.canvas,
     "--fui-surface": theme.surface,
     "--fui-elevated": theme.elevated,
@@ -391,8 +477,5 @@ export function getScopedStageStyle(theme: ResolvedStyleTheme): CSSProperties {
     backgroundSize: theme.canvasPatternSize,
     color: theme.ink,
     fontFamily: theme.fontBody,
-    border: `${theme.borderWidth} solid ${theme.borderStrong}`,
-    borderRadius: theme.radius,
-    boxShadow: theme.shadow,
   };
 }

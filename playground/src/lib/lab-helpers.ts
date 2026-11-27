@@ -10,37 +10,27 @@ import {
   type StyleNode,
 } from "./vault-data";
 import type { ActiveTab } from "../components/TopCommandBar";
+import { getSlotBadgeLabel } from "./lab-slots";
 
-export const MAX_LAB_ANIMATIONS = 4;
+export const MAX_LAB_ANIMATIONS = 6;
 
-export const AMBIENT_BACKDROP_IDS = new Set<string>([
-  "bayer-dither",
-  "ascii-filter",
-  "orbital-canvas",
-  "pixel-hover-grid",
-  "crt-grain-overlay",
-  "aurora-mesh-bg",
-  "svg-ripple-pulse",
-  "meteor-shower",
-  "eclipse-orb",
-  "lamp-horizon-glow",
-]);
+export type LabTemplateId = "landing" | "workbench" | "editorial";
 
-export type LabViewportMode = "desktop" | "card" | "mobile";
+export type LabViewportMode = "desktop" | "tablet" | "mobile";
 
 export interface LabState {
   styleId: string;
   animationIds: string[];
-  backdropId: string | null;
+  template: LabTemplateId;
   backdropOpacity: number;
   viewport: LabViewportMode;
 }
 
 export const DEFAULT_LAB_STATE: LabState = {
   styleId: "fui-tactical",
-  animationIds: ["streaming-token-text", "border-spotlight"],
-  backdropId: null,
-  backdropOpacity: 0.45,
+  animationIds: ["orbital-canvas", "scramble-text", "border-spotlight", "count-up"],
+  template: "landing",
+  backdropOpacity: 0.38,
   viewport: "desktop",
 };
 
@@ -69,7 +59,6 @@ export function evaluateLabMix(
   const clashes: LabPairEdge[] = [];
   const untested: LabPairEdge[] = [];
 
-  // Style <-> Animation edges
   for (const animId of animationIds) {
     const rel = getRelationStatus(styleId, animId);
     if (rel === "clashes") {
@@ -81,7 +70,6 @@ export function evaluateLabMix(
     }
   }
 
-  // Animation <-> Animation edges (check explicit pairs/clashes without marking neutral anim-anim as untested noise)
   for (let i = 0; i < animationIds.length; i++) {
     for (let j = i + 1; j < animationIds.length; j++) {
       const a = animationIds[i];
@@ -136,11 +124,11 @@ export function pickRandomCompatibleMix(excludeStyleId?: string): {
   if (!picked) {
     return {
       styleId: styleNodes[0]?.id ?? "fui-tactical",
-      animationIds: animationNodes.slice(0, 2).map((a) => a.id),
+      animationIds: animationNodes.slice(0, 3).map((a) => a.id),
     };
   }
 
-  const count = Math.min(picked.pairedAnims.length, Math.random() > 0.45 ? 3 : 2);
+  const count = Math.min(picked.pairedAnims.length, Math.random() > 0.45 ? 4 : 3);
   const chosen: string[] = [];
   for (const anim of shuffle(picked.pairedAnims)) {
     const clashesChosen = chosen.some(
@@ -198,13 +186,25 @@ export function pickChaosMix(excludeStyleId?: string): {
 export function resolveHybridToLabMix(hybrid: HybridRecipe): {
   styleId: string;
   animationIds: string[];
+  suggestedTemplate?: LabTemplateId;
 } {
   const styleExists = nodeById.get(hybrid.baseStyle)?.kind === "style";
   const styleId = styleExists ? hybrid.baseStyle : DEFAULT_LAB_STATE.styleId;
   const animationIds = hybrid.accents
     .filter((id) => nodeById.get(id)?.kind === "animation")
     .slice(0, MAX_LAB_ANIMATIONS);
-  return { styleId, animationIds };
+
+  const hasAgentic = animationIds.some(
+    (id) => (nodeById.get(id) as AnimationNode | undefined)?.mechanic === "ai-agentic"
+  );
+  const styleNode = nodeById.get(styleId) as StyleNode | undefined;
+  const suggestedTemplate: LabTemplateId | undefined = hasAgentic
+    ? "workbench"
+    : styleNode?.cluster === "06-editorial-warm"
+      ? "editorial"
+      : undefined;
+
+  return { styleId, animationIds, suggestedTemplate };
 }
 
 export function buildLabShadcnCommand(
@@ -224,7 +224,8 @@ export function buildLabShadcnCommand(
 export function buildLabAgentPrompt(
   styleId: string,
   animationIds: string[],
-  evaluation: LabMixEvaluation
+  evaluation: LabMixEvaluation,
+  template: LabTemplateId = "landing"
 ): string {
   const style = nodeById.get(styleId) as StyleNode | undefined;
   const clusterMeta = style ? vaultRelations.clusters[style.cluster] : null;
@@ -238,7 +239,7 @@ export function buildLabAgentPrompt(
       ? anims
           .map(
             (a) =>
-              `- \`${a.id}\` (${a.mechanic}, ${a.path}, reducedMotion: ${a.reducedMotion})`
+              `- \`${a.id}\` [${getSlotBadgeLabel(a.id)}] (${a.mechanic}, ${a.path}, reducedMotion: ${a.reducedMotion})`
           )
           .join("\n")
       : "- (No animations selected yet — style foundation only)";
@@ -250,15 +251,22 @@ export function buildLabAgentPrompt(
           .join(", ")}). Treat this clash as an intentional creative override—keep typography legible, preserve WCAG contrast, and isolate motion energy cleanly.\n`
       : "";
 
+  const templateLabel =
+    template === "workbench"
+      ? "AI Workbench / Agent Control Surface"
+      : template === "editorial"
+        ? "Editorial Design & Systems Journal"
+        : "SaaS Developer Platform Landing Page";
+
   return [
-    `Build a cohesive React + TypeScript interface using the UI Vault mix below.`,
+    `Build a cohesive React + TypeScript ${templateLabel} using the UI Vault mix below.`,
     ``,
     `Base Visual Style:`,
     `- Style ID: \`${styleId}\`${style ? ` (${style.cluster} · tier: ${style.tier})` : ""}`,
     style ? `- Spec & Tokens: \`${style.path}/STYLE.md\` and \`${style.path}/tokens.css\`` : "",
     clusterMeta ? `- Cluster DNA: ${clusterMeta.dna}` : "",
     ``,
-    `Animation Primitives (${anims.length}):`,
+    `Animation Primitives & Page Slots (${anims.length}):`,
     animLines,
     clashSection,
     `Install via shadcn CLI:`,
@@ -268,7 +276,7 @@ export function buildLabAgentPrompt(
     ``,
     `Implementation Rules:`,
     `1. Import and apply the style's CSS custom properties from \`tokens.css\` strictly as the visual foundation (surface hierarchy, border width/radius, typography, and contrast).`,
-    `2. Compose the selected zero-dependency animations without introducing extra runtime libraries.`,
+    `2. Compose the selected zero-dependency animations directly onto the real semantic page elements indicated above without introducing extra runtime libraries.`,
     `3. Honor \`prefers-reduced-motion: reduce\` across every animated surface.`,
   ]
     .filter((line) => line !== undefined)
@@ -318,26 +326,26 @@ export function readUrlState(): ParsedUrlState {
     validAnims = DEFAULT_LAB_STATE.animationIds;
   }
 
-  const rawBackdrop = params.get("backdrop");
-  const validBackdrop =
-    rawBackdrop &&
-    validAnims.includes(rawBackdrop) &&
-    AMBIENT_BACKDROP_IDS.has(rawBackdrop)
-      ? rawBackdrop
-      : null;
+  const rawTpl = params.get("tpl");
+  const template: LabTemplateId =
+    rawTpl === "landing" || rawTpl === "workbench" || rawTpl === "editorial"
+      ? rawTpl
+      : DEFAULT_LAB_STATE.template;
 
   const rawVp = params.get("vp");
   const viewport: LabViewportMode =
-    rawVp === "desktop" || rawVp === "card" || rawVp === "mobile"
+    rawVp === "desktop" || rawVp === "tablet" || rawVp === "mobile"
       ? rawVp
-      : "desktop";
+      : rawVp === "card"
+        ? "tablet"
+        : "desktop";
 
   return {
     tab,
     lab: {
       styleId: validStyle,
       animationIds: validAnims,
-      backdropId: validBackdrop,
+      template,
       backdropOpacity: DEFAULT_LAB_STATE.backdropOpacity,
       viewport,
     },
@@ -351,9 +359,7 @@ export function buildLabShareUrl(lab: LabState): string {
   url.searchParams.set("tab", "labs");
   url.searchParams.set("style", lab.styleId);
   url.searchParams.set("anims", lab.animationIds.join(","));
-  if (lab.backdropId && lab.animationIds.includes(lab.backdropId)) {
-    url.searchParams.set("backdrop", lab.backdropId);
-  }
+  url.searchParams.set("tpl", lab.template);
   if (lab.viewport !== "desktop") {
     url.searchParams.set("vp", lab.viewport);
   }
@@ -367,11 +373,8 @@ export function syncUrlState(tab: ActiveTab, lab: LabState): void {
     url.searchParams.set("tab", "labs");
     url.searchParams.set("style", lab.styleId);
     url.searchParams.set("anims", lab.animationIds.join(","));
-    if (lab.backdropId && lab.animationIds.includes(lab.backdropId)) {
-      url.searchParams.set("backdrop", lab.backdropId);
-    } else {
-      url.searchParams.delete("backdrop");
-    }
+    url.searchParams.set("tpl", lab.template);
+    url.searchParams.delete("backdrop");
     if (lab.viewport !== "desktop") {
       url.searchParams.set("vp", lab.viewport);
     } else {
@@ -380,6 +383,7 @@ export function syncUrlState(tab: ActiveTab, lab: LabState): void {
   } else {
     url.searchParams.delete("style");
     url.searchParams.delete("anims");
+    url.searchParams.delete("tpl");
     url.searchParams.delete("backdrop");
     url.searchParams.delete("vp");
     if (tab === "animations") {
