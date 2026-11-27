@@ -4,6 +4,7 @@ import { TopCommandBar, type ActiveTab } from "./components/TopCommandBar";
 import { AnimationsLab } from "./components/AnimationsLab";
 import { StylesGallery } from "./components/StylesGallery";
 import { RelationsExplorer } from "./components/RelationsExplorer";
+import { MixLabsStudio } from "./components/MixLabsStudio";
 import { ReferencesView } from "./components/ReferencesView";
 import { CodeDrawer } from "./components/CodeDrawer";
 import {
@@ -11,7 +12,20 @@ import {
   initReducedMotionSimulator,
   setSimulatedReducedMotion,
 } from "./lib/reduced-motion";
-import { nodeById, type AnimationNode } from "./lib/vault-data";
+import {
+  animationNodes,
+  getRelationStatus,
+  nodeById,
+  styleNodes,
+  type AnimationNode,
+  type HybridRecipe,
+} from "./lib/vault-data";
+import {
+  readUrlState,
+  resolveHybridToLabMix,
+  syncUrlState,
+  type LabState,
+} from "./lib/lab-helpers";
 
 interface ToastState {
   label: string;
@@ -19,7 +33,14 @@ interface ToastState {
 }
 
 export function App() {
-  const [activeTab, setActiveTab] = useState<ActiveTab>("animations");
+  const initialUrl = useRef(readUrlState());
+
+  const [activeTab, setActiveTab] = useState<ActiveTab>(
+    () => initialUrl.current.tab ?? "animations"
+  );
+  const [labState, setLabState] = useState<LabState>(
+    () => initialUrl.current.lab
+  );
   const [searchQuery, setSearchQuery] = useState("");
   const [reducedMotion, setReducedMotion] = useState<boolean>(() =>
     getSystemReducedMotion()
@@ -35,6 +56,10 @@ export function App() {
   useEffect(() => {
     initReducedMotionSimulator();
   }, []);
+
+  useEffect(() => {
+    syncUrlState(activeTab, labState);
+  }, [activeTab, labState]);
 
   const handleToggleReducedMotion = useCallback(() => {
     setReducedMotion((prev) => {
@@ -73,6 +98,50 @@ export function App() {
     }
   }, []);
 
+  const handleOpenNodeInLab = useCallback((nodeId: string) => {
+    const node = nodeById.get(nodeId);
+    if (!node) return;
+
+    if (node.kind === "style") {
+      const pairedAnims = animationNodes
+        .filter((a) => getRelationStatus(node.id, a.id) === "pairs")
+        .slice(0, 2)
+        .map((a) => a.id);
+
+      setLabState((prev) => ({
+        ...prev,
+        styleId: node.id,
+        animationIds: pairedAnims.length > 0 ? pairedAnims : prev.animationIds,
+        backdropId: null,
+      }));
+    } else {
+      const pairedStyle = styleNodes.find(
+        (s) => getRelationStatus(node.id, s.id) === "pairs"
+      );
+      setLabState((prev) => ({
+        ...prev,
+        styleId: pairedStyle ? pairedStyle.id : prev.styleId,
+        animationIds: [node.id],
+        backdropId: null,
+      }));
+    }
+
+    setActiveTab("labs");
+  }, []);
+
+  const handleOpenHybridInLab = useCallback((hybrid: HybridRecipe) => {
+    const mix = resolveHybridToLabMix(hybrid);
+    setLabState((prev) => ({
+      ...prev,
+      styleId: mix.styleId,
+      animationIds: mix.animationIds,
+      backdropId: null,
+    }));
+    setActiveTab("labs");
+  }, []);
+
+  const isViewportLocked = activeTab === "relations" || activeTab === "labs";
+
   return (
     <>
       <TopCommandBar
@@ -85,9 +154,10 @@ export function App() {
         onSearchChange={setSearchQuery}
         reducedMotion={reducedMotion}
         onToggleReducedMotion={handleToggleReducedMotion}
+        labAnimCount={labState.animationIds.length}
       />
 
-      <main className="vault-main">
+      <main className="vault-main" data-locked={isViewportLocked}>
         {activeTab === "animations" && (
           <AnimationsLab
             searchQuery={searchQuery}
@@ -114,8 +184,21 @@ export function App() {
         {activeTab === "relations" && (
           <RelationsExplorer
             searchQuery={searchQuery}
+            onClearGlobalSearch={() => setSearchQuery("")}
             onCopy={handleCopy}
             onJumpToNode={handleJumpToNode}
+            onOpenNodeInLab={handleOpenNodeInLab}
+            onOpenHybridInLab={handleOpenHybridInLab}
+          />
+        )}
+
+        {activeTab === "labs" && (
+          <MixLabsStudio
+            labState={labState}
+            onUpdateLabState={setLabState}
+            motionEpoch={motionEpoch}
+            reducedMotion={reducedMotion}
+            onCopy={handleCopy}
           />
         )}
 

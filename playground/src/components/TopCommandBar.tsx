@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import {
   Activity,
   BookOpen,
+  FlaskConical,
   GitFork,
   Layers,
   PauseCircle,
@@ -11,8 +12,14 @@ import {
   X,
 } from "lucide-react";
 import { animationNodes, styleNodes, vaultRelations } from "../lib/vault-data";
+import { MAX_LAB_ANIMATIONS } from "../lib/lab-helpers";
 
-export type ActiveTab = "animations" | "styles" | "relations" | "references";
+export type ActiveTab =
+  | "animations"
+  | "styles"
+  | "relations"
+  | "labs"
+  | "references";
 
 interface TopCommandBarProps {
   activeTab: ActiveTab;
@@ -21,6 +28,7 @@ interface TopCommandBarProps {
   onSearchChange: (value: string) => void;
   reducedMotion: boolean;
   onToggleReducedMotion: () => void;
+  labAnimCount: number;
 }
 
 export function TopCommandBar({
@@ -30,6 +38,7 @@ export function TopCommandBar({
   onSearchChange,
   reducedMotion,
   onToggleReducedMotion,
+  labAnimCount,
 }: TopCommandBarProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -57,6 +66,8 @@ export function TopCommandBar({
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [searchQuery, onSearchChange]);
+
+  const isLocalFilterTab = activeTab === "labs" || activeTab === "relations";
 
   return (
     <header className="cmd-header">
@@ -99,7 +110,21 @@ export function TopCommandBar({
             onClick={() => onTabChange("relations")}
           >
             <GitFork size={13} />
-            <span>Relations &amp; Hybrids</span>
+            <span className="cmd-tab-label-full">Relations &amp; Hybrids</span>
+            <span className="cmd-tab-label-short">Relations</span>
+          </button>
+
+          <button
+            type="button"
+            className="cmd-tab"
+            data-active={activeTab === "labs"}
+            onClick={() => onTabChange("labs")}
+          >
+            <FlaskConical size={13} />
+            <span>Labs</span>
+            <span className="cmd-tab-count">
+              {labAnimCount}/{MAX_LAB_ANIMATIONS}
+            </span>
           </button>
 
           <button
@@ -122,7 +147,11 @@ export function TopCommandBar({
               className="cmd-search-input"
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
-              placeholder="Filter name, cluster, engine..."
+              placeholder={
+                isLocalFilterTab
+                  ? "Use local filters in view..."
+                  : "Filter name, cluster, engine..."
+              }
               aria-label="Filter vault items"
             />
             {searchQuery ? (
@@ -149,10 +178,15 @@ export function TopCommandBar({
             title="Simulate prefers-reduced-motion: reduce"
           >
             {reducedMotion ? <PauseCircle size={13} /> : <PlayCircle size={13} />}
-            <span>{reducedMotion ? "Reduced Motion: ON" : "Motion: Full"}</span>
+            <span className="cmd-motion-label-full">
+              {reducedMotion ? "Reduced Motion: ON" : "Motion: Full"}
+            </span>
+            <span className="cmd-motion-label-short">
+              {reducedMotion ? "RM: ON" : "Motion"}
+            </span>
           </button>
 
-          <span className="badge badge-emerald" title="Synced directly with parent vault">
+          <span className="badge badge-emerald cmd-live-badge" title="Synced directly with parent vault">
             <Activity size={11} />
             <span>LIVE</span>
           </span>
