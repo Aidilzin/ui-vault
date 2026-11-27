@@ -41,6 +41,8 @@ Follow the **6-Layer Composition Stack** (`Layout + Style + Typography + Texture
 1. Place under `animations/<mechanic>/<id>.tsx` (or `.css`), enforce MIT/Apache-2.0/clean-room license hygiene and `prefers-reduced-motion: reduce`, register in `animations/registry.json` and `relations.json`, and wire into `playground/src/demos/`.
 
 ### Verification Gate (Before Pushing to `main`)
+Run all checks locally (`npm run sync:readme` regenerates both `README.md` dynamic blocks and all `docs/catalog/*.md` pages):
+
 ```bash
 npm run typecheck
 npm run validate:registry
