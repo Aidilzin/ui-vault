@@ -144,4 +144,41 @@ export const modernCraftSwatches: Record<string, () => ReactNode> = {
       </div>
     </div>
   ),
+
+  "kinetic-studio-white": () => (
+    <div style={{ height: "100%", background: "#fafafa", color: "#111113", padding: 14, display: "flex", flexDirection: "column", justifyContent: "space-between", fontFamily: "var(--font-sans)" }}>
+      <div style={{ display: "flex", gap: 5, alignItems: "center" }}>
+        <span style={{ background: "#0066ff", color: "#ffffff", padding: "3px 10px", borderRadius: 999, fontSize: 9, fontWeight: 600 }}>Spring</span>
+        <span style={{ background: "#ffffff", border: "1px solid #e4e4e7", color: "#666870", padding: "3px 10px", borderRadius: 999, fontSize: 9 }}>60fps</span>
+      </div>
+      <div style={{ background: "#ffffff", border: "1px solid #e4e4e7", borderRadius: 10, boxShadow: "0 4px 16px rgba(15,23,42,0.05)", padding: "10px 12px" }}>
+        <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: "-0.02em" }}>Kinetic Studio</div>
+        <div style={{ fontSize: 10, color: "#666870", marginTop: 2 }}>Alabaster canvas + tactile pill lift</div>
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: 9, color: "#666870" }}>
+        <span>#FAFAFA / 1PX</span>
+        <span style={{ color: "#0066ff" }}>#0066FF</span>
+      </div>
+    </div>
+  ),
+
+  "motion-slate-minimal": () => (
+    <div style={{ height: "100%", background: "#ffffff", color: "#18181b", padding: 14, display: "flex", flexDirection: "column", justifyContent: "space-between", fontFamily: "var(--font-sans)" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: 9, color: "#71717a" }}>
+        <span>PRIMITIVES // DOCS</span>
+        <span style={{ color: "#059669" }}>● ZERO HUE</span>
+      </div>
+      <div style={{ background: "#f8f8f9", border: "1px solid #e4e4e7", borderRadius: 8, padding: "10px 12px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <div>
+          <div style={{ fontSize: 13, fontWeight: 600 }}>Motion Slate</div>
+          <div style={{ fontSize: 10, color: "#71717a", marginTop: 2 }}>Quiet zinc component frame</div>
+        </div>
+        <span style={{ background: "#18181b", color: "#ffffff", padding: "3px 9px", borderRadius: 6, fontSize: 9, fontWeight: 600 }}>Run</span>
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: 9, color: "#71717a" }}>
+        <span>#FFFFFF / #18181B</span>
+        <span>8PX RADIUS</span>
+      </div>
+    </div>
+  ),
 };

@@ -1,797 +1,951 @@
 {
-    "$schema": "https://ui.shadcn.com/schema/registry.json",
-    "items": [
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "style-fui-tactical",
+      "type": "registry:item",
+      "title": "FUI Tactical Style",
+      "description": "Precision 1px hairline HUD aesthetic with monospace telemetry tokens and anti-slop guardrails.",
+      "categories": [
+        "01-precision-systems",
+        "style"
+      ],
+      "files": [
         {
-            "name": "style-fui-tactical",
-            "type": "registry:item",
-            "title": "FUI Tactical Style",
-            "description": "Precision 1px hairline HUD aesthetic with monospace telemetry tokens and anti-slop guardrails.",
-            "categories": [
-                "01-precision-systems",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "01-precision-systems/fui-tactical/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "01-precision-systems/fui-tactical/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/fui-tactical.tokens.css"
-                }
-            ]
+          "path": "01-precision-systems/fui-tactical/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
         },
         {
-            "name": "style-neo-swiss",
-            "type": "registry:item",
-            "title": "Neo-Swiss Grid Style",
-            "description": "Exposed hairline grids, bold Neo-Grotesk scale contrast, and disciplined negative space.",
-            "categories": [
-                "01-precision-systems",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "01-precision-systems/neo-swiss/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "01-precision-systems/neo-swiss/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/neo-swiss.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-editorial-mono",
-            "type": "registry:item",
-            "title": "Editorial Mono Style",
-            "description": "Dark-first achromatic editorial surface with compressed display typography, mono eyebrows, and coral-red pill CTAs.",
-            "categories": [
-                "01-precision-systems",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "01-precision-systems/editorial-mono/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "01-precision-systems/editorial-mono/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/editorial-mono.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-industrial-hardware",
-            "type": "registry:item",
-            "title": "Industrial Hardware Style",
-            "description": "Anodized light-aluminum chassis aesthetic with zero drop shadows, color-coded tactile encoders, and crisp 200ms/500ms motion curves.",
-            "categories": [
-                "01-precision-systems",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "01-precision-systems/industrial-hardware/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "01-precision-systems/industrial-hardware/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/industrial-hardware.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-ditherpunk",
-            "type": "registry:item",
-            "title": "Ditherpunk Style",
-            "description": "1-bit Bayer dithering and high-contrast retro compute aesthetic spec.",
-            "categories": [
-                "02-retro-compute",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "02-retro-compute/ditherpunk/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "02-retro-compute/ditherpunk/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/ditherpunk.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-os-core",
-            "type": "registry:item",
-            "title": "OS-Core Style",
-            "description": "Classic desktop OS chrome, beveled window borders, and crisp bitmap/monospace UI spec.",
-            "categories": [
-                "02-retro-compute",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "02-retro-compute/os-core/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "02-retro-compute/os-core/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/os-core.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-neo-brutalism",
-            "type": "registry:item",
-            "title": "Neo-Brutalism Style",
-            "description": "Thick ink borders, hard zero-blur offset shadows, and bold flat color blocks.",
-            "categories": [
-                "03-kinetic-rebel",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "03-kinetic-rebel/neo-brutalism/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "03-kinetic-rebel/neo-brutalism/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/neo-brutalism.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-acid-y2k",
-            "type": "registry:item",
-            "title": "Acid Graphics & Y2K Chrome Style",
-            "description": "Pitch-black backdrops paired with liquid chrome lettering and high-voltage cyber accents.",
-            "categories": [
-                "03-kinetic-rebel",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "03-kinetic-rebel/acid-y2k/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "03-kinetic-rebel/acid-y2k/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/acid-y2k.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-liquid-glass",
-            "type": "registry:item",
-            "title": "Liquid Glass Style",
-            "description": "Refractive optical surfaces paired with restrained spring-damper tactile feedback.",
-            "categories": [
-                "04-spatial-physics",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "04-spatial-physics/liquid-glass/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "04-spatial-physics/liquid-glass/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/liquid-glass.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-ambient-orbit",
-            "type": "registry:item",
-            "title": "2.5D Ambient Orbit Style",
-            "description": "Depth-sorted elliptical radar aesthetic with hover-to-freeze damping and sparse semantic alerts.",
-            "categories": [
-                "04-spatial-physics",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "04-spatial-physics/ambient-orbit/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "04-spatial-physics/ambient-orbit/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/ambient-orbit.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-monolith-dark",
-            "type": "registry:item",
-            "title": "Monolith Dark Style",
-            "description": "Stepped nocturnal charcoal surfaces with 1px hairlines and restrained indigo focus.",
-            "categories": [
-                "05-modern-craft",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "05-modern-craft/monolith-dark/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "05-modern-craft/monolith-dark/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/monolith-dark.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-telemetry-fault",
-            "type": "registry:item",
-            "title": "Telemetry Fault Style",
-            "description": "Deep plum-black observability console with electric lime and rose diagnostic signals.",
-            "categories": [
-                "01-precision-systems",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "01-precision-systems/telemetry-fault/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "01-precision-systems/telemetry-fault/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/telemetry-fault.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-monochrome-stark",
-            "type": "registry:item",
-            "title": "Monochrome Stark Style",
-            "description": "Binary black-and-white Swiss minimalism with sharp 1px grid rules and blue focus.",
-            "categories": [
-                "01-precision-systems",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "01-precision-systems/monochrome-stark/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "01-precision-systems/monochrome-stark/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/monochrome-stark.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-retro-web-96",
-            "type": "registry:item",
-            "title": "Retro Web 96 Style",
-            "description": "Mid-90s directory chrome with flat table rules, classic cobalt links, and 0px radii.",
-            "categories": [
-                "02-retro-compute",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "02-retro-compute/retro-web-96/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "02-retro-compute/retro-web-96/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/retro-web-96.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-console-2001",
-            "type": "registry:item",
-            "title": "Console 2001 Style",
-            "description": "Early-2000s molded hardware entertainment UI with saturated primary color blocks.",
-            "categories": [
-                "03-kinetic-rebel",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "03-kinetic-rebel/console-2001/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "03-kinetic-rebel/console-2001/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/console-2001.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-zine-wire",
-            "type": "registry:item",
-            "title": "Zine Wire Style",
-            "description": "Cyber-editorial feed with charcoal grounds, electric mint highlights, and hyper-violet rules.",
-            "categories": [
-                "03-kinetic-rebel",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "03-kinetic-rebel/zine-wire/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "03-kinetic-rebel/zine-wire/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/zine-wire.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-command-dark",
-            "type": "registry:item",
-            "title": "Command Dark Style",
-            "description": "Keyboard-first floating launcher with translucent obsidian panes and crimson accents.",
-            "categories": [
-                "04-spatial-physics",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "04-spatial-physics/command-dark/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "04-spatial-physics/command-dark/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/command-dark.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-mesh-craft",
-            "type": "registry:item",
-            "title": "Mesh Craft Style",
-            "description": "Porcelain editorial cards and deep slate ink paired with luminous indigo mesh accents.",
-            "categories": [
-                "05-modern-craft",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "05-modern-craft/mesh-craft/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "05-modern-craft/mesh-craft/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/mesh-craft.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-warm-manuscript",
-            "type": "registry:item",
-            "title": "Warm Manuscript Style",
-            "description": "Warm parchment substrates, soft carbon ink, literary typography, and terracotta accents.",
-            "categories": [
-                "06-editorial-warm",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "06-editorial-warm/warm-manuscript/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "06-editorial-warm/warm-manuscript/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/warm-manuscript.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-archival-paper",
-            "type": "registry:item",
-            "title": "Archival Paper Style",
-            "description": "Quiet museum-grade research paper canvas with crisp block frames and deep cobalt accents.",
-            "categories": [
-                "06-editorial-warm",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "06-editorial-warm/archival-paper/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "06-editorial-warm/archival-paper/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/archival-paper.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-tactile-studio-warm",
-            "type": "registry:item",
-            "title": "Tactile Studio Warm Style",
-            "description": "Warm alabaster and stone-tinted editorial moodboard aesthetic with calm 150-200ms motion.",
-            "categories": [
-                "06-editorial-warm",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "06-editorial-warm/tactile-studio-warm/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "06-editorial-warm/tactile-studio-warm/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/tactile-studio-warm.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-dark-gallery-index",
-            "type": "registry:item",
-            "title": "Dark Gallery Index Style",
-            "description": "Ultra-dark showcase index with sharp card frames, pill filters, and sparse chroma tags.",
-            "categories": [
-                "01-precision-systems",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "01-precision-systems/dark-gallery-index/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "01-precision-systems/dark-gallery-index/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/dark-gallery-index.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-avant-poster",
-            "type": "registry:item",
-            "title": "Avant Poster Style",
-            "description": "Experimental newsprint archive with stark black ink and electric ultraviolet highlights.",
-            "categories": [
-                "03-kinetic-rebel",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "03-kinetic-rebel/avant-poster/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "03-kinetic-rebel/avant-poster/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/avant-poster.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-swiss-type-foundry",
-            "type": "registry:item",
-            "title": "Swiss Type Foundry Style",
-            "description": "Gallery-white type specimen grid with extreme scale contrast and vermilion accents.",
-            "categories": [
-                "01-precision-systems",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "01-precision-systems/swiss-type-foundry/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "01-precision-systems/swiss-type-foundry/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/swiss-type-foundry.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-phosphor-terminal",
-            "type": "registry:item",
-            "title": "Phosphor Terminal Style",
-            "description": "Deep obsidian-violet shell chrome with phosphor-green output and acid-chartreuse cursors.",
-            "categories": [
-                "02-retro-compute",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "02-retro-compute/phosphor-terminal/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "02-retro-compute/phosphor-terminal/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/phosphor-terminal.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-bento-grid",
-            "type": "registry:item",
-            "title": "Bento Grid Style",
-            "description": "Modular light-studio bento tiles with generous radii and crisp cobalt focus.",
-            "categories": [
-                "05-modern-craft",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "05-modern-craft/bento-grid/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "05-modern-craft/bento-grid/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/bento-grid.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-aurora-mesh",
-            "type": "registry:item",
-            "title": "Aurora Mesh Style",
-            "description": "Pitch obsidian canvas with restrained luminous aurora edge blooms and razor hairlines.",
-            "categories": [
-                "05-modern-craft",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "05-modern-craft/aurora-mesh/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "05-modern-craft/aurora-mesh/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/aurora-mesh.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-tactile-soft",
-            "type": "registry:item",
-            "title": "Tactile Soft Style",
-            "description": "Warm diffuse-elevation white cards, friendly pill filters, and coral-rose accents.",
-            "categories": [
-                "05-modern-craft",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "05-modern-craft/tactile-soft/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "05-modern-craft/tactile-soft/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/tactile-soft.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-monochrome-gallery",
-            "type": "registry:item",
-            "title": "Monochrome Gallery Style",
-            "description": "Calm document workspace paper with quiet stone blocks and restrained cobalt focus.",
-            "categories": [
-                "06-editorial-warm",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "06-editorial-warm/monochrome-gallery/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "06-editorial-warm/monochrome-gallery/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/monochrome-gallery.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-pastel-playful",
-            "type": "registry:item",
-            "title": "Pastel Playful Style",
-            "description": "Collaborative creative canvas pairing warm paper, crisp dark ink, and pastel blocks.",
-            "categories": [
-                "06-editorial-warm",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "06-editorial-warm/pastel-playful/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "06-editorial-warm/pastel-playful/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/pastel-playful.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-wordmark-press",
-            "type": "registry:item",
-            "title": "Wordmark Press Style",
-            "description": "Zero-box pure typography system where controls and ornaments are set in words and hairlines.",
-            "categories": [
-                "06-editorial-warm",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "06-editorial-warm/wordmark-press/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "06-editorial-warm/wordmark-press/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/wordmark-press.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-orbital-ceramic",
-            "type": "registry:item",
-            "title": "Orbital Ceramic Style",
-            "description": "Matte basalt ceramic surfaces paired with diffused solar halo orbs and luminous hairline seams.",
-            "categories": [
-                "04-spatial-physics",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "04-spatial-physics/orbital-ceramic/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "04-spatial-physics/orbital-ceramic/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/orbital-ceramic.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-eight-bit-arcade",
-            "type": "registry:item",
-            "title": "8-Bit Arcade Style",
-            "description": "Stepped pixel-notched arcade borders, CRT navy grounds, and segmented 8-bit HUD palettes.",
-            "categories": [
-                "02-retro-compute",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "02-retro-compute/eight-bit-arcade/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "02-retro-compute/eight-bit-arcade/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/eight-bit-arcade.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-code-forge",
-            "type": "registry:item",
-            "title": "Code Forge Style",
-            "description": "Code-collaboration dark neutral palette with WCAG-verified borders and syntactic diff greens/reds.",
-            "categories": [
-                "01-precision-systems",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "01-precision-systems/code-forge/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "01-precision-systems/code-forge/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/code-forge.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-perceptual-scale",
-            "type": "registry:item",
-            "title": "Perceptual Scale Style",
-            "description": "Mathematical 12-step perceptual color scale with solid/soft/surface component hierarchy.",
-            "categories": [
-                "05-modern-craft",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "05-modern-craft/perceptual-scale/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "05-modern-craft/perceptual-scale/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/perceptual-scale.tokens.css"
-                }
-            ]
-        },
-        {
-            "name": "style-transit-precision",
-            "type": "registry:item",
-            "title": "Transit Precision Style",
-            "description": "AAA-contrast European rail signage aesthetic with tabular timetables and signal red wayfinding.",
-            "categories": [
-                "01-precision-systems",
-                "style"
-            ],
-            "files": [
-                {
-                    "path": "01-precision-systems/transit-precision/STYLE.md",
-                    "type": "registry:file",
-                    "target": "~/DESIGN.md"
-                },
-                {
-                    "path": "01-precision-systems/transit-precision/tokens.css",
-                    "type": "registry:file",
-                    "target": "~/src/styles/transit-precision.tokens.css"
-                }
-            ]
+          "path": "01-precision-systems/fui-tactical/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/fui-tactical.tokens.css"
         }
-    ]
+      ]
+    },
+    {
+      "name": "style-neo-swiss",
+      "type": "registry:item",
+      "title": "Neo-Swiss Grid Style",
+      "description": "Exposed hairline grids, bold Neo-Grotesk scale contrast, and disciplined negative space.",
+      "categories": [
+        "01-precision-systems",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "01-precision-systems/neo-swiss/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "01-precision-systems/neo-swiss/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/neo-swiss.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-editorial-mono",
+      "type": "registry:item",
+      "title": "Editorial Mono Style",
+      "description": "Dark-first achromatic editorial surface with compressed display typography, mono eyebrows, and coral-red pill CTAs.",
+      "categories": [
+        "01-precision-systems",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "01-precision-systems/editorial-mono/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "01-precision-systems/editorial-mono/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/editorial-mono.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-industrial-hardware",
+      "type": "registry:item",
+      "title": "Industrial Hardware Style",
+      "description": "Anodized light-aluminum chassis aesthetic with zero drop shadows, color-coded tactile encoders, and crisp 200ms/500ms motion curves.",
+      "categories": [
+        "01-precision-systems",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "01-precision-systems/industrial-hardware/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "01-precision-systems/industrial-hardware/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/industrial-hardware.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-ditherpunk",
+      "type": "registry:item",
+      "title": "Ditherpunk Style",
+      "description": "1-bit Bayer dithering and high-contrast retro compute aesthetic spec.",
+      "categories": [
+        "02-retro-compute",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "02-retro-compute/ditherpunk/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "02-retro-compute/ditherpunk/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/ditherpunk.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-os-core",
+      "type": "registry:item",
+      "title": "OS-Core Style",
+      "description": "Classic desktop OS chrome, beveled window borders, and crisp bitmap/monospace UI spec.",
+      "categories": [
+        "02-retro-compute",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "02-retro-compute/os-core/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "02-retro-compute/os-core/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/os-core.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-neo-brutalism",
+      "type": "registry:item",
+      "title": "Neo-Brutalism Style",
+      "description": "Thick ink borders, hard zero-blur offset shadows, and bold flat color blocks.",
+      "categories": [
+        "03-kinetic-rebel",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "03-kinetic-rebel/neo-brutalism/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "03-kinetic-rebel/neo-brutalism/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/neo-brutalism.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-acid-y2k",
+      "type": "registry:item",
+      "title": "Acid Graphics & Y2K Chrome Style",
+      "description": "Pitch-black backdrops paired with liquid chrome lettering and high-voltage cyber accents.",
+      "categories": [
+        "03-kinetic-rebel",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "03-kinetic-rebel/acid-y2k/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "03-kinetic-rebel/acid-y2k/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/acid-y2k.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-liquid-glass",
+      "type": "registry:item",
+      "title": "Liquid Glass Style",
+      "description": "Refractive optical surfaces paired with restrained spring-damper tactile feedback.",
+      "categories": [
+        "04-spatial-physics",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "04-spatial-physics/liquid-glass/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "04-spatial-physics/liquid-glass/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/liquid-glass.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-ambient-orbit",
+      "type": "registry:item",
+      "title": "2.5D Ambient Orbit Style",
+      "description": "Depth-sorted elliptical radar aesthetic with hover-to-freeze damping and sparse semantic alerts.",
+      "categories": [
+        "04-spatial-physics",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "04-spatial-physics/ambient-orbit/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "04-spatial-physics/ambient-orbit/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/ambient-orbit.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-monolith-dark",
+      "type": "registry:item",
+      "title": "Monolith Dark Style",
+      "description": "Stepped nocturnal charcoal surfaces with 1px hairlines and restrained indigo focus.",
+      "categories": [
+        "05-modern-craft",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "05-modern-craft/monolith-dark/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "05-modern-craft/monolith-dark/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/monolith-dark.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-telemetry-fault",
+      "type": "registry:item",
+      "title": "Telemetry Fault Style",
+      "description": "Deep plum-black observability console with electric lime and rose diagnostic signals.",
+      "categories": [
+        "01-precision-systems",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "01-precision-systems/telemetry-fault/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "01-precision-systems/telemetry-fault/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/telemetry-fault.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-monochrome-stark",
+      "type": "registry:item",
+      "title": "Monochrome Stark Style",
+      "description": "Binary black-and-white Swiss minimalism with sharp 1px grid rules and blue focus.",
+      "categories": [
+        "01-precision-systems",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "01-precision-systems/monochrome-stark/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "01-precision-systems/monochrome-stark/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/monochrome-stark.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-retro-web-96",
+      "type": "registry:item",
+      "title": "Retro Web 96 Style",
+      "description": "Mid-90s directory chrome with flat table rules, classic cobalt links, and 0px radii.",
+      "categories": [
+        "02-retro-compute",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "02-retro-compute/retro-web-96/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "02-retro-compute/retro-web-96/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/retro-web-96.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-console-2001",
+      "type": "registry:item",
+      "title": "Console 2001 Style",
+      "description": "Early-2000s molded hardware entertainment UI with saturated primary color blocks.",
+      "categories": [
+        "03-kinetic-rebel",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "03-kinetic-rebel/console-2001/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "03-kinetic-rebel/console-2001/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/console-2001.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-zine-wire",
+      "type": "registry:item",
+      "title": "Zine Wire Style",
+      "description": "Cyber-editorial feed with charcoal grounds, electric mint highlights, and hyper-violet rules.",
+      "categories": [
+        "03-kinetic-rebel",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "03-kinetic-rebel/zine-wire/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "03-kinetic-rebel/zine-wire/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/zine-wire.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-command-dark",
+      "type": "registry:item",
+      "title": "Command Dark Style",
+      "description": "Keyboard-first floating launcher with translucent obsidian panes and crimson accents.",
+      "categories": [
+        "04-spatial-physics",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "04-spatial-physics/command-dark/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "04-spatial-physics/command-dark/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/command-dark.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-mesh-craft",
+      "type": "registry:item",
+      "title": "Mesh Craft Style",
+      "description": "Porcelain editorial cards and deep slate ink paired with luminous indigo mesh accents.",
+      "categories": [
+        "05-modern-craft",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "05-modern-craft/mesh-craft/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "05-modern-craft/mesh-craft/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/mesh-craft.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-warm-manuscript",
+      "type": "registry:item",
+      "title": "Warm Manuscript Style",
+      "description": "Warm parchment substrates, soft carbon ink, literary typography, and terracotta accents.",
+      "categories": [
+        "06-editorial-warm",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "06-editorial-warm/warm-manuscript/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "06-editorial-warm/warm-manuscript/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/warm-manuscript.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-archival-paper",
+      "type": "registry:item",
+      "title": "Archival Paper Style",
+      "description": "Quiet museum-grade research paper canvas with crisp block frames and deep cobalt accents.",
+      "categories": [
+        "06-editorial-warm",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "06-editorial-warm/archival-paper/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "06-editorial-warm/archival-paper/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/archival-paper.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-tactile-studio-warm",
+      "type": "registry:item",
+      "title": "Tactile Studio Warm Style",
+      "description": "Warm alabaster and stone-tinted editorial moodboard aesthetic with calm 150-200ms motion.",
+      "categories": [
+        "06-editorial-warm",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "06-editorial-warm/tactile-studio-warm/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "06-editorial-warm/tactile-studio-warm/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/tactile-studio-warm.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-dark-gallery-index",
+      "type": "registry:item",
+      "title": "Dark Gallery Index Style",
+      "description": "Ultra-dark showcase index with sharp card frames, pill filters, and sparse chroma tags.",
+      "categories": [
+        "01-precision-systems",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "01-precision-systems/dark-gallery-index/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "01-precision-systems/dark-gallery-index/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/dark-gallery-index.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-avant-poster",
+      "type": "registry:item",
+      "title": "Avant Poster Style",
+      "description": "Experimental newsprint archive with stark black ink and electric ultraviolet highlights.",
+      "categories": [
+        "03-kinetic-rebel",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "03-kinetic-rebel/avant-poster/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "03-kinetic-rebel/avant-poster/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/avant-poster.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-swiss-type-foundry",
+      "type": "registry:item",
+      "title": "Swiss Type Foundry Style",
+      "description": "Gallery-white type specimen grid with extreme scale contrast and vermilion accents.",
+      "categories": [
+        "01-precision-systems",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "01-precision-systems/swiss-type-foundry/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "01-precision-systems/swiss-type-foundry/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/swiss-type-foundry.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-phosphor-terminal",
+      "type": "registry:item",
+      "title": "Phosphor Terminal Style",
+      "description": "Deep obsidian-violet shell chrome with phosphor-green output and acid-chartreuse cursors.",
+      "categories": [
+        "02-retro-compute",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "02-retro-compute/phosphor-terminal/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "02-retro-compute/phosphor-terminal/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/phosphor-terminal.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-bento-grid",
+      "type": "registry:item",
+      "title": "Bento Grid Style",
+      "description": "Modular light-studio bento tiles with generous radii and crisp cobalt focus.",
+      "categories": [
+        "05-modern-craft",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "05-modern-craft/bento-grid/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "05-modern-craft/bento-grid/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/bento-grid.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-aurora-mesh",
+      "type": "registry:item",
+      "title": "Aurora Mesh Style",
+      "description": "Pitch obsidian canvas with restrained luminous aurora edge blooms and razor hairlines.",
+      "categories": [
+        "05-modern-craft",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "05-modern-craft/aurora-mesh/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "05-modern-craft/aurora-mesh/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/aurora-mesh.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-tactile-soft",
+      "type": "registry:item",
+      "title": "Tactile Soft Style",
+      "description": "Warm diffuse-elevation white cards, friendly pill filters, and coral-rose accents.",
+      "categories": [
+        "05-modern-craft",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "05-modern-craft/tactile-soft/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "05-modern-craft/tactile-soft/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/tactile-soft.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-monochrome-gallery",
+      "type": "registry:item",
+      "title": "Monochrome Gallery Style",
+      "description": "Calm document workspace paper with quiet stone blocks and restrained cobalt focus.",
+      "categories": [
+        "06-editorial-warm",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "06-editorial-warm/monochrome-gallery/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "06-editorial-warm/monochrome-gallery/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/monochrome-gallery.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-pastel-playful",
+      "type": "registry:item",
+      "title": "Pastel Playful Style",
+      "description": "Collaborative creative canvas pairing warm paper, crisp dark ink, and pastel blocks.",
+      "categories": [
+        "06-editorial-warm",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "06-editorial-warm/pastel-playful/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "06-editorial-warm/pastel-playful/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/pastel-playful.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-wordmark-press",
+      "type": "registry:item",
+      "title": "Wordmark Press Style",
+      "description": "Zero-box pure typography system where controls and ornaments are set in words and hairlines.",
+      "categories": [
+        "06-editorial-warm",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "06-editorial-warm/wordmark-press/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "06-editorial-warm/wordmark-press/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/wordmark-press.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-orbital-ceramic",
+      "type": "registry:item",
+      "title": "Orbital Ceramic Style",
+      "description": "Matte basalt ceramic surfaces paired with diffused solar halo orbs and luminous hairline seams.",
+      "categories": [
+        "04-spatial-physics",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "04-spatial-physics/orbital-ceramic/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "04-spatial-physics/orbital-ceramic/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/orbital-ceramic.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-eight-bit-arcade",
+      "type": "registry:item",
+      "title": "8-Bit Arcade Style",
+      "description": "Stepped pixel-notched arcade borders, CRT navy grounds, and segmented 8-bit HUD palettes.",
+      "categories": [
+        "02-retro-compute",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "02-retro-compute/eight-bit-arcade/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "02-retro-compute/eight-bit-arcade/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/eight-bit-arcade.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-code-forge",
+      "type": "registry:item",
+      "title": "Code Forge Style",
+      "description": "Code-collaboration dark neutral palette with WCAG-verified borders and syntactic diff greens/reds.",
+      "categories": [
+        "01-precision-systems",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "01-precision-systems/code-forge/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "01-precision-systems/code-forge/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/code-forge.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-perceptual-scale",
+      "type": "registry:item",
+      "title": "Perceptual Scale Style",
+      "description": "Mathematical 12-step perceptual color scale with solid/soft/surface component hierarchy.",
+      "categories": [
+        "05-modern-craft",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "05-modern-craft/perceptual-scale/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "05-modern-craft/perceptual-scale/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/perceptual-scale.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-transit-precision",
+      "type": "registry:item",
+      "title": "Transit Precision Style",
+      "description": "AAA-contrast European rail signage aesthetic with tabular timetables and signal red wayfinding.",
+      "categories": [
+        "01-precision-systems",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "01-precision-systems/transit-precision/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "01-precision-systems/transit-precision/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/transit-precision.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-cinema-noir-motion",
+      "type": "registry:item",
+      "title": "Cinema Noir Motion Style",
+      "description": "Ultra-deep obsidian cinema ground with tungsten spotlight amber accents and letterbox shutter framing.",
+      "categories": [
+        "04-spatial-physics",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "04-spatial-physics/cinema-noir-motion/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "04-spatial-physics/cinema-noir-motion/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/cinema-noir-motion.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-kinetic-studio-white",
+      "type": "registry:item",
+      "title": "Kinetic Studio White Style",
+      "description": "Pure alabaster micro-interaction showcase canvas with whisper-soft 1px pill elevation and spring feedback tokens.",
+      "categories": [
+        "05-modern-craft",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "05-modern-craft/kinetic-studio-white/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "05-modern-craft/kinetic-studio-white/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/kinetic-studio-white.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-velvet-chrome-prism",
+      "type": "registry:item",
+      "title": "Velvet Chrome Prism Style",
+      "description": "Deep ultraviolet-charcoal ground with iridescent violet-cyan prism border seams and dark optical specimen cards.",
+      "categories": [
+        "04-spatial-physics",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "04-spatial-physics/velvet-chrome-prism/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "04-spatial-physics/velvet-chrome-prism/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/velvet-chrome-prism.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-risograph-print",
+      "type": "registry:item",
+      "title": "Risograph Print Style",
+      "description": "Warm uncoated cream paper stock overprinted with soy-ink cobalt and vermilion misregistration offsets.",
+      "categories": [
+        "03-kinetic-rebel",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "03-kinetic-rebel/risograph-print/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "03-kinetic-rebel/risograph-print/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/risograph-print.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-blueprint-cyanotype",
+      "type": "registry:item",
+      "title": "Blueprint Cyanotype Style",
+      "description": "Prussian engineering cyanotype cobalt canvas with crisp drafting-white 1px hairlines and technical callout markers.",
+      "categories": [
+        "02-retro-compute",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "02-retro-compute/blueprint-cyanotype/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "02-retro-compute/blueprint-cyanotype/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/blueprint-cyanotype.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-motion-slate-minimal",
+      "type": "registry:item",
+      "title": "Motion Slate Minimal Style",
+      "description": "Ultra-quiet neutral zinc documentation canvas with 1px hairline component frames and zero brand-hue distraction.",
+      "categories": [
+        "05-modern-craft",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "05-modern-craft/motion-slate-minimal/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "05-modern-craft/motion-slate-minimal/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/motion-slate-minimal.tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "style-gallery-curated-sand",
+      "type": "registry:item",
+      "title": "Gallery Curated Sand Style",
+      "description": "Sunlit limestone and travertine exhibition ground with cool graphite ink and architectural index rules.",
+      "categories": [
+        "06-editorial-warm",
+        "style"
+      ],
+      "files": [
+        {
+          "path": "06-editorial-warm/gallery-curated-sand/STYLE.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        },
+        {
+          "path": "06-editorial-warm/gallery-curated-sand/tokens.css",
+          "type": "registry:file",
+          "target": "~/src/styles/gallery-curated-sand.tokens.css"
+        }
+      ]
+    }
+  ]
 }

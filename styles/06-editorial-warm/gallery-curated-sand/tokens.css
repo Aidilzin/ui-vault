@@ -1,0 +1,20 @@
+:root {
+  --gcs-canvas: #edeae3;
+  --gcs-surface: #f6f4ef;
+  --gcs-elevated: #e5e0d5;
+  --gcs-ink: #1f2421;
+  --gcs-ink-muted: #5f635e;
+  --gcs-border: #d6d1c6;
+  --gcs-border-strong: #9c9689;
+  --gcs-accent: #3d5a4c;
+  --gcs-accent-alt: #9a5b3c;
+  --gcs-radius: 4px;
+  --gcs-shadow: none;
+}
+
+.gcs-plaque {
+  background: var(--gcs-surface);
+  color: var(--gcs-ink);
+  border: 1px solid var(--gcs-border);
+  border-radius: var(--gcs-radius);
+}

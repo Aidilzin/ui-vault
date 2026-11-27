@@ -118,4 +118,34 @@ export const retroComputeSwatches: Record<string, () => ReactNode> = {
       </div>
     </div>
   ),
+
+  "blueprint-cyanotype": () => (
+    <div
+      style={{
+        height: "100%",
+        background: "#0b2545",
+        backgroundImage: "linear-gradient(rgba(232,241,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(232,241,255,0.12) 1px, transparent 1px)",
+        backgroundSize: "16px 16px",
+        color: "#e8f1ff",
+        padding: 14,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        fontFamily: "var(--font-mono)",
+      }}
+    >
+      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 9, color: "#9cc2eb" }}>
+        <span>DWG NO. 04-BP</span>
+        <span style={{ color: "#fbbf24" }}>SCALE 1:20</span>
+      </div>
+      <div style={{ background: "rgba(16,49,90,0.88)", border: "1px solid rgba(232,241,255,0.45)", padding: "9px 11px" }}>
+        <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.04em" }}>CYANOTYPE SPEC</div>
+        <div style={{ fontSize: 9.5, color: "#9cc2eb", marginTop: 3 }}>Prussian ground + 1px chalk hairlines</div>
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 9 }}>
+        <span style={{ color: "#7dd3fc" }}>#0B2545 / #E8F1FF</span>
+        <span style={{ color: "#fbbf24" }}>REV C</span>
+      </div>
+    </div>
+  ),
 };

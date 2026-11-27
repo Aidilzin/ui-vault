@@ -92,4 +92,38 @@ export const spatialPhysicsSwatches: Record<string, () => ReactNode> = {
       </div>
     </div>
   ),
+
+  "cinema-noir-motion": () => (
+    <div style={{ height: "100%", background: "radial-gradient(ellipse at 50% 0%, rgba(245,158,11,0.22) 0%, transparent 62%), #060708", color: "#f4f4f5", padding: 14, display: "flex", flexDirection: "column", justifyContent: "space-between", fontFamily: "var(--font-sans)" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: 9, color: "#9ca3af", letterSpacing: "0.08em" }}>
+        <span>REEL 04 // 2.39:1</span>
+        <span style={{ color: "#f59e0b" }}>● TUNGSTEN</span>
+      </div>
+      <div style={{ background: "#0e1013", border: "1px solid rgba(255,255,255,0.12)", borderTop: "2px solid #f59e0b", borderRadius: 4, padding: "10px 12px" }}>
+        <div style={{ fontSize: 15, fontWeight: 600, letterSpacing: "-0.02em" }}>Cinema Noir Stage</div>
+        <div style={{ fontSize: 10, color: "#9ca3af", marginTop: 2 }}>Obsidian letterbox + amber key light</div>
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: 9, color: "#9ca3af" }}>
+        <span>#060708 / #F59E0B</span>
+        <span>SHUTTER EASE</span>
+      </div>
+    </div>
+  ),
+
+  "velvet-chrome-prism": () => (
+    <div style={{ height: "100%", background: "radial-gradient(circle at 20% 20%, rgba(139,92,246,0.24) 0%, transparent 50%), radial-gradient(circle at 82% 80%, rgba(34,211,238,0.2) 0%, transparent 48%), #07050f", color: "#f5f3ff", padding: 14, display: "flex", flexDirection: "column", justifyContent: "space-between", fontFamily: "var(--font-sans)" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: 9, color: "#a79fc4" }}>
+        <span>PRISM // OPTICS</span>
+        <span style={{ color: "#22d3ee" }}>UV-SEAM</span>
+      </div>
+      <div style={{ background: "#100c1e", border: "1px solid rgba(167,139,250,0.34)", borderRadius: 12, boxShadow: "inset 0 1px 0 rgba(34,211,238,0.3)", padding: "10px 12px" }}>
+        <div style={{ fontSize: 15, fontWeight: 600, letterSpacing: "-0.02em" }}>Velvet Chrome</div>
+        <div style={{ fontSize: 10, color: "#a79fc4", marginTop: 2 }}>Iridescent violet-cyan prism rim</div>
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: 9 }}>
+        <span style={{ color: "#8b5cf6" }}>#8B5CF6</span>
+        <span style={{ color: "#22d3ee" }}>#22D3EE</span>
+      </div>
+    </div>
+  ),
 };

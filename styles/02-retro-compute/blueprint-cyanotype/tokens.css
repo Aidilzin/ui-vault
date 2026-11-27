@@ -1,0 +1,20 @@
+:root {
+  --bp-canvas: #0b2545;
+  --bp-surface: #10315a;
+  --bp-elevated: #163e70;
+  --bp-ink: #e8f1ff;
+  --bp-ink-muted: #9cc2eb;
+  --bp-border: rgba(232, 241, 255, 0.24);
+  --bp-border-strong: rgba(232, 241, 255, 0.55);
+  --bp-accent: #7dd3fc;
+  --bp-accent-alt: #fbbf24;
+  --bp-radius: 2px;
+  --bp-shadow: none;
+}
+
+.bp-sheet {
+  background: var(--bp-surface);
+  color: var(--bp-ink);
+  border: 1px solid var(--bp-border);
+  border-radius: var(--bp-radius);
+}

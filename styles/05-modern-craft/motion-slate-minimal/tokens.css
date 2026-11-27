@@ -1,0 +1,21 @@
+:root {
+  --msm-canvas: #ffffff;
+  --msm-surface: #f8f8f9;
+  --msm-elevated: #f4f4f5;
+  --msm-ink: #18181b;
+  --msm-ink-muted: #71717a;
+  --msm-border: #e4e4e7;
+  --msm-border-strong: #a1a1aa;
+  --msm-accent: #18181b;
+  --msm-accent-alt: #059669;
+  --msm-radius: 8px;
+  --msm-shadow: 0 1px 2px rgba(24, 24, 27, 0.04);
+}
+
+.msm-frame {
+  background: var(--msm-surface);
+  color: var(--msm-ink);
+  border: 1px solid var(--msm-border);
+  border-radius: var(--msm-radius);
+  box-shadow: var(--msm-shadow);
+}

@@ -1,0 +1,21 @@
+:root {
+  --ksw-canvas: #fafafa;
+  --ksw-surface: #ffffff;
+  --ksw-elevated: #f2f3f5;
+  --ksw-ink: #111113;
+  --ksw-ink-muted: #666870;
+  --ksw-border: #e4e4e7;
+  --ksw-border-strong: #d4d4d8;
+  --ksw-accent: #0066ff;
+  --ksw-accent-alt: #10b981;
+  --ksw-radius: 10px;
+  --ksw-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+}
+
+.ksw-card {
+  background: var(--ksw-surface);
+  color: var(--ksw-ink);
+  border: 1px solid var(--ksw-border);
+  border-radius: var(--ksw-radius);
+  box-shadow: var(--ksw-shadow);
+}

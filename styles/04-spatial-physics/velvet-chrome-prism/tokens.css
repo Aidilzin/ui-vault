@@ -1,0 +1,22 @@
+:root {
+  --vcp-canvas: #07050f;
+  --vcp-surface: #100c1e;
+  --vcp-elevated: #17122b;
+  --vcp-ink: #f5f3ff;
+  --vcp-ink-muted: #a79fc4;
+  --vcp-border: rgba(167, 139, 250, 0.22);
+  --vcp-border-strong: rgba(34, 211, 238, 0.42);
+  --vcp-accent: #8b5cf6;
+  --vcp-accent-alt: #22d3ee;
+  --vcp-blur: 12px;
+  --vcp-radius: 12px;
+  --vcp-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 14px 36px rgba(4, 2, 12, 0.65);
+}
+
+.vcp-card {
+  background: var(--vcp-surface);
+  color: var(--vcp-ink);
+  border: 1px solid var(--vcp-border);
+  border-radius: var(--vcp-radius);
+  box-shadow: var(--vcp-shadow);
+}

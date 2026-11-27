@@ -1,0 +1,25 @@
+:root {
+  --cn-canvas: #060708;
+  --cn-surface: #0e1013;
+  --cn-elevated: #16191f;
+  --cn-ink: #f4f4f5;
+  --cn-ink-muted: #9ca3af;
+  --cn-border: rgba(255, 255, 255, 0.11);
+  --cn-border-strong: rgba(255, 255, 255, 0.22);
+  --cn-accent: #f59e0b;
+  --cn-accent-alt: #e2e8f0;
+  --cn-radius: 4px;
+  --cn-shadow: 0 20px 48px rgba(0, 0, 0, 0.65);
+}
+
+.cn-stage {
+  background: var(--cn-canvas);
+  color: var(--cn-ink);
+}
+
+.cn-panel {
+  background: var(--cn-surface);
+  border: 1px solid var(--cn-border);
+  border-radius: var(--cn-radius);
+  box-shadow: var(--cn-shadow);
+}

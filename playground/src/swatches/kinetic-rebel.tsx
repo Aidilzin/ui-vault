@@ -101,4 +101,21 @@ export const kineticRebelSwatches: Record<string, () => ReactNode> = {
       </div>
     </div>
   ),
+
+  "risograph-print": () => (
+    <div style={{ height: "100%", background: "#f6f1e7", color: "#171b2e", padding: 14, display: "flex", flexDirection: "column", justifyContent: "space-between", fontFamily: "var(--font-display)" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontFamily: "var(--font-mono)", fontSize: 9 }}>
+        <span style={{ background: "#1d4ed8", color: "#fbf8f2", padding: "2px 6px", fontWeight: 700 }}>DRUM 01 // COBALT</span>
+        <span style={{ color: "#ef4444", fontWeight: 700 }}>+3PX OFFSET</span>
+      </div>
+      <div style={{ background: "#fbf8f2", border: "1.5px solid #1d4ed8", boxShadow: "3px 3px 0 #ef4444", padding: "9px 11px" }}>
+        <div style={{ fontSize: 16, fontWeight: 800, color: "#171b2e", lineHeight: 1.05 }}>RISOGRAPH PRESS</div>
+        <div style={{ fontSize: 10, color: "#525870", marginTop: 3, fontFamily: "var(--font-mono)" }}>Soy-ink overprint on cream stock</div>
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: 9 }}>
+        <span style={{ color: "#1d4ed8", fontWeight: 700 }}>#1D4ED8</span>
+        <span style={{ color: "#ef4444", fontWeight: 700 }}>#EF4444</span>
+      </div>
+    </div>
+  ),
 };

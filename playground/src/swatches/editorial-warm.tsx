@@ -108,4 +108,21 @@ export const editorialWarmSwatches: Record<string, () => ReactNode> = {
       </div>
     </div>
   ),
+
+  "gallery-curated-sand": () => (
+    <div style={{ height: "100%", background: "#edeae3", color: "#1f2421", padding: 14, display: "flex", flexDirection: "column", justifyContent: "space-between", fontFamily: "Georgia, serif" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: 9, color: "#5f635e", borderBottom: "1px solid #d6d1c6", paddingBottom: 5 }}>
+        <span>EXHIBITION // 14</span>
+        <span style={{ color: "#3d5a4c" }}>LIMESTONE</span>
+      </div>
+      <div style={{ background: "#f6f4ef", border: "1px solid #d6d1c6", borderRadius: 4, padding: "9px 11px" }}>
+        <div style={{ fontSize: 16, fontWeight: 600, lineHeight: 1.1 }}>Curated Travertine</div>
+        <div style={{ fontSize: 10, color: "#5f635e", marginTop: 3, fontFamily: "var(--font-sans)" }}>Cool graphite ink on warm sand</div>
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-mono)", fontSize: 9, color: "#5f635e" }}>
+        <span>#EDEAE3 / #1F2421</span>
+        <span style={{ color: "#3d5a4c", fontWeight: 600 }}>#3D5A4C</span>
+      </div>
+    </div>
+  ),
 };

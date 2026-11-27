@@ -176,6 +176,7 @@ const SERIF_STYLES = new Set([
   "warm-manuscript",
   "wordmark-press",
   "archival-paper",
+  "gallery-curated-sand",
 ]);
 
 const DISPLAY_STYLES = new Set([
@@ -186,6 +187,7 @@ const DISPLAY_STYLES = new Set([
   "swiss-type-foundry",
   "neo-swiss",
   "zine-wire",
+  "risograph-print",
 ]);
 
 const MONO_STYLES = new Set([
@@ -194,6 +196,7 @@ const MONO_STYLES = new Set([
   "eight-bit-arcade",
   "os-core",
   "retro-web-96",
+  "blueprint-cyanotype",
 ]);
 
 const THICK_BORDER_STYLES = new Set([
@@ -207,6 +210,7 @@ const MEDIUM_BORDER_STYLES = new Set([
   "avant-poster",
   "pastel-playful",
   "console-2001",
+  "risograph-print",
 ]);
 
 const themeCache = new Map<string, ResolvedStyleTheme>();

@@ -1,0 +1,21 @@
+:root {
+  --riso-canvas: #f6f1e7;
+  --riso-surface: #fbf8f2;
+  --riso-elevated: #efe7d8;
+  --riso-ink: #171b2e;
+  --riso-ink-muted: #525870;
+  --riso-border: #1d4ed8;
+  --riso-border-strong: #171b2e;
+  --riso-accent: #1d4ed8;
+  --riso-accent-alt: #ef4444;
+  --riso-radius: 2px;
+  --riso-shadow: 3px 3px 0 #ef4444;
+}
+
+.riso-sheet {
+  background: var(--riso-surface);
+  color: var(--riso-ink);
+  border: 1.5px solid var(--riso-border);
+  border-radius: var(--riso-radius);
+  box-shadow: var(--riso-shadow);
+}
