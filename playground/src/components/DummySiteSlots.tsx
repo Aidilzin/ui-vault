@@ -174,6 +174,11 @@ export function DummyNavSlot({
       tabs={links.map((l) => ({ id: l.id, label: l.label }))}
       defaultTabId={links[0]?.id}
       accentBg={theme.accent}
+      accentBorder={theme.accent}
+      activeColor={theme.accentInk}
+      inactiveColor={theme.surfaceMuted}
+      trackBg={theme.elevated}
+      trackBorder={theme.border}
       onChange={setActiveLink}
     />
   ) : hasGooey ? (

@@ -13,6 +13,11 @@ export interface SpotlightTabsProps {
   tabs: SpotlightTabOption[];
   defaultTabId?: string;
   accentBg?: string;
+  accentBorder?: string;
+  activeColor?: string;
+  inactiveColor?: string;
+  trackBg?: string;
+  trackBorder?: string;
   onChange?: (id: string) => void;
 }
 
@@ -20,6 +25,11 @@ export function SpotlightTabs({
   tabs,
   defaultTabId,
   accentBg = "rgba(56, 189, 248, 0.16)",
+  accentBorder = "rgba(56, 189, 248, 0.45)",
+  activeColor = "#38bdf8",
+  inactiveColor = "#8b94a3",
+  trackBg = "#0f1115",
+  trackBorder = "rgba(255, 255, 255, 0.12)",
   onChange,
 }: SpotlightTabsProps) {
   const [activeId, setActiveId] = useState(defaultTabId ?? tabs[0]?.id ?? "");
@@ -44,8 +54,8 @@ export function SpotlightTabs({
         display: "inline-flex",
         padding: 3,
         gap: 2,
-        background: "#0f1115",
-        border: "1px solid rgba(255, 255, 255, 0.12)",
+        background: trackBg,
+        border: `1px solid ${trackBorder}`,
         borderRadius: 6,
       }}
     >
@@ -53,13 +63,14 @@ export function SpotlightTabs({
         aria-hidden="true"
         style={{
           position: "absolute",
+          zIndex: 0,
           top: 3,
           bottom: 3,
           left: 0,
           width: pill.width,
           transform: `translate3d(${pill.left}px, 0, 0)`,
           background: accentBg,
-          border: "1px solid rgba(56, 189, 248, 0.45)",
+          border: `1px solid ${accentBorder}`,
           borderRadius: 4,
           transition: reduced
             ? "none"
@@ -89,9 +100,10 @@ export function SpotlightTabs({
               padding: "6px 12px",
               background: "transparent",
               border: "none",
-              color: active ? "#38bdf8" : "#8b94a3",
+              color: active ? activeColor : inactiveColor,
               fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
               fontSize: 11,
+              fontWeight: active ? 600 : 400,
               cursor: "pointer",
               transition: "color 140ms ease",
             }}
