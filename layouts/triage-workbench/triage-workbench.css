@@ -1,0 +1,85 @@
+/* ui-vault // layout: triage-workbench (production)
+ * 3-pane desktop triage shell (nav rail + scrollable queue + detail inspector).
+ */
+
+.lay-triage-workbench {
+  container-type: inline-size;
+  container-name: lay-triage;
+  min-height: var(--lay-height, 100%);
+  display: flex;
+  flex-direction: column;
+  background: var(--lay-canvas, transparent);
+  color: var(--lay-ink, inherit);
+}
+
+.lay-triage-header {
+  border-bottom: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  background: var(--lay-surface, transparent);
+  padding: 10px 14px;
+}
+
+.lay-triage-body {
+  display: grid;
+  grid-template-columns: 185px minmax(220px, 0.95fr) minmax(0, 1.35fr);
+  flex: 1;
+  min-height: 0;
+}
+
+.lay-triage-nav {
+  border-right: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  background: var(--lay-surface, transparent);
+  padding: 12px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lay-triage-queue {
+  border-right: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  padding: 12px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lay-triage-inspector {
+  padding: 14px 16px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lay-triage-footer {
+  border-top: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  padding: 8px 14px;
+  color: var(--lay-muted, inherit);
+}
+
+@container lay-triage (max-width: 720px) {
+  .lay-triage-body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  }
+
+  .lay-triage-nav {
+    grid-column: 1 / -1;
+    border-right: none;
+    border-bottom: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 8px 12px;
+  }
+}
+
+@container lay-triage (max-width: 480px) {
+  .lay-triage-body {
+    grid-template-columns: 1fr;
+  }
+
+  .lay-triage-queue {
+    border-right: none;
+    border-bottom: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  }
+}

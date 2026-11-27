@@ -1,0 +1,110 @@
+/* ui-vault // layout: floating-os-desktop (experimental)
+ * Spatial/retro desktop canvas with slim top menu bar, framed windows, and container-scoped dock.
+ */
+
+.lay-os-desktop {
+  container-type: inline-size;
+  container-name: lay-os;
+  position: relative;
+  min-height: var(--lay-height, 100%);
+  display: flex;
+  flex-direction: column;
+  background: var(--lay-canvas, transparent);
+  color: var(--lay-ink, inherit);
+}
+
+.lay-os-menubar {
+  border-bottom: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  background: var(--lay-surface, transparent);
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.lay-os-workspace {
+  flex: 1;
+  padding: var(--lay-pad, 16px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.95fr);
+  gap: var(--lay-gap, 14px);
+  align-items: start;
+}
+
+.lay-os-window {
+  min-width: 0;
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border-strong, var(--lay-border, currentColor));
+  border-radius: var(--lay-radius, 6px);
+  box-shadow: var(--lay-shadow, none);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.lay-os-win-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-bottom: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  background: var(--lay-elevated, var(--lay-surface, transparent));
+}
+
+.lay-os-win-dots {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.lay-os-win-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--lay-border-strong, currentColor);
+  opacity: 0.65;
+}
+
+.lay-os-win-title {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.lay-os-win-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lay-os-dock-wrap {
+  position: sticky;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  padding: 0 12px 10px;
+  pointer-events: none;
+}
+
+.lay-os-dock {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border-strong, var(--lay-border, currentColor));
+  border-radius: var(--lay-radius, 10px);
+  box-shadow: var(--lay-shadow, none);
+}
+
+@container lay-os (max-width: 720px) {
+  .lay-os-workspace {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+}

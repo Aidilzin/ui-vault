@@ -1,0 +1,94 @@
+/* ui-vault // layout: masonry-archive (production)
+ * Curated gallery/catalog layout with sticky filter bar, responsive waterfall grid, and detail rail.
+ * No overflow:hidden on sticky ancestors.
+ */
+
+.lay-masonry-archive {
+  container-type: inline-size;
+  container-name: lay-masonry;
+  min-height: var(--lay-height, 100%);
+  display: flex;
+  flex-direction: column;
+  background: var(--lay-canvas, transparent);
+  color: var(--lay-ink, inherit);
+}
+
+.lay-masonry-header {
+  border-bottom: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  padding: 12px 16px;
+}
+
+.lay-masonry-filter {
+  position: sticky;
+  top: 48px;
+  z-index: 10;
+  border-bottom: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  background: var(--lay-surface, transparent);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.lay-masonry-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: var(--lay-gap, 14px);
+  padding: var(--lay-pad, 16px);
+  flex: 1;
+  align-items: start;
+}
+
+.lay-masonry-archive[data-has-detail="false"] .lay-masonry-body {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.lay-masonry-grid {
+  column-count: 3;
+  column-gap: var(--lay-gap, 14px);
+  min-width: 0;
+}
+
+.lay-masonry-item {
+  break-inside: avoid;
+  margin-bottom: var(--lay-gap, 14px);
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  border-radius: var(--lay-radius, 6px);
+  padding: 12px;
+}
+
+.lay-masonry-detail {
+  min-width: 0;
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  border-radius: var(--lay-radius, 6px);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lay-masonry-footer {
+  border-top: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  padding: 10px 16px;
+  color: var(--lay-muted, inherit);
+}
+
+@container lay-masonry (max-width: 760px) {
+  .lay-masonry-body {
+    grid-template-columns: 1fr;
+  }
+
+  .lay-masonry-grid {
+    column-count: 2;
+  }
+}
+
+@container lay-masonry (max-width: 480px) {
+  .lay-masonry-grid {
+    column-count: 1;
+  }
+}

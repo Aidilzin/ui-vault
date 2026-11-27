@@ -1,0 +1,94 @@
+/* ui-vault // layout: swiss-editorial-grid (production)
+ * Exposed 1px hairline 12-column International Typographic grid.
+ * Note: No overflow:hidden on sticky ancestors so indexRail sticks cleanly.
+ */
+
+.lay-swiss-editorial {
+  container-type: inline-size;
+  container-name: lay-swiss;
+  min-height: var(--lay-height, 100%);
+  display: flex;
+  flex-direction: column;
+  background: var(--lay-canvas, transparent);
+  color: var(--lay-ink, inherit);
+}
+
+.lay-swiss-masthead {
+  border-bottom: var(--lay-border-width, 1px) solid var(--lay-border-strong, var(--lay-border, currentColor));
+  padding: 12px 18px;
+}
+
+.lay-swiss-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  flex: 1;
+}
+
+.lay-swiss-index {
+  grid-column: span 3;
+  border-right: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  padding: 16px 14px;
+  min-width: 0;
+}
+
+.lay-swiss-index-sticky {
+  position: sticky;
+  top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lay-swiss-main {
+  grid-column: span 9;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.lay-swiss-hero {
+  border-bottom: var(--lay-border-width, 1px) solid var(--lay-border-strong, var(--lay-border, currentColor));
+  padding: 22px 20px;
+}
+
+.lay-swiss-body {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lay-swiss-footer {
+  border-top: var(--lay-border-width, 1px) solid var(--lay-border-strong, var(--lay-border, currentColor));
+  padding: 12px 18px;
+  color: var(--lay-muted, inherit);
+}
+
+@container lay-swiss (max-width: 720px) {
+  .lay-swiss-index {
+    grid-column: span 12;
+    border-right: none;
+    border-bottom: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+    padding: 10px 14px;
+  }
+
+  .lay-swiss-index-sticky {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .lay-swiss-main {
+    grid-column: span 12;
+  }
+}
+
+@container lay-swiss (max-width: 480px) {
+  .lay-swiss-masthead,
+  .lay-swiss-hero,
+  .lay-swiss-body,
+  .lay-swiss-footer {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

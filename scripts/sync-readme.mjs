@@ -13,7 +13,16 @@ const styleNodes = (relations.nodes ?? []).filter((n) => n.kind === "style");
 const animNodes = (relations.nodes ?? []).filter((n) => n.kind === "animation");
 const textureNodes = (relations.nodes ?? []).filter((n) => n.kind === "texture");
 const typographyNodes = (relations.nodes ?? []).filter((n) => n.kind === "typography");
+const layoutNodes = (relations.nodes ?? []).filter((n) => n.kind === "layout");
+const telemetryNodes = (relations.nodes ?? []).filter((n) => n.kind === "telemetry");
 const hybrids = relations.hybrids ?? [];
+const totalItems =
+  styleNodes.length +
+  animNodes.length +
+  textureNodes.length +
+  typographyNodes.length +
+  layoutNodes.length +
+  telemetryNodes.length;
 
 function replaceBlock(content, marker, replacement) {
   const start = `<!-- VAULT:${marker}:START -->`;
@@ -32,7 +41,7 @@ function replaceBlock(content, marker, replacement) {
   );
 }
 
-const badgeLine = `[![Registry Items](https://img.shields.io/badge/Registry-${styleNodes.length}%20styles%20%C2%B7%20${animNodes.length}%20animations%20%C2%B7%20${textureNodes.length}%20textures%20%C2%B7%20${typographyNodes.length}%20typography-34d399?style=flat-square&labelColor=0f1115)](./relations.json)`;
+const badgeLine = `[![Registry Items](https://img.shields.io/badge/Registry-${totalItems}%20items%20%C2%B7%20${styleNodes.length}%20styles%20%C2%B7%20${animNodes.length}%20anims%20%C2%B7%20${textureNodes.length}%20tex%20%C2%B7%20${typographyNodes.length}%20type%20%C2%B7%20${layoutNodes.length}%20layouts%20%C2%B7%20${telemetryNodes.length}%20telemetry-34d399?style=flat-square&labelColor=0f1115)](./relations.json)`;
 
 const stylesLines = [
   `### Styles by Aesthetic Cluster (${styleNodes.length})`,
@@ -91,17 +100,45 @@ for (const typo of typographyNodes) {
   );
 }
 
+const layoutLines = [
+  `### Layout Shells (${layoutNodes.length})`,
+  "",
+  "| Layout | Tier | Pattern | Slots | `shadcn` Install |",
+  "| :--- | :--- | :--- | :--- | :--- |",
+];
+for (const lay of layoutNodes) {
+  const slots = (lay.slots ?? []).map((s) => `\`${s}\``).join(", ");
+  layoutLines.push(
+    `| **${lay.name ?? lay.id}** (\`${lay.id}\`) | \`${lay.tier}\` | ${lay.pattern ?? ""} | ${slots} | \`npx shadcn@latest add Aidilzin/ui-vault/${lay.registryItem}\` |`
+  );
+}
+
+const telemetryLines = [
+  `### Telemetry Micro-Charts (${telemetryNodes.length})`,
+  "",
+  "| Telemetry | Tier | Engine | Perf Tier | Reduced Motion Fallback | `shadcn` Install |",
+  "| :--- | :--- | :--- | :--- | :--- | :--- |",
+];
+for (const tel of telemetryNodes) {
+  const engines = (tel.engine ?? []).map((e) => `\`${e}\``).join(", ");
+  telemetryLines.push(
+    `| **${tel.name ?? tel.id}** (\`${tel.id}\`) | \`${tel.tier}\` | ${engines} | \`${tel.perfTier}\` | \`${tel.reducedMotion}\` | \`npx shadcn@latest add Aidilzin/ui-vault/${tel.registryItem}\` |`
+  );
+}
+
 const hybridLines = [
   `### Proven Hybrid Recipes (${hybrids.length})`,
   "",
-  "| Recipe | Stack (`baseStyle` + `accents`) | Best For | Combined `shadcn` Install |",
+  "| Recipe | Stack (`baseStyle` + `layers`) | Best For | Combined `shadcn` Install |",
   "| :--- | :--- | :--- | :--- |",
 ];
 for (const hybrid of hybrids) {
   const ids = [
     hybrid.baseStyle,
+    ...(hybrid.layout ? [hybrid.layout] : []),
     ...(hybrid.texture ? [hybrid.texture] : []),
     ...(hybrid.typography ? [hybrid.typography] : []),
+    ...(hybrid.telemetry ?? []),
     ...(hybrid.accents ?? []),
   ];
   const regItems = ids
@@ -110,8 +147,10 @@ for (const hybrid of hybrids) {
     .map((item) => `Aidilzin/ui-vault/${item}`)
     .join(" ");
   const extras = [
+    ...(hybrid.layout ? [`lay:\`${hybrid.layout}\``] : []),
     ...(hybrid.texture ? [`tex:\`${hybrid.texture}\``] : []),
     ...(hybrid.typography ? [`type:\`${hybrid.typography}\``] : []),
+    ...(hybrid.telemetry ?? []).map((t) => `tel:\`${t}\``),
     ...(hybrid.accents ?? []).map((a) => `\`${a}\``),
   ].join(", ");
   hybridLines.push(
@@ -125,9 +164,11 @@ readme = replaceBlock(readme, "STYLES", stylesLines.join("\n"));
 readme = replaceBlock(readme, "ANIMATIONS", animLines.join("\n"));
 readme = replaceBlock(readme, "TEXTURES", textureLines.join("\n"));
 readme = replaceBlock(readme, "TYPOGRAPHY", typographyLines.join("\n"));
+readme = replaceBlock(readme, "LAYOUTS", layoutLines.join("\n"));
+readme = replaceBlock(readme, "TELEMETRY", telemetryLines.join("\n"));
 readme = replaceBlock(readme, "HYBRIDS", hybridLines.join("\n"));
 fs.writeFileSync(readmePath, readme, "utf8");
 
 console.log(
-  `✔ Synced README.md (${styleNodes.length} styles, ${animNodes.length} animations, ${textureNodes.length} textures, ${typographyNodes.length} typography, ${hybrids.length} hybrids).`
+  `✔ Synced README.md (${totalItems} items: ${styleNodes.length} styles, ${animNodes.length} animations, ${textureNodes.length} textures, ${typographyNodes.length} typography, ${layoutNodes.length} layouts, ${telemetryNodes.length} telemetry, ${hybrids.length} hybrids).`
 );

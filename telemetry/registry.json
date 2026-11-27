@@ -1,0 +1,155 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "telemetry-inline-sparkline",
+      "type": "registry:item",
+      "title": "Inline Sparkline",
+      "description": "Crisp zero-dependency SVG trend sparkline with subtle gradient fill and interactive pointer scrubber readout.",
+      "categories": ["telemetry", "production"],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "inline-sparkline.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/telemetry/inline-sparkline.tsx"
+        }
+      ]
+    },
+    {
+      "name": "telemetry-uptime-strip",
+      "type": "registry:item",
+      "title": "Uptime Strip",
+      "description": "60-segment operational/degraded/outage strip with bounded inline hover inspection and uptime percentage.",
+      "categories": ["telemetry", "production"],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "uptime-strip.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/telemetry/uptime-strip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "telemetry-activity-heatmap",
+      "type": "registry:item",
+      "title": "Activity Heatmap",
+      "description": "Compact 5-step perceptual intensity grid with interactive cell inspection readout.",
+      "categories": ["telemetry", "production"],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "activity-heatmap.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/telemetry/activity-heatmap.tsx"
+        }
+      ]
+    },
+    {
+      "name": "telemetry-latency-histogram",
+      "type": "registry:item",
+      "title": "Latency Histogram",
+      "description": "Distribution bar chart with p50, p95, and p99 threshold markers and interactive bucket hover stats.",
+      "categories": ["telemetry", "production"],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "latency-histogram.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/telemetry/latency-histogram.tsx"
+        }
+      ]
+    },
+    {
+      "name": "telemetry-radial-step-gauge",
+      "type": "registry:item",
+      "title": "Radial Step Gauge",
+      "description": "Segmented hardware and FUI circular arc gauge with centered tabular readout.",
+      "categories": ["telemetry", "viral"],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "radial-step-gauge.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/telemetry/radial-step-gauge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "telemetry-led-status-matrix",
+      "type": "registry:item",
+      "title": "LED Status Matrix",
+      "description": "Dense grid of cluster, pod, or agent health LEDs with cell inspection and reduced-motion support.",
+      "categories": ["telemetry", "experimental"],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "led-status-matrix.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/telemetry/led-status-matrix.tsx"
+        }
+      ]
+    },
+    {
+      "name": "telemetry-live-oscilloscope",
+      "type": "registry:item",
+      "title": "Live Oscilloscope",
+      "description": "HiDPI ResizeObserver Canvas waveform trace with Pause toggle and static reduced-motion snapshot.",
+      "categories": ["telemetry", "experimental"],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "live-oscilloscope.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/telemetry/live-oscilloscope.tsx"
+        }
+      ]
+    },
+    {
+      "name": "telemetry-segmented-quota-bar",
+      "type": "registry:item",
+      "title": "Segmented Quota Bar",
+      "description": "Multi-series proportional horizontal stack bar with 1px gaps and interactive legend highlighting.",
+      "categories": ["telemetry", "production"],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "segmented-quota-bar.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/telemetry/segmented-quota-bar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "telemetry-diff-delta-pill",
+      "type": "registry:item",
+      "title": "Diff Delta Pill",
+      "description": "Precision trend delta badge (+14.2%, -3.8ms) with crisp vector indicator and semantic polarity.",
+      "categories": ["telemetry", "production"],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "diff-delta-pill.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/telemetry/diff-delta-pill.tsx"
+        }
+      ]
+    },
+    {
+      "name": "telemetry-node-topology-mini",
+      "type": "registry:item",
+      "title": "Node Topology Mini",
+      "description": "Compact SVG service and agent dependency graph with animated packet flow, health dots, and hop latency.",
+      "categories": ["telemetry", "viral"],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "node-topology-mini.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/telemetry/node-topology-mini.tsx"
+        }
+      ]
+    }
+  ]
+}

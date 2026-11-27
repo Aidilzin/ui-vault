@@ -18,8 +18,18 @@ const stylesReg = readJson("styles/registry.json");
 const animsReg = readJson("animations/registry.json");
 const texturesReg = readJson("textures/registry.json");
 const typographyReg = readJson("typography/registry.json");
+const layoutsReg = readJson("layouts/registry.json");
+const telemetryReg = readJson("telemetry/registry.json");
 
-if (!relations || !stylesReg || !animsReg || !texturesReg || !typographyReg) {
+if (
+  !relations ||
+  !stylesReg ||
+  !animsReg ||
+  !texturesReg ||
+  !typographyReg ||
+  !layoutsReg ||
+  !telemetryReg
+) {
   console.error("Vault check aborted due to missing JSON manifests.");
   process.exit(1);
 }
@@ -27,6 +37,7 @@ if (!relations || !stylesReg || !animsReg || !texturesReg || !typographyReg) {
 const clusterIds = new Set(Object.keys(relations.clusters ?? {}));
 const mechanicIds = new Set(relations.mechanics ?? []);
 const validTiers = new Set(relations.tiers ?? ["production", "viral", "experimental"]);
+const validPerfTiers = new Set(["low", "medium", "high"]);
 const nodes = relations.nodes ?? [];
 
 // 1. Duplicate ID / registryItem / tier check
@@ -51,8 +62,10 @@ const styleNodes = nodes.filter((n) => n.kind === "style");
 const animNodes = nodes.filter((n) => n.kind === "animation");
 const textureNodes = nodes.filter((n) => n.kind === "texture");
 const typographyNodes = nodes.filter((n) => n.kind === "typography");
+const layoutNodes = nodes.filter((n) => n.kind === "layout");
+const telemetryNodes = nodes.filter((n) => n.kind === "telemetry");
 
-// 2. Validate cluster -> style references & style node -> cluster references
+// 2. Validate cluster -> style references & style files
 const stylesInClusters = new Set();
 for (const [clusterId, meta] of Object.entries(relations.clusters)) {
   for (const styleId of meta.styles ?? []) {
@@ -99,7 +112,6 @@ for (const style of styleNodes) {
 }
 
 // 3. Validate animation nodes & files on disk
-const validPerfTiers = new Set(["low", "medium", "high"]);
 for (const anim of animNodes) {
   if (!mechanicIds.has(anim.mechanic)) {
     errors.push(`Animation "${anim.id}" has unknown mechanic "${anim.mechanic}"`);
@@ -128,13 +140,12 @@ for (const tex of textureNodes) {
   if (!texturesInIndex.has(tex.id)) {
     errors.push(`Texture "${tex.id}" is missing from relations.textures index`);
   }
-  const fullPath = path.join(rootDir, tex.path);
-  if (!fs.existsSync(fullPath)) {
+  if (!fs.existsSync(path.join(rootDir, tex.path))) {
     errors.push(`Missing texture CSS on disk for "${tex.id}": ${tex.path}`);
   }
 }
 
-// 3c. Validate typography nodes, index parity & files on disk
+// 3c. Validate typography nodes & files on disk
 const typographyInIndex = new Set(relations.typography ?? []);
 for (const typeId of typographyInIndex) {
   const node = nodeById.get(typeId);
@@ -147,9 +158,7 @@ for (const typo of typographyNodes) {
     errors.push(`Typography "${typo.id}" is missing from relations.typography index`);
   }
   const typeMdPath = path.join(rootDir, typo.path);
-  const typeDir = path.dirname(typeMdPath);
-  const typeCssPath = path.join(typeDir, "typography.css");
-
+  const typeCssPath = path.join(path.dirname(typeMdPath), "typography.css");
   if (!fs.existsSync(typeMdPath)) {
     errors.push(`Missing TYPOGRAPHY.md on disk for "${typo.id}": ${typo.path}`);
   } else {
@@ -159,15 +168,68 @@ for (const typo of typographyNodes) {
       errors.push(`TYPOGRAPHY.md frontmatter id mismatch for "${typo.id}"`);
     }
   }
-
   if (!fs.existsSync(typeCssPath)) {
-    errors.push(
-      `Missing typography.css for "${typo.id}": ${path.relative(rootDir, typeCssPath)}`
-    );
+    errors.push(`Missing typography.css for "${typo.id}": ${path.relative(rootDir, typeCssPath)}`);
   }
 }
 
-// 4. Validate pairsWith / clashesWith edges across all 4 kinds
+// 3d. Validate layout nodes & files on disk
+const layoutsInIndex = new Set(relations.layouts ?? []);
+for (const layId of layoutsInIndex) {
+  const node = nodeById.get(layId);
+  if (!node || node.kind !== "layout") {
+    errors.push(`relations.layouts references missing layout node "${layId}"`);
+  }
+}
+for (const lay of layoutNodes) {
+  if (!layoutsInIndex.has(lay.id)) {
+    errors.push(`Layout "${lay.id}" is missing from relations.layouts index`);
+  }
+  const layMdPath = path.join(rootDir, lay.path);
+  const layDir = path.dirname(layMdPath);
+  const layTsxPath = path.join(layDir, `${lay.id}.tsx`);
+  const layCssPath = path.join(layDir, `${lay.id}.css`);
+  if (!fs.existsSync(layMdPath)) {
+    errors.push(`Missing LAYOUT.md on disk for "${lay.id}": ${lay.path}`);
+  } else {
+    const raw = fs.readFileSync(layMdPath, "utf8");
+    const idMatch = raw.match(/^id:\s*(.+)$/m);
+    if (!idMatch || idMatch[1].trim() !== lay.id) {
+      errors.push(`LAYOUT.md frontmatter id mismatch for "${lay.id}"`);
+    }
+  }
+  if (!fs.existsSync(layTsxPath)) {
+    errors.push(`Missing layout TSX for "${lay.id}": ${path.relative(rootDir, layTsxPath)}`);
+  }
+  if (!fs.existsSync(layCssPath)) {
+    errors.push(`Missing layout CSS for "${lay.id}": ${path.relative(rootDir, layCssPath)}`);
+  }
+}
+
+// 3e. Validate telemetry nodes & files on disk
+const telemetryInIndex = new Set(relations.telemetry ?? []);
+for (const telId of telemetryInIndex) {
+  const node = nodeById.get(telId);
+  if (!node || node.kind !== "telemetry") {
+    errors.push(`relations.telemetry references missing telemetry node "${telId}"`);
+  }
+}
+for (const tel of telemetryNodes) {
+  if (!telemetryInIndex.has(tel.id)) {
+    errors.push(`Telemetry "${tel.id}" is missing from relations.telemetry index`);
+  }
+  if (!validPerfTiers.has(tel.perfTier)) {
+    errors.push(`Telemetry "${tel.id}" has invalid perfTier "${tel.perfTier}"`);
+  }
+  if (!tel.reducedMotion || typeof tel.reducedMotion !== "string") {
+    errors.push(`Telemetry "${tel.id}" is missing reducedMotion fallback metadata`);
+  }
+  if (!fs.existsSync(path.join(rootDir, tel.path))) {
+    errors.push(`Missing telemetry file on disk for "${tel.id}": ${tel.path}`);
+  }
+}
+
+// 4. Validate pairsWith / clashesWith edges across all 6 kinds
 for (const node of nodes) {
   const pairs = new Set(node.pairsWith ?? []);
   const clashes = new Set(node.clashesWith ?? []);
@@ -186,16 +248,24 @@ for (const node of nodes) {
   }
 }
 
-// 5. Validate hybrids (including optional texture & typography slots)
+// 5. Validate hybrids (including optional layout, texture, typography & telemetry slots)
 for (const hybrid of relations.hybrids ?? []) {
   if (!nodeById.has(hybrid.baseStyle)) {
     errors.push(`Hybrid "${hybrid.id}" references unknown baseStyle "${hybrid.baseStyle}"`);
+  }
+  if (hybrid.layout && nodeById.get(hybrid.layout)?.kind !== "layout") {
+    errors.push(`Hybrid "${hybrid.id}" references unknown layout "${hybrid.layout}"`);
   }
   if (hybrid.texture && nodeById.get(hybrid.texture)?.kind !== "texture") {
     errors.push(`Hybrid "${hybrid.id}" references unknown texture "${hybrid.texture}"`);
   }
   if (hybrid.typography && nodeById.get(hybrid.typography)?.kind !== "typography") {
     errors.push(`Hybrid "${hybrid.id}" references unknown typography "${hybrid.typography}"`);
+  }
+  for (const telId of hybrid.telemetry ?? []) {
+    if (nodeById.get(telId)?.kind !== "telemetry") {
+      errors.push(`Hybrid "${hybrid.id}" references unknown telemetry "${telId}"`);
+    }
   }
   for (const acc of hybrid.accents ?? []) {
     if (!nodeById.has(acc)) {
@@ -204,101 +274,46 @@ for (const hybrid of relations.hybrids ?? []) {
   }
 }
 
-// 6. Parity between relations.json and styles/registry.json
-const styleRegByName = new Map((stylesReg.items ?? []).map((i) => [i.name, i]));
-for (const style of styleNodes) {
-  const item = styleRegByName.get(style.registryItem);
-  if (!item) {
-    errors.push(`Style "${style.id}" (${style.registryItem}) missing from styles/registry.json`);
-    continue;
+function checkRegistryParity(label, dirName, reg, kindNodes, requiredSuffixes = []) {
+  const regByName = new Map((reg.items ?? []).map((i) => [i.name, i]));
+  for (const node of kindNodes) {
+    const item = regByName.get(node.registryItem);
+    if (!item) {
+      errors.push(`${label} "${node.id}" (${node.registryItem}) missing from ${dirName}/registry.json`);
+      continue;
+    }
+    for (const suffix of requiredSuffixes) {
+      const hasSuffix = (item.files ?? []).some((f) => f.path.endsWith(suffix));
+      if (!hasSuffix) {
+        errors.push(`${dirName}/registry.json "${item.name}" missing ${suffix} entry`);
+      }
+    }
+    for (const f of item.files ?? []) {
+      const disk = path.join(rootDir, dirName, f.path);
+      if (!fs.existsSync(disk)) {
+        errors.push(`${dirName}/registry.json "${item.name}" references missing file: ${dirName}/${f.path}`);
+      }
+    }
   }
-  const hasStyleMd = (item.files ?? []).some((f) => f.path.endsWith("/STYLE.md"));
-  const hasTokens = (item.files ?? []).some((f) => f.path.endsWith("/tokens.css"));
-  if (!hasStyleMd) errors.push(`styles/registry.json "${item.name}" missing STYLE.md entry`);
-  if (!hasTokens) errors.push(`styles/registry.json "${item.name}" missing tokens.css entry`);
-  for (const f of item.files ?? []) {
-    const disk = path.join(rootDir, "styles", f.path);
-    if (!fs.existsSync(disk)) {
-      errors.push(`styles/registry.json "${item.name}" references missing file: styles/${f.path}`);
+  for (const item of reg.items ?? []) {
+    if (!kindNodes.some((n) => n.registryItem === item.name)) {
+      errors.push(`Orphaned ${label.toLowerCase()} in ${dirName}/registry.json not in relations.json: "${item.name}"`);
     }
   }
 }
-for (const item of stylesReg.items ?? []) {
-  if (!styleNodes.some((s) => s.registryItem === item.name)) {
-    errors.push(`Orphaned style in styles/registry.json not in relations.json: "${item.name}"`);
-  }
-}
 
-// 7. Parity between relations.json and animations/registry.json
-const animRegByName = new Map((animsReg.items ?? []).map((i) => [i.name, i]));
-for (const anim of animNodes) {
-  const item = animRegByName.get(anim.registryItem);
-  if (!item) {
-    errors.push(`Animation "${anim.id}" (${anim.registryItem}) missing from animations/registry.json`);
-    continue;
-  }
-  for (const f of item.files ?? []) {
-    const disk = path.join(rootDir, "animations", f.path);
-    if (!fs.existsSync(disk)) {
-      errors.push(
-        `animations/registry.json "${item.name}" references missing file: animations/${f.path}`
-      );
-    }
-  }
-}
-for (const item of animsReg.items ?? []) {
-  if (!animNodes.some((a) => a.registryItem === item.name)) {
-    errors.push(`Orphaned animation in animations/registry.json not in relations.json: "${item.name}"`);
-  }
-}
+// 6. Parity between relations.json and all 6 sub-registries
+checkRegistryParity("Style", "styles", stylesReg, styleNodes, ["/STYLE.md", "/tokens.css"]);
+checkRegistryParity("Animation", "animations", animsReg, animNodes);
+checkRegistryParity("Texture", "textures", texturesReg, textureNodes);
+checkRegistryParity("Typography", "typography", typographyReg, typographyNodes, [
+  "/TYPOGRAPHY.md",
+  "/typography.css",
+]);
+checkRegistryParity("Layout", "layouts", layoutsReg, layoutNodes, ["/LAYOUT.md", ".tsx", ".css"]);
+checkRegistryParity("Telemetry", "telemetry", telemetryReg, telemetryNodes, [".tsx"]);
 
-// 7b. Parity between relations.json and textures/registry.json
-const texRegByName = new Map((texturesReg.items ?? []).map((i) => [i.name, i]));
-for (const tex of textureNodes) {
-  const item = texRegByName.get(tex.registryItem);
-  if (!item) {
-    errors.push(`Texture "${tex.id}" (${tex.registryItem}) missing from textures/registry.json`);
-    continue;
-  }
-  for (const f of item.files ?? []) {
-    const disk = path.join(rootDir, "textures", f.path);
-    if (!fs.existsSync(disk)) {
-      errors.push(`textures/registry.json "${item.name}" references missing file: textures/${f.path}`);
-    }
-  }
-}
-for (const item of texturesReg.items ?? []) {
-  if (!textureNodes.some((t) => t.registryItem === item.name)) {
-    errors.push(`Orphaned texture in textures/registry.json not in relations.json: "${item.name}"`);
-  }
-}
-
-// 7c. Parity between relations.json and typography/registry.json
-const typoRegByName = new Map((typographyReg.items ?? []).map((i) => [i.name, i]));
-for (const typo of typographyNodes) {
-  const item = typoRegByName.get(typo.registryItem);
-  if (!item) {
-    errors.push(`Typography "${typo.id}" (${typo.registryItem}) missing from typography/registry.json`);
-    continue;
-  }
-  const hasTypeMd = (item.files ?? []).some((f) => f.path.endsWith("/TYPOGRAPHY.md"));
-  const hasTypeCss = (item.files ?? []).some((f) => f.path.endsWith("/typography.css"));
-  if (!hasTypeMd) errors.push(`typography/registry.json "${item.name}" missing TYPOGRAPHY.md entry`);
-  if (!hasTypeCss) errors.push(`typography/registry.json "${item.name}" missing typography.css entry`);
-  for (const f of item.files ?? []) {
-    const disk = path.join(rootDir, "typography", f.path);
-    if (!fs.existsSync(disk)) {
-      errors.push(`typography/registry.json "${item.name}" references missing file: typography/${f.path}`);
-    }
-  }
-}
-for (const item of typographyReg.items ?? []) {
-  if (!typographyNodes.some((t) => t.registryItem === item.name)) {
-    errors.push(`Orphaned typography in typography/registry.json not in relations.json: "${item.name}"`);
-  }
-}
-
-// 8. Check for orphaned directories/files on disk across all 4 categories
+// 7. Check for orphaned directories/files on disk across all 6 categories
 const stylesRoot = path.join(rootDir, "styles");
 for (const clusterDir of fs.readdirSync(stylesRoot, { withFileTypes: true })) {
   if (!clusterDir.isDirectory()) continue;
@@ -338,8 +353,26 @@ for (const file of fs.readdirSync(texturesRoot, { withFileTypes: true })) {
 const typographyRoot = path.join(rootDir, "typography");
 for (const dir of fs.readdirSync(typographyRoot, { withFileTypes: true })) {
   if (!dir.isDirectory()) continue;
-  if (!nodeById.has(dir.name) || nodeById.get(dir.name)?.kind !== "typography") {
+  if (nodeById.get(dir.name)?.kind !== "typography") {
     errors.push(`Orphaned typography directory on disk: typography/${dir.name}`);
+  }
+}
+
+const layoutsRoot = path.join(rootDir, "layouts");
+for (const dir of fs.readdirSync(layoutsRoot, { withFileTypes: true })) {
+  if (!dir.isDirectory()) continue;
+  if (nodeById.get(dir.name)?.kind !== "layout") {
+    errors.push(`Orphaned layout directory on disk: layouts/${dir.name}`);
+  }
+}
+
+const telemetryRoot = path.join(rootDir, "telemetry");
+const expectedTelPaths = new Set(telemetryNodes.map((t) => path.normalize(path.join(rootDir, t.path))));
+for (const file of fs.readdirSync(telemetryRoot, { withFileTypes: true })) {
+  if (!file.isFile() || !file.name.endsWith(".tsx")) continue;
+  const full = path.normalize(path.join(telemetryRoot, file.name));
+  if (!expectedTelPaths.has(full)) {
+    errors.push(`Orphaned telemetry file on disk: telemetry/${file.name}`);
   }
 }
 
@@ -352,5 +385,5 @@ if (errors.length > 0) {
 }
 
 console.log(
-  `✔ Vault parity check passed: ${styleNodes.length} styles, ${animNodes.length} animations, ${textureNodes.length} textures, ${typographyNodes.length} typography, ${(relations.hybrids ?? []).length} hybrids, 0 orphans.`
+  `✔ Vault parity check passed: ${styleNodes.length} styles, ${animNodes.length} animations, ${textureNodes.length} textures, ${typographyNodes.length} typography, ${layoutNodes.length} layouts, ${telemetryNodes.length} telemetry, ${(relations.hybrids ?? []).length} hybrids, 0 orphans.`
 );

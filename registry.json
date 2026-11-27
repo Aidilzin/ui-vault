@@ -6,6 +6,8 @@
     "styles/registry.json",
     "animations/registry.json",
     "textures/registry.json",
-    "typography/registry.json"
+    "typography/registry.json",
+    "layouts/registry.json",
+    "telemetry/registry.json"
   ]
 }

@@ -1,0 +1,83 @@
+/* ui-vault // layout: sticky-scrollytelling (viral)
+ * Sticky visual stage paired with scrolling narrative steps.
+ * No overflow:hidden on ancestors so position:sticky tracks container or window scroll.
+ */
+
+.lay-sticky-scrolly {
+  container-type: inline-size;
+  container-name: lay-scrolly;
+  min-height: var(--lay-height, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--lay-gap, 16px);
+  padding: var(--lay-pad, 16px);
+  background: var(--lay-canvas, transparent);
+  color: var(--lay-ink, inherit);
+}
+
+.lay-scrolly-header {
+  border-bottom: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  padding-bottom: 12px;
+}
+
+.lay-scrolly-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: var(--lay-gap, 18px);
+  align-items: start;
+}
+
+.lay-scrolly-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.lay-scrolly-step {
+  padding: 14px 16px;
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  border-radius: var(--lay-radius, 6px);
+  cursor: pointer;
+  opacity: 0.72;
+  transition: opacity 160ms ease, border-color 160ms ease;
+}
+
+.lay-scrolly-step[data-active="true"] {
+  opacity: 1;
+  border-color: var(--lay-border-strong, var(--lay-border, currentColor));
+}
+
+.lay-scrolly-stage-col {
+  min-width: 0;
+}
+
+.lay-scrolly-stage-sticky {
+  position: sticky;
+  top: 56px;
+  padding: 16px;
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  border-radius: var(--lay-radius, 6px);
+}
+
+.lay-scrolly-footer {
+  border-top: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  padding-top: 10px;
+  color: var(--lay-muted, inherit);
+}
+
+@container lay-scrolly (max-width: 680px) {
+  .lay-scrolly-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lay-scrolly-stage-col {
+    order: -1;
+  }
+
+  .lay-scrolly-stage-sticky {
+    position: static;
+  }
+}

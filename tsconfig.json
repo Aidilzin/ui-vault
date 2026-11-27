@@ -10,5 +10,12 @@
     "skipLibCheck": true,
     "isolatedModules": true
   },
-  "include": ["animations/**/*.ts", "animations/**/*.tsx"]
+  "include": [
+    "animations/**/*.ts",
+    "animations/**/*.tsx",
+    "layouts/**/*.ts",
+    "layouts/**/*.tsx",
+    "telemetry/**/*.ts",
+    "telemetry/**/*.tsx"
+  ]
 }

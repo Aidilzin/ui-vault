@@ -1,0 +1,93 @@
+/* ui-vault // layout: bento-showcase (viral)
+ * Asymmetric 12-column modular Bento grid with @container responsive collapse.
+ */
+
+.lay-bento-showcase {
+  container-type: inline-size;
+  container-name: lay-bento;
+  min-height: var(--lay-height, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--lay-gap, 14px);
+  padding: var(--lay-pad, 16px);
+  background: var(--lay-canvas, transparent);
+  color: var(--lay-ink, inherit);
+}
+
+.lay-bento-header {
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  border-radius: var(--lay-radius, 6px);
+  padding: 10px 14px;
+}
+
+.lay-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--lay-gap, 14px);
+  flex: 1;
+  align-items: stretch;
+}
+
+.lay-bento-tile {
+  min-width: 0;
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  border-radius: var(--lay-radius, 6px);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lay-bento-hero {
+  grid-column: span 8;
+}
+
+.lay-bento-metric {
+  grid-column: span 4;
+}
+
+.lay-bento-sub {
+  grid-column: span 4;
+}
+
+.lay-bento-wide {
+  grid-column: span 4;
+}
+
+.lay-bento-footer {
+  border-top: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  padding-top: 10px;
+  color: var(--lay-muted, inherit);
+}
+
+@container lay-bento (max-width: 720px) {
+  .lay-bento-hero,
+  .lay-bento-metric {
+    grid-column: span 12;
+  }
+
+  .lay-bento-sub,
+  .lay-bento-wide {
+    grid-column: span 6;
+  }
+}
+
+@container lay-bento (max-width: 480px) {
+  .lay-bento-showcase {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .lay-bento-grid {
+    gap: 10px;
+  }
+
+  .lay-bento-hero,
+  .lay-bento-metric,
+  .lay-bento-sub,
+  .lay-bento-wide {
+    grid-column: span 12;
+  }
+}

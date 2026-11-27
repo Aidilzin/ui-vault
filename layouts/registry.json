@@ -1,0 +1,197 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "layout-bento-showcase",
+      "type": "registry:item",
+      "title": "Bento Showcase Layout",
+      "description": "Asymmetric 12-column modular Bento grid with span-8 hero tile, metric column, and @container collapse.",
+      "categories": ["layout", "viral"],
+      "files": [
+        {
+          "path": "bento-showcase/bento-showcase.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/layouts/bento-showcase.tsx"
+        },
+        {
+          "path": "bento-showcase/bento-showcase.css",
+          "type": "registry:file",
+          "target": "~/src/styles/layouts/bento-showcase.css"
+        },
+        {
+          "path": "bento-showcase/LAYOUT.md",
+          "type": "registry:file",
+          "target": "~/LAYOUT.md"
+        }
+      ]
+    },
+    {
+      "name": "layout-triage-workbench",
+      "type": "registry:item",
+      "title": "Triage Workbench Layout",
+      "description": "Linear/Superhuman-style 3-pane desktop shell with nav rail, queue pane, and detail inspector.",
+      "categories": ["layout", "production"],
+      "files": [
+        {
+          "path": "triage-workbench/triage-workbench.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/layouts/triage-workbench.tsx"
+        },
+        {
+          "path": "triage-workbench/triage-workbench.css",
+          "type": "registry:file",
+          "target": "~/src/styles/layouts/triage-workbench.css"
+        },
+        {
+          "path": "triage-workbench/LAYOUT.md",
+          "type": "registry:file",
+          "target": "~/LAYOUT.md"
+        }
+      ]
+    },
+    {
+      "name": "layout-swiss-editorial-grid",
+      "type": "registry:item",
+      "title": "Swiss Editorial Grid Layout",
+      "description": "Exposed 1px hairline 12-column International Typographic grid with sticky index rail.",
+      "categories": ["layout", "production"],
+      "files": [
+        {
+          "path": "swiss-editorial-grid/swiss-editorial-grid.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/layouts/swiss-editorial-grid.tsx"
+        },
+        {
+          "path": "swiss-editorial-grid/swiss-editorial-grid.css",
+          "type": "registry:file",
+          "target": "~/src/styles/layouts/swiss-editorial-grid.css"
+        },
+        {
+          "path": "swiss-editorial-grid/LAYOUT.md",
+          "type": "registry:file",
+          "target": "~/LAYOUT.md"
+        }
+      ]
+    },
+    {
+      "name": "layout-split-ai-ide",
+      "type": "registry:item",
+      "title": "Split AI IDE Layout",
+      "description": "Agentic workspace shell with session rail, execution stream, container-sticky composer, and diff artifact pane.",
+      "categories": ["layout", "production"],
+      "files": [
+        {
+          "path": "split-ai-ide/split-ai-ide.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/layouts/split-ai-ide.tsx"
+        },
+        {
+          "path": "split-ai-ide/split-ai-ide.css",
+          "type": "registry:file",
+          "target": "~/src/styles/layouts/split-ai-ide.css"
+        },
+        {
+          "path": "split-ai-ide/LAYOUT.md",
+          "type": "registry:file",
+          "target": "~/LAYOUT.md"
+        }
+      ]
+    },
+    {
+      "name": "layout-sticky-scrollytelling",
+      "type": "registry:item",
+      "title": "Sticky Scrollytelling Layout",
+      "description": "Sticky visual stage paired with scrolling narrative steps supporting custom scroll containers or standalone window scroll.",
+      "categories": ["layout", "viral"],
+      "files": [
+        {
+          "path": "sticky-scrollytelling/sticky-scrollytelling.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/layouts/sticky-scrollytelling.tsx"
+        },
+        {
+          "path": "sticky-scrollytelling/sticky-scrollytelling.css",
+          "type": "registry:file",
+          "target": "~/src/styles/layouts/sticky-scrollytelling.css"
+        },
+        {
+          "path": "sticky-scrollytelling/LAYOUT.md",
+          "type": "registry:file",
+          "target": "~/LAYOUT.md"
+        }
+      ]
+    },
+    {
+      "name": "layout-floating-os-desktop",
+      "type": "registry:item",
+      "title": "Floating OS Desktop Layout",
+      "description": "Spatial and retro desktop canvas with menu bar, framed primary and secondary windows, and container-scoped bottom dock.",
+      "categories": ["layout", "experimental"],
+      "files": [
+        {
+          "path": "floating-os-desktop/floating-os-desktop.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/layouts/floating-os-desktop.tsx"
+        },
+        {
+          "path": "floating-os-desktop/floating-os-desktop.css",
+          "type": "registry:file",
+          "target": "~/src/styles/layouts/floating-os-desktop.css"
+        },
+        {
+          "path": "floating-os-desktop/LAYOUT.md",
+          "type": "registry:file",
+          "target": "~/LAYOUT.md"
+        }
+      ]
+    },
+    {
+      "name": "layout-command-hud-dashboard",
+      "type": "registry:item",
+      "title": "Command HUD Dashboard Layout",
+      "description": "Dense FUI mission-control grid with top telemetry ticker, 4-quadrant hairline instrumentation panels, and bottom event rail.",
+      "categories": ["layout", "experimental"],
+      "files": [
+        {
+          "path": "command-hud-dashboard/command-hud-dashboard.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/layouts/command-hud-dashboard.tsx"
+        },
+        {
+          "path": "command-hud-dashboard/command-hud-dashboard.css",
+          "type": "registry:file",
+          "target": "~/src/styles/layouts/command-hud-dashboard.css"
+        },
+        {
+          "path": "command-hud-dashboard/LAYOUT.md",
+          "type": "registry:file",
+          "target": "~/LAYOUT.md"
+        }
+      ]
+    },
+    {
+      "name": "layout-masonry-archive",
+      "type": "registry:item",
+      "title": "Masonry Archive Layout",
+      "description": "Curated gallery and catalog layout with sticky filter bar, multi-column waterfall grid, and slide-over detail rail.",
+      "categories": ["layout", "production"],
+      "files": [
+        {
+          "path": "masonry-archive/masonry-archive.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/layouts/masonry-archive.tsx"
+        },
+        {
+          "path": "masonry-archive/masonry-archive.css",
+          "type": "registry:file",
+          "target": "~/src/styles/layouts/masonry-archive.css"
+        },
+        {
+          "path": "masonry-archive/LAYOUT.md",
+          "type": "registry:file",
+          "target": "~/LAYOUT.md"
+        }
+      ]
+    }
+  ]
+}

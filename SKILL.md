@@ -1,52 +1,46 @@
 ---
 name: ui-vault
-description: Curated visual design styles, adaptive surface textures, fluid typography systems, and experimental web animations grouped by aesthetic cluster and motion mechanic. Use whenever the user asks to apply a specific UI aesthetic, layer surface textures or typography scales, blend experimental styles, or add named micro-interactions.
+description: Curated visual design styles, container-query layout shells, adaptive surface textures, fluid typography systems, zero-library telemetry micro-charts, and experimental web animations. Use whenever the user asks to apply a specific UI aesthetic, compose a layout or telemetry dashboard, layer surface textures or typography scales, or add named micro-interactions.
 ---
 
 # UI Vault Workflow
 
-Follow the **4-Layer Composition Workflow** (`Style + Typography + Texture + Animations`) whenever styling an interface or adding motion from this vault:
+Follow the **6-Layer Composition Stack** (`Layout + Style + Typography + Texture + Telemetry + Animations`) whenever designing or building an interface from this vault:
 
-1. **Read `relations.json` first.** Locate the requested base style, typography system, surface texture, cluster, tier (`production` | `viral` | `experimental`), or hybrid recipe before writing any CSS or JSX.
-2. **Respect tier boundaries & compatibility.** Default to `production` base styles, textures, and typography for mainstream SaaS/apps, layer at most 1–2 restrained `viral` accents, and reserve `experimental` aesthetics for portfolios, creative labs, or explicit user requests. Verify `pairsWith` across all 4 kinds and never mix entries listed in `clashesWith` unless explicitly asked.
-3. **Layer the 4 foundations cleanly:**
-   - **Layer 1 — Base Style (`styles/`):** Read `STYLE.md` and `tokens.css` as the source of truth for palette, surface elevation, border width/radius, and forbidden anti-patterns.
-   - **Layer 2 — Typography System (`typography/`):** Optionally pair or override with a fluid typography package (`TYPOGRAPHY.md` + scoped `.type-<id>` in `typography.css`) using `clamp()` scales, `tabular-nums`, and `text-wrap: balance`. Never mutate global `html`/`body` font sizes outside a scoped container.
-   - **Layer 3 — Surface Texture (`textures/`):** Optionally layer a zero-JS adaptive texture (`.tx-<id>`) parameterized by `--tx-color`, `--tx-opacity`, and `--tx-size`. Mount ground textures (`dot-matrix`, `architect-grid`, `paper-fiber`, etc.) behind cards at `z-index: 0` and atmospheric overlays (`film-grain`, `crt-scanlines`, `radial-vignette`) as full-surface `pointer-events: none` overlays.
-   - **Layer 4 — Animations (`animations/`):** Prefer components already in `animations/` (or install via `npx shadcn@latest add Aidilzin/ui-vault/<item>`). Check `externalRegistries` in `relations.json` before hand-rolling motion code.
-4. **Enforce motion hygiene.** Every animation must:
+1. **Read `relations.json` first.** Locate the requested base style, layout shell, typography system, surface texture, telemetry charts, or hybrid recipe before writing any CSS or JSX.
+2. **Respect tier boundaries & compatibility.** Default to `production` foundations for mainstream SaaS/apps, layer at most 1–2 restrained `viral` accents, and reserve `experimental` aesthetics for portfolios, creative labs, or explicit user requests. Verify `pairsWith` across all 6 kinds and never mix entries listed in `clashesWith` unless explicitly asked.
+3. **Compose the 6 layers cleanly:**
+   - **Layer 1 — Layout Shell (`layouts/`):** Pick a container-query (`@container`) skeleton from `layouts/<id>/` driven by `--lay-*` tokens with zero hardcoded hex colors, zero `100vh` locks, and composable ReactNode slots.
+   - **Layer 2 — Base Style (`styles/`):** Read `STYLE.md` and `tokens.css` as the source of truth for palette, surface elevation, border width/radius, and forbidden anti-patterns.
+   - **Layer 3 — Typography System (`typography/`):** Optionally override with a scoped fluid typography package (`.type-<id>` in `typography.css`) using `clamp()` scales, `tabular-nums`, and `text-wrap: balance`.
+   - **Layer 4 — Surface Texture (`textures/`):** Optionally layer a zero-JS adaptive texture (`.tx-<id>`) parameterized by `--tx-color`, `--tx-opacity`, and `--tx-size`. Mount structural ground textures behind cards (`z-index: 0`) and atmospheric overlays (`film-grain`, `crt-scanlines`, `radial-vignette`) as full-surface `pointer-events: none` layers.
+   - **Layer 5 — Telemetry Micro-Charts (`telemetry/`):** Drop zero-dependency SVG/React micro-charts into KPI, observability, or AI workbench slots driven by adaptive `--tel-*` tokens (with WCAG-safe darkened semantic tokens on light grounds).
+   - **Layer 6 — Animations (`animations/`):** Prefer components already in `animations/` (or install via `npx shadcn@latest add Aidilzin/ui-vault/<item>`). Check `externalRegistries` in `relations.json` before hand-rolling motion code.
+4. **Enforce motion & responsive hygiene.** Every animated or telemetry primitive must:
    - Honor `prefers-reduced-motion: reduce` using the fallback specified in `relations.json`.
-   - Animate compositor-only properties (`transform`, `opacity`) where possible.
-   - Keep productivity/dashboard transitions brisk (`100–220ms`); reserve longer timelines for dedicated showcase/hero scenes.
+   - Use responsive `viewBox` + `width="100%"` (or `ResizeObserver` + `devicePixelRatio` for Canvas) with bounded hover readouts so zero horizontal overflow occurs at `390px`.
 
 ## Ingesting New Vault Items
 
-Use these repeatable pipelines whenever expanding the vault:
+### Adding a Style (`styles/`)
+1. Extract tokens with Dembrandt MCP, assign a cluster & tier, author `STYLE.md` + `tokens.css`, register in `relations.json` and `styles/registry.json`, and add a swatch in `playground/src/swatches/`.
 
-### Adding a Style (Live URL -> Vault)
-1. **Extract tokens with Dembrandt MCP.** Run the configured `dembrandt` MCP server against a reference URL to capture palette, surface hierarchy, typography, borders, radii, and shadow rules.
-2. **Assign a cluster & tier.** Place the style under one of the 6 clusters in `relations.json` and assign a required `tier` (`production`, `viral`, or `experimental`).
-3. **Author the spec.** Create `styles/<cluster>/<style-id>/STYLE.md` (YAML frontmatter + `Core Tokens & Surfaces`, `Typography & Layout`, and `Forbidden Anti-Patterns`) and `tokens.css`.
-4. **Register metadata.** Add the style node to `relations.json` (with `pairsWith` / `clashesWith`), `styles/registry.json`, and root `registry.json`.
-5. **Wire into Playground.** Add an authentic mini-UI swatch in `playground/src/swatches/`.
+### Adding a Layout Shell (`layouts/`)
+1. Create `layouts/<id>/<id>.tsx`, `layouts/<id>/<id>.css`, and `layouts/<id>/LAYOUT.md` (with YAML frontmatter `id`, `name`, `tier`, `pattern`, `slots`, `pairsWith`, `clashesWith`).
+2. Enforce zero hardcoded palette colors (use `--lay-*` tokens), `container-type: inline-size` with `@container` breakpoints, `min-height: var(--lay-height, 100%)` (no `100vh` or `position: fixed`), and no relative `./<id>.css` import inside `.tsx`.
+3. Register in `layouts/registry.json` (`type: "registry:item"`, CLI `layout-<id>`) and `relations.json`.
 
-### Adding a Surface Texture (`textures/`)
-1. **Follow the Adaptive CSS Rule.** Create `textures/<id>.css` using pure CSS gradients referencing `var(--tx-color, currentColor)` or inline SVG `mask-image` / `-webkit-mask-image` over `background-color: var(--tx-color, currentColor)` (or balanced monochrome `feTurbulence` noise for organic grain). Never hardcode fixed black/white strokes inside an SVG `background-image`.
-2. **Scope cleanly.** Define `:where(.tx-<id>) { position: relative; isolation: isolate; }` and paint the surface on `.tx-<id>::before` (`position: absolute; inset: 0; pointer-events: none;`) parameterized by `--tx-color`, `--tx-opacity`, and `--tx-size`.
-3. **Register metadata.** Add the item (`type: "registry:item"`, CLI name `texture-<id>`, file `type: "registry:file"`, target `~/src/styles/textures/<id>.css`) to `textures/registry.json` and add the node + index ID to `relations.json`.
+### Adding a Telemetry Micro-Chart (`telemetry/`)
+1. Create a zero-dependency strict-TypeScript `telemetry/<id>.tsx` using `--tel-*` tokens, responsive `viewBox` + `width="100%"`, strict `tabular-nums`, bounded hover inspection, ARIA labels, and explicit `prefers-reduced-motion` fallback.
+2. Register in `telemetry/registry.json` (`type: "registry:item"`, CLI `telemetry-<id>`, `dependencies: []`) and `relations.json`.
 
-### Adding a Typography System (`typography/`)
-1. **Author spec & scoped CSS.** Create `typography/<id>/TYPOGRAPHY.md` (YAML frontmatter with `id`, `name`, `tier`, `voice`, `googleFontsUrl`, `pairsWith`, `clashesWith`, plus rationale, fluid scale, OpenType rules, and anti-patterns) and `typography/<id>/typography.css` scoped strictly to `.type-<id>` with fluid `clamp()` tokens, `tabular-nums`, and `text-wrap: balance`.
-2. **Register metadata.** Add the item (`type: "registry:item"`, CLI name `type-<id>`, installing `~/TYPOGRAPHY.md` and `~/src/styles/typography-<id>.css`) to `typography/registry.json` and add the node + index ID to `relations.json`.
+### Adding a Surface Texture (`textures/`) or Typography System (`typography/`)
+1. Follow adaptive `--tx-color` / `mask-image` / `::before` scoping for textures (`textures/registry.json`) and scoped `.type-<id>` fluid `clamp()` tokens for typography (`typography/registry.json`).
 
 ### Adding an Animation (`animations/`)
-1. **Assign a mechanic.** Place the primitive under `animations/<mechanic>/<animation-id>.tsx` (or `.css`) using one of the 8 mechanics.
-2. **Enforce constraints & license hygiene.** Only adapt verified open-source (`MIT`, `Apache-2.0`, `ISC`) registries or author `clean-room` implementations; keep dependencies minimal and implement an explicit `prefers-reduced-motion: reduce` fallback.
-3. **Register metadata.** Add the animation node to `relations.json` and `animations/registry.json`, then wire its live demo into `playground/src/demos/`.
+1. Place under `animations/<mechanic>/<id>.tsx` (or `.css`), enforce MIT/Apache-2.0/clean-room license hygiene and `prefers-reduced-motion: reduce`, register in `animations/registry.json` and `relations.json`, and wire into `playground/src/demos/`.
 
 ### Verification Gate (Before Pushing to `main`)
-Run all checks locally; pushing to `main` automatically runs these gates in GitHub Actions and deploys `playground/dist` to GitHub Pages:
-
 ```bash
 npm run typecheck
 npm run validate:registry

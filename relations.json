@@ -1,5 +1,5 @@
 {
-    "version": "1.5.0",
+    "version": "1.6.0",
     "clusters": {
         "01-precision-systems": {
             "label": "Precision Systems",
@@ -108,6 +108,28 @@
         "pixel-arcade",
         "neo-display-saas",
         "condensed-hardware"
+    ],
+    "layouts": [
+        "bento-showcase",
+        "triage-workbench",
+        "swiss-editorial-grid",
+        "split-ai-ide",
+        "sticky-scrollytelling",
+        "floating-os-desktop",
+        "command-hud-dashboard",
+        "masonry-archive"
+    ],
+    "telemetry": [
+        "inline-sparkline",
+        "uptime-strip",
+        "activity-heatmap",
+        "latency-histogram",
+        "radial-step-gauge",
+        "led-status-matrix",
+        "live-oscilloscope",
+        "segmented-quota-bar",
+        "diff-delta-pill",
+        "node-topology-mini"
     ],
     "nodes": [
         {
@@ -2849,6 +2871,403 @@
                 "pastel-playful",
                 "liquid-glass"
             ]
+        },
+        {
+            "id": "bento-showcase",
+            "name": "Bento Showcase",
+            "kind": "layout",
+            "tier": "viral",
+            "pattern": "Asymmetric 12-column modular Bento grid",
+            "slots": ["header", "hero", "metricColumn", "tiles", "footer"],
+            "path": "layouts/bento-showcase/LAYOUT.md",
+            "registryItem": "layout-bento-showcase",
+            "pairsWith": [
+                "bento-grid",
+                "monolith-dark",
+                "aurora-mesh",
+                "orbital-ceramic",
+                "neo-display-saas",
+                "dot-matrix",
+                "inline-sparkline",
+                "radial-step-gauge"
+            ],
+            "clashesWith": [
+                "retro-web-96",
+                "os-core",
+                "neo-swiss"
+            ]
+        },
+        {
+            "id": "triage-workbench",
+            "name": "Triage Workbench",
+            "kind": "layout",
+            "tier": "production",
+            "pattern": "3-pane Linear / Superhuman desktop triage shell",
+            "slots": ["header", "navRail", "queuePane", "inspectorPane", "footer"],
+            "path": "layouts/triage-workbench/LAYOUT.md",
+            "registryItem": "layout-triage-workbench",
+            "pairsWith": [
+                "monolith-dark",
+                "command-dark",
+                "code-forge",
+                "perceptual-scale",
+                "precision-mono",
+                "activity-heatmap",
+                "diff-delta-pill"
+            ],
+            "clashesWith": [
+                "avant-poster",
+                "zine-wire"
+            ]
+        },
+        {
+            "id": "swiss-editorial-grid",
+            "name": "Swiss Editorial Grid",
+            "kind": "layout",
+            "tier": "production",
+            "pattern": "Exposed 1px hairline 12-column International Typographic grid",
+            "slots": ["masthead", "indexRail", "hero", "body", "footer"],
+            "path": "layouts/swiss-editorial-grid/LAYOUT.md",
+            "registryItem": "layout-swiss-editorial-grid",
+            "pairsWith": [
+                "neo-swiss",
+                "swiss-type-foundry",
+                "monochrome-stark",
+                "warm-manuscript",
+                "archival-paper",
+                "swiss-grotesk",
+                "editorial-serif",
+                "inline-sparkline"
+            ],
+            "clashesWith": [
+                "liquid-glass",
+                "pastel-playful",
+                "acid-y2k"
+            ]
+        },
+        {
+            "id": "split-ai-ide",
+            "name": "Split AI IDE",
+            "kind": "layout",
+            "tier": "production",
+            "pattern": "Agentic workspace with session rail, execution stream, pinned composer, and diff pane",
+            "slots": ["header", "sessionRail", "stream", "composer", "artifactPane"],
+            "path": "layouts/split-ai-ide/LAYOUT.md",
+            "registryItem": "layout-split-ai-ide",
+            "pairsWith": [
+                "monolith-dark",
+                "code-forge",
+                "command-dark",
+                "phosphor-terminal",
+                "precision-mono",
+                "segmented-quota-bar",
+                "node-topology-mini"
+            ],
+            "clashesWith": [
+                "pastel-playful",
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "sticky-scrollytelling",
+            "name": "Sticky Scrollytelling",
+            "kind": "layout",
+            "tier": "viral",
+            "pattern": "Sticky visual/artifact stage paired with scrolling narrative steps",
+            "slots": ["header", "steps", "renderStage", "footer"],
+            "path": "layouts/sticky-scrollytelling/LAYOUT.md",
+            "registryItem": "layout-sticky-scrollytelling",
+            "pairsWith": [
+                "orbital-ceramic",
+                "warm-manuscript",
+                "aurora-mesh",
+                "editorial-serif",
+                "literary-humanist",
+                "topographic-mesh",
+                "inline-sparkline",
+                "node-topology-mini"
+            ],
+            "clashesWith": [
+                "os-core",
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "floating-os-desktop",
+            "name": "Floating OS Desktop",
+            "kind": "layout",
+            "tier": "experimental",
+            "pattern": "Spatial / retro desktop canvas with menu bar, framed windows, and scoped bottom dock",
+            "slots": ["menuBar", "primaryWindow", "secondaryWindow", "dock"],
+            "path": "layouts/floating-os-desktop/LAYOUT.md",
+            "registryItem": "layout-floating-os-desktop",
+            "pairsWith": [
+                "os-core",
+                "retro-web-96",
+                "liquid-glass",
+                "pastel-playful",
+                "checker-dither",
+                "pixel-arcade",
+                "led-status-matrix"
+            ],
+            "clashesWith": [
+                "neo-swiss",
+                "warm-manuscript"
+            ]
+        },
+        {
+            "id": "command-hud-dashboard",
+            "name": "Command HUD Dashboard",
+            "kind": "layout",
+            "tier": "experimental",
+            "pattern": "Dense 4-quadrant FUI mission-control instrumentation grid",
+            "slots": ["ticker", "quadrants", "eventRail"],
+            "path": "layouts/command-hud-dashboard/LAYOUT.md",
+            "registryItem": "layout-command-hud-dashboard",
+            "pairsWith": [
+                "fui-tactical",
+                "telemetry-fault",
+                "industrial-hardware",
+                "architect-grid",
+                "crosshair-field",
+                "precision-mono",
+                "live-oscilloscope",
+                "uptime-strip",
+                "latency-histogram",
+                "node-topology-mini"
+            ],
+            "clashesWith": [
+                "warm-manuscript",
+                "pastel-playful",
+                "liquid-glass"
+            ]
+        },
+        {
+            "id": "masonry-archive",
+            "name": "Masonry Archive",
+            "kind": "layout",
+            "tier": "production",
+            "pattern": "Curated catalog with sticky filter bar, multi-column waterfall grid, and detail rail",
+            "slots": ["header", "filterBar", "items", "detailRail", "footer"],
+            "path": "layouts/masonry-archive/LAYOUT.md",
+            "registryItem": "layout-masonry-archive",
+            "pairsWith": [
+                "dark-gallery-index",
+                "monochrome-gallery",
+                "archival-paper",
+                "tactile-studio-warm",
+                "film-grain",
+                "editorial-serif",
+                "activity-heatmap"
+            ],
+            "clashesWith": [
+                "phosphor-terminal"
+            ]
+        },
+        {
+            "id": "inline-sparkline",
+            "name": "Inline Sparkline",
+            "kind": "telemetry",
+            "tier": "production",
+            "engine": ["svg", "react"],
+            "perfTier": "low",
+            "reducedMotion": "static-scrubber",
+            "path": "telemetry/inline-sparkline.tsx",
+            "registryItem": "telemetry-inline-sparkline",
+            "pairsWith": [
+                "fui-tactical",
+                "monolith-dark",
+                "bento-grid",
+                "warm-manuscript",
+                "swiss-editorial-grid",
+                "bento-showcase"
+            ],
+            "clashesWith": []
+        },
+        {
+            "id": "uptime-strip",
+            "name": "Uptime Strip",
+            "kind": "telemetry",
+            "tier": "production",
+            "engine": ["react", "css"],
+            "perfTier": "low",
+            "reducedMotion": "instant-tooltip",
+            "path": "telemetry/uptime-strip.tsx",
+            "registryItem": "telemetry-uptime-strip",
+            "pairsWith": [
+                "fui-tactical",
+                "telemetry-fault",
+                "monolith-dark",
+                "perceptual-scale",
+                "command-hud-dashboard"
+            ],
+            "clashesWith": [
+                "avant-poster"
+            ]
+        },
+        {
+            "id": "activity-heatmap",
+            "name": "Activity Heatmap",
+            "kind": "telemetry",
+            "tier": "production",
+            "engine": ["svg", "react"],
+            "perfTier": "low",
+            "reducedMotion": "instant-cell-focus",
+            "path": "telemetry/activity-heatmap.tsx",
+            "registryItem": "telemetry-activity-heatmap",
+            "pairsWith": [
+                "monolith-dark",
+                "code-forge",
+                "bento-grid",
+                "triage-workbench",
+                "masonry-archive"
+            ],
+            "clashesWith": []
+        },
+        {
+            "id": "latency-histogram",
+            "name": "Latency Histogram",
+            "kind": "telemetry",
+            "tier": "production",
+            "engine": ["svg", "react"],
+            "perfTier": "low",
+            "reducedMotion": "static-bars",
+            "path": "telemetry/latency-histogram.tsx",
+            "registryItem": "telemetry-latency-histogram",
+            "pairsWith": [
+                "telemetry-fault",
+                "fui-tactical",
+                "industrial-hardware",
+                "command-hud-dashboard"
+            ],
+            "clashesWith": [
+                "pastel-playful"
+            ]
+        },
+        {
+            "id": "radial-step-gauge",
+            "name": "Radial Step Gauge",
+            "kind": "telemetry",
+            "tier": "viral",
+            "engine": ["svg", "react"],
+            "perfTier": "low",
+            "reducedMotion": "instant-value",
+            "path": "telemetry/radial-step-gauge.tsx",
+            "registryItem": "telemetry-radial-step-gauge",
+            "pairsWith": [
+                "industrial-hardware",
+                "fui-tactical",
+                "orbital-ceramic",
+                "bento-showcase",
+                "condensed-hardware"
+            ],
+            "clashesWith": [
+                "warm-manuscript"
+            ]
+        },
+        {
+            "id": "led-status-matrix",
+            "name": "LED Status Matrix",
+            "kind": "telemetry",
+            "tier": "experimental",
+            "engine": ["react", "css"],
+            "perfTier": "low",
+            "reducedMotion": "static-leds",
+            "path": "telemetry/led-status-matrix.tsx",
+            "registryItem": "telemetry-led-status-matrix",
+            "pairsWith": [
+                "fui-tactical",
+                "phosphor-terminal",
+                "industrial-hardware",
+                "command-hud-dashboard",
+                "floating-os-desktop"
+            ],
+            "clashesWith": [
+                "warm-manuscript",
+                "archival-paper"
+            ]
+        },
+        {
+            "id": "live-oscilloscope",
+            "name": "Live Oscilloscope",
+            "kind": "telemetry",
+            "tier": "experimental",
+            "engine": ["canvas", "react"],
+            "perfTier": "medium",
+            "reducedMotion": "static-waveform",
+            "path": "telemetry/live-oscilloscope.tsx",
+            "registryItem": "telemetry-live-oscilloscope",
+            "pairsWith": [
+                "fui-tactical",
+                "phosphor-terminal",
+                "telemetry-fault",
+                "industrial-hardware",
+                "command-hud-dashboard"
+            ],
+            "clashesWith": [
+                "warm-manuscript",
+                "pastel-playful"
+            ]
+        },
+        {
+            "id": "segmented-quota-bar",
+            "name": "Segmented Quota Bar",
+            "kind": "telemetry",
+            "tier": "production",
+            "engine": ["react", "css"],
+            "perfTier": "low",
+            "reducedMotion": "instant-highlight",
+            "path": "telemetry/segmented-quota-bar.tsx",
+            "registryItem": "telemetry-segmented-quota-bar",
+            "pairsWith": [
+                "monolith-dark",
+                "perceptual-scale",
+                "code-forge",
+                "split-ai-ide",
+                "triage-workbench"
+            ],
+            "clashesWith": []
+        },
+        {
+            "id": "diff-delta-pill",
+            "name": "Diff Delta Pill",
+            "kind": "telemetry",
+            "tier": "production",
+            "engine": ["svg", "react"],
+            "perfTier": "low",
+            "reducedMotion": "static-badge",
+            "path": "telemetry/diff-delta-pill.tsx",
+            "registryItem": "telemetry-diff-delta-pill",
+            "pairsWith": [
+                "monolith-dark",
+                "bento-grid",
+                "fui-tactical",
+                "triage-workbench",
+                "bento-showcase"
+            ],
+            "clashesWith": []
+        },
+        {
+            "id": "node-topology-mini",
+            "name": "Node Topology Mini",
+            "kind": "telemetry",
+            "tier": "viral",
+            "engine": ["svg", "react"],
+            "perfTier": "low",
+            "reducedMotion": "static-topology",
+            "path": "telemetry/node-topology-mini.tsx",
+            "registryItem": "telemetry-node-topology-mini",
+            "pairsWith": [
+                "fui-tactical",
+                "monolith-dark",
+                "ambient-orbit",
+                "split-ai-ide",
+                "command-hud-dashboard",
+                "sticky-scrollytelling"
+            ],
+            "clashesWith": [
+                "retro-web-96"
+            ]
         }
     ],
     "hybrids": [
@@ -2856,8 +3275,13 @@
             "id": "tactical-space",
             "name": "Tactical Space Dashboard",
             "baseStyle": "fui-tactical",
+            "layout": "command-hud-dashboard",
             "texture": "architect-grid",
             "typography": "precision-mono",
+            "telemetry": [
+                "live-oscilloscope",
+                "node-topology-mini"
+            ],
             "accents": [
                 "ambient-orbit",
                 "scramble-text",
@@ -2892,6 +3316,11 @@
             "id": "issue-command-center",
             "name": "Issue Command Center",
             "baseStyle": "monolith-dark",
+            "layout": "triage-workbench",
+            "telemetry": [
+                "activity-heatmap",
+                "diff-delta-pill"
+            ],
             "accents": [
                 "command-dark",
                 "spotlight-tabs",
@@ -2904,6 +3333,12 @@
             "id": "observability-console",
             "name": "Observability Fault Console",
             "baseStyle": "telemetry-fault",
+            "layout": "command-hud-dashboard",
+            "telemetry": [
+                "uptime-strip",
+                "latency-histogram",
+                "diff-delta-pill"
+            ],
             "accents": [
                 "fui-tactical",
                 "scramble-text",
@@ -2916,8 +3351,12 @@
             "id": "type-specimen-press",
             "name": "Type Specimen Press",
             "baseStyle": "swiss-type-foundry",
+            "layout": "swiss-editorial-grid",
             "texture": "film-grain",
             "typography": "swiss-grotesk",
+            "telemetry": [
+                "inline-sparkline"
+            ],
             "accents": [
                 "neo-swiss",
                 "variable-proximity",
@@ -3018,6 +3457,12 @@
             "id": "bento-product-launch",
             "name": "Bento Product Launch",
             "baseStyle": "bento-grid",
+            "layout": "bento-showcase",
+            "telemetry": [
+                "inline-sparkline",
+                "radial-step-gauge",
+                "diff-delta-pill"
+            ],
             "accents": [
                 "border-spotlight",
                 "odometer-ticker",
@@ -3051,6 +3496,11 @@
             "id": "ai-agent-workbench",
             "name": "AI Agent Workbench",
             "baseStyle": "monolith-dark",
+            "layout": "split-ai-ide",
+            "telemetry": [
+                "segmented-quota-bar",
+                "node-topology-mini"
+            ],
             "accents": [
                 "reasoning-trace",
                 "tool-call-step",
