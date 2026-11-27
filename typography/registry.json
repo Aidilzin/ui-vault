@@ -1,0 +1,176 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "type-precision-mono",
+      "type": "registry:item",
+      "title": "Precision Mono Typography",
+      "description": "Inter + JetBrains Mono fluid scale with tight -0.025em display tracking, uppercase mono micro-labels, and strict tabular-nums.",
+      "categories": ["typography", "production"],
+      "files": [
+        {
+          "path": "precision-mono/TYPOGRAPHY.md",
+          "type": "registry:file",
+          "target": "~/TYPOGRAPHY.md"
+        },
+        {
+          "path": "precision-mono/typography.css",
+          "type": "registry:file",
+          "target": "~/src/styles/typography-precision-mono.css"
+        }
+      ]
+    },
+    {
+      "name": "type-editorial-serif",
+      "type": "registry:item",
+      "title": "Editorial Serif Typography",
+      "description": "Instrument Serif + Plus Jakarta Sans + IBM Plex Mono high-contrast editorial and AI-lab voice with generous display sizing.",
+      "categories": ["typography", "production"],
+      "files": [
+        {
+          "path": "editorial-serif/TYPOGRAPHY.md",
+          "type": "registry:file",
+          "target": "~/TYPOGRAPHY.md"
+        },
+        {
+          "path": "editorial-serif/typography.css",
+          "type": "registry:file",
+          "target": "~/src/styles/typography-editorial-serif.css"
+        }
+      ]
+    },
+    {
+      "name": "type-swiss-grotesk",
+      "type": "registry:item",
+      "title": "Swiss Grotesk Typography",
+      "description": "Archivo + Inter + IBM Plex Mono heavy tight-tracked (-0.04em) International Typographic Style hierarchy.",
+      "categories": ["typography", "production"],
+      "files": [
+        {
+          "path": "swiss-grotesk/TYPOGRAPHY.md",
+          "type": "registry:file",
+          "target": "~/TYPOGRAPHY.md"
+        },
+        {
+          "path": "swiss-grotesk/typography.css",
+          "type": "registry:file",
+          "target": "~/src/styles/typography-swiss-grotesk.css"
+        }
+      ]
+    },
+    {
+      "name": "type-literary-humanist",
+      "type": "registry:item",
+      "title": "Literary Humanist Typography",
+      "description": "Fraunces optical variable serif + Newsreader + IBM Plex Mono warm tactile manuscript and journal proportions.",
+      "categories": ["typography", "production"],
+      "files": [
+        {
+          "path": "literary-humanist/TYPOGRAPHY.md",
+          "type": "registry:file",
+          "target": "~/TYPOGRAPHY.md"
+        },
+        {
+          "path": "literary-humanist/typography.css",
+          "type": "registry:file",
+          "target": "~/src/styles/typography-literary-humanist.css"
+        }
+      ]
+    },
+    {
+      "name": "type-kinetic-brutal",
+      "type": "registry:item",
+      "title": "Kinetic Brutal Typography",
+      "description": "Syne display + Space Grotesk + Space Mono wide, assertive avant-garde poster geometry.",
+      "categories": ["typography", "experimental"],
+      "files": [
+        {
+          "path": "kinetic-brutal/TYPOGRAPHY.md",
+          "type": "registry:file",
+          "target": "~/TYPOGRAPHY.md"
+        },
+        {
+          "path": "kinetic-brutal/typography.css",
+          "type": "registry:file",
+          "target": "~/src/styles/typography-kinetic-brutal.css"
+        }
+      ]
+    },
+    {
+      "name": "type-terminal-phosphor",
+      "type": "registry:item",
+      "title": "Terminal Phosphor Typography",
+      "description": "JetBrains Mono + IBM Plex Mono all-monospace system with strict grid rhythm and zero sans-serif drift.",
+      "categories": ["typography", "experimental"],
+      "files": [
+        {
+          "path": "terminal-phosphor/TYPOGRAPHY.md",
+          "type": "registry:file",
+          "target": "~/TYPOGRAPHY.md"
+        },
+        {
+          "path": "terminal-phosphor/typography.css",
+          "type": "registry:file",
+          "target": "~/src/styles/typography-terminal-phosphor.css"
+        }
+      ]
+    },
+    {
+      "name": "type-pixel-arcade",
+      "type": "registry:item",
+      "title": "Pixel Arcade Typography",
+      "description": "Silkscreen stepped bitmap display paired with readable Space Mono body copy.",
+      "categories": ["typography", "experimental"],
+      "files": [
+        {
+          "path": "pixel-arcade/TYPOGRAPHY.md",
+          "type": "registry:file",
+          "target": "~/TYPOGRAPHY.md"
+        },
+        {
+          "path": "pixel-arcade/typography.css",
+          "type": "registry:file",
+          "target": "~/src/styles/typography-pixel-arcade.css"
+        }
+      ]
+    },
+    {
+      "name": "type-neo-display-saas",
+      "type": "registry:item",
+      "title": "Neo Display SaaS Typography",
+      "description": "Space Grotesk + Inter + JetBrains Mono clean, punchy modern launch-page voice.",
+      "categories": ["typography", "viral"],
+      "files": [
+        {
+          "path": "neo-display-saas/TYPOGRAPHY.md",
+          "type": "registry:file",
+          "target": "~/TYPOGRAPHY.md"
+        },
+        {
+          "path": "neo-display-saas/typography.css",
+          "type": "registry:file",
+          "target": "~/src/styles/typography-neo-display-saas.css"
+        }
+      ]
+    },
+    {
+      "name": "type-condensed-hardware",
+      "type": "registry:item",
+      "title": "Condensed Hardware Typography",
+      "description": "Barlow Condensed uppercase industrial signage + Inter + IBM Plex Mono for rail-timetable and hardware faceplates.",
+      "categories": ["typography", "viral"],
+      "files": [
+        {
+          "path": "condensed-hardware/TYPOGRAPHY.md",
+          "type": "registry:file",
+          "target": "~/TYPOGRAPHY.md"
+        },
+        {
+          "path": "condensed-hardware/typography.css",
+          "type": "registry:file",
+          "target": "~/src/styles/typography-condensed-hardware.css"
+        }
+      ]
+    }
+  ]
+}

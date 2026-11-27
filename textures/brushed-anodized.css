@@ -1,0 +1,37 @@
+/* ui-vault // texture: brushed-anodized (viral)
+ * Ultra-fine horizontal directional hardware / ceramic micro-sheen.
+ * Params: --tx-color (default currentColor), --tx-opacity (default 0.1), --tx-size (default 3px)
+ */
+
+:where(.tx-brushed-anodized) {
+  position: relative;
+  isolation: isolate;
+}
+
+.tx-brushed-anodized::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--tx-opacity, 0.1);
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      var(--tx-color, currentColor) 0px,
+      transparent 1px,
+      transparent var(--tx-size, 3px)
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      color-mix(in srgb, var(--tx-color, currentColor) 55%, transparent) 1px,
+      transparent calc(var(--tx-size, 3px) * 2.3)
+    ),
+    linear-gradient(
+      105deg,
+      transparent 15%,
+      color-mix(in srgb, var(--tx-color, currentColor) 30%, transparent) 48%,
+      transparent 82%
+    );
+}

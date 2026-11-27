@@ -1,0 +1,173 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "texture-film-grain",
+      "type": "registry:item",
+      "title": "Film Grain Texture",
+      "description": "Subtle SVG feTurbulence fractal analog grain overlay adaptive across dark and light grounds.",
+      "categories": ["texture", "production"],
+      "files": [
+        {
+          "path": "film-grain.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/film-grain.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-paper-fiber",
+      "type": "registry:item",
+      "title": "Paper Fiber Texture",
+      "description": "Fine organic paper and linen micro-weave texture for editorial and warm tactile grounds.",
+      "categories": ["texture", "production"],
+      "files": [
+        {
+          "path": "paper-fiber.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/paper-fiber.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-dot-matrix",
+      "type": "registry:item",
+      "title": "Dot Matrix Texture",
+      "description": "Crisp 1px radial dot grid surface layer with configurable pitch and adaptive ink.",
+      "categories": ["texture", "production"],
+      "files": [
+        {
+          "path": "dot-matrix.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/dot-matrix.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-architect-grid",
+      "type": "registry:item",
+      "title": "Architect Grid Texture",
+      "description": "Dual-scale major and minor blueprint engineering hairline grid.",
+      "categories": ["texture", "production"],
+      "files": [
+        {
+          "path": "architect-grid.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/architect-grid.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-crosshair-field",
+      "type": "registry:item",
+      "title": "Crosshair Field Texture",
+      "description": "Repeating + HUD registration reticle marks built with adaptive SVG mask-image.",
+      "categories": ["texture", "experimental"],
+      "files": [
+        {
+          "path": "crosshair-field.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/crosshair-field.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-crt-scanlines",
+      "type": "registry:item",
+      "title": "CRT Scanlines Texture",
+      "description": "Horizontal phosphor scanline overlay with subtle alternating pitch.",
+      "categories": ["texture", "experimental"],
+      "files": [
+        {
+          "path": "crt-scanlines.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/crt-scanlines.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-diagonal-hatch",
+      "type": "registry:item",
+      "title": "Diagonal Hatch Texture",
+      "description": "Crisp 45-degree technical drafting hatch lines for panels and structural dividers.",
+      "categories": ["texture", "production"],
+      "files": [
+        {
+          "path": "diagonal-hatch.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/diagonal-hatch.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-halftone-screen",
+      "type": "registry:item",
+      "title": "Halftone Screen Texture",
+      "description": "Classic angled offset-print halftone dot matrix built with staggered radial gradients.",
+      "categories": ["texture", "experimental"],
+      "files": [
+        {
+          "path": "halftone-screen.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/halftone-screen.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-brushed-anodized",
+      "type": "registry:item",
+      "title": "Brushed Anodized Texture",
+      "description": "Ultra-fine horizontal directional hardware and ceramic micro-sheen.",
+      "categories": ["texture", "viral"],
+      "files": [
+        {
+          "path": "brushed-anodized.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/brushed-anodized.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-topographic-mesh",
+      "type": "registry:item",
+      "title": "Topographic Mesh Texture",
+      "description": "Subtle repeating SVG contour topography lines via adaptive mask-image.",
+      "categories": ["texture", "viral"],
+      "files": [
+        {
+          "path": "topographic-mesh.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/topographic-mesh.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-radial-vignette",
+      "type": "registry:item",
+      "title": "Radial Vignette Texture",
+      "description": "Soft edge depth falloff scrim to focus hero and canvas stages.",
+      "categories": ["texture", "production"],
+      "files": [
+        {
+          "path": "radial-vignette.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/radial-vignette.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-checker-dither",
+      "type": "registry:item",
+      "title": "Checker Dither Texture",
+      "description": "Crisp 2x2 pixel dither and retro OS checkerboard pattern via conic-gradient.",
+      "categories": ["texture", "experimental"],
+      "files": [
+        {
+          "path": "checker-dither.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/checker-dither.css"
+        }
+      ]
+    }
+  ]
+}

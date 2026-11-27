@@ -1,0 +1,25 @@
+/* ui-vault // texture: dot-matrix (production)
+ * Crisp 1px radial dot grid with configurable pitch.
+ * Params: --tx-color (default currentColor), --tx-opacity (default 0.2), --tx-size (default 16px)
+ */
+
+:where(.tx-dot-matrix) {
+  position: relative;
+  isolation: isolate;
+}
+
+.tx-dot-matrix::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--tx-opacity, 0.2);
+  background-image: radial-gradient(
+    circle,
+    var(--tx-color, currentColor) 1px,
+    transparent 1.15px
+  );
+  background-size: var(--tx-size, 16px) var(--tx-size, 16px);
+  background-position: 0 0;
+}

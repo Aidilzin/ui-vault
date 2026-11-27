@@ -1,0 +1,25 @@
+/* ui-vault // texture: diagonal-hatch (production)
+ * Crisp 45-degree technical drafting hatch lines for panels and dividers.
+ * Params: --tx-color (default currentColor), --tx-opacity (default 0.13), --tx-size (default 10px)
+ */
+
+:where(.tx-diagonal-hatch) {
+  position: relative;
+  isolation: isolate;
+}
+
+.tx-diagonal-hatch::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--tx-opacity, 0.13);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--tx-color, currentColor) 0px,
+    var(--tx-color, currentColor) 1px,
+    transparent 1px,
+    transparent var(--tx-size, 10px)
+  );
+}

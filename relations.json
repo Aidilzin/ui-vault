@@ -1,5 +1,5 @@
 {
-    "version": "1.4.0",
+    "version": "1.5.0",
     "clusters": {
         "01-precision-systems": {
             "label": "Precision Systems",
@@ -83,6 +83,31 @@
         "scroll-driven",
         "micro-feedback",
         "ai-agentic"
+    ],
+    "textures": [
+        "film-grain",
+        "paper-fiber",
+        "dot-matrix",
+        "architect-grid",
+        "crosshair-field",
+        "crt-scanlines",
+        "diagonal-hatch",
+        "halftone-screen",
+        "brushed-anodized",
+        "topographic-mesh",
+        "radial-vignette",
+        "checker-dither"
+    ],
+    "typography": [
+        "precision-mono",
+        "editorial-serif",
+        "swiss-grotesk",
+        "literary-humanist",
+        "kinetic-brutal",
+        "terminal-phosphor",
+        "pixel-arcade",
+        "neo-display-saas",
+        "condensed-hardware"
     ],
     "nodes": [
         {
@@ -2279,6 +2304,551 @@
                 "phosphor-terminal"
             ],
             "clashesWith": []
+        },
+        {
+            "id": "film-grain",
+            "name": "Film Grain",
+            "kind": "texture",
+            "tier": "production",
+            "layer": "overlay",
+            "mechanism": "svg-turbulence",
+            "defaultOpacity": 0.09,
+            "defaultSize": "180px",
+            "path": "textures/film-grain.css",
+            "registryItem": "texture-film-grain",
+            "pairsWith": [
+                "warm-manuscript",
+                "archival-paper",
+                "swiss-type-foundry",
+                "monolith-dark",
+                "dark-gallery-index",
+                "editorial-serif"
+            ],
+            "clashesWith": [
+                "eight-bit-arcade",
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "paper-fiber",
+            "name": "Paper Fiber",
+            "kind": "texture",
+            "tier": "production",
+            "layer": "ground",
+            "mechanism": "css-gradient",
+            "defaultOpacity": 0.07,
+            "defaultSize": "6px",
+            "path": "textures/paper-fiber.css",
+            "registryItem": "texture-paper-fiber",
+            "pairsWith": [
+                "warm-manuscript",
+                "archival-paper",
+                "tactile-studio-warm",
+                "monochrome-gallery",
+                "literary-humanist",
+                "editorial-serif"
+            ],
+            "clashesWith": [
+                "acid-y2k",
+                "phosphor-terminal",
+                "eight-bit-arcade"
+            ]
+        },
+        {
+            "id": "dot-matrix",
+            "name": "Dot Matrix",
+            "kind": "texture",
+            "tier": "production",
+            "layer": "ground",
+            "mechanism": "css-gradient",
+            "defaultOpacity": 0.2,
+            "defaultSize": "16px",
+            "path": "textures/dot-matrix.css",
+            "registryItem": "texture-dot-matrix",
+            "pairsWith": [
+                "bento-grid",
+                "monolith-dark",
+                "fui-tactical",
+                "perceptual-scale",
+                "neo-display-saas",
+                "precision-mono"
+            ],
+            "clashesWith": [
+                "warm-manuscript"
+            ]
+        },
+        {
+            "id": "architect-grid",
+            "name": "Architect Grid",
+            "kind": "texture",
+            "tier": "production",
+            "layer": "ground",
+            "mechanism": "css-gradient",
+            "defaultOpacity": 0.14,
+            "defaultSize": "20px",
+            "path": "textures/architect-grid.css",
+            "registryItem": "texture-architect-grid",
+            "pairsWith": [
+                "fui-tactical",
+                "neo-swiss",
+                "industrial-hardware",
+                "telemetry-fault",
+                "transit-precision",
+                "precision-mono",
+                "swiss-grotesk"
+            ],
+            "clashesWith": [
+                "pastel-playful",
+                "warm-manuscript"
+            ]
+        },
+        {
+            "id": "crosshair-field",
+            "name": "Crosshair Field",
+            "kind": "texture",
+            "tier": "experimental",
+            "layer": "ground",
+            "mechanism": "svg-mask",
+            "defaultOpacity": 0.24,
+            "defaultSize": "32px",
+            "path": "textures/crosshair-field.css",
+            "registryItem": "texture-crosshair-field",
+            "pairsWith": [
+                "fui-tactical",
+                "telemetry-fault",
+                "ambient-orbit",
+                "crosshair-reticle",
+                "precision-mono",
+                "terminal-phosphor"
+            ],
+            "clashesWith": [
+                "warm-manuscript",
+                "pastel-playful",
+                "tactile-soft"
+            ]
+        },
+        {
+            "id": "crt-scanlines",
+            "name": "CRT Scanlines",
+            "kind": "texture",
+            "tier": "experimental",
+            "layer": "overlay",
+            "mechanism": "css-gradient",
+            "defaultOpacity": 0.14,
+            "defaultSize": "4px",
+            "path": "textures/crt-scanlines.css",
+            "registryItem": "texture-crt-scanlines",
+            "pairsWith": [
+                "phosphor-terminal",
+                "ditherpunk",
+                "eight-bit-arcade",
+                "console-2001",
+                "terminal-phosphor",
+                "pixel-arcade"
+            ],
+            "clashesWith": [
+                "warm-manuscript",
+                "liquid-glass",
+                "tactile-soft"
+            ]
+        },
+        {
+            "id": "diagonal-hatch",
+            "name": "Diagonal Hatch",
+            "kind": "texture",
+            "tier": "production",
+            "layer": "ground",
+            "mechanism": "css-gradient",
+            "defaultOpacity": 0.13,
+            "defaultSize": "10px",
+            "path": "textures/diagonal-hatch.css",
+            "registryItem": "texture-diagonal-hatch",
+            "pairsWith": [
+                "neo-swiss",
+                "monochrome-stark",
+                "industrial-hardware",
+                "neo-brutalism",
+                "swiss-grotesk",
+                "condensed-hardware"
+            ],
+            "clashesWith": [
+                "liquid-glass",
+                "aurora-mesh"
+            ]
+        },
+        {
+            "id": "halftone-screen",
+            "name": "Halftone Screen",
+            "kind": "texture",
+            "tier": "experimental",
+            "layer": "ground",
+            "mechanism": "css-gradient",
+            "defaultOpacity": 0.18,
+            "defaultSize": "10px",
+            "path": "textures/halftone-screen.css",
+            "registryItem": "texture-halftone-screen",
+            "pairsWith": [
+                "neo-brutalism",
+                "avant-poster",
+                "zine-wire",
+                "ditherpunk",
+                "kinetic-brutal"
+            ],
+            "clashesWith": [
+                "liquid-glass",
+                "monolith-dark",
+                "warm-manuscript"
+            ]
+        },
+        {
+            "id": "brushed-anodized",
+            "name": "Brushed Anodized",
+            "kind": "texture",
+            "tier": "viral",
+            "layer": "ground",
+            "mechanism": "css-gradient",
+            "defaultOpacity": 0.1,
+            "defaultSize": "3px",
+            "path": "textures/brushed-anodized.css",
+            "registryItem": "texture-brushed-anodized",
+            "pairsWith": [
+                "industrial-hardware",
+                "orbital-ceramic",
+                "command-dark",
+                "dark-gallery-index",
+                "condensed-hardware"
+            ],
+            "clashesWith": [
+                "eight-bit-arcade",
+                "retro-web-96"
+            ]
+        },
+        {
+            "id": "topographic-mesh",
+            "name": "Topographic Mesh",
+            "kind": "texture",
+            "tier": "viral",
+            "layer": "ground",
+            "mechanism": "svg-mask",
+            "defaultOpacity": 0.18,
+            "defaultSize": "120px",
+            "path": "textures/topographic-mesh.css",
+            "registryItem": "texture-topographic-mesh",
+            "pairsWith": [
+                "ambient-orbit",
+                "orbital-ceramic",
+                "aurora-mesh",
+                "fui-tactical",
+                "orbital-canvas"
+            ],
+            "clashesWith": [
+                "retro-web-96",
+                "os-core"
+            ]
+        },
+        {
+            "id": "radial-vignette",
+            "name": "Radial Vignette",
+            "kind": "texture",
+            "tier": "production",
+            "layer": "overlay",
+            "mechanism": "css-gradient",
+            "defaultOpacity": 0.28,
+            "defaultSize": "100%",
+            "path": "textures/radial-vignette.css",
+            "registryItem": "texture-radial-vignette",
+            "pairsWith": [
+                "monolith-dark",
+                "aurora-mesh",
+                "command-dark",
+                "dark-gallery-index",
+                "orbital-ceramic",
+                "neo-display-saas"
+            ],
+            "clashesWith": [
+                "neo-brutalism"
+            ]
+        },
+        {
+            "id": "checker-dither",
+            "name": "Checker Dither",
+            "kind": "texture",
+            "tier": "experimental",
+            "layer": "ground",
+            "mechanism": "css-gradient",
+            "defaultOpacity": 0.16,
+            "defaultSize": "4px",
+            "path": "textures/checker-dither.css",
+            "registryItem": "texture-checker-dither",
+            "pairsWith": [
+                "ditherpunk",
+                "os-core",
+                "retro-web-96",
+                "eight-bit-arcade",
+                "bayer-dither",
+                "pixel-arcade"
+            ],
+            "clashesWith": [
+                "liquid-glass",
+                "warm-manuscript",
+                "aurora-mesh"
+            ]
+        },
+        {
+            "id": "precision-mono",
+            "name": "Precision Mono",
+            "kind": "typography",
+            "tier": "production",
+            "voice": "Technical telemetry, tight neo-grotesk headings, uppercase mono micro-labels, strict tabular numerals",
+            "fonts": [
+                "Inter",
+                "JetBrains Mono"
+            ],
+            "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap",
+            "path": "typography/precision-mono/TYPOGRAPHY.md",
+            "registryItem": "type-precision-mono",
+            "pairsWith": [
+                "fui-tactical",
+                "monolith-dark",
+                "telemetry-fault",
+                "code-forge",
+                "editorial-mono",
+                "architect-grid"
+            ],
+            "clashesWith": [
+                "warm-manuscript",
+                "pastel-playful",
+                "avant-poster"
+            ]
+        },
+        {
+            "id": "editorial-serif",
+            "name": "Editorial Serif",
+            "kind": "typography",
+            "tier": "production",
+            "voice": "High-contrast editorial and AI research lab voice with generous classical display proportions",
+            "fonts": [
+                "Instrument Serif",
+                "Plus Jakarta Sans",
+                "IBM Plex Mono"
+            ],
+            "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap",
+            "path": "typography/editorial-serif/TYPOGRAPHY.md",
+            "registryItem": "type-editorial-serif",
+            "pairsWith": [
+                "warm-manuscript",
+                "archival-paper",
+                "monochrome-gallery",
+                "tactile-studio-warm",
+                "monolith-dark",
+                "paper-fiber",
+                "film-grain"
+            ],
+            "clashesWith": [
+                "eight-bit-arcade",
+                "ditherpunk",
+                "acid-y2k",
+                "phosphor-terminal"
+            ]
+        },
+        {
+            "id": "swiss-grotesk",
+            "name": "Swiss Grotesk",
+            "kind": "typography",
+            "tier": "production",
+            "voice": "Heavy tight-tracked International Typographic Style hierarchy with disciplined negative space",
+            "fonts": [
+                "Archivo",
+                "Inter",
+                "IBM Plex Mono"
+            ],
+            "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap",
+            "path": "typography/swiss-grotesk/TYPOGRAPHY.md",
+            "registryItem": "type-swiss-grotesk",
+            "pairsWith": [
+                "neo-swiss",
+                "swiss-type-foundry",
+                "monochrome-stark",
+                "wordmark-press",
+                "architect-grid",
+                "diagonal-hatch"
+            ],
+            "clashesWith": [
+                "pastel-playful",
+                "liquid-glass",
+                "ambient-orbit"
+            ]
+        },
+        {
+            "id": "literary-humanist",
+            "name": "Literary Humanist",
+            "kind": "typography",
+            "tier": "production",
+            "voice": "Warm tactile manuscript and long-form journal proportions using optical variable serifs",
+            "fonts": [
+                "Fraunces",
+                "Newsreader",
+                "IBM Plex Mono"
+            ],
+            "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap",
+            "path": "typography/literary-humanist/TYPOGRAPHY.md",
+            "registryItem": "type-literary-humanist",
+            "pairsWith": [
+                "warm-manuscript",
+                "archival-paper",
+                "tactile-studio-warm",
+                "paper-fiber",
+                "film-grain"
+            ],
+            "clashesWith": [
+                "fui-tactical",
+                "acid-y2k",
+                "telemetry-fault",
+                "eight-bit-arcade"
+            ]
+        },
+        {
+            "id": "kinetic-brutal",
+            "name": "Kinetic Brutal",
+            "kind": "typography",
+            "tier": "experimental",
+            "voice": "Wide assertive avant-garde poster geometry with raw brutalist energy",
+            "fonts": [
+                "Syne",
+                "Space Grotesk",
+                "Space Mono"
+            ],
+            "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap",
+            "path": "typography/kinetic-brutal/TYPOGRAPHY.md",
+            "registryItem": "type-kinetic-brutal",
+            "pairsWith": [
+                "neo-brutalism",
+                "avant-poster",
+                "acid-y2k",
+                "zine-wire",
+                "halftone-screen",
+                "diagonal-hatch"
+            ],
+            "clashesWith": [
+                "warm-manuscript",
+                "tactile-soft",
+                "liquid-glass",
+                "perceptual-scale"
+            ]
+        },
+        {
+            "id": "terminal-phosphor",
+            "name": "Terminal Phosphor",
+            "kind": "typography",
+            "tier": "experimental",
+            "voice": "Strict all-monospace grid rhythm with zero sans-serif drift for CLI and retro-compute surfaces",
+            "fonts": [
+                "JetBrains Mono",
+                "IBM Plex Mono"
+            ],
+            "googleFontsUrl": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap",
+            "path": "typography/terminal-phosphor/TYPOGRAPHY.md",
+            "registryItem": "type-terminal-phosphor",
+            "pairsWith": [
+                "phosphor-terminal",
+                "ditherpunk",
+                "code-forge",
+                "telemetry-fault",
+                "crt-scanlines",
+                "crosshair-field"
+            ],
+            "clashesWith": [
+                "warm-manuscript",
+                "pastel-playful",
+                "liquid-glass",
+                "tactile-soft"
+            ]
+        },
+        {
+            "id": "pixel-arcade",
+            "name": "Pixel Arcade",
+            "kind": "typography",
+            "tier": "experimental",
+            "voice": "Crisp stepped bitmap display headlines paired with readable monospace body copy",
+            "fonts": [
+                "Silkscreen",
+                "Space Mono"
+            ],
+            "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&display=swap",
+            "path": "typography/pixel-arcade/TYPOGRAPHY.md",
+            "registryItem": "type-pixel-arcade",
+            "pairsWith": [
+                "eight-bit-arcade",
+                "ditherpunk",
+                "os-core",
+                "retro-web-96",
+                "checker-dither",
+                "crt-scanlines"
+            ],
+            "clashesWith": [
+                "warm-manuscript",
+                "archival-paper",
+                "liquid-glass",
+                "editorial-mono",
+                "monolith-dark"
+            ]
+        },
+        {
+            "id": "neo-display-saas",
+            "name": "Neo Display SaaS",
+            "kind": "typography",
+            "tier": "viral",
+            "voice": "Clean, punchy modern launch-page and product marketing voice with geometric poise",
+            "fonts": [
+                "Space Grotesk",
+                "Inter",
+                "JetBrains Mono"
+            ],
+            "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
+            "path": "typography/neo-display-saas/TYPOGRAPHY.md",
+            "registryItem": "type-neo-display-saas",
+            "pairsWith": [
+                "bento-grid",
+                "aurora-mesh",
+                "mesh-craft",
+                "command-dark",
+                "orbital-ceramic",
+                "dot-matrix",
+                "radial-vignette"
+            ],
+            "clashesWith": [
+                "retro-web-96",
+                "os-core",
+                "archival-paper"
+            ]
+        },
+        {
+            "id": "condensed-hardware",
+            "name": "Condensed Hardware",
+            "kind": "typography",
+            "tier": "viral",
+            "voice": "Uppercase industrial signage, rail-timetable clarity, and anodized hardware faceplate typography",
+            "fonts": [
+                "Barlow Condensed",
+                "Inter",
+                "IBM Plex Mono"
+            ],
+            "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap",
+            "path": "typography/condensed-hardware/TYPOGRAPHY.md",
+            "registryItem": "type-condensed-hardware",
+            "pairsWith": [
+                "industrial-hardware",
+                "transit-precision",
+                "fui-tactical",
+                "brushed-anodized",
+                "diagonal-hatch",
+                "architect-grid"
+            ],
+            "clashesWith": [
+                "warm-manuscript",
+                "pastel-playful",
+                "liquid-glass"
+            ]
         }
     ],
     "hybrids": [
@@ -2286,6 +2856,8 @@
             "id": "tactical-space",
             "name": "Tactical Space Dashboard",
             "baseStyle": "fui-tactical",
+            "texture": "architect-grid",
+            "typography": "precision-mono",
             "accents": [
                 "ambient-orbit",
                 "scramble-text",
@@ -2344,6 +2916,8 @@
             "id": "type-specimen-press",
             "name": "Type Specimen Press",
             "baseStyle": "swiss-type-foundry",
+            "texture": "film-grain",
+            "typography": "swiss-grotesk",
             "accents": [
                 "neo-swiss",
                 "variable-proximity",
@@ -2356,6 +2930,8 @@
             "id": "warm-research-reader",
             "name": "Warm Research Reader",
             "baseStyle": "warm-manuscript",
+            "texture": "paper-fiber",
+            "typography": "literary-humanist",
             "accents": [
                 "archival-paper",
                 "blur-text",
@@ -2380,6 +2956,8 @@
             "id": "phosphor-cli-workbench",
             "name": "Phosphor CLI Workbench",
             "baseStyle": "phosphor-terminal",
+            "texture": "crt-scanlines",
+            "typography": "terminal-phosphor",
             "accents": [
                 "ditherpunk",
                 "crt-grain-overlay",
@@ -2392,6 +2970,8 @@
             "id": "tactile-hardware-deck",
             "name": "Tactile Hardware Deck",
             "baseStyle": "industrial-hardware",
+            "texture": "brushed-anodized",
+            "typography": "condensed-hardware",
             "accents": [
                 "monochrome-stark",
                 "elastic-slider",

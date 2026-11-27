@@ -1,0 +1,23 @@
+/* ui-vault // texture: radial-vignette (production)
+ * Soft edge depth falloff scrim to focus hero and canvas stages.
+ * Params: --tx-color (default currentColor), --tx-opacity (default 0.28), --tx-size (default 100%)
+ */
+
+:where(.tx-radial-vignette) {
+  position: relative;
+  isolation: isolate;
+}
+
+.tx-radial-vignette::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--tx-opacity, 0.28);
+  background-image: radial-gradient(
+    ellipse var(--tx-size, 100%) var(--tx-size, 100%) at 50% 50%,
+    transparent 38%,
+    var(--tx-color, currentColor) 100%
+  );
+}

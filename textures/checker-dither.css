@@ -1,0 +1,25 @@
+/* ui-vault // texture: checker-dither (experimental)
+ * Crisp 2x2 pixel dither / retro OS checkerboard pattern via conic-gradient.
+ * Params: --tx-color (default currentColor), --tx-opacity (default 0.16), --tx-size (default 4px)
+ */
+
+:where(.tx-checker-dither) {
+  position: relative;
+  isolation: isolate;
+}
+
+.tx-checker-dither::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--tx-opacity, 0.16);
+  background-image: conic-gradient(
+    var(--tx-color, currentColor) 90deg,
+    transparent 90deg 180deg,
+    var(--tx-color, currentColor) 180deg 270deg,
+    transparent 270deg
+  );
+  background-size: var(--tx-size, 4px) var(--tx-size, 4px);
+}

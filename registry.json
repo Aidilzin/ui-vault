@@ -4,6 +4,8 @@
   "homepage": "https://github.com/Aidilzin/ui-vault",
   "include": [
     "styles/registry.json",
-    "animations/registry.json"
+    "animations/registry.json",
+    "textures/registry.json",
+    "typography/registry.json"
   ]
 }

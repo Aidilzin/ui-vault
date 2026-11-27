@@ -1,0 +1,33 @@
+/* ui-vault // texture: halftone-screen (experimental)
+ * Classic angled offset-print halftone dot matrix using dual staggered radial gradients.
+ * Params: --tx-color (default currentColor), --tx-opacity (default 0.18), --tx-size (default 10px)
+ */
+
+:where(.tx-halftone-screen) {
+  position: relative;
+  isolation: isolate;
+}
+
+.tx-halftone-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--tx-opacity, 0.18);
+  background-image:
+    radial-gradient(
+      circle,
+      var(--tx-color, currentColor) 1.35px,
+      transparent 1.55px
+    ),
+    radial-gradient(
+      circle,
+      var(--tx-color, currentColor) 1.35px,
+      transparent 1.55px
+    );
+  background-size: var(--tx-size, 10px) var(--tx-size, 10px);
+  background-position:
+    0 0,
+    calc(var(--tx-size, 10px) / 2) calc(var(--tx-size, 10px) / 2);
+}

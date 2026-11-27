@@ -1,0 +1,43 @@
+/* ui-vault // typography: kinetic-brutal (experimental)
+ * Syne + Space Grotesk + Space Mono — wide avant-garde poster geometry.
+ * Scoped strictly to .type-kinetic-brutal (never mutates global html/body).
+ */
+
+.type-kinetic-brutal {
+  --type-display: "Syne", "Space Grotesk", sans-serif;
+  --type-body: "Space Grotesk", "Inter", sans-serif;
+  --type-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --text-hero: clamp(1.9rem, 1.15rem + 3vw, 3.4rem);
+  --text-h2: clamp(1.35rem, 1.05rem + 1.1vw, 1.95rem);
+  --text-h3: clamp(1.05rem, 0.95rem + 0.4vw, 1.3rem);
+  --text-body: clamp(0.9rem, 0.86rem + 0.16vw, 1rem);
+  --text-label: 0.75rem;
+  --text-micro: 0.6875rem;
+
+  --tracking-display: -0.03em;
+  --tracking-label: 0.08em;
+  --leading-display: 0.98;
+  --leading-body: 1.5;
+  --display-weight: 800;
+  --display-transform: uppercase;
+
+  font-family: var(--type-body);
+}
+
+.type-kinetic-brutal :where(h1, h2, h3, .type-display) {
+  font-family: var(--type-display);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);
+  text-transform: var(--display-transform);
+  text-wrap: balance;
+}
+
+.type-kinetic-brutal :where(code, pre, .type-mono, .type-micro) {
+  font-family: var(--type-mono);
+}
+
+.type-kinetic-brutal :where(.type-tabular, td, th, time, output) {
+  font-variant-numeric: tabular-nums;
+}

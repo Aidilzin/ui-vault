@@ -1,0 +1,44 @@
+/* ui-vault // texture: architect-grid (production)
+ * Dual-scale major (5x) and minor blueprint engineering hairline grid.
+ * Params: --tx-color (default currentColor), --tx-opacity (default 0.14), --tx-size (default 20px)
+ */
+
+:where(.tx-architect-grid) {
+  position: relative;
+  isolation: isolate;
+}
+
+.tx-architect-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--tx-opacity, 0.14);
+  background-image:
+    linear-gradient(
+      to right,
+      var(--tx-color, currentColor) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      var(--tx-color, currentColor) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--tx-color, currentColor) 40%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--tx-color, currentColor) 40%, transparent) 1px,
+      transparent 1px
+    );
+  background-size:
+    calc(var(--tx-size, 20px) * 5) calc(var(--tx-size, 20px) * 5),
+    calc(var(--tx-size, 20px) * 5) calc(var(--tx-size, 20px) * 5),
+    var(--tx-size, 20px) var(--tx-size, 20px),
+    var(--tx-size, 20px) var(--tx-size, 20px);
+}
