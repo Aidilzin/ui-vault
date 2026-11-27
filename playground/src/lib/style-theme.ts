@@ -422,6 +422,23 @@ export function resolveStyleTheme(styleId: string): ResolvedStyleTheme {
 }
 
 /**
+ * Returns a derived theme whose font families delegate to the active scoped
+ * `.type-<id>` CSS custom properties on `.dummy-site-root`.
+ */
+export function applyTypographyOverride(
+  theme: ResolvedStyleTheme,
+  typographyId: string | null
+): ResolvedStyleTheme {
+  if (!typographyId) return theme;
+  return {
+    ...theme,
+    fontHeading: "var(--type-display)",
+    fontBody: "var(--type-body)",
+    fontMono: "var(--type-mono)",
+  };
+}
+
+/**
  * Returns inline CSS custom properties scoped strictly to `.dummy-site-root`.
  * Never mutates global `:root` so the outer `fui-tactical` shell stays untouched.
  */

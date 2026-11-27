@@ -4,6 +4,7 @@ import {
   BookOpen,
   FlaskConical,
   GitFork,
+  Grid2x2,
   Layers,
   PauseCircle,
   PlayCircle,
@@ -11,12 +12,19 @@ import {
   Sparkles,
   X,
 } from "lucide-react";
-import { animationNodes, styleNodes, vaultRelations } from "../lib/vault-data";
+import {
+  animationNodes,
+  styleNodes,
+  textureNodes,
+  typographyNodes,
+  vaultRelations,
+} from "../lib/vault-data";
 import { MAX_LAB_ANIMATIONS } from "../lib/lab-helpers";
 
 export type ActiveTab =
   | "animations"
   | "styles"
+  | "foundations"
   | "relations"
   | "labs"
   | "references";
@@ -68,6 +76,7 @@ export function TopCommandBar({
   }, [searchQuery, onSearchChange]);
 
   const isLocalFilterTab = activeTab === "labs" || activeTab === "relations";
+  const foundationsCount = textureNodes.length + typographyNodes.length;
 
   return (
     <header className="cmd-header">
@@ -88,7 +97,8 @@ export function TopCommandBar({
             onClick={() => onTabChange("animations")}
           >
             <Sparkles size={13} />
-            <span>Animations</span>
+            <span className="cmd-tab-label-full">Animations</span>
+            <span className="cmd-tab-label-short">Anims</span>
             <span className="cmd-tab-count">{animationNodes.length}</span>
           </button>
 
@@ -101,6 +111,18 @@ export function TopCommandBar({
             <Layers size={13} />
             <span>Styles</span>
             <span className="cmd-tab-count">{styleNodes.length}</span>
+          </button>
+
+          <button
+            type="button"
+            className="cmd-tab"
+            data-active={activeTab === "foundations"}
+            onClick={() => onTabChange("foundations")}
+          >
+            <Grid2x2 size={13} />
+            <span className="cmd-tab-label-full">Foundations</span>
+            <span className="cmd-tab-label-short">Found.</span>
+            <span className="cmd-tab-count">{foundationsCount}</span>
           </button>
 
           <button
@@ -134,7 +156,8 @@ export function TopCommandBar({
             onClick={() => onTabChange("references")}
           >
             <BookOpen size={13} />
-            <span>References</span>
+            <span className="cmd-tab-label-full">References</span>
+            <span className="cmd-tab-label-short">Refs</span>
           </button>
         </nav>
 

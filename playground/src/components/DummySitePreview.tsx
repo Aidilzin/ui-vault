@@ -1,9 +1,13 @@
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState, type CSSProperties } from "react";
 import { Activity, BookOpen, Cpu, Terminal } from "lucide-react";
-import { getScopedStageStyle, type ResolvedStyleTheme } from "../lib/style-theme";
+import {
+  applyTypographyOverride,
+  getScopedStageStyle,
+  type ResolvedStyleTheme,
+} from "../lib/style-theme";
 import type { LabTemplateId, LabViewportMode } from "../lib/lab-helpers";
 import type { ResolvedLabSlots } from "../lib/lab-slots";
-import { formatNodeLabel } from "../lib/vault-data";
+import { formatNodeLabel, nodeById, type TextureNode } from "../lib/vault-data";
 import { LabBackdropLayer } from "./LabBackdropLayer";
 import {
   DummyFeatureGrid,
@@ -25,6 +29,9 @@ import {
 
 interface DummySitePreviewProps {
   theme: ResolvedStyleTheme;
+  textureId: string | null;
+  textureOpacity: number;
+  typographyId: string | null;
   template: LabTemplateId;
   viewport: LabViewportMode;
   slots: ResolvedLabSlots;
@@ -174,7 +181,10 @@ const MARQUEE_ITEMS_BY_TEMPLATE: Record<LabTemplateId, string[]> = {
 };
 
 export function DummySitePreview({
-  theme,
+  theme: baseTheme,
+  textureId,
+  textureOpacity,
+  typographyId,
   template,
   viewport,
   slots,
@@ -187,6 +197,17 @@ export function DummySitePreview({
   const browserScrollRef = useRef<HTMLDivElement>(null);
   const [drawerOpen, setDrawerOpen] = useState(true);
   const [toastOpen, setToastOpen] = useState(true);
+
+  const theme = useMemo(
+    () => applyTypographyOverride(baseTheme, typographyId),
+    [baseTheme, typographyId]
+  );
+
+  const activeTexture = useMemo(() => {
+    if (!textureId) return null;
+    const node = nodeById.get(textureId);
+    return node?.kind === "texture" ? (node as TextureNode) : null;
+  }, [textureId]);
 
   const scopedStyle = useMemo(() => getScopedStageStyle(theme), [theme]);
   const hasDock = slots.nav.includes("dock-magnify");
@@ -1185,14 +1206,55 @@ export function DummySitePreview({
         data-testid="dummy-browser-viewport"
       >
         <div
-          className="dummy-site-root"
+          className={
+            typographyId
+              ? `dummy-site-root type-${typographyId}`
+              : "dummy-site-root"
+          }
           data-style-id={theme.styleId}
           data-profile={theme.profile}
           data-template={template}
           data-viewport={viewport}
           data-light={theme.isLight}
+          data-type-override={Boolean(typographyId)}
+          data-texture-id={textureId ?? undefined}
           style={scopedStyle}
         >
+          {activeTexture && (
+            <div
+              className={`dummy-texture-layer tx-${activeTexture.id}`}
+              data-layer={activeTexture.layer}
+              aria-hidden="true"
+              style={
+                {
+                  "--tx-color":
+                    activeTexture.id === "radial-vignette"
+                      ? theme.isLight
+                        ? "rgba(15, 23, 42, 0.72)"
+                        : "rgba(0, 0, 0, 0.92)"
+                      : theme.ink,
+                  "--tx-opacity": String(textureOpacity),
+                } as CSSProperties
+              }
+            />
+          )}
+
+          {inspectSlots && (activeTexture || typographyId) && (
+            <div className="dummy-foundations-inspector" aria-hidden="true">
+              {activeTexture && (
+                <span className="slot-inspector-tag" style={{ position: "static" }}>
+                  TEXTURE ({activeTexture.layer.toUpperCase()}): {activeTexture.id} ·{" "}
+                  {Math.round(textureOpacity * 100)}%
+                </span>
+              )}
+              {typographyId && (
+                <span className="slot-inspector-tag" style={{ position: "static" }}>
+                  TYPOGRAPHY: {typographyId}
+                </span>
+              )}
+            </div>
+          )}
+
           {renderOsTitlebar()}
           {template === "landing" && renderLandingTemplate()}
           {template === "workbench" && renderWorkbenchTemplate()}

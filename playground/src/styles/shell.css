@@ -809,27 +809,47 @@ a {
 }
 
 /* ==========================================================================
-   5-Tab Header Responsive Tightening (1024px–1260px single-row fit)
+   6-Tab Header Responsive Tightening (1024px–1260px single-row fit)
    ========================================================================== */
 .cmd-tab-label-short,
 .cmd-motion-label-short {
   display: none;
 }
 
-@media (max-width: 1260px) {
-  .cmd-header-inner {
-    padding: 0 12px;
-    gap: 8px;
-    flex-wrap: nowrap;
-  }
-
+@media (max-width: 1320px) {
   .cmd-brand-version,
   .cmd-live-badge {
     display: none;
   }
 
   .cmd-tab {
-    padding: 5px 7px;
+    padding: 5px 8px;
+    font-size: 10.5px;
+    gap: 5px;
+  }
+
+  .cmd-search-input {
+    width: 170px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cmd-header-inner {
+    padding: 0 10px;
+    gap: 6px;
+    flex-wrap: nowrap;
+  }
+
+  .cmd-brand {
+    gap: 6px;
+  }
+
+  .cmd-brand-title {
+    font-size: 11px;
+  }
+
+  .cmd-tab {
+    padding: 5px 6px;
     font-size: 10px;
     gap: 4px;
   }
@@ -845,11 +865,11 @@ a {
   }
 
   .cmd-search-input {
-    width: 150px;
+    width: 132px;
   }
 
   .cmd-motion-btn {
-    padding: 0 8px;
+    padding: 0 7px;
   }
 }
 
@@ -2335,4 +2355,338 @@ a {
   .dummy-bento-lead {
     grid-column: span 1;
   }
+}
+
+/* ==========================================================================
+   Foundations Gallery (Textures & Typography)
+   ========================================================================== */
+.fnd-slider-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  background: var(--fui-canvas);
+  border: 1px solid var(--fui-border);
+  border-radius: 3px;
+}
+
+.fnd-slider-control input[type="range"] {
+  width: 72px;
+  accent-color: var(--fui-signal-active);
+}
+
+.fnd-specimen-bar {
+  align-items: center;
+}
+
+.fnd-specimen-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 240px;
+}
+
+.fnd-specimen-input {
+  flex: 1;
+  min-width: 180px;
+  height: 30px;
+  padding: 0 10px;
+  background: var(--fui-canvas);
+  border: 1px solid var(--fui-border);
+  border-radius: 3px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--fui-ink);
+  outline: none;
+}
+
+.fnd-specimen-input:focus {
+  border-color: var(--fui-signal-active);
+}
+
+.fnd-tabular-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 9px;
+  background: var(--fui-canvas);
+  border: 1px solid var(--fui-border);
+  border-radius: 3px;
+}
+
+.fnd-tabular-val {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  color: var(--fui-signal-active);
+}
+
+.fnd-textures-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 16px;
+}
+
+.fnd-type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 480px) {
+  .fnd-textures-grid,
+  .fnd-type-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fnd-card {
+  overflow: hidden;
+}
+
+.fnd-texture-stage {
+  position: relative;
+  height: 158px;
+  border-bottom: 1px solid var(--fui-border);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+}
+
+.fnd-texture-stage-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 8px;
+}
+
+.fnd-texture-stage-tag {
+  align-self: flex-start;
+  padding: 2px 7px;
+  border: 1px solid;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  backdrop-filter: blur(4px);
+}
+
+.fnd-texture-sample-card {
+  padding: 8px 10px;
+  border: 1px solid;
+  border-radius: 3px;
+  backdrop-filter: blur(4px);
+}
+
+.fnd-type-stage {
+  padding: 16px;
+  background: var(--fui-canvas);
+  border-bottom: 1px solid var(--fui-border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 184px;
+  overflow: hidden;
+}
+
+.fnd-type-ladder-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.fnd-type-hero-sample {
+  font-size: clamp(22px, 2.2vw, 30px);
+  color: var(--fui-ink);
+  overflow-wrap: anywhere;
+}
+
+.fnd-type-h2-sample {
+  font-size: 15px;
+  color: var(--fui-ink);
+  opacity: 0.9;
+}
+
+.fnd-type-body-sample {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--fui-ink-muted);
+}
+
+.fnd-card-body {
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.fnd-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.fnd-card-title {
+  margin: 0 0 2px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fui-ink);
+}
+
+.fnd-chip-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.fnd-card-actions {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.fnd-card-actions .btn-fui {
+  flex: 1;
+  justify-content: center;
+  font-size: 10.5px;
+  padding: 0 8px;
+}
+
+/* ==========================================================================
+   Labs Collapsible Texture / Typography Pickers & Dummy Site Layering
+   ========================================================================== */
+.lab-collapse-toggle {
+  appearance: none;
+  width: 100%;
+  padding: 2px 0;
+  background: transparent;
+  border: none;
+  color: var(--fui-ink-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.lab-collapse-toggle:hover {
+  color: var(--fui-ink);
+}
+
+.lab-compact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-height: 190px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.lab-texture-opacity-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background: var(--fui-canvas);
+  border: 1px solid var(--fui-border);
+  border-radius: 3px;
+}
+
+.lab-texture-opacity-bar input[type="range"] {
+  flex: 1;
+  accent-color: var(--fui-signal-active);
+}
+
+/* Scoped Texture Layer inside .dummy-site-root */
+.dummy-texture-layer {
+  position: absolute !important;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.dummy-texture-layer[data-layer="ground"] {
+  z-index: 0;
+}
+
+.dummy-texture-layer[data-layer="overlay"] {
+  z-index: 25;
+}
+
+.dummy-site-root > :not(.dummy-texture-layer):not(.dummy-navbar):not(.dummy-foundations-inspector) {
+  position: relative;
+  z-index: 1;
+}
+
+.dummy-foundations-inspector {
+  position: absolute;
+  top: 56px;
+  right: 12px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  pointer-events: none;
+}
+
+/* Scoped Typography Override Rules inside .dummy-site-root (Zero Global Leakage) */
+.dummy-site-root[data-type-override="true"] {
+  font-family: var(--type-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+.dummy-site-root[data-type-override="true"] .dummy-hero-h1 {
+  font-family: var(--type-display) !important;
+  font-size: var(--text-hero);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);
+  text-transform: var(--display-transform);
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+.dummy-site-root[data-type-override="true"] h2 {
+  font-family: var(--type-display) !important;
+  font-size: var(--text-h2) !important;
+  font-weight: var(--display-weight) !important;
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);
+  text-wrap: balance;
+}
+
+.dummy-site-root[data-type-override="true"] .dummy-hero-sub {
+  font-family: var(--type-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+/* Mock Browser Tablet & Mobile Display-Size Caps (Guardrail #4) */
+.dummy-site-root[data-type-override="true"][data-viewport="tablet"] .dummy-hero-h1 {
+  font-size: min(var(--text-hero), 2.25rem);
+}
+
+.dummy-site-root[data-type-override="true"][data-viewport="mobile"] .dummy-hero-h1 {
+  font-size: min(var(--text-hero), 1.65rem);
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.dummy-site-root[data-type-override="true"][data-viewport="mobile"] h2 {
+  font-size: min(var(--text-h2), 1.25rem) !important;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }

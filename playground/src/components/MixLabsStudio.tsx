@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   AlertTriangle,
   Check,
@@ -9,6 +9,7 @@ import {
   Dices,
   Eye,
   Flame,
+  Grid2x2,
   Link2,
   Maximize2,
   Minimize2,
@@ -20,6 +21,7 @@ import {
   Tablet,
   Terminal,
   Trash2,
+  Type,
   X,
 } from "lucide-react";
 import {
@@ -28,13 +30,18 @@ import {
   clusterList,
   formatNodeLabel,
   getRelationStatus,
+  nodeById,
   styleNodes,
+  textureNodes,
+  typographyNodes,
   vaultRelations,
   type ClusterId,
   type MechanicId,
   type TierId,
+  type TypographyNode,
 } from "../lib/vault-data";
 import { resolveStyleTheme } from "../lib/style-theme";
+import { loadGoogleFonts } from "../lib/font-loader";
 import {
   MAX_LAB_ANIMATIONS,
   buildLabAgentPrompt,
@@ -75,6 +82,8 @@ export function MixLabsStudio({
   const [styleSearch, setStyleSearch] = useState("");
   const [styleTier, setStyleTier] = useState<TierId | "all">("all");
   const [collapsedClusters, setCollapsedClusters] = useState<Record<string, boolean>>({});
+  const [textureOpen, setTextureOpen] = useState(false);
+  const [typographyOpen, setTypographyOpen] = useState(false);
 
   const [animSearch, setAnimSearch] = useState("");
   const [animMechanic, setAnimMechanic] = useState<MechanicId | "all">("all");
@@ -83,6 +92,15 @@ export function MixLabsStudio({
   const [selectedPresetId, setSelectedPresetId] = useState("");
   const [inspectSlots, setInspectSlots] = useState(false);
   const [expanded, setExpanded] = useState(false);
+
+  // Load Google Fonts on demand whenever a Typography override is active in Labs
+  useEffect(() => {
+    if (!labState.typographyId) return;
+    const node = nodeById.get(labState.typographyId) as TypographyNode | undefined;
+    if (node?.kind === "typography") {
+      loadGoogleFonts(node.googleFontsUrl);
+    }
+  }, [labState.typographyId]);
 
   const theme = useMemo(
     () => resolveStyleTheme(labState.styleId),
@@ -95,8 +113,19 @@ export function MixLabsStudio({
   );
 
   const evaluation = useMemo(
-    () => evaluateLabMix(labState.styleId, labState.animationIds),
-    [labState.styleId, labState.animationIds]
+    () =>
+      evaluateLabMix(
+        labState.styleId,
+        labState.animationIds,
+        labState.textureId,
+        labState.typographyId
+      ),
+    [
+      labState.styleId,
+      labState.animationIds,
+      labState.textureId,
+      labState.typographyId,
+    ]
   );
 
   const groupedStyles = useMemo(() => {
@@ -115,6 +144,26 @@ export function MixLabsStudio({
       })
       .filter((group) => group.items.length > 0);
   }, [styleSearch, styleTier]);
+
+  const sortedTextures = useMemo(() => {
+    const rank = (id: string) => {
+      const st = getRelationStatus(labState.styleId, id);
+      if (st === "pairs") return 0;
+      if (st === "neutral") return 1;
+      return 2;
+    };
+    return [...textureNodes].sort((a, b) => rank(a.id) - rank(b.id));
+  }, [labState.styleId]);
+
+  const sortedTypography = useMemo(() => {
+    const rank = (id: string) => {
+      const st = getRelationStatus(labState.styleId, id);
+      if (st === "pairs") return 0;
+      if (st === "neutral") return 1;
+      return 2;
+    };
+    return [...typographyNodes].sort((a, b) => rank(a.id) - rank(b.id));
+  }, [labState.styleId]);
 
   const filteredAnimations = useMemo(() => {
     const q = animSearch.trim().toLowerCase();
@@ -149,6 +198,27 @@ export function MixLabsStudio({
     onUpdateLabState((prev) => ({ ...prev, styleId }));
   };
 
+  const handleSelectTexture = (textureId: string | null) => {
+    setSelectedPresetId("");
+    const tex = textureId
+      ? textureNodes.find((t) => t.id === textureId)
+      : undefined;
+    onUpdateLabState((prev) => ({
+      ...prev,
+      textureId,
+      textureOpacity: tex ? tex.defaultOpacity : prev.textureOpacity,
+    }));
+  };
+
+  const handleSelectTypography = (typographyId: string | null) => {
+    setSelectedPresetId("");
+    if (typographyId) {
+      const typo = typographyNodes.find((t) => t.id === typographyId);
+      if (typo) loadGoogleFonts(typo.googleFontsUrl);
+    }
+    onUpdateLabState((prev) => ({ ...prev, typographyId }));
+  };
+
   const handleToggleAnimation = (animId: string) => {
     setSelectedPresetId("");
     onUpdateLabState((prev) => {
@@ -178,6 +248,9 @@ export function MixLabsStudio({
       ...prev,
       styleId: mix.styleId,
       animationIds: mix.animationIds,
+      textureId: mix.textureId,
+      textureOpacity: mix.textureOpacity ?? prev.textureOpacity,
+      typographyId: mix.typographyId,
       template: mix.suggestedTemplate ?? prev.template,
     }));
   };
@@ -207,10 +280,17 @@ export function MixLabsStudio({
     onUpdateLabState((prev) => ({
       ...prev,
       animationIds: [],
+      textureId: null,
+      typographyId: null,
     }));
   };
 
   const combinedEpoch = motionEpoch + labReplayEpoch;
+  const totalShadcnItems =
+    1 +
+    (labState.textureId ? 1 : 0) +
+    (labState.typographyId ? 1 : 0) +
+    labState.animationIds.length;
 
   return (
     <section className="lab-studio" aria-label="Labs Mix and Match Studio">
@@ -270,15 +350,15 @@ export function MixLabsStudio({
                   className="btn-fui"
                   style={{ fontSize: 10, padding: "0 7px" }}
                   onClick={handleClearAnims}
-                  title="Clear active animations"
-                  aria-label="Clear active animations"
+                  title="Clear active animations, texture & typography overrides"
+                  aria-label="Clear active layers"
                 >
                   <Trash2 size={12} />
                 </button>
               </div>
             </div>
 
-            {/* Base Style Selector (Single-Select) */}
+            {/* 1. Base Style Selector (Single-Select) */}
             <div className="lab-rail-section">
               <div className="lab-rail-section-head">
                 <span className="fui-mono-label" style={{ color: "var(--fui-ink)" }}>
@@ -391,11 +471,161 @@ export function MixLabsStudio({
               </div>
             </div>
 
-            {/* Animation Stack Selector (Multi-Select, max 6) */}
+            {/* 2. Surface Texture Picker (Collapsible) */}
+            <div className="lab-rail-section">
+              <button
+                type="button"
+                className="lab-collapse-toggle"
+                onClick={() => setTextureOpen((v) => !v)}
+                aria-expanded={textureOpen}
+              >
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}>
+                  {textureOpen ? <ChevronDown size={12} /> : <ChevronRight size={12} />}
+                  <Grid2x2 size={11} />
+                  <span className="fui-mono-label" style={{ color: "var(--fui-ink)" }}>
+                    2. Surface Texture
+                  </span>
+                </span>
+                <span
+                  className={`badge ${labState.textureId ? "badge-cyan" : ""}`}
+                  style={{ fontSize: 9 }}
+                >
+                  {labState.textureId ?? "None"}
+                </span>
+              </button>
+
+              {labState.textureId && (
+                <label className="lab-texture-opacity-bar">
+                  <span className="fui-mono-label">OPACITY</span>
+                  <input
+                    type="range"
+                    min={0.04}
+                    max={0.45}
+                    step={0.01}
+                    value={labState.textureOpacity}
+                    onChange={(e) => {
+                      const val = Number(e.target.value);
+                      onUpdateLabState((prev) => ({
+                        ...prev,
+                        textureOpacity: val,
+                      }));
+                    }}
+                    aria-label="Surface texture opacity"
+                  />
+                  <span className="fui-mono-label" style={{ minWidth: 28, textAlign: "right" }}>
+                    {Math.round(labState.textureOpacity * 100)}%
+                  </span>
+                </label>
+              )}
+
+              {textureOpen && (
+                <div className="lab-compact-list">
+                  <button
+                    type="button"
+                    className="lab-rail-row"
+                    data-active={labState.textureId === null}
+                    onClick={() => handleSelectTexture(null)}
+                  >
+                    <span className="lab-rail-row-name">None (Style Ground)</span>
+                  </button>
+                  {sortedTextures.map((tex) => {
+                    const active = labState.textureId === tex.id;
+                    const rel = getRelationStatus(labState.styleId, tex.id);
+                    return (
+                      <button
+                        key={tex.id}
+                        type="button"
+                        className="lab-rail-row"
+                        data-active={active}
+                        onClick={() => handleSelectTexture(tex.id)}
+                      >
+                        <span className="lab-rail-row-left">
+                          <span className="lab-rail-row-name">{tex.name}</span>
+                        </span>
+                        <span style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
+                          {rel === "pairs" && (
+                            <span className="badge badge-emerald rel-status-tag">PAIR</span>
+                          )}
+                          {rel === "clashes" && (
+                            <span className="badge badge-crimson rel-status-tag">CLASH</span>
+                          )}
+                          <span className={`tier-dot tier-dot-${tex.tier}`} />
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+
+            {/* 3. Typography Override Picker (Collapsible) */}
+            <div className="lab-rail-section">
+              <button
+                type="button"
+                className="lab-collapse-toggle"
+                onClick={() => setTypographyOpen((v) => !v)}
+                aria-expanded={typographyOpen}
+              >
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}>
+                  {typographyOpen ? <ChevronDown size={12} /> : <ChevronRight size={12} />}
+                  <Type size={11} />
+                  <span className="fui-mono-label" style={{ color: "var(--fui-ink)" }}>
+                    3. Typography Override
+                  </span>
+                </span>
+                <span
+                  className={`badge ${labState.typographyId ? "badge-amber" : ""}`}
+                  style={{ fontSize: 9 }}
+                >
+                  {labState.typographyId ?? "Style Default"}
+                </span>
+              </button>
+
+              {typographyOpen && (
+                <div className="lab-compact-list">
+                  <button
+                    type="button"
+                    className="lab-rail-row"
+                    data-active={labState.typographyId === null}
+                    onClick={() => handleSelectTypography(null)}
+                  >
+                    <span className="lab-rail-row-name">Style Default</span>
+                  </button>
+                  {sortedTypography.map((typo) => {
+                    const active = labState.typographyId === typo.id;
+                    const rel = getRelationStatus(labState.styleId, typo.id);
+                    return (
+                      <button
+                        key={typo.id}
+                        type="button"
+                        className="lab-rail-row"
+                        data-active={active}
+                        onClick={() => handleSelectTypography(typo.id)}
+                      >
+                        <span className="lab-rail-row-left">
+                          <span className="lab-rail-row-name">{typo.name}</span>
+                        </span>
+                        <span style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
+                          {rel === "pairs" && (
+                            <span className="badge badge-emerald rel-status-tag">PAIR</span>
+                          )}
+                          {rel === "clashes" && (
+                            <span className="badge badge-crimson rel-status-tag">CLASH</span>
+                          )}
+                          <span className={`tier-dot tier-dot-${typo.tier}`} />
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+
+            {/* 4. Animation Stack Selector (Multi-Select, max 6) */}
             <div className="lab-rail-section">
               <div className="lab-rail-section-head">
                 <span className="fui-mono-label" style={{ color: "var(--fui-ink)" }}>
-                  2. Animation Stack
+                  4. Animation Stack
                 </span>
                 <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                   <button
@@ -593,7 +823,7 @@ export function MixLabsStudio({
                 className="pill-btn rel-mini-pill"
                 data-active={inspectSlots}
                 onClick={() => setInspectSlots((v) => !v)}
-                title="Highlight active animation slots on the dummy website"
+                title="Highlight active animation, texture, and typography slots on the dummy website"
               >
                 <Eye size={11} style={{ marginRight: 4, verticalAlign: "-1px" }} />
                 Inspect Slots
@@ -626,12 +856,46 @@ export function MixLabsStudio({
             </div>
           </div>
 
-          {/* Active Slot Chips + Hero BG Opacity Sub-Bar */}
+          {/* Active Slot Chips + Texture/Type Pills + Hero BG Opacity Sub-Bar */}
           <div className="lab-toolbar" style={{ padding: "5px 10px" }}>
             <div className="lab-active-chips">
-              {labState.animationIds.length === 0 ? (
+              {labState.textureId && (
+                <div className="lab-active-chip" data-backdrop="true">
+                  <span className="lab-chip-slot-pill">TEX</span>
+                  <span className="lab-active-chip-name">
+                    {labState.textureId} ({Math.round(labState.textureOpacity * 100)}%)
+                  </span>
+                  <button
+                    type="button"
+                    className="lab-chip-remove"
+                    onClick={() => handleSelectTexture(null)}
+                    aria-label={`Remove texture ${labState.textureId}`}
+                  >
+                    <X size={11} />
+                  </button>
+                </div>
+              )}
+
+              {labState.typographyId && (
+                <div className="lab-active-chip" data-backdrop="true">
+                  <span className="lab-chip-slot-pill">TYPE</span>
+                  <span className="lab-active-chip-name">{labState.typographyId}</span>
+                  <button
+                    type="button"
+                    className="lab-chip-remove"
+                    onClick={() => handleSelectTypography(null)}
+                    aria-label={`Remove typography ${labState.typographyId}`}
+                  >
+                    <X size={11} />
+                  </button>
+                </div>
+              )}
+
+              {labState.animationIds.length === 0 &&
+              !labState.textureId &&
+              !labState.typographyId ? (
                 <span className="fui-mono-label">
-                  Style-only preview — pick up to {MAX_LAB_ANIMATIONS} animations from the rail to animate page slots
+                  Style-only preview — layer a texture, typography override, or up to {MAX_LAB_ANIMATIONS} animations from the rail
                 </span>
               ) : (
                 labState.animationIds.map((animId) => (
@@ -686,6 +950,9 @@ export function MixLabsStudio({
             >
               <DummySitePreview
                 theme={theme}
+                textureId={labState.textureId}
+                textureOpacity={labState.textureOpacity}
+                typographyId={labState.typographyId}
                 template={labState.template}
                 viewport={labState.viewport}
                 slots={slots}
@@ -736,7 +1003,9 @@ export function MixLabsStudio({
               </span>
             ) : (
               <span>
-                {labState.animationIds.length === 0
+                {labState.animationIds.length === 0 &&
+                !labState.textureId &&
+                !labState.typographyId
                   ? `Base style: ${labState.styleId} (${theme.profile})`
                   : `${evaluation.pairs.length} paired · ${evaluation.untested.length} untested (preview unlocked)`}
               </span>
@@ -750,8 +1019,13 @@ export function MixLabsStudio({
             className="btn-fui btn-fui-primary"
             onClick={() =>
               onCopy(
-                buildLabShadcnCommand(labState.styleId, labState.animationIds),
-                `Copied shadcn add (${1 + labState.animationIds.length} items)`
+                buildLabShadcnCommand(
+                  labState.styleId,
+                  labState.animationIds,
+                  labState.textureId,
+                  labState.typographyId
+                ),
+                `Copied shadcn add (${totalShadcnItems} items)`
               )
             }
           >
@@ -768,7 +1042,10 @@ export function MixLabsStudio({
                   labState.styleId,
                   labState.animationIds,
                   evaluation,
-                  labState.template
+                  labState.template,
+                  labState.textureId,
+                  labState.textureOpacity,
+                  labState.typographyId
                 ),
                 `Copied Agent Prompt for ${labState.styleId}`
               )

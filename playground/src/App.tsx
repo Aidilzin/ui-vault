@@ -3,6 +3,10 @@ import { CheckCircle2 } from "lucide-react";
 import { TopCommandBar, type ActiveTab } from "./components/TopCommandBar";
 import { AnimationsLab } from "./components/AnimationsLab";
 import { StylesGallery } from "./components/StylesGallery";
+import {
+  FoundationsView,
+  type FoundationsSubView,
+} from "./components/FoundationsView";
 import { RelationsExplorer } from "./components/RelationsExplorer";
 import { MixLabsStudio } from "./components/MixLabsStudio";
 import { ReferencesView } from "./components/ReferencesView";
@@ -38,6 +42,8 @@ export function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>(
     () => initialUrl.current.tab ?? "animations"
   );
+  const [foundationsSubView, setFoundationsSubView] =
+    useState<FoundationsSubView>("textures");
   const [labState, setLabState] = useState<LabState>(
     () => initialUrl.current.lab
   );
@@ -91,10 +97,18 @@ export function App() {
     if (node.kind === "style") {
       setActiveTab("styles");
       setActiveStyleId(node.id);
-    } else {
+    } else if (node.kind === "animation") {
       setActiveStyleId(null);
       setActiveTab("animations");
       setFocusedAnimationId(node.id);
+    } else if (node.kind === "texture") {
+      setActiveStyleId(null);
+      setFoundationsSubView("textures");
+      setActiveTab("foundations");
+    } else if (node.kind === "typography") {
+      setActiveStyleId(null);
+      setFoundationsSubView("typography");
+      setActiveTab("foundations");
     }
   }, []);
 
@@ -115,7 +129,7 @@ export function App() {
         template:
           node.cluster === "06-editorial-warm" ? "editorial" : prev.template,
       }));
-    } else {
+    } else if (node.kind === "animation") {
       const pairedStyle = styleNodes.find(
         (s) => getRelationStatus(node.id, s.id) === "pairs"
       );
@@ -125,6 +139,41 @@ export function App() {
         animationIds: [node.id],
         template:
           node.mechanic === "ai-agentic" ? "workbench" : prev.template,
+      }));
+    } else if (node.kind === "texture") {
+      const firstPairedStyle = node.pairsWith.find(
+        (id) => nodeById.get(id)?.kind === "style"
+      );
+      const pairedStyleNode = firstPairedStyle
+        ? styleNodes.find((s) => s.id === firstPairedStyle)
+        : styleNodes.find((s) => getRelationStatus(node.id, s.id) === "pairs");
+
+      setLabState((prev) => ({
+        ...prev,
+        styleId: pairedStyleNode ? pairedStyleNode.id : prev.styleId,
+        textureId: node.id,
+        textureOpacity: node.defaultOpacity,
+        template:
+          pairedStyleNode?.cluster === "06-editorial-warm"
+            ? "editorial"
+            : prev.template,
+      }));
+    } else if (node.kind === "typography") {
+      const firstPairedStyle = node.pairsWith.find(
+        (id) => nodeById.get(id)?.kind === "style"
+      );
+      const pairedStyleNode = firstPairedStyle
+        ? styleNodes.find((s) => s.id === firstPairedStyle)
+        : styleNodes.find((s) => getRelationStatus(node.id, s.id) === "pairs");
+
+      setLabState((prev) => ({
+        ...prev,
+        styleId: pairedStyleNode ? pairedStyleNode.id : prev.styleId,
+        typographyId: node.id,
+        template:
+          pairedStyleNode?.cluster === "06-editorial-warm"
+            ? "editorial"
+            : prev.template,
       }));
     }
 
@@ -137,6 +186,9 @@ export function App() {
       ...prev,
       styleId: mix.styleId,
       animationIds: mix.animationIds,
+      textureId: mix.textureId,
+      textureOpacity: mix.textureOpacity ?? prev.textureOpacity,
+      typographyId: mix.typographyId,
       template: mix.suggestedTemplate ?? prev.template,
     }));
     setActiveTab("labs");
@@ -180,6 +232,18 @@ export function App() {
             onSelectStyle={setActiveStyleId}
             onCopy={handleCopy}
             onJumpToNode={handleJumpToNode}
+          />
+        )}
+
+        {activeTab === "foundations" && (
+          <FoundationsView
+            subView={foundationsSubView}
+            onSubViewChange={setFoundationsSubView}
+            searchQuery={searchQuery}
+            reducedMotion={reducedMotion}
+            onCopy={handleCopy}
+            onJumpToNode={handleJumpToNode}
+            onOpenNodeInLab={handleOpenNodeInLab}
           />
         )}
 

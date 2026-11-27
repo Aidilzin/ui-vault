@@ -1,6 +1,10 @@
 import relationsJson from "@vault/relations.json";
 import bookmarksRaw from "@vault/references/bookmarks.md?raw";
 
+// Bundle all scoped texture (.tx-*) and typography (.type-*) stylesheets natively
+import.meta.glob("@vault/textures/*.css", { eager: true });
+import.meta.glob("@vault/typography/*/typography.css", { eager: true });
+
 const styleMdGlobs = import.meta.glob("@vault/styles/*/*/STYLE.md", {
   query: "?raw",
   import: "default",
@@ -14,6 +18,24 @@ const styleTokensGlobs = import.meta.glob("@vault/styles/*/*/tokens.css", {
 }) as Record<string, string>;
 
 const animationRawGlobs = import.meta.glob("@vault/animations/*/*.{tsx,css}", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+const textureRawGlobs = import.meta.glob("@vault/textures/*.css", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+const typographyMdGlobs = import.meta.glob("@vault/typography/*/TYPOGRAPHY.md", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+const typographyCssGlobs = import.meta.glob("@vault/typography/*/typography.css", {
   query: "?raw",
   import: "default",
   eager: true,
@@ -73,12 +95,43 @@ export interface AnimationNode {
   clashesWith: string[];
 }
 
-export type VaultNode = StyleNode | AnimationNode;
+export interface TextureNode {
+  id: string;
+  name: string;
+  kind: "texture";
+  tier: TierId;
+  layer: "ground" | "overlay";
+  mechanism: "css-gradient" | "svg-mask" | "svg-turbulence";
+  defaultOpacity: number;
+  defaultSize: string;
+  path: string;
+  registryItem: string;
+  pairsWith: string[];
+  clashesWith: string[];
+}
+
+export interface TypographyNode {
+  id: string;
+  name: string;
+  kind: "typography";
+  tier: TierId;
+  voice: string;
+  fonts: string[];
+  googleFontsUrl: string;
+  path: string;
+  registryItem: string;
+  pairsWith: string[];
+  clashesWith: string[];
+}
+
+export type VaultNode = StyleNode | AnimationNode | TextureNode | TypographyNode;
 
 export interface HybridRecipe {
   id: string;
   name: string;
   baseStyle: string;
+  texture?: string;
+  typography?: string;
   accents: string[];
   bestFor: string;
 }
@@ -87,6 +140,8 @@ export interface VaultRelations {
   version: string;
   clusters: Record<ClusterId, Omit<ClusterMeta, "id">>;
   mechanics: MechanicId[];
+  textures: string[];
+  typography: string[];
   nodes: VaultNode[];
   hybrids: HybridRecipe[];
   externalRegistries: Record<string, string>;
@@ -107,6 +162,14 @@ export const styleNodes: StyleNode[] = vaultRelations.nodes.filter(
 
 export const animationNodes: AnimationNode[] = vaultRelations.nodes.filter(
   (n): n is AnimationNode => n.kind === "animation"
+);
+
+export const textureNodes: TextureNode[] = vaultRelations.nodes.filter(
+  (n): n is TextureNode => n.kind === "texture"
+);
+
+export const typographyNodes: TypographyNode[] = vaultRelations.nodes.filter(
+  (n): n is TypographyNode => n.kind === "typography"
 );
 
 export const nodeById = new Map<string, VaultNode>(
@@ -136,6 +199,9 @@ function buildMapByFileStem(globs: Record<string, string>): Record<string, strin
 export const styleRawById: Record<string, string> = buildMapByDirName(styleMdGlobs);
 export const styleTokensById: Record<string, string> = buildMapByDirName(styleTokensGlobs);
 export const animationRawById: Record<string, string> = buildMapByFileStem(animationRawGlobs);
+export const textureRawById: Record<string, string> = buildMapByFileStem(textureRawGlobs);
+export const typographyRawById: Record<string, string> = buildMapByDirName(typographyMdGlobs);
+export const typographyCssById: Record<string, string> = buildMapByDirName(typographyCssGlobs);
 export const bookmarksMarkdown = bookmarksRaw;
 
 export function getShadcnAddCommand(registryItems: string | string[]): string {
@@ -146,7 +212,12 @@ export function getShadcnAddCommand(registryItems: string | string[]): string {
 }
 
 export function getHybridBundleCommand(hybrid: HybridRecipe): string {
-  const ids = [hybrid.baseStyle, ...hybrid.accents];
+  const ids = [
+    hybrid.baseStyle,
+    ...(hybrid.texture ? [hybrid.texture] : []),
+    ...(hybrid.typography ? [hybrid.typography] : []),
+    ...hybrid.accents,
+  ];
   const registryItems = ids
     .map((id) => nodeById.get(id)?.registryItem)
     .filter((item): item is string => Boolean(item));
@@ -193,6 +264,7 @@ export function formatNodeLabel(id: string): string {
       if (part === "ascii") return "ASCII";
       if (part === "svg") return "SVG";
       if (part === "crt") return "CRT";
+      if (part === "saas") return "SaaS";
       return part.charAt(0).toUpperCase() + part.slice(1);
     })
     .join(" ");

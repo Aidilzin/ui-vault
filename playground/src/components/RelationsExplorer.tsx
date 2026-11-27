@@ -609,6 +609,28 @@ export function RelationsExplorer({
                         >
                           {hybrid.baseStyle}
                         </button>
+                        {hybrid.texture && (
+                          <button
+                            type="button"
+                            className="badge badge-cyan"
+                            style={{ cursor: "pointer" }}
+                            onClick={() => onJumpToNode(hybrid.texture!)}
+                            title={`Inspect texture: ${hybrid.texture}`}
+                          >
+                            tex: {hybrid.texture}
+                          </button>
+                        )}
+                        {hybrid.typography && (
+                          <button
+                            type="button"
+                            className="badge badge-amber"
+                            style={{ cursor: "pointer" }}
+                            onClick={() => onJumpToNode(hybrid.typography!)}
+                            title={`Inspect typography: ${hybrid.typography}`}
+                          >
+                            type: {hybrid.typography}
+                          </button>
+                        )}
                       </div>
 
                       <div style={{ display: "flex", alignItems: "center", gap: 5, flexWrap: "wrap" }}>
