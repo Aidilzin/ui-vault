@@ -609,6 +609,17 @@ export function RelationsExplorer({
                         >
                           {hybrid.baseStyle}
                         </button>
+                        {hybrid.layout && (
+                          <button
+                            type="button"
+                            className="badge badge-emerald"
+                            style={{ cursor: "pointer" }}
+                            onClick={() => onJumpToNode(hybrid.layout!)}
+                            title={`Inspect layout: ${hybrid.layout}`}
+                          >
+                            lay: {hybrid.layout}
+                          </button>
+                        )}
                         {hybrid.texture && (
                           <button
                             type="button"
@@ -631,6 +642,18 @@ export function RelationsExplorer({
                             type: {hybrid.typography}
                           </button>
                         )}
+                        {(hybrid.telemetry ?? []).map((telId) => (
+                          <button
+                            key={telId}
+                            type="button"
+                            className="badge"
+                            style={{ cursor: "pointer" }}
+                            onClick={() => onJumpToNode(telId)}
+                            title={`Inspect telemetry: ${telId}`}
+                          >
+                            tel: {telId}
+                          </button>
+                        ))}
                       </div>
 
                       <div style={{ display: "flex", alignItems: "center", gap: 5, flexWrap: "wrap" }}>

@@ -1,9 +1,10 @@
 import relationsJson from "@vault/relations.json";
 import bookmarksRaw from "@vault/references/bookmarks.md?raw";
 
-// Bundle all scoped texture (.tx-*) and typography (.type-*) stylesheets natively
+// Bundle all scoped texture (.tx-*), typography (.type-*), and layout (.lay-*) stylesheets natively
 import.meta.glob("@vault/textures/*.css", { eager: true });
 import.meta.glob("@vault/typography/*/typography.css", { eager: true });
+import.meta.glob("@vault/layouts/*/*.css", { eager: true });
 
 const styleMdGlobs = import.meta.glob("@vault/styles/*/*/STYLE.md", {
   query: "?raw",
@@ -36,6 +37,30 @@ const typographyMdGlobs = import.meta.glob("@vault/typography/*/TYPOGRAPHY.md", 
 }) as Record<string, string>;
 
 const typographyCssGlobs = import.meta.glob("@vault/typography/*/typography.css", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+const layoutMdGlobs = import.meta.glob("@vault/layouts/*/LAYOUT.md", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+const layoutTsxGlobs = import.meta.glob("@vault/layouts/*/*.tsx", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+const layoutCssGlobs = import.meta.glob("@vault/layouts/*/*.css", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+const telemetryRawGlobs = import.meta.glob("@vault/telemetry/*.tsx", {
   query: "?raw",
   import: "default",
   eager: true,
@@ -124,14 +149,49 @@ export interface TypographyNode {
   clashesWith: string[];
 }
 
-export type VaultNode = StyleNode | AnimationNode | TextureNode | TypographyNode;
+export interface LayoutNode {
+  id: string;
+  name: string;
+  kind: "layout";
+  tier: TierId;
+  pattern: string;
+  slots: string[];
+  path: string;
+  registryItem: string;
+  pairsWith: string[];
+  clashesWith: string[];
+}
+
+export interface TelemetryNode {
+  id: string;
+  name: string;
+  kind: "telemetry";
+  tier: TierId;
+  engine: string[];
+  perfTier: "low" | "medium" | "high";
+  reducedMotion: string;
+  path: string;
+  registryItem: string;
+  pairsWith: string[];
+  clashesWith: string[];
+}
+
+export type VaultNode =
+  | StyleNode
+  | AnimationNode
+  | TextureNode
+  | TypographyNode
+  | LayoutNode
+  | TelemetryNode;
 
 export interface HybridRecipe {
   id: string;
   name: string;
   baseStyle: string;
+  layout?: string;
   texture?: string;
   typography?: string;
+  telemetry?: string[];
   accents: string[];
   bestFor: string;
 }
@@ -142,6 +202,8 @@ export interface VaultRelations {
   mechanics: MechanicId[];
   textures: string[];
   typography: string[];
+  layouts: string[];
+  telemetry: string[];
   nodes: VaultNode[];
   hybrids: HybridRecipe[];
   externalRegistries: Record<string, string>;
@@ -170,6 +232,14 @@ export const textureNodes: TextureNode[] = vaultRelations.nodes.filter(
 
 export const typographyNodes: TypographyNode[] = vaultRelations.nodes.filter(
   (n): n is TypographyNode => n.kind === "typography"
+);
+
+export const layoutNodes: LayoutNode[] = vaultRelations.nodes.filter(
+  (n): n is LayoutNode => n.kind === "layout"
+);
+
+export const telemetryNodes: TelemetryNode[] = vaultRelations.nodes.filter(
+  (n): n is TelemetryNode => n.kind === "telemetry"
 );
 
 export const nodeById = new Map<string, VaultNode>(
@@ -202,6 +272,10 @@ export const animationRawById: Record<string, string> = buildMapByFileStem(anima
 export const textureRawById: Record<string, string> = buildMapByFileStem(textureRawGlobs);
 export const typographyRawById: Record<string, string> = buildMapByDirName(typographyMdGlobs);
 export const typographyCssById: Record<string, string> = buildMapByDirName(typographyCssGlobs);
+export const layoutMdById: Record<string, string> = buildMapByDirName(layoutMdGlobs);
+export const layoutTsxById: Record<string, string> = buildMapByDirName(layoutTsxGlobs);
+export const layoutCssById: Record<string, string> = buildMapByDirName(layoutCssGlobs);
+export const telemetryRawById: Record<string, string> = buildMapByFileStem(telemetryRawGlobs);
 export const bookmarksMarkdown = bookmarksRaw;
 
 export function getShadcnAddCommand(registryItems: string | string[]): string {
@@ -214,8 +288,10 @@ export function getShadcnAddCommand(registryItems: string | string[]): string {
 export function getHybridBundleCommand(hybrid: HybridRecipe): string {
   const ids = [
     hybrid.baseStyle,
+    ...(hybrid.layout ? [hybrid.layout] : []),
     ...(hybrid.texture ? [hybrid.texture] : []),
     ...(hybrid.typography ? [hybrid.typography] : []),
+    ...(hybrid.telemetry ?? []),
     ...hybrid.accents,
   ];
   const registryItems = ids
@@ -265,6 +341,10 @@ export function formatNodeLabel(id: string): string {
       if (part === "svg") return "SVG";
       if (part === "crt") return "CRT";
       if (part === "saas") return "SaaS";
+      if (part === "ai") return "AI";
+      if (part === "ide") return "IDE";
+      if (part === "hud") return "HUD";
+      if (part === "led") return "LED";
       return part.charAt(0).toUpperCase() + part.slice(1);
     })
     .join(" ");

@@ -1,5 +1,13 @@
 import { useMemo, useRef, useState, type CSSProperties } from "react";
-import { Activity, BookOpen, Cpu, Terminal } from "lucide-react";
+import { Activity, BookOpen, Cpu, RefreshCw, Terminal } from "lucide-react";
+import { BentoShowcase } from "@vault/layouts/bento-showcase/bento-showcase";
+import { TriageWorkbench } from "@vault/layouts/triage-workbench/triage-workbench";
+import { SwissEditorialGrid } from "@vault/layouts/swiss-editorial-grid/swiss-editorial-grid";
+import { SplitAiIde } from "@vault/layouts/split-ai-ide/split-ai-ide";
+import { StickyScrollytelling } from "@vault/layouts/sticky-scrollytelling/sticky-scrollytelling";
+import { FloatingOsDesktop } from "@vault/layouts/floating-os-desktop/floating-os-desktop";
+import { CommandHudDashboard } from "@vault/layouts/command-hud-dashboard/command-hud-dashboard";
+import { MasonryArchive } from "@vault/layouts/masonry-archive/masonry-archive";
 import {
   applyTypographyOverride,
   getScopedStageStyle,
@@ -8,6 +16,7 @@ import {
 import type { LabTemplateId, LabViewportMode } from "../lib/lab-helpers";
 import type { ResolvedLabSlots } from "../lib/lab-slots";
 import { formatNodeLabel, nodeById, type TextureNode } from "../lib/vault-data";
+import { renderTelemetryWidget } from "../lib/foundations-registry";
 import { LabBackdropLayer } from "./LabBackdropLayer";
 import {
   DummyFeatureGrid,
@@ -29,9 +38,13 @@ import {
 
 interface DummySitePreviewProps {
   theme: ResolvedStyleTheme;
+  layoutId: string | null;
   textureId: string | null;
   textureOpacity: number;
   typographyId: string | null;
+  telemetryIds: string[];
+  telemetrySeed: number;
+  onSimulateTelemetry: () => void;
   template: LabTemplateId;
   viewport: LabViewportMode;
   slots: ResolvedLabSlots;
@@ -182,9 +195,13 @@ const MARQUEE_ITEMS_BY_TEMPLATE: Record<LabTemplateId, string[]> = {
 
 export function DummySitePreview({
   theme: baseTheme,
+  layoutId,
   textureId,
   textureOpacity,
   typographyId,
+  telemetryIds,
+  telemetrySeed,
+  onSimulateTelemetry,
   template,
   viewport,
   slots,
@@ -218,6 +235,82 @@ export function DummySitePreview({
     if (hasElasticCols) ids.push("elastic-column-scroll");
     return ids;
   }, [slots.interactiveStage, hasElasticCols]);
+
+  const renderTelemetryBand = () => {
+    if (telemetryIds.length === 0) return null;
+    return (
+      <section
+        className="dummy-telemetry-band"
+        data-testid="dummy-telemetry-band"
+        style={{
+          background: theme.surface,
+          border: `${theme.borderWidth} solid ${theme.border}`,
+          borderRadius: theme.radius,
+          boxShadow: theme.profile === "swiss" ? "none" : theme.shadow,
+        }}
+      >
+        <div
+          className="dummy-telemetry-band-head"
+          style={{ borderBottom: `1px solid ${theme.border}` }}
+        >
+          <span
+            style={{
+              fontFamily: theme.fontMono,
+              fontSize: 10,
+              fontWeight: 600,
+              letterSpacing: "0.08em",
+              color: theme.accent,
+            }}
+          >
+            LIVE TELEMETRY ({telemetryIds.length})
+          </span>
+          <button
+            type="button"
+            onClick={onSimulateTelemetry}
+            style={{
+              appearance: "none",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 4,
+              padding: "2px 7px",
+              borderRadius: theme.radius,
+              border: `1px solid ${theme.borderStrong}`,
+              background: "transparent",
+              color: theme.surfaceInk,
+              fontFamily: theme.fontMono,
+              fontSize: 9.5,
+              cursor: "pointer",
+            }}
+          >
+            <RefreshCw size={10} />
+            <span>Simulate</span>
+          </button>
+        </div>
+
+        <div
+          className="dummy-telemetry-band-grid"
+          data-count={telemetryIds.length}
+        >
+          {telemetryIds.map((telId) => (
+            <div
+              key={telId}
+              className="dummy-telemetry-cell"
+              style={{
+                border: `1px solid ${theme.border}`,
+                borderRadius: theme.radius,
+                background: theme.elevated,
+              }}
+            >
+              {renderTelemetryWidget(telId, {
+                seed: telemetrySeed,
+                reducedMotion,
+              })}
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  };
 
   // Classic OS window titlebar for `retro-os` styles (`os-core`, `retro-web-96`)
   const renderOsTitlebar = () => {
@@ -534,6 +627,8 @@ export function DummySitePreview({
                 epoch={epoch}
                 inspectSlots={inspectSlots}
               />
+
+              {renderTelemetryBand()}
 
               {/* 3-Column Feature Grid */}
               <section className="dummy-section">
@@ -874,6 +969,7 @@ export function DummySitePreview({
               inspectSlots={inspectSlots}
             >
               <div className="dummy-workbench-thread">
+                {renderTelemetryBand()}
                 <SlotInspectorWrap
                   slot="interactive-stage"
                   activeIds={workspaceIds}
@@ -1176,6 +1272,8 @@ export function DummySitePreview({
                 epoch={epoch}
                 inspectSlots={inspectSlots}
               />
+
+              {renderTelemetryBand()}
             </div>
           </DummyScrollFxSection>
         </div>
@@ -1195,6 +1293,428 @@ export function DummySitePreview({
     );
   };
 
+  /* ==========================================================================
+     LAYOUT SHELL OVERRIDE (8 real @vault/layouts/* shells)
+     ========================================================================== */
+  const renderLayoutShellOverride = () => {
+    const contentTitle =
+      template === "workbench"
+        ? "Autonomous Patch Pipeline"
+        : template === "editorial"
+          ? "Typography, Friction & Honest Surfaces"
+          : "Spatial infrastructure for high-craft teams.";
+    const contentSub =
+      template === "workbench"
+        ? "Orchestrate reasoning traces, sandboxed tool calls, and inline code diffs in one deterministic agent shell."
+        : template === "editorial"
+          ? "An inquiry into how structural hairlines, tactile elevation, and restrained kinetic choreography shape reading calm."
+          : "Ship deterministic edge runtimes, contrast-verified design systems, and zero-dependency motion primitives.";
+    const features =
+      template === "workbench"
+        ? WORKBENCH_CARDS
+        : template === "editorial"
+          ? EDITORIAL_ARTICLES
+          : LANDING_FEATURES;
+    const metrics =
+      template === "workbench"
+        ? WORKBENCH_METRICS
+        : template === "editorial"
+          ? EDITORIAL_METRICS
+          : LANDING_METRICS;
+    const navLinks =
+      template === "workbench"
+        ? WORKBENCH_NAV
+        : template === "editorial"
+          ? EDITORIAL_NAV
+          : LANDING_NAV;
+
+    const compactNavbar = (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: 10,
+          flexWrap: "wrap",
+        }}
+      >
+        <div className="dummy-brand">
+          <span
+            className="dummy-brand-dot"
+            style={{
+              background: theme.accent,
+              color: theme.accentInk,
+              borderRadius: theme.radius,
+            }}
+          >
+            A
+          </span>
+          <span style={{ fontFamily: theme.fontHeading, fontWeight: 700, fontSize: 13 }}>
+            {template === "editorial" ? "FORMA" : "Aether Engine"}
+          </span>
+        </div>
+        <DummyNavSlot
+          navIds={slots.nav}
+          links={navLinks}
+          theme={theme}
+          inspectSlots={inspectSlots}
+        />
+      </div>
+    );
+
+    const heroBlock = (
+      <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: 10 }}>
+        {renderHeroEyebrow(`${formatNodeLabel(theme.styleId)} // ${layoutId}`)}
+        <SlotInspectorWrap
+          slot="hero-title"
+          activeIds={slots.heroTitlePrimary ? [slots.heroTitlePrimary] : []}
+          inspectSlots={inspectSlots}
+        >
+          <h1
+            className="dummy-hero-h1"
+            data-profile={theme.profile}
+            style={{ fontFamily: theme.fontHeading, color: theme.ink }}
+          >
+            {renderKineticText(slots.heroTitlePrimary, contentTitle, theme, epoch)}
+          </h1>
+        </SlotInspectorWrap>
+        <p className="dummy-hero-sub" style={{ color: theme.inkMuted }}>
+          {contentSub}
+        </p>
+        <DummyHeroCta
+          ctaIds={slots.heroCta}
+          primaryLabel="Start Building"
+          secondaryLabel="Inspect Spec"
+          theme={theme}
+          inspectSlots={inspectSlots}
+          onAction={onReplay}
+        />
+      </div>
+    );
+
+    const primaryTelemetry =
+      telemetryIds.length > 0
+        ? renderTelemetryBand()
+        : (
+          <DummyMetricsBar
+            metricIds={slots.metrics}
+            items={metrics}
+            theme={theme}
+            epoch={epoch}
+            inspectSlots={inspectSlots}
+          />
+        );
+
+    const footerBar = (
+      <div style={{ display: "flex", justifyContent: "space-between", fontFamily: theme.fontMono, fontSize: 10 }}>
+        <span>STYLE: {theme.styleId.toUpperCase()}</span>
+        <span>LAYOUT: {layoutId?.toUpperCase()}</span>
+      </div>
+    );
+
+    switch (layoutId) {
+      case "bento-showcase":
+        return (
+          <BentoShowcase
+            header={compactNavbar}
+            hero={heroBlock}
+            metricColumn={primaryTelemetry}
+            tiles={features.map((f) => (
+              <div key={f.id}>
+                <div style={{ fontFamily: theme.fontMono, fontSize: 10, color: theme.accent }}>
+                  {f.tag}
+                </div>
+                <h2 style={{ margin: "4px 0", fontFamily: theme.fontHeading, fontSize: 15 }}>
+                  {f.title}
+                </h2>
+                <p style={{ margin: 0, fontSize: 12, color: theme.surfaceMuted }}>{f.desc}</p>
+              </div>
+            ))}
+            footer={footerBar}
+          />
+        );
+
+      case "triage-workbench":
+        return (
+          <TriageWorkbench
+            header={compactNavbar}
+            navRail={navLinks.map((n, idx) => (
+              <div
+                key={n.id}
+                style={{
+                  fontFamily: theme.fontMono,
+                  fontSize: 11,
+                  padding: "4px 8px",
+                  borderRadius: theme.radius,
+                  background: idx === 0 ? theme.elevated : "transparent",
+                  color: idx === 0 ? theme.accent : theme.surfaceMuted,
+                }}
+              >
+                {n.label}
+              </div>
+            ))}
+            queuePane={features.map((f) => (
+              <div
+                key={f.id}
+                style={{
+                  padding: "10px 12px",
+                  border: `1px solid ${theme.border}`,
+                  borderRadius: theme.radius,
+                  background: theme.surface,
+                }}
+              >
+                <div style={{ fontFamily: theme.fontMono, fontSize: 9.5, color: theme.accent }}>
+                  {f.tag} · {f.metric}
+                </div>
+                <div style={{ fontWeight: 600, fontSize: 13, marginTop: 3 }}>{f.title}</div>
+              </div>
+            ))}
+            inspectorPane={
+              <>
+                {heroBlock}
+                {primaryTelemetry}
+              </>
+            }
+            footer={footerBar}
+          />
+        );
+
+      case "swiss-editorial-grid":
+        return (
+          <SwissEditorialGrid
+            masthead={compactNavbar}
+            indexRail={
+              <>
+                <div style={{ fontFamily: theme.fontMono, fontSize: 10, color: theme.accent }}>
+                  INDEX // 01–03
+                </div>
+                {features.map((f, i) => (
+                  <div key={f.id} style={{ fontSize: 11.5, color: theme.inkMuted }}>
+                    0{i + 1}. {f.title}
+                  </div>
+                ))}
+              </>
+            }
+            hero={heroBlock}
+            body={
+              <>
+                {primaryTelemetry}
+                <DummyFeatureGrid
+                  cardIds={slots.featureCards}
+                  features={features}
+                  theme={theme}
+                  epoch={epoch}
+                  inspectSlots={inspectSlots}
+                />
+              </>
+            }
+            footer={footerBar}
+          />
+        );
+
+      case "split-ai-ide":
+        return (
+          <SplitAiIde
+            header={compactNavbar}
+            sessionRail={features.map((f, i) => (
+              <div
+                key={f.id}
+                style={{
+                  fontFamily: theme.fontMono,
+                  fontSize: 10.5,
+                  padding: "5px 8px",
+                  borderRadius: theme.radius,
+                  border: `1px solid ${i === 0 ? theme.accent : theme.border}`,
+                  color: i === 0 ? theme.accent : theme.surfaceMuted,
+                }}
+              >
+                RUN #{408 - i} · {f.id}
+              </div>
+            ))}
+            stream={
+              <>
+                {heroBlock}
+                {workspaceIds.length > 0 && (
+                  <div className="dummy-agent-stack">
+                    {workspaceIds.map((id) => (
+                      <div key={id}>{renderWorkspaceWidget(id, theme, epoch)}</div>
+                    ))}
+                  </div>
+                )}
+              </>
+            }
+            composer={
+              <div style={{ fontFamily: theme.fontMono, fontSize: 11, color: theme.surfaceMuted }}>
+                &gt; /plan verify 144 registry items --style={theme.styleId}
+              </div>
+            }
+            artifactPane={primaryTelemetry}
+          />
+        );
+
+      case "sticky-scrollytelling":
+        return (
+          <StickyScrollytelling
+            scrollContainerRef={browserScrollRef}
+            header={compactNavbar}
+            steps={features.map((f) => ({
+              id: f.id,
+              content: (
+                <div>
+                  <div style={{ fontFamily: theme.fontMono, fontSize: 10, color: theme.accent }}>
+                    {f.tag}
+                  </div>
+                  <h2 style={{ margin: "4px 0 6px", fontFamily: theme.fontHeading, fontSize: 16 }}>
+                    {f.title}
+                  </h2>
+                  <p style={{ margin: 0, fontSize: 12.5, color: theme.surfaceMuted }}>{f.desc}</p>
+                </div>
+              ),
+            }))}
+            renderStage={(idx) => (
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                <div style={{ fontFamily: theme.fontMono, fontSize: 10, color: theme.accent }}>
+                  ACTIVE CHAPTER 0{idx + 1} // {features[idx]?.title ?? "STAGE"}
+                </div>
+                {heroBlock}
+                {primaryTelemetry}
+              </div>
+            )}
+            footer={footerBar}
+          />
+        );
+
+      case "floating-os-desktop":
+        return (
+          <FloatingOsDesktop
+            menuBar={compactNavbar}
+            primaryTitle={`${template.toUpperCase()}.APP`}
+            primaryWindow={
+              <>
+                {heroBlock}
+                <DummyFeatureGrid
+                  cardIds={slots.featureCards}
+                  features={features}
+                  theme={theme}
+                  epoch={epoch}
+                  inspectSlots={inspectSlots}
+                />
+              </>
+            }
+            secondaryTitle="TELEMETRY.SYS"
+            secondaryWindow={primaryTelemetry}
+            dock={navLinks.map((n) => (
+              <span
+                key={n.id}
+                style={{
+                  fontFamily: theme.fontMono,
+                  fontSize: 10,
+                  padding: "3px 8px",
+                  border: `1px solid ${theme.border}`,
+                  borderRadius: theme.radius,
+                }}
+              >
+                {n.label}
+              </span>
+            ))}
+          />
+        );
+
+      case "command-hud-dashboard": {
+        const quadTel = telemetryIds.length > 0 ? telemetryIds : ["inline-sparkline", "uptime-strip"];
+        return (
+          <CommandHudDashboard
+            ticker={compactNavbar}
+            quadrants={[
+              { id: "hero", label: "COMMAND", content: heroBlock },
+              {
+                id: "tel-1",
+                label: quadTel[0].toUpperCase(),
+                content: renderTelemetryWidget(quadTel[0], {
+                  seed: telemetrySeed,
+                  reducedMotion,
+                }),
+              },
+              {
+                id: "tel-2",
+                label: (quadTel[1] ?? "latency-histogram").toUpperCase(),
+                content: renderTelemetryWidget(quadTel[1] ?? "latency-histogram", {
+                  seed: telemetrySeed,
+                  reducedMotion,
+                }),
+              },
+              {
+                id: "cap",
+                label: "SYSTEM MODULES",
+                content:
+                  quadTel[2] ? (
+                    renderTelemetryWidget(quadTel[2], {
+                      seed: telemetrySeed,
+                      reducedMotion,
+                    })
+                  ) : (
+                    <DummyMetricsBar
+                      metricIds={slots.metrics}
+                      items={metrics}
+                      theme={theme}
+                      epoch={epoch}
+                      inspectSlots={inspectSlots}
+                    />
+                  ),
+              },
+            ]}
+            eventRail={footerBar}
+          />
+        );
+      }
+
+      case "masonry-archive":
+        return (
+          <MasonryArchive
+            header={compactNavbar}
+            filterBar={
+              <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+                {navLinks.map((n, i) => (
+                  <span
+                    key={n.id}
+                    style={{
+                      fontFamily: theme.fontMono,
+                      fontSize: 10,
+                      padding: "2px 8px",
+                      borderRadius: theme.radius,
+                      border: `1px solid ${i === 0 ? theme.accent : theme.border}`,
+                      color: i === 0 ? theme.accent : theme.surfaceMuted,
+                    }}
+                  >
+                    {n.label}
+                  </span>
+                ))}
+              </div>
+            }
+            items={[
+              <div key="hero">{heroBlock}</div>,
+              ...features.map((f) => (
+                <div key={f.id}>
+                  <div style={{ fontFamily: theme.fontMono, fontSize: 10, color: theme.accent }}>
+                    {f.tag}
+                  </div>
+                  <h2 style={{ margin: "4px 0", fontFamily: theme.fontHeading, fontSize: 15 }}>
+                    {f.title}
+                  </h2>
+                  <p style={{ margin: 0, fontSize: 12, color: theme.surfaceMuted }}>{f.desc}</p>
+                </div>
+              )),
+            ]}
+            detailRail={primaryTelemetry}
+            footer={footerBar}
+          />
+        );
+
+      default:
+        return null;
+    }
+  };
+
   return (
     <div
       className="dummy-browser-shell"
@@ -1212,6 +1732,7 @@ export function DummySitePreview({
               : "dummy-site-root"
           }
           data-style-id={theme.styleId}
+          data-layout-id={layoutId ?? undefined}
           data-profile={theme.profile}
           data-template={template}
           data-viewport={viewport}
@@ -1239,8 +1760,13 @@ export function DummySitePreview({
             />
           )}
 
-          {inspectSlots && (activeTexture || typographyId) && (
+          {inspectSlots && (layoutId || activeTexture || typographyId || telemetryIds.length > 0) && (
             <div className="dummy-foundations-inspector" aria-hidden="true">
+              {layoutId && (
+                <span className="slot-inspector-tag" style={{ position: "static" }}>
+                  LAYOUT: {layoutId}
+                </span>
+              )}
               {activeTexture && (
                 <span className="slot-inspector-tag" style={{ position: "static" }}>
                   TEXTURE ({activeTexture.layer.toUpperCase()}): {activeTexture.id} ·{" "}
@@ -1252,13 +1778,24 @@ export function DummySitePreview({
                   TYPOGRAPHY: {typographyId}
                 </span>
               )}
+              {telemetryIds.length > 0 && (
+                <span className="slot-inspector-tag" style={{ position: "static" }}>
+                  TELEMETRY: {telemetryIds.join(" + ")}
+                </span>
+              )}
             </div>
           )}
 
-          {renderOsTitlebar()}
-          {template === "landing" && renderLandingTemplate()}
-          {template === "workbench" && renderWorkbenchTemplate()}
-          {template === "editorial" && renderEditorialTemplate()}
+          {layoutId ? (
+            renderLayoutShellOverride()
+          ) : (
+            <>
+              {renderOsTitlebar()}
+              {template === "landing" && renderLandingTemplate()}
+              {template === "workbench" && renderWorkbenchTemplate()}
+              {template === "editorial" && renderEditorialTemplate()}
+            </>
+          )}
         </div>
       </div>
 

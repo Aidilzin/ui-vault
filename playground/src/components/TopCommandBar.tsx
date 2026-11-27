@@ -14,7 +14,9 @@ import {
 } from "lucide-react";
 import {
   animationNodes,
+  layoutNodes,
   styleNodes,
+  telemetryNodes,
   textureNodes,
   typographyNodes,
   vaultRelations,
@@ -76,7 +78,11 @@ export function TopCommandBar({
   }, [searchQuery, onSearchChange]);
 
   const isLocalFilterTab = activeTab === "labs" || activeTab === "relations";
-  const foundationsCount = textureNodes.length + typographyNodes.length;
+  const foundationsCount =
+    textureNodes.length +
+    typographyNodes.length +
+    layoutNodes.length +
+    telemetryNodes.length;
 
   return (
     <header className="cmd-header">

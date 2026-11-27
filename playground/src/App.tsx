@@ -109,6 +109,14 @@ export function App() {
       setActiveStyleId(null);
       setFoundationsSubView("typography");
       setActiveTab("foundations");
+    } else if (node.kind === "layout") {
+      setActiveStyleId(null);
+      setFoundationsSubView("layouts");
+      setActiveTab("foundations");
+    } else if (node.kind === "telemetry") {
+      setActiveStyleId(null);
+      setFoundationsSubView("telemetry");
+      setActiveTab("foundations");
     }
   }, []);
 
@@ -175,6 +183,40 @@ export function App() {
             ? "editorial"
             : prev.template,
       }));
+    } else if (node.kind === "layout") {
+      const firstPairedStyle = node.pairsWith.find(
+        (id) => nodeById.get(id)?.kind === "style"
+      );
+      const pairedStyleNode = firstPairedStyle
+        ? styleNodes.find((s) => s.id === firstPairedStyle)
+        : styleNodes.find((s) => getRelationStatus(node.id, s.id) === "pairs");
+
+      setLabState((prev) => ({
+        ...prev,
+        styleId: pairedStyleNode ? pairedStyleNode.id : prev.styleId,
+        layoutId: node.id,
+        template:
+          node.id === "split-ai-ide"
+            ? "workbench"
+            : pairedStyleNode?.cluster === "06-editorial-warm"
+              ? "editorial"
+              : prev.template,
+      }));
+    } else if (node.kind === "telemetry") {
+      const firstPairedStyle = node.pairsWith.find(
+        (id) => nodeById.get(id)?.kind === "style"
+      );
+      const pairedStyleNode = firstPairedStyle
+        ? styleNodes.find((s) => s.id === firstPairedStyle)
+        : styleNodes.find((s) => getRelationStatus(node.id, s.id) === "pairs");
+
+      setLabState((prev) => ({
+        ...prev,
+        styleId: pairedStyleNode ? pairedStyleNode.id : prev.styleId,
+        telemetryIds: prev.telemetryIds.includes(node.id)
+          ? prev.telemetryIds
+          : [...prev.telemetryIds, node.id].slice(-3),
+      }));
     }
 
     setActiveTab("labs");
@@ -185,10 +227,12 @@ export function App() {
     setLabState((prev) => ({
       ...prev,
       styleId: mix.styleId,
+      layoutId: mix.layoutId,
       animationIds: mix.animationIds,
       textureId: mix.textureId,
       textureOpacity: mix.textureOpacity ?? prev.textureOpacity,
       typographyId: mix.typographyId,
+      telemetryIds: mix.telemetryIds,
       template: mix.suggestedTemplate ?? prev.template,
     }));
     setActiveTab("labs");

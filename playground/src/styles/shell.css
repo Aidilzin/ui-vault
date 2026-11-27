@@ -2690,3 +2690,76 @@ a {
   max-width: 100%;
   overflow-wrap: anywhere;
 }
+
+/* ==========================================================================
+   Foundations Layouts & Telemetry Stages + Labs Telemetry Band
+   ========================================================================== */
+.fnd-layouts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 560px) {
+  .fnd-layouts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fnd-layout-stage-wrap {
+  padding: 12px;
+  background: var(--fui-canvas);
+  border-bottom: 1px solid var(--fui-border);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.fnd-layout-stage-frame {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--fui-border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: max-width 180ms ease;
+}
+
+.fnd-layout-stage-frame[data-mode="compact"] {
+  max-width: 380px;
+}
+
+.fnd-telemetry-stage {
+  padding: 16px;
+  min-height: 132px;
+  border-bottom: 1px solid var(--fui-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.dummy-telemetry-band {
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.dummy-telemetry-band-head {
+  padding: 7px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.dummy-telemetry-band-grid {
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+}
+
+.dummy-telemetry-cell {
+  padding: 10px 12px;
+  min-width: 0;
+  overflow: hidden;
+}

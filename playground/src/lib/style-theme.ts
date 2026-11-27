@@ -484,6 +484,31 @@ export function getScopedStageStyle(theme: ResolvedStyleTheme): CSSProperties {
     "--fui-signal-active": theme.accent,
     "--fui-signal-ok": theme.pairInk,
     "--fui-signal-fault": theme.clashInk,
+    // Locally scope --lay-* layout shell tokens
+    "--lay-canvas": "transparent",
+    "--lay-surface": theme.surface,
+    "--lay-elevated": theme.elevated,
+    "--lay-border": theme.border,
+    "--lay-border-strong": theme.borderStrong,
+    "--lay-border-width": theme.borderWidth,
+    "--lay-radius": theme.radius,
+    "--lay-shadow": theme.profile === "swiss" ? "none" : theme.shadow,
+    "--lay-ink": theme.ink,
+    "--lay-muted": theme.inkMuted,
+    "--lay-gap": theme.profile === "swiss" ? "0px" : "12px",
+    // Locally scope WCAG-safe --tel-* telemetry chart tokens (darkened on light grounds)
+    "--tel-accent":
+      theme.isLight && (getRelativeLuminance(theme.accent) ?? 0) > 0.55
+        ? "#0369a1"
+        : theme.accent,
+    "--tel-accent-alt": theme.accentAlt,
+    "--tel-ink": theme.surfaceInk,
+    "--tel-muted": theme.surfaceMuted,
+    "--tel-border": theme.border,
+    "--tel-surface": theme.surface,
+    "--tel-ok": theme.isLight ? "#047857" : "#34d399",
+    "--tel-warn": theme.isLight ? "#b45309" : "#f59e0b",
+    "--tel-danger": theme.isLight ? "#be123c" : "#f43f5e",
   };
 
   return {

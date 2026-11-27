@@ -1,11 +1,18 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 
 interface LazyStageProps {
   children: ReactNode;
   minHeight?: number;
+  className?: string;
+  style?: CSSProperties;
 }
 
-export function LazyStage({ children, minHeight = 200 }: LazyStageProps) {
+export function LazyStage({
+  children,
+  minHeight = 200,
+  className = "anim-stage",
+  style,
+}: LazyStageProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(true);
 
@@ -25,7 +32,7 @@ export function LazyStage({ children, minHeight = 200 }: LazyStageProps) {
   }, []);
 
   return (
-    <div ref={containerRef} className="anim-stage" style={{ minHeight }}>
+    <div ref={containerRef} className={className} style={{ minHeight, ...style }}>
       {visible ? (
         children
       ) : (

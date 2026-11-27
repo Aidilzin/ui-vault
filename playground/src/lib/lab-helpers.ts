@@ -7,7 +7,9 @@ import {
   vaultRelations,
   type AnimationNode,
   type HybridRecipe,
+  type LayoutNode,
   type StyleNode,
+  type TelemetryNode,
   type TextureNode,
   type TypographyNode,
 } from "./vault-data";
@@ -15,6 +17,7 @@ import type { ActiveTab } from "../components/TopCommandBar";
 import { getSlotBadgeLabel } from "./lab-slots";
 
 export const MAX_LAB_ANIMATIONS = 6;
+export const MAX_LAB_TELEMETRY = 3;
 
 export type LabTemplateId = "landing" | "workbench" | "editorial";
 
@@ -22,10 +25,12 @@ export type LabViewportMode = "desktop" | "tablet" | "mobile";
 
 export interface LabState {
   styleId: string;
+  layoutId: string | null;
   animationIds: string[];
   textureId: string | null;
   textureOpacity: number;
   typographyId: string | null;
+  telemetryIds: string[];
   template: LabTemplateId;
   backdropOpacity: number;
   viewport: LabViewportMode;
@@ -33,10 +38,12 @@ export interface LabState {
 
 export const DEFAULT_LAB_STATE: LabState = {
   styleId: "fui-tactical",
+  layoutId: null,
   animationIds: ["orbital-canvas", "scramble-text", "border-spotlight", "count-up"],
   textureId: null,
   textureOpacity: 0.16,
   typographyId: null,
+  telemetryIds: [],
   template: "landing",
   backdropOpacity: 0.38,
   viewport: "desktop",
@@ -63,7 +70,9 @@ export function evaluateLabMix(
   styleId: string,
   animationIds: string[],
   textureId: string | null = null,
-  typographyId: string | null = null
+  typographyId: string | null = null,
+  layoutId: string | null = null,
+  telemetryIds: string[] = []
 ): LabMixEvaluation {
   const pairs: LabPairEdge[] = [];
   const clashes: LabPairEdge[] = [];
@@ -83,15 +92,19 @@ export function evaluateLabMix(
   for (const animId of animationIds) {
     checkEdge(styleId, animId, true);
   }
-
   for (let i = 0; i < animationIds.length; i++) {
     for (let j = i + 1; j < animationIds.length; j++) {
       checkEdge(animationIds[i], animationIds[j], false);
     }
   }
 
+  if (layoutId) {
+    checkEdge(styleId, layoutId, true);
+  }
+
   if (textureId) {
     checkEdge(styleId, textureId, true);
+    if (layoutId) checkEdge(layoutId, textureId, false);
     for (const animId of animationIds) {
       checkEdge(textureId, animId, false);
     }
@@ -99,17 +112,24 @@ export function evaluateLabMix(
 
   if (typographyId) {
     checkEdge(styleId, typographyId, true);
+    if (layoutId) checkEdge(layoutId, typographyId, false);
+    if (textureId) checkEdge(textureId, typographyId, false);
     for (const animId of animationIds) {
       checkEdge(typographyId, animId, false);
     }
   }
 
-  if (textureId && typographyId) {
-    checkEdge(textureId, typographyId, false);
+  for (const telId of telemetryIds) {
+    checkEdge(styleId, telId, true);
+    if (layoutId) checkEdge(layoutId, telId, false);
   }
 
   const hasExtras =
-    animationIds.length > 0 || Boolean(textureId) || Boolean(typographyId);
+    animationIds.length > 0 ||
+    Boolean(layoutId) ||
+    Boolean(textureId) ||
+    Boolean(typographyId) ||
+    telemetryIds.length > 0;
 
   let status: LabCompatibilityStatus = "EXPERIMENTAL MIX";
   if (clashes.length > 0) {
@@ -213,10 +233,12 @@ export function pickChaosMix(excludeStyleId?: string): {
 
 export function resolveHybridToLabMix(hybrid: HybridRecipe): {
   styleId: string;
+  layoutId: string | null;
   animationIds: string[];
   textureId: string | null;
   textureOpacity?: number;
   typographyId: string | null;
+  telemetryIds: string[];
   suggestedTemplate?: LabTemplateId;
 } {
   const styleExists = nodeById.get(hybrid.baseStyle)?.kind === "style";
@@ -224,6 +246,11 @@ export function resolveHybridToLabMix(hybrid: HybridRecipe): {
   const animationIds = hybrid.accents
     .filter((id) => nodeById.get(id)?.kind === "animation")
     .slice(0, MAX_LAB_ANIMATIONS);
+
+  const layNode = hybrid.layout
+    ? (nodeById.get(hybrid.layout) as LayoutNode | undefined)
+    : undefined;
+  const layoutId = layNode?.kind === "layout" ? layNode.id : null;
 
   const texNode = hybrid.texture
     ? (nodeById.get(hybrid.texture) as TextureNode | undefined)
@@ -236,6 +263,10 @@ export function resolveHybridToLabMix(hybrid: HybridRecipe): {
     : undefined;
   const typographyId = typoNode?.kind === "typography" ? typoNode.id : null;
 
+  const telemetryIds = (hybrid.telemetry ?? [])
+    .filter((id) => nodeById.get(id)?.kind === "telemetry")
+    .slice(0, MAX_LAB_TELEMETRY);
+
   const hasAgentic = animationIds.some(
     (id) => (nodeById.get(id) as AnimationNode | undefined)?.mechanic === "ai-agentic"
   );
@@ -246,18 +277,33 @@ export function resolveHybridToLabMix(hybrid: HybridRecipe): {
       ? "editorial"
       : undefined;
 
-  return { styleId, animationIds, textureId, textureOpacity, typographyId, suggestedTemplate };
+  return {
+    styleId,
+    layoutId,
+    animationIds,
+    textureId,
+    textureOpacity,
+    typographyId,
+    telemetryIds,
+    suggestedTemplate,
+  };
 }
 
 export function buildLabShadcnCommand(
   styleId: string,
   animationIds: string[],
   textureId: string | null = null,
-  typographyId: string | null = null
+  typographyId: string | null = null,
+  layoutId: string | null = null,
+  telemetryIds: string[] = []
 ): string {
   const items: string[] = [];
   const style = nodeById.get(styleId);
   if (style) items.push(style.registryItem);
+  if (layoutId) {
+    const lay = nodeById.get(layoutId);
+    if (lay) items.push(lay.registryItem);
+  }
   if (textureId) {
     const tex = nodeById.get(textureId);
     if (tex) items.push(tex.registryItem);
@@ -265,6 +311,10 @@ export function buildLabShadcnCommand(
   if (typographyId) {
     const typo = nodeById.get(typographyId);
     if (typo) items.push(typo.registryItem);
+  }
+  for (const id of telemetryIds) {
+    const tel = nodeById.get(id);
+    if (tel) items.push(tel.registryItem);
   }
   for (const id of animationIds) {
     const anim = nodeById.get(id);
@@ -280,21 +330,37 @@ export function buildLabAgentPrompt(
   template: LabTemplateId = "landing",
   textureId: string | null = null,
   textureOpacity = DEFAULT_LAB_STATE.textureOpacity,
-  typographyId: string | null = null
+  typographyId: string | null = null,
+  layoutId: string | null = null,
+  telemetryIds: string[] = []
 ): string {
   const style = nodeById.get(styleId) as StyleNode | undefined;
+  const layout = layoutId
+    ? (nodeById.get(layoutId) as LayoutNode | undefined)
+    : undefined;
   const texture = textureId
     ? (nodeById.get(textureId) as TextureNode | undefined)
     : undefined;
   const typography = typographyId
     ? (nodeById.get(typographyId) as TypographyNode | undefined)
     : undefined;
+  const telemetries = telemetryIds
+    .map((id) => nodeById.get(id))
+    .filter((n): n is TelemetryNode => Boolean(n && n.kind === "telemetry"));
   const clusterMeta = style ? vaultRelations.clusters[style.cluster] : null;
   const anims = animationIds
     .map((id) => nodeById.get(id))
     .filter((n): n is AnimationNode => Boolean(n && n.kind === "animation"));
 
-  const cmd = buildLabShadcnCommand(styleId, animationIds, textureId, typographyId);
+  const cmd = buildLabShadcnCommand(
+    styleId,
+    animationIds,
+    textureId,
+    typographyId,
+    layoutId,
+    telemetryIds
+  );
+
   const animLines =
     anims.length > 0
       ? anims
@@ -303,7 +369,7 @@ export function buildLabAgentPrompt(
               `- \`${a.id}\` [${getSlotBadgeLabel(a.id)}] (${a.mechanic}, ${a.path}, reducedMotion: ${a.reducedMotion})`
           )
           .join("\n")
-      : "- (No animations selected yet — style foundation only)";
+      : "- (No animations selected yet — foundation layers only)";
 
   const clashSection =
     evaluation.status === "CLASH DETECTED"
@@ -320,22 +386,27 @@ export function buildLabAgentPrompt(
         : "SaaS Developer Platform Landing Page";
 
   const lines: string[] = [
-    `Build a cohesive React + TypeScript ${templateLabel} using the UI Vault 4-layer stack below.`,
+    `Build a cohesive React + TypeScript ${templateLabel} using the UI Vault 6-layer stack below.`,
     ``,
     `1. Base Visual Style:`,
     `- Style ID: \`${styleId}\`${style ? ` (${style.cluster} · tier: ${style.tier})` : ""}`,
   ];
-  if (style) {
-    lines.push(`- Spec & Tokens: \`${style.path}\` and sibling \`tokens.css\``);
-  }
-  if (clusterMeta) {
-    lines.push(`- Cluster DNA: ${clusterMeta.dna}`);
+  if (style) lines.push(`- Spec & Tokens: \`${style.path}\` and sibling \`tokens.css\``);
+  if (clusterMeta) lines.push(`- Cluster DNA: ${clusterMeta.dna}`);
+
+  if (layout) {
+    lines.push(
+      ``,
+      `2. Layout Shell:`,
+      `- Layout ID: \`${layout.id}\` (${layout.pattern}, slots: ${layout.slots.join(", ")})`,
+      `- Spec & Files: \`${layout.path}\`, \`${layout.id}.tsx\`, and \`${layout.id}.css\``
+    );
   }
 
   if (typography) {
     lines.push(
       ``,
-      `2. Typography System Override:`,
+      `3. Typography System Override:`,
       `- Typography ID: \`${typography.id}\` (${typography.fonts.join(" + ")}, tier: ${typography.tier})`,
       `- Spec & Scoped CSS: \`${typography.path}\` and sibling \`typography.css\` (\`.type-${typography.id}\`)`,
       `- Google Fonts: ${typography.googleFontsUrl}`
@@ -345,15 +416,25 @@ export function buildLabAgentPrompt(
   if (texture) {
     lines.push(
       ``,
-      `3. Surface Texture Layer:`,
+      `4. Surface Texture Layer:`,
       `- Texture ID: \`${texture.id}\` (\`.tx-${texture.id}\`, layer: ${texture.layer}, opacity: ${textureOpacity.toFixed(2)})`,
       `- Stylesheet: \`${texture.path}\``
     );
   }
 
+  if (telemetries.length > 0) {
+    lines.push(
+      ``,
+      `5. Telemetry Micro-Charts (${telemetries.length}):`,
+      ...telemetries.map(
+        (t) => `- \`${t.id}\` (${t.engine.join("/")}, ${t.path}, reducedMotion: ${t.reducedMotion})`
+      )
+    );
+  }
+
   lines.push(
     ``,
-    `Animation Primitives & Page Slots (${anims.length}):`,
+    `6. Animation Primitives & Page Slots (${anims.length}):`,
     animLines
   );
 
@@ -367,10 +448,9 @@ export function buildLabAgentPrompt(
     `\`\`\``,
     ``,
     `Implementation Rules:`,
-    `1. Import and apply the style's CSS custom properties from \`tokens.css\` strictly as the visual foundation (surface hierarchy, border width/radius, contrast).`,
-    `2. Scope typography (\`.type-*\`) and surface textures (\`.tx-*\`) cleanly to the page root without mutating global \`:root\` or \`html/body\` defaults.`,
-    `3. Compose the selected zero-dependency animations directly onto the real semantic page elements indicated above without introducing extra runtime libraries.`,
-    `4. Honor \`prefers-reduced-motion: reduce\` across every animated surface.`
+    `1. Scope base style (\`tokens.css\`), layout tokens (\`--lay-*\`), telemetry tokens (\`--tel-*\`), typography (\`.type-*\`), and surface textures (\`.tx-*\`) cleanly without mutating global \`:root\` defaults.`,
+    `2. Compose the selected zero-dependency telemetry charts and animations directly into the layout slots.`,
+    `3. Honor \`prefers-reduced-motion: reduce\` across every animated and live-telemetry surface.`
   );
 
   return lines.join("\n");
@@ -405,6 +485,10 @@ export function readUrlState(): ParsedUrlState {
       ? rawStyle
       : DEFAULT_LAB_STATE.styleId;
 
+  const rawLay = params.get("lay");
+  const layoutId =
+    rawLay && nodeById.get(rawLay)?.kind === "layout" ? rawLay : null;
+
   const rawAnims = params.get("anims");
   let validAnims: string[];
   if (rawAnims !== null) {
@@ -419,6 +503,18 @@ export function readUrlState(): ParsedUrlState {
   } else {
     validAnims = DEFAULT_LAB_STATE.animationIds;
   }
+
+  const rawTel = params.get("tel");
+  const telemetryIds = rawTel
+    ? Array.from(
+        new Set(
+          rawTel
+            .split(",")
+            .map((s) => s.trim())
+            .filter((id) => nodeById.get(id)?.kind === "telemetry")
+        )
+      ).slice(0, MAX_LAB_TELEMETRY)
+    : [];
 
   const rawTex = params.get("tex");
   const validTexNode =
@@ -458,10 +554,12 @@ export function readUrlState(): ParsedUrlState {
     tab,
     lab: {
       styleId: validStyle,
+      layoutId,
       animationIds: validAnims,
       textureId,
       textureOpacity,
       typographyId,
+      telemetryIds,
       template,
       backdropOpacity: DEFAULT_LAB_STATE.backdropOpacity,
       viewport,
@@ -475,6 +573,7 @@ export function buildLabShareUrl(lab: LabState): string {
   url.search = "";
   url.searchParams.set("tab", "labs");
   url.searchParams.set("style", lab.styleId);
+  if (lab.layoutId) url.searchParams.set("lay", lab.layoutId);
   url.searchParams.set("anims", lab.animationIds.join(","));
   url.searchParams.set("tpl", lab.template);
   if (lab.textureId) {
@@ -483,6 +582,9 @@ export function buildLabShareUrl(lab: LabState): string {
   }
   if (lab.typographyId) {
     url.searchParams.set("type", lab.typographyId);
+  }
+  if (lab.telemetryIds.length > 0) {
+    url.searchParams.set("tel", lab.telemetryIds.join(","));
   }
   if (lab.viewport !== "desktop") {
     url.searchParams.set("vp", lab.viewport);
@@ -496,6 +598,8 @@ export function syncUrlState(tab: ActiveTab, lab: LabState): void {
   if (tab === "labs") {
     url.searchParams.set("tab", "labs");
     url.searchParams.set("style", lab.styleId);
+    if (lab.layoutId) url.searchParams.set("lay", lab.layoutId);
+    else url.searchParams.delete("lay");
     url.searchParams.set("anims", lab.animationIds.join(","));
     url.searchParams.set("tpl", lab.template);
     url.searchParams.delete("backdrop");
@@ -511,6 +615,11 @@ export function syncUrlState(tab: ActiveTab, lab: LabState): void {
     } else {
       url.searchParams.delete("type");
     }
+    if (lab.telemetryIds.length > 0) {
+      url.searchParams.set("tel", lab.telemetryIds.join(","));
+    } else {
+      url.searchParams.delete("tel");
+    }
     if (lab.viewport !== "desktop") {
       url.searchParams.set("vp", lab.viewport);
     } else {
@@ -518,6 +627,7 @@ export function syncUrlState(tab: ActiveTab, lab: LabState): void {
     }
   } else {
     url.searchParams.delete("style");
+    url.searchParams.delete("lay");
     url.searchParams.delete("anims");
     url.searchParams.delete("tpl");
     url.searchParams.delete("backdrop");
@@ -525,6 +635,7 @@ export function syncUrlState(tab: ActiveTab, lab: LabState): void {
     url.searchParams.delete("tex");
     url.searchParams.delete("texOp");
     url.searchParams.delete("type");
+    url.searchParams.delete("tel");
     if (tab === "animations") {
       url.searchParams.delete("tab");
     } else {
