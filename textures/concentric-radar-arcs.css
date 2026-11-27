@@ -1,0 +1,25 @@
+/* ui-vault // texture: concentric-radar-arcs (viral)
+ * Pure CSS repeating-radial-gradient concentric sonar/orbital distance rings.
+ * Params: --tx-color (default currentColor), --tx-opacity (default 0.14), --tx-size (default 44px)
+ */
+
+:where(.tx-concentric-radar-arcs) {
+  position: relative;
+  isolation: isolate;
+}
+
+.tx-concentric-radar-arcs::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--tx-opacity, 0.14);
+  background-image: repeating-radial-gradient(
+    circle at 50% 50%,
+    transparent 0,
+    transparent calc(var(--tx-size, 44px) - 1px),
+    var(--tx-color, currentColor) calc(var(--tx-size, 44px) - 1px),
+    var(--tx-color, currentColor) var(--tx-size, 44px)
+  );
+}

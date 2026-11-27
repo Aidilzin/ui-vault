@@ -1,0 +1,43 @@
+/* ui-vault // typography: cjk-bilingual-precision (production)
+ * Inter + Noto Sans JP + JetBrains Mono.
+ * Scoped strictly to .type-cjk-bilingual-precision.
+ */
+
+.type-cjk-bilingual-precision {
+  --type-display: "Inter", "Noto Sans JP", "Hiragino Sans", sans-serif;
+  --type-body: "Inter", "Noto Sans JP", "Hiragino Sans", sans-serif;
+  --type-mono: "JetBrains Mono", "Noto Sans JP", ui-monospace, monospace;
+
+  --text-hero: clamp(1.85rem, 1.25rem + 2.4vw, 3.05rem);
+  --text-h2: clamp(1.32rem, 1.08rem + 1vw, 1.85rem);
+  --text-h3: clamp(1.05rem, 0.98rem + 0.35vw, 1.24rem);
+  --text-body: clamp(0.9375rem, 0.9rem + 0.16vw, 1.02rem);
+  --text-label: 0.72rem;
+  --text-micro: 0.6875rem;
+
+  --tracking-display: 0em;
+  --tracking-label: 0.08em;
+  --leading-display: 1.34;
+  --leading-body: 1.78;
+  --display-weight: 700;
+  --display-transform: none;
+
+  font-family: var(--type-body);
+}
+
+.type-cjk-bilingual-precision :where(h1, h2, h3, .type-display) {
+  font-family: var(--type-display);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);
+  text-transform: var(--display-transform);
+  text-wrap: balance;
+}
+
+.type-cjk-bilingual-precision :where(code, pre, .type-mono, .type-micro) {
+  font-family: var(--type-mono);
+}
+
+.type-cjk-bilingual-precision :where(.type-tabular, td, th, time, output) {
+  font-variant-numeric: tabular-nums;
+}

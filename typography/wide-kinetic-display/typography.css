@@ -1,0 +1,43 @@
+/* ui-vault // typography: wide-kinetic-display (experimental)
+ * Clash Display + Satoshi (Fontshare).
+ * Scoped strictly to .type-wide-kinetic-display.
+ */
+
+.type-wide-kinetic-display {
+  --type-display: "Clash Display", "Inter", -apple-system, sans-serif;
+  --type-body: "Satoshi", "Inter", -apple-system, sans-serif;
+  --type-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --text-hero: clamp(2.1rem, 1.35rem + 3vw, 3.75rem);
+  --text-h2: clamp(1.45rem, 1.15rem + 1.25vw, 2.15rem);
+  --text-h3: clamp(1.1rem, 1rem + 0.45vw, 1.35rem);
+  --text-body: clamp(0.9375rem, 0.9rem + 0.16vw, 1.03rem);
+  --text-label: 0.72rem;
+  --text-micro: 0.6875rem;
+
+  --tracking-display: -0.025em;
+  --tracking-label: 0.09em;
+  --leading-display: 1.02;
+  --leading-body: 1.56;
+  --display-weight: 600;
+  --display-transform: none;
+
+  font-family: var(--type-body);
+}
+
+.type-wide-kinetic-display :where(h1, h2, h3, .type-display) {
+  font-family: var(--type-display);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);
+  text-transform: var(--display-transform);
+  text-wrap: balance;
+}
+
+.type-wide-kinetic-display :where(code, pre, .type-mono, .type-micro) {
+  font-family: var(--type-mono);
+}
+
+.type-wide-kinetic-display :where(.type-tabular, td, th, time, output) {
+  font-variant-numeric: tabular-nums;
+}

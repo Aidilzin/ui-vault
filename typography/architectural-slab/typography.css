@@ -1,0 +1,43 @@
+/* ui-vault // typography: architectural-slab (production)
+ * Zilla Slab + Inter + Space Mono.
+ * Scoped strictly to .type-architectural-slab.
+ */
+
+.type-architectural-slab {
+  --type-display: "Zilla Slab", Georgia, serif;
+  --type-body: "Inter", -apple-system, sans-serif;
+  --type-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --text-hero: clamp(2.05rem, 1.35rem + 2.8vw, 3.5rem);
+  --text-h2: clamp(1.4rem, 1.12rem + 1.15vw, 2.05rem);
+  --text-h3: clamp(1.1rem, 1rem + 0.4vw, 1.32rem);
+  --text-body: clamp(0.9375rem, 0.9rem + 0.16vw, 1.03rem);
+  --text-label: 0.72rem;
+  --text-micro: 0.6875rem;
+
+  --tracking-display: -0.015em;
+  --tracking-label: 0.09em;
+  --leading-display: 1.06;
+  --leading-body: 1.62;
+  --display-weight: 700;
+  --display-transform: none;
+
+  font-family: var(--type-body);
+}
+
+.type-architectural-slab :where(h1, h2, h3, .type-display) {
+  font-family: var(--type-display);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);
+  text-transform: var(--display-transform);
+  text-wrap: balance;
+}
+
+.type-architectural-slab :where(code, pre, .type-mono, .type-micro) {
+  font-family: var(--type-mono);
+}
+
+.type-architectural-slab :where(.type-tabular, td, th, time, output) {
+  font-variant-numeric: tabular-nums;
+}

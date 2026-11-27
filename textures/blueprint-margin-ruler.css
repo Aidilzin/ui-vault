@@ -1,0 +1,50 @@
+/* ui-vault // texture: blueprint-margin-ruler (production)
+ * Calibrated major/minor millimeter tick-mark ruler pinned along top and left margins.
+ * Params: --tx-color (default currentColor), --tx-opacity (default 0.28), --tx-size (default 12px)
+ */
+
+:where(.tx-blueprint-margin-ruler) {
+  position: relative;
+  isolation: isolate;
+}
+
+.tx-blueprint-margin-ruler::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--tx-opacity, 0.28);
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      var(--tx-color, currentColor) 0 1px,
+      transparent 1px var(--tx-size, 12px)
+    ),
+    repeating-linear-gradient(
+      to right,
+      var(--tx-color, currentColor) 0 1.5px,
+      transparent 1.5px calc(var(--tx-size, 12px) * 5)
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      var(--tx-color, currentColor) 0 1px,
+      transparent 1px var(--tx-size, 12px)
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      var(--tx-color, currentColor) 0 1.5px,
+      transparent 1.5px calc(var(--tx-size, 12px) * 5)
+    );
+  background-size:
+    100% 6px,
+    100% 12px,
+    6px 100%,
+    12px 100%;
+  background-position:
+    0 0,
+    0 0,
+    0 0,
+    0 0;
+  background-repeat: no-repeat;
+}

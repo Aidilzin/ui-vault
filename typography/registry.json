@@ -6,7 +6,10 @@
       "type": "registry:item",
       "title": "Precision Mono Typography",
       "description": "Inter + JetBrains Mono fluid scale with tight -0.025em display tracking, uppercase mono micro-labels, and strict tabular-nums.",
-      "categories": ["typography", "production"],
+      "categories": [
+        "typography",
+        "production"
+      ],
       "files": [
         {
           "path": "precision-mono/TYPOGRAPHY.md",
@@ -25,7 +28,10 @@
       "type": "registry:item",
       "title": "Editorial Serif Typography",
       "description": "Instrument Serif + Plus Jakarta Sans + IBM Plex Mono high-contrast editorial and AI-lab voice with generous display sizing.",
-      "categories": ["typography", "production"],
+      "categories": [
+        "typography",
+        "production"
+      ],
       "files": [
         {
           "path": "editorial-serif/TYPOGRAPHY.md",
@@ -44,7 +50,10 @@
       "type": "registry:item",
       "title": "Swiss Grotesk Typography",
       "description": "Archivo + Inter + IBM Plex Mono heavy tight-tracked (-0.04em) International Typographic Style hierarchy.",
-      "categories": ["typography", "production"],
+      "categories": [
+        "typography",
+        "production"
+      ],
       "files": [
         {
           "path": "swiss-grotesk/TYPOGRAPHY.md",
@@ -63,7 +72,10 @@
       "type": "registry:item",
       "title": "Literary Humanist Typography",
       "description": "Fraunces optical variable serif + Newsreader + IBM Plex Mono warm tactile manuscript and journal proportions.",
-      "categories": ["typography", "production"],
+      "categories": [
+        "typography",
+        "production"
+      ],
       "files": [
         {
           "path": "literary-humanist/TYPOGRAPHY.md",
@@ -82,7 +94,10 @@
       "type": "registry:item",
       "title": "Kinetic Brutal Typography",
       "description": "Syne display + Space Grotesk + Space Mono wide, assertive avant-garde poster geometry.",
-      "categories": ["typography", "experimental"],
+      "categories": [
+        "typography",
+        "experimental"
+      ],
       "files": [
         {
           "path": "kinetic-brutal/TYPOGRAPHY.md",
@@ -101,7 +116,10 @@
       "type": "registry:item",
       "title": "Terminal Phosphor Typography",
       "description": "JetBrains Mono + IBM Plex Mono all-monospace system with strict grid rhythm and zero sans-serif drift.",
-      "categories": ["typography", "experimental"],
+      "categories": [
+        "typography",
+        "experimental"
+      ],
       "files": [
         {
           "path": "terminal-phosphor/TYPOGRAPHY.md",
@@ -120,7 +138,10 @@
       "type": "registry:item",
       "title": "Pixel Arcade Typography",
       "description": "Silkscreen stepped bitmap display paired with readable Space Mono body copy.",
-      "categories": ["typography", "experimental"],
+      "categories": [
+        "typography",
+        "experimental"
+      ],
       "files": [
         {
           "path": "pixel-arcade/TYPOGRAPHY.md",
@@ -139,7 +160,10 @@
       "type": "registry:item",
       "title": "Neo Display SaaS Typography",
       "description": "Space Grotesk + Inter + JetBrains Mono clean, punchy modern launch-page voice.",
-      "categories": ["typography", "viral"],
+      "categories": [
+        "typography",
+        "viral"
+      ],
       "files": [
         {
           "path": "neo-display-saas/TYPOGRAPHY.md",
@@ -158,7 +182,10 @@
       "type": "registry:item",
       "title": "Condensed Hardware Typography",
       "description": "Barlow Condensed uppercase industrial signage + Inter + IBM Plex Mono for rail-timetable and hardware faceplates.",
-      "categories": ["typography", "viral"],
+      "categories": [
+        "typography",
+        "viral"
+      ],
       "files": [
         {
           "path": "condensed-hardware/TYPOGRAPHY.md",
@@ -169,6 +196,160 @@
           "path": "condensed-hardware/typography.css",
           "type": "registry:file",
           "target": "~/src/styles/typography-condensed-hardware.css"
+        }
+      ]
+    },
+    {
+      "name": "type-editorial-didone",
+      "type": "registry:item",
+      "title": "Editorial Didone Typography",
+      "description": "Bodoni Moda + Plus Jakarta Sans + IBM Plex Mono high-contrast luxury fashion and exhibition serif voice.",
+      "categories": [
+        "typography",
+        "viral"
+      ],
+      "files": [
+        {
+          "path": "editorial-didone/TYPOGRAPHY.md",
+          "type": "registry:file",
+          "target": "~/TYPOGRAPHY.md"
+        },
+        {
+          "path": "editorial-didone/typography.css",
+          "type": "registry:file",
+          "target": "~/src/styles/typography-editorial-didone.css"
+        }
+      ]
+    },
+    {
+      "name": "type-technical-superfamily",
+      "type": "registry:item",
+      "title": "Technical Superfamily Typography",
+      "description": "IBM Plex Sans + IBM Plex Serif + IBM Plex Mono unified engineering tri-voice superfamily.",
+      "categories": [
+        "typography",
+        "production"
+      ],
+      "files": [
+        {
+          "path": "technical-superfamily/TYPOGRAPHY.md",
+          "type": "registry:file",
+          "target": "~/TYPOGRAPHY.md"
+        },
+        {
+          "path": "technical-superfamily/typography.css",
+          "type": "registry:file",
+          "target": "~/src/styles/typography-technical-superfamily.css"
+        }
+      ]
+    },
+    {
+      "name": "type-wide-kinetic-display",
+      "type": "registry:item",
+      "title": "Wide Kinetic Display Typography",
+      "description": "Clash Display + Satoshi (Fontshare) modernist neo-grotesque display with sharp squared apertures.",
+      "categories": [
+        "typography",
+        "experimental"
+      ],
+      "files": [
+        {
+          "path": "wide-kinetic-display/TYPOGRAPHY.md",
+          "type": "registry:file",
+          "target": "~/TYPOGRAPHY.md"
+        },
+        {
+          "path": "wide-kinetic-display/typography.css",
+          "type": "registry:file",
+          "target": "~/src/styles/typography-wide-kinetic-display.css"
+        }
+      ]
+    },
+    {
+      "name": "type-geometric-friendly",
+      "type": "registry:item",
+      "title": "Geometric Friendly Typography",
+      "description": "Plus Jakarta Sans + Nunito + DM Mono approachable rounded-terminal geometric consumer system.",
+      "categories": [
+        "typography",
+        "production"
+      ],
+      "files": [
+        {
+          "path": "geometric-friendly/TYPOGRAPHY.md",
+          "type": "registry:file",
+          "target": "~/TYPOGRAPHY.md"
+        },
+        {
+          "path": "geometric-friendly/typography.css",
+          "type": "registry:file",
+          "target": "~/src/styles/typography-geometric-friendly.css"
+        }
+      ]
+    },
+    {
+      "name": "type-cjk-bilingual-precision",
+      "type": "registry:item",
+      "title": "CJK Bilingual Precision Typography",
+      "description": "Inter + Noto Sans JP + JetBrains Mono bilingual Latin and CJK system with relaxed display leading.",
+      "categories": [
+        "typography",
+        "production"
+      ],
+      "files": [
+        {
+          "path": "cjk-bilingual-precision/TYPOGRAPHY.md",
+          "type": "registry:file",
+          "target": "~/TYPOGRAPHY.md"
+        },
+        {
+          "path": "cjk-bilingual-precision/typography.css",
+          "type": "registry:file",
+          "target": "~/src/styles/typography-cjk-bilingual-precision.css"
+        }
+      ]
+    },
+    {
+      "name": "type-architectural-slab",
+      "type": "registry:item",
+      "title": "Architectural Slab Typography",
+      "description": "Zilla Slab + Inter + Space Mono crisp journalistic slab-serif display voice.",
+      "categories": [
+        "typography",
+        "production"
+      ],
+      "files": [
+        {
+          "path": "architectural-slab/TYPOGRAPHY.md",
+          "type": "registry:file",
+          "target": "~/TYPOGRAPHY.md"
+        },
+        {
+          "path": "architectural-slab/typography.css",
+          "type": "registry:file",
+          "target": "~/src/styles/typography-architectural-slab.css"
+        }
+      ]
+    },
+    {
+      "name": "type-neo-minimal-mono",
+      "type": "registry:item",
+      "title": "Neo Minimal Mono Typography",
+      "description": "Geist + Geist Mono minimalist developer-craft neo-grotesk and companion monospace.",
+      "categories": [
+        "typography",
+        "viral"
+      ],
+      "files": [
+        {
+          "path": "neo-minimal-mono/TYPOGRAPHY.md",
+          "type": "registry:file",
+          "target": "~/TYPOGRAPHY.md"
+        },
+        {
+          "path": "neo-minimal-mono/typography.css",
+          "type": "registry:file",
+          "target": "~/src/styles/typography-neo-minimal-mono.css"
         }
       ]
     }

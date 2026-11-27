@@ -1,0 +1,37 @@
+/* ui-vault // texture: micro-plus-stitch (production)
+ * Tightly pitched dashed tailoring micro-stitch intersections in pure CSS gradients.
+ * Params: --tx-color (default currentColor), --tx-opacity (default 0.16), --tx-size (default 14px)
+ */
+
+:where(.tx-micro-plus-stitch) {
+  position: relative;
+  isolation: isolate;
+}
+
+.tx-micro-plus-stitch::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--tx-opacity, 0.16);
+  background-image:
+    linear-gradient(
+      to right,
+      transparent 42%,
+      var(--tx-color, currentColor) 42%,
+      var(--tx-color, currentColor) 58%,
+      transparent 58%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 42%,
+      var(--tx-color, currentColor) 42%,
+      var(--tx-color, currentColor) 58%,
+      transparent 58%
+    );
+  background-size:
+    var(--tx-size, 14px) 1px,
+    1px var(--tx-size, 14px);
+  background-position: center center;
+}

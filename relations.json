@@ -103,7 +103,16 @@
     "brushed-anodized",
     "topographic-mesh",
     "radial-vignette",
-    "checker-dither"
+    "checker-dither",
+    "isometric-cube-grid",
+    "pcb-circuit-traces",
+    "hex-honeycomb-mesh",
+    "micro-plus-stitch",
+    "concentric-radar-arcs",
+    "pinstripe-ledger",
+    "blueprint-margin-ruler",
+    "mineral-terrazzo-speckle",
+    "carbon-twill-weave"
   ],
   "typography": [
     "precision-mono",
@@ -114,7 +123,14 @@
     "terminal-phosphor",
     "pixel-arcade",
     "neo-display-saas",
-    "condensed-hardware"
+    "condensed-hardware",
+    "editorial-didone",
+    "technical-superfamily",
+    "wide-kinetic-display",
+    "geometric-friendly",
+    "cjk-bilingual-precision",
+    "architectural-slab",
+    "neo-minimal-mono"
   ],
   "layouts": [
     "bento-showcase",
@@ -3674,6 +3690,367 @@
         "perceptual-scale"
       ],
       "clashesWith": [
+        "retro-web-96"
+      ]
+    },
+    {
+      "id": "isometric-cube-grid",
+      "kind": "texture",
+      "tier": "experimental",
+      "layer": "ground",
+      "cssClass": "tx-isometric-cube-grid",
+      "defaultOpacity": 0.14,
+      "defaultSize": "40px",
+      "registryItem": "texture-isometric-cube-grid",
+      "path": "textures/isometric-cube-grid.css",
+      "pairsWith": [
+        "fui-tactical",
+        "blueprint-cyanotype",
+        "bento-grid",
+        "industrial-hardware"
+      ],
+      "clashesWith": [
+        "warm-manuscript",
+        "pastel-playful"
+      ]
+    },
+    {
+      "id": "pcb-circuit-traces",
+      "kind": "texture",
+      "tier": "experimental",
+      "layer": "ground",
+      "cssClass": "tx-pcb-circuit-traces",
+      "defaultOpacity": 0.14,
+      "defaultSize": "64px",
+      "registryItem": "texture-pcb-circuit-traces",
+      "path": "textures/pcb-circuit-traces.css",
+      "pairsWith": [
+        "phosphor-terminal",
+        "fui-tactical",
+        "telemetry-fault",
+        "blueprint-cyanotype"
+      ],
+      "clashesWith": [
+        "warm-manuscript",
+        "tactile-soft",
+        "liquid-glass"
+      ]
+    },
+    {
+      "id": "hex-honeycomb-mesh",
+      "kind": "texture",
+      "tier": "viral",
+      "layer": "ground",
+      "cssClass": "tx-hex-honeycomb-mesh",
+      "defaultOpacity": 0.14,
+      "defaultSize": "36px",
+      "registryItem": "texture-hex-honeycomb-mesh",
+      "path": "textures/hex-honeycomb-mesh.css",
+      "pairsWith": [
+        "velvet-chrome-prism",
+        "orbital-ceramic",
+        "command-dark",
+        "fui-tactical"
+      ],
+      "clashesWith": [
+        "warm-manuscript",
+        "retro-web-96"
+      ]
+    },
+    {
+      "id": "micro-plus-stitch",
+      "kind": "texture",
+      "tier": "production",
+      "layer": "ground",
+      "cssClass": "tx-micro-plus-stitch",
+      "defaultOpacity": 0.16,
+      "defaultSize": "14px",
+      "registryItem": "texture-micro-plus-stitch",
+      "path": "textures/micro-plus-stitch.css",
+      "pairsWith": [
+        "archival-paper",
+        "tactile-studio-warm",
+        "motion-slate-minimal",
+        "neo-swiss"
+      ],
+      "clashesWith": [
+        "acid-y2k",
+        "eight-bit-arcade"
+      ]
+    },
+    {
+      "id": "concentric-radar-arcs",
+      "kind": "texture",
+      "tier": "viral",
+      "layer": "ground",
+      "cssClass": "tx-concentric-radar-arcs",
+      "defaultOpacity": 0.14,
+      "defaultSize": "44px",
+      "registryItem": "texture-concentric-radar-arcs",
+      "path": "textures/concentric-radar-arcs.css",
+      "pairsWith": [
+        "ambient-orbit",
+        "orbital-ceramic",
+        "velvet-chrome-prism",
+        "fui-tactical"
+      ],
+      "clashesWith": [
+        "neo-brutalism",
+        "retro-web-96"
+      ]
+    },
+    {
+      "id": "pinstripe-ledger",
+      "kind": "texture",
+      "tier": "production",
+      "layer": "ground",
+      "cssClass": "tx-pinstripe-ledger",
+      "defaultOpacity": 0.12,
+      "defaultSize": "18px",
+      "registryItem": "texture-pinstripe-ledger",
+      "path": "textures/pinstripe-ledger.css",
+      "pairsWith": [
+        "neo-swiss",
+        "monochrome-stark",
+        "swiss-type-foundry",
+        "monolith-dark"
+      ],
+      "clashesWith": [
+        "pastel-playful",
+        "liquid-glass"
+      ]
+    },
+    {
+      "id": "blueprint-margin-ruler",
+      "kind": "texture",
+      "tier": "production",
+      "layer": "ground",
+      "cssClass": "tx-blueprint-margin-ruler",
+      "defaultOpacity": 0.28,
+      "defaultSize": "12px",
+      "registryItem": "texture-blueprint-margin-ruler",
+      "path": "textures/blueprint-margin-ruler.css",
+      "pairsWith": [
+        "blueprint-cyanotype",
+        "industrial-hardware",
+        "fui-tactical",
+        "transit-precision"
+      ],
+      "clashesWith": [
+        "pastel-playful",
+        "warm-manuscript"
+      ]
+    },
+    {
+      "id": "mineral-terrazzo-speckle",
+      "kind": "texture",
+      "tier": "production",
+      "layer": "ground",
+      "cssClass": "tx-mineral-terrazzo-speckle",
+      "defaultOpacity": 0.14,
+      "defaultSize": "72px",
+      "registryItem": "texture-mineral-terrazzo-speckle",
+      "path": "textures/mineral-terrazzo-speckle.css",
+      "pairsWith": [
+        "gallery-curated-sand",
+        "risograph-print",
+        "warm-manuscript",
+        "tactile-studio-warm"
+      ],
+      "clashesWith": [
+        "phosphor-terminal",
+        "acid-y2k"
+      ]
+    },
+    {
+      "id": "carbon-twill-weave",
+      "kind": "texture",
+      "tier": "viral",
+      "layer": "ground",
+      "cssClass": "tx-carbon-twill-weave",
+      "defaultOpacity": 0.14,
+      "defaultSize": "12px",
+      "registryItem": "texture-carbon-twill-weave",
+      "path": "textures/carbon-twill-weave.css",
+      "pairsWith": [
+        "industrial-hardware",
+        "command-dark",
+        "cinema-noir-motion",
+        "dark-gallery-index"
+      ],
+      "clashesWith": [
+        "warm-manuscript",
+        "pastel-playful"
+      ]
+    },
+    {
+      "id": "editorial-didone",
+      "kind": "typography",
+      "tier": "viral",
+      "cssClass": "type-editorial-didone",
+      "fonts": [
+        "Bodoni Moda",
+        "Plus Jakarta Sans",
+        "IBM Plex Mono"
+      ],
+      "voice": "High-contrast luxury fashion and exhibition serif with optical hairline contrast",
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap",
+      "registryItem": "type-editorial-didone",
+      "path": "typography/editorial-didone/TYPOGRAPHY.md",
+      "pairsWith": [
+        "gallery-curated-sand",
+        "cinema-noir-motion",
+        "monochrome-gallery"
+      ],
+      "clashesWith": [
+        "eight-bit-arcade",
+        "phosphor-terminal",
+        "neo-brutalism"
+      ]
+    },
+    {
+      "id": "technical-superfamily",
+      "kind": "typography",
+      "tier": "production",
+      "cssClass": "type-technical-superfamily",
+      "fonts": [
+        "IBM Plex Sans",
+        "IBM Plex Serif",
+        "IBM Plex Mono"
+      ],
+      "voice": "Unified engineering tri-voice superfamily pairing matching x-height Sans, Serif, and Mono cuts",
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap",
+      "registryItem": "type-technical-superfamily",
+      "path": "typography/technical-superfamily/TYPOGRAPHY.md",
+      "pairsWith": [
+        "blueprint-cyanotype",
+        "code-forge",
+        "telemetry-fault"
+      ],
+      "clashesWith": [
+        "pastel-playful",
+        "acid-y2k"
+      ]
+    },
+    {
+      "id": "wide-kinetic-display",
+      "kind": "typography",
+      "tier": "experimental",
+      "cssClass": "type-wide-kinetic-display",
+      "fonts": [
+        "Clash Display",
+        "Satoshi"
+      ],
+      "voice": "Contemporary modernist display with sharp squared apertures and sleek geometric body voice",
+      "googleFontsUrl": "https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap",
+      "registryItem": "type-wide-kinetic-display",
+      "path": "typography/wide-kinetic-display/TYPOGRAPHY.md",
+      "pairsWith": [
+        "velvet-chrome-prism",
+        "aurora-mesh",
+        "bento-grid"
+      ],
+      "clashesWith": [
+        "warm-manuscript",
+        "retro-web-96"
+      ]
+    },
+    {
+      "id": "geometric-friendly",
+      "kind": "typography",
+      "tier": "production",
+      "cssClass": "type-geometric-friendly",
+      "fonts": [
+        "Plus Jakarta Sans",
+        "Nunito",
+        "DM Mono"
+      ],
+      "voice": "Approachable rounded-terminal geometric system tailored for consumer apps and soft tactile UIs",
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Nunito:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap",
+      "registryItem": "type-geometric-friendly",
+      "path": "typography/geometric-friendly/TYPOGRAPHY.md",
+      "pairsWith": [
+        "tactile-soft",
+        "pastel-playful",
+        "mesh-craft",
+        "perceptual-scale"
+      ],
+      "clashesWith": [
+        "fui-tactical",
+        "phosphor-terminal",
+        "neo-brutalism"
+      ]
+    },
+    {
+      "id": "cjk-bilingual-precision",
+      "kind": "typography",
+      "tier": "production",
+      "cssClass": "type-cjk-bilingual-precision",
+      "fonts": [
+        "Noto Sans JP",
+        "Inter",
+        "JetBrains Mono"
+      ],
+      "voice": "Balanced Latin + CJK system enforcing relaxed display leading (>= 1.3) and strict tabular numerals",
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
+      "registryItem": "type-cjk-bilingual-precision",
+      "path": "typography/cjk-bilingual-precision/TYPOGRAPHY.md",
+      "pairsWith": [
+        "monochrome-stark",
+        "motion-slate-minimal",
+        "transit-precision"
+      ],
+      "clashesWith": [
+        "acid-y2k",
+        "pixel-arcade"
+      ]
+    },
+    {
+      "id": "architectural-slab",
+      "kind": "typography",
+      "tier": "production",
+      "cssClass": "type-architectural-slab",
+      "fonts": [
+        "Zilla Slab",
+        "Inter",
+        "Space Mono"
+      ],
+      "voice": "Crisp journalistic slab-serif display voice with sturdy bracketed serifs and clean sans prose",
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Inter:wght@400;500&family=Space+Mono:wght@400;700&display=swap",
+      "registryItem": "type-architectural-slab",
+      "path": "typography/architectural-slab/TYPOGRAPHY.md",
+      "pairsWith": [
+        "archival-paper",
+        "neo-swiss",
+        "editorial-mono",
+        "risograph-print"
+      ],
+      "clashesWith": [
+        "liquid-glass",
+        "aurora-mesh"
+      ]
+    },
+    {
+      "id": "neo-minimal-mono",
+      "kind": "typography",
+      "tier": "viral",
+      "cssClass": "type-neo-minimal-mono",
+      "fonts": [
+        "Geist",
+        "Geist Mono"
+      ],
+      "voice": "Minimalist developer-craft neo-grotesk and companion monospace with razor-tight display tracking",
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap",
+      "registryItem": "type-neo-minimal-mono",
+      "path": "typography/neo-minimal-mono/TYPOGRAPHY.md",
+      "pairsWith": [
+        "motion-slate-minimal",
+        "kinetic-studio-white",
+        "monolith-dark",
+        "monochrome-stark"
+      ],
+      "clashesWith": [
+        "warm-manuscript",
         "retro-web-96"
       ]
     }

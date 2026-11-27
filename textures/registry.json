@@ -6,7 +6,10 @@
       "type": "registry:item",
       "title": "Film Grain Texture",
       "description": "Subtle SVG feTurbulence fractal analog grain overlay adaptive across dark and light grounds.",
-      "categories": ["texture", "production"],
+      "categories": [
+        "texture",
+        "production"
+      ],
       "files": [
         {
           "path": "film-grain.css",
@@ -20,7 +23,10 @@
       "type": "registry:item",
       "title": "Paper Fiber Texture",
       "description": "Fine organic paper and linen micro-weave texture for editorial and warm tactile grounds.",
-      "categories": ["texture", "production"],
+      "categories": [
+        "texture",
+        "production"
+      ],
       "files": [
         {
           "path": "paper-fiber.css",
@@ -34,7 +40,10 @@
       "type": "registry:item",
       "title": "Dot Matrix Texture",
       "description": "Crisp 1px radial dot grid surface layer with configurable pitch and adaptive ink.",
-      "categories": ["texture", "production"],
+      "categories": [
+        "texture",
+        "production"
+      ],
       "files": [
         {
           "path": "dot-matrix.css",
@@ -48,7 +57,10 @@
       "type": "registry:item",
       "title": "Architect Grid Texture",
       "description": "Dual-scale major and minor blueprint engineering hairline grid.",
-      "categories": ["texture", "production"],
+      "categories": [
+        "texture",
+        "production"
+      ],
       "files": [
         {
           "path": "architect-grid.css",
@@ -62,7 +74,10 @@
       "type": "registry:item",
       "title": "Crosshair Field Texture",
       "description": "Repeating + HUD registration reticle marks built with adaptive SVG mask-image.",
-      "categories": ["texture", "experimental"],
+      "categories": [
+        "texture",
+        "experimental"
+      ],
       "files": [
         {
           "path": "crosshair-field.css",
@@ -76,7 +91,10 @@
       "type": "registry:item",
       "title": "CRT Scanlines Texture",
       "description": "Horizontal phosphor scanline overlay with subtle alternating pitch.",
-      "categories": ["texture", "experimental"],
+      "categories": [
+        "texture",
+        "experimental"
+      ],
       "files": [
         {
           "path": "crt-scanlines.css",
@@ -90,7 +108,10 @@
       "type": "registry:item",
       "title": "Diagonal Hatch Texture",
       "description": "Crisp 45-degree technical drafting hatch lines for panels and structural dividers.",
-      "categories": ["texture", "production"],
+      "categories": [
+        "texture",
+        "production"
+      ],
       "files": [
         {
           "path": "diagonal-hatch.css",
@@ -104,7 +125,10 @@
       "type": "registry:item",
       "title": "Halftone Screen Texture",
       "description": "Classic angled offset-print halftone dot matrix built with staggered radial gradients.",
-      "categories": ["texture", "experimental"],
+      "categories": [
+        "texture",
+        "experimental"
+      ],
       "files": [
         {
           "path": "halftone-screen.css",
@@ -118,7 +142,10 @@
       "type": "registry:item",
       "title": "Brushed Anodized Texture",
       "description": "Ultra-fine horizontal directional hardware and ceramic micro-sheen.",
-      "categories": ["texture", "viral"],
+      "categories": [
+        "texture",
+        "viral"
+      ],
       "files": [
         {
           "path": "brushed-anodized.css",
@@ -132,7 +159,10 @@
       "type": "registry:item",
       "title": "Topographic Mesh Texture",
       "description": "Subtle repeating SVG contour topography lines via adaptive mask-image.",
-      "categories": ["texture", "viral"],
+      "categories": [
+        "texture",
+        "viral"
+      ],
       "files": [
         {
           "path": "topographic-mesh.css",
@@ -146,7 +176,10 @@
       "type": "registry:item",
       "title": "Radial Vignette Texture",
       "description": "Soft edge depth falloff scrim to focus hero and canvas stages.",
-      "categories": ["texture", "production"],
+      "categories": [
+        "texture",
+        "production"
+      ],
       "files": [
         {
           "path": "radial-vignette.css",
@@ -160,12 +193,168 @@
       "type": "registry:item",
       "title": "Checker Dither Texture",
       "description": "Crisp 2x2 pixel dither and retro OS checkerboard pattern via conic-gradient.",
-      "categories": ["texture", "experimental"],
+      "categories": [
+        "texture",
+        "experimental"
+      ],
       "files": [
         {
           "path": "checker-dither.css",
           "type": "registry:file",
           "target": "~/src/styles/textures/checker-dither.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-isometric-cube-grid",
+      "type": "registry:item",
+      "title": "Isometric Cube Grid Texture",
+      "description": "30-degree isometric wireframe cube lattice via adaptive SVG mask-image.",
+      "categories": [
+        "texture",
+        "experimental"
+      ],
+      "files": [
+        {
+          "path": "isometric-cube-grid.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/isometric-cube-grid.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-pcb-circuit-traces",
+      "type": "registry:item",
+      "title": "PCB Circuit Traces Texture",
+      "description": "45-degree routed printed-circuit traces and via pads via adaptive SVG mask-image.",
+      "categories": [
+        "texture",
+        "experimental"
+      ],
+      "files": [
+        {
+          "path": "pcb-circuit-traces.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/pcb-circuit-traces.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-hex-honeycomb-mesh",
+      "type": "registry:item",
+      "title": "Hex Honeycomb Mesh Texture",
+      "description": "Tessellated hexagonal honeycomb hairline mesh via adaptive SVG mask-image.",
+      "categories": [
+        "texture",
+        "viral"
+      ],
+      "files": [
+        {
+          "path": "hex-honeycomb-mesh.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/hex-honeycomb-mesh.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-micro-plus-stitch",
+      "type": "registry:item",
+      "title": "Micro Plus Stitch Texture",
+      "description": "Tightly pitched dashed tailoring micro-stitch intersections in pure CSS gradients.",
+      "categories": [
+        "texture",
+        "production"
+      ],
+      "files": [
+        {
+          "path": "micro-plus-stitch.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/micro-plus-stitch.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-concentric-radar-arcs",
+      "type": "registry:item",
+      "title": "Concentric Radar Arcs Texture",
+      "description": "Pure CSS repeating-radial-gradient concentric sonar and orbital distance rings.",
+      "categories": [
+        "texture",
+        "viral"
+      ],
+      "files": [
+        {
+          "path": "concentric-radar-arcs.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/concentric-radar-arcs.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-pinstripe-ledger",
+      "type": "registry:item",
+      "title": "Pinstripe Ledger Texture",
+      "description": "Crisp vertical editorial and financial ledger hairline pinstripes in pure CSS.",
+      "categories": [
+        "texture",
+        "production"
+      ],
+      "files": [
+        {
+          "path": "pinstripe-ledger.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/pinstripe-ledger.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-blueprint-margin-ruler",
+      "type": "registry:item",
+      "title": "Blueprint Margin Ruler Texture",
+      "description": "Calibrated major and minor millimeter tick-mark ruler pinned along top and left margins.",
+      "categories": [
+        "texture",
+        "production"
+      ],
+      "files": [
+        {
+          "path": "blueprint-margin-ruler.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/blueprint-margin-ruler.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-mineral-terrazzo-speckle",
+      "type": "registry:item",
+      "title": "Mineral Terrazzo Speckle Texture",
+      "description": "Irregular scattered ceramic and stone mineral speckles via minimal original SVG mask-image.",
+      "categories": [
+        "texture",
+        "production"
+      ],
+      "files": [
+        {
+          "path": "mineral-terrazzo-speckle.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/mineral-terrazzo-speckle.css"
+        }
+      ]
+    },
+    {
+      "name": "texture-carbon-twill-weave",
+      "type": "registry:item",
+      "title": "Carbon Twill Weave Texture",
+      "description": "Interlocking diagonal carbon-fiber twill micro-weave built with layered CSS linear gradients.",
+      "categories": [
+        "texture",
+        "viral"
+      ],
+      "files": [
+        {
+          "path": "carbon-twill-weave.css",
+          "type": "registry:file",
+          "target": "~/src/styles/textures/carbon-twill-weave.css"
         }
       ]
     }

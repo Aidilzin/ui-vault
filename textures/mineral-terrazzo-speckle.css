@@ -1,0 +1,25 @@
+/* ui-vault // texture: mineral-terrazzo-speckle (production)
+ * Irregular scattered ceramic/stone mineral speckles via minimal original SVG mask-image.
+ * Params: --tx-color (default currentColor), --tx-opacity (default 0.14), --tx-size (default 72px)
+ */
+
+:where(.tx-mineral-terrazzo-speckle) {
+  position: relative;
+  isolation: isolate;
+}
+
+.tx-mineral-terrazzo-speckle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--tx-opacity, 0.14);
+  background-color: var(--tx-color, currentColor);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cpolygon points='8,10 13,8 12,14' fill='%23000'/%3E%3Cpolygon points='46,16 53,19 49,24 44,21' fill='%23000'/%3E%3Ccircle cx='28' cy='32' r='1.8' fill='%23000'/%3E%3Cpolygon points='14,52 21,49 19,56' fill='%23000'/%3E%3Cpolygon points='56,50 62,54 58,59 53,56' fill='%23000'/%3E%3Ccircle cx='38' cy='60' r='1.5' fill='%23000'/%3E%3Ccircle cx='64' cy='28' r='1.6' fill='%23000'/%3E%3Ccircle cx='22' cy='18' r='1.2' fill='%23000'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cpolygon points='8,10 13,8 12,14' fill='%23000'/%3E%3Cpolygon points='46,16 53,19 49,24 44,21' fill='%23000'/%3E%3Ccircle cx='28' cy='32' r='1.8' fill='%23000'/%3E%3Cpolygon points='14,52 21,49 19,56' fill='%23000'/%3E%3Cpolygon points='56,50 62,54 58,59 53,56' fill='%23000'/%3E%3Ccircle cx='38' cy='60' r='1.5' fill='%23000'/%3E%3Ccircle cx='64' cy='28' r='1.6' fill='%23000'/%3E%3Ccircle cx='22' cy='18' r='1.2' fill='%23000'/%3E%3C/svg%3E");
+  -webkit-mask-size: var(--tx-size, 72px) var(--tx-size, 72px);
+  mask-size: var(--tx-size, 72px) var(--tx-size, 72px);
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+}

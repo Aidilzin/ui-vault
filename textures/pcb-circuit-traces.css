@@ -1,0 +1,25 @@
+/* ui-vault // texture: pcb-circuit-traces (experimental)
+ * 45-degree routed printed-circuit traces and via pads via adaptive SVG mask-image.
+ * Params: --tx-color (default currentColor), --tx-opacity (default 0.14), --tx-size (default 64px)
+ */
+
+:where(.tx-pcb-circuit-traces) {
+  position: relative;
+  isolation: isolate;
+}
+
+.tx-pcb-circuit-traces::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--tx-opacity, 0.14);
+  background-color: var(--tx-color, currentColor);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M0 16H18L28 26H44M64 48H46L36 38H20M16 0V10L24 18M48 64V54L40 46' fill='none' stroke='%23000' stroke-width='1.2'/%3E%3Ccircle cx='44' cy='26' r='2.5' fill='none' stroke='%23000' stroke-width='1.2'/%3E%3Ccircle cx='20' cy='38' r='2.5' fill='none' stroke='%23000' stroke-width='1.2'/%3E%3Ccircle cx='24' cy='18' r='2' fill='%23000'/%3E%3Ccircle cx='40' cy='46' r='2' fill='%23000'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M0 16H18L28 26H44M64 48H46L36 38H20M16 0V10L24 18M48 64V54L40 46' fill='none' stroke='%23000' stroke-width='1.2'/%3E%3Ccircle cx='44' cy='26' r='2.5' fill='none' stroke='%23000' stroke-width='1.2'/%3E%3Ccircle cx='20' cy='38' r='2.5' fill='none' stroke='%23000' stroke-width='1.2'/%3E%3Ccircle cx='24' cy='18' r='2' fill='%23000'/%3E%3Ccircle cx='40' cy='46' r='2' fill='%23000'/%3E%3C/svg%3E");
+  -webkit-mask-size: var(--tx-size, 64px) var(--tx-size, 64px);
+  mask-size: var(--tx-size, 64px) var(--tx-size, 64px);
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+}

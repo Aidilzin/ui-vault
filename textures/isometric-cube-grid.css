@@ -1,0 +1,25 @@
+/* ui-vault // texture: isometric-cube-grid (experimental)
+ * 30-degree isometric wireframe cube lattice via adaptive SVG mask-image.
+ * Params: --tx-color (default currentColor), --tx-opacity (default 0.14), --tx-size (default 40px)
+ */
+
+:where(.tx-isometric-cube-grid) {
+  position: relative;
+  isolation: isolate;
+}
+
+.tx-isometric-cube-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--tx-opacity, 0.14);
+  background-color: var(--tx-color, currentColor);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='46' viewBox='0 0 40 46'%3E%3Cpath d='M20 0L40 11.5V34.5L20 46L0 34.5V11.5ZM20 0V23M20 23L40 11.5M20 23L0 11.5' fill='none' stroke='%23000' stroke-width='1'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='46' viewBox='0 0 40 46'%3E%3Cpath d='M20 0L40 11.5V34.5L20 46L0 34.5V11.5ZM20 0V23M20 23L40 11.5M20 23L0 11.5' fill='none' stroke='%23000' stroke-width='1'/%3E%3C/svg%3E");
+  -webkit-mask-size: var(--tx-size, 40px) calc(var(--tx-size, 40px) * 1.15);
+  mask-size: var(--tx-size, 40px) calc(var(--tx-size, 40px) * 1.15);
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+}

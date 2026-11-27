@@ -1,0 +1,25 @@
+/* ui-vault // texture: pinstripe-ledger (production)
+ * Crisp vertical editorial/financial ledger hairline pinstripes in pure CSS.
+ * Params: --tx-color (default currentColor), --tx-opacity (default 0.12), --tx-size (default 18px)
+ */
+
+:where(.tx-pinstripe-ledger) {
+  position: relative;
+  isolation: isolate;
+}
+
+.tx-pinstripe-ledger::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--tx-opacity, 0.12);
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--tx-color, currentColor) 0,
+    var(--tx-color, currentColor) 1px,
+    transparent 1px,
+    transparent var(--tx-size, 18px)
+  );
+}

@@ -1,0 +1,37 @@
+/* ui-vault // texture: carbon-twill-weave (viral)
+ * Interlocking diagonal carbon-fiber twill micro-weave built with layered CSS linear gradients.
+ * Params: --tx-color (default currentColor), --tx-opacity (default 0.14), --tx-size (default 12px)
+ */
+
+:where(.tx-carbon-twill-weave) {
+  position: relative;
+  isolation: isolate;
+}
+
+.tx-carbon-twill-weave::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--tx-opacity, 0.14);
+  background-image:
+    linear-gradient(
+      45deg,
+      var(--tx-color, currentColor) 25%,
+      transparent 25%,
+      transparent 75%,
+      var(--tx-color, currentColor) 75%
+    ),
+    linear-gradient(
+      -45deg,
+      color-mix(in srgb, var(--tx-color, currentColor) 55%, transparent) 25%,
+      transparent 25%,
+      transparent 75%,
+      color-mix(in srgb, var(--tx-color, currentColor) 55%, transparent) 75%
+    );
+  background-size: var(--tx-size, 12px) var(--tx-size, 12px);
+  background-position:
+    0 0,
+    calc(var(--tx-size, 12px) / 2) calc(var(--tx-size, 12px) / 2);
+}
