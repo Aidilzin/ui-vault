@@ -8,6 +8,13 @@ import { StickyScrollytelling } from "@vault/layouts/sticky-scrollytelling/stick
 import { FloatingOsDesktop } from "@vault/layouts/floating-os-desktop/floating-os-desktop";
 import { CommandHudDashboard } from "@vault/layouts/command-hud-dashboard/command-hud-dashboard";
 import { MasonryArchive } from "@vault/layouts/masonry-archive/masonry-archive";
+import { DocsThreeColumn } from "@vault/layouts/docs-three-column/docs-three-column";
+import { SplitHeroFeed } from "@vault/layouts/split-hero-feed/split-hero-feed";
+import { KanbanSwimlanes } from "@vault/layouts/kanban-swimlanes/kanban-swimlanes";
+import { CinemaMediaStage } from "@vault/layouts/cinema-media-stage/cinema-media-stage";
+import { TradingTerminalGrid } from "@vault/layouts/trading-terminal-grid/trading-terminal-grid";
+import { ComparisonMatrixSplit } from "@vault/layouts/comparison-matrix-split/comparison-matrix-split";
+import { EditorialIndexPreview } from "@vault/layouts/editorial-index-preview/editorial-index-preview";
 import {
   applyTypographyOverride,
   getScopedStageStyle,
@@ -1707,6 +1714,180 @@ export function DummySitePreview({
             ]}
             detailRail={primaryTelemetry}
             footer={footerBar}
+          />
+        );
+
+      case "docs-three-column":
+        return (
+          <DocsThreeColumn
+            header={compactNavbar}
+            navTree={navLinks.map((n, i) => (
+              <div key={n.id} style={{ fontFamily: theme.fontMono, fontSize: 10.5, color: i === 0 ? theme.accent : theme.surfaceMuted }}>
+                0{i + 1}. {n.label}
+              </div>
+            ))}
+            prose={
+              <>
+                {heroBlock}
+                {primaryTelemetry}
+              </>
+            }
+            toc={features.map((f) => (
+              <div key={f.id} style={{ fontSize: 11, color: theme.surfaceMuted }}>
+                • {f.title}
+              </div>
+            ))}
+          />
+        );
+
+      case "split-hero-feed":
+        return (
+          <SplitHeroFeed
+            pinnedHero={
+              <>
+                {compactNavbar}
+                <div style={{ marginTop: 12 }}>{heroBlock}</div>
+              </>
+            }
+            feedItems={[
+              <div key="tel">{primaryTelemetry}</div>,
+              ...features.map((f) => (
+                <div key={f.id}>
+                  <div style={{ fontFamily: theme.fontMono, fontSize: 10, color: theme.accent }}>{f.tag}</div>
+                  <h2 style={{ margin: "4px 0", fontFamily: theme.fontHeading, fontSize: 15 }}>{f.title}</h2>
+                  <p style={{ margin: 0, fontSize: 12, color: theme.surfaceMuted }}>{f.desc}</p>
+                </div>
+              )),
+            ]}
+            footer={footerBar}
+          />
+        );
+
+      case "kanban-swimlanes":
+        return (
+          <KanbanSwimlanes
+            header={compactNavbar}
+            lanes={[
+              {
+                id: "queued",
+                title: "Queued",
+                cards: [<div key="h">{heroBlock}</div>],
+              },
+              {
+                id: "active",
+                title: "In Progress",
+                cards: features.map((f) => (
+                  <div key={f.id}>
+                    <div style={{ fontFamily: theme.fontMono, fontSize: 9.5, color: theme.accent }}>{f.tag}</div>
+                    <div style={{ fontWeight: 600, fontSize: 12.5, marginTop: 3 }}>{f.title}</div>
+                  </div>
+                )),
+              },
+              {
+                id: "verified",
+                title: "Telemetry",
+                cards: [<div key="t">{primaryTelemetry}</div>],
+              },
+            ]}
+          />
+        );
+
+      case "cinema-media-stage":
+        return (
+          <CinemaMediaStage
+            topBar={compactNavbar}
+            stage={
+              <>
+                {heroBlock}
+                <div style={{ marginTop: 14 }}>{primaryTelemetry}</div>
+              </>
+            }
+            utilityDock={navLinks.map((n, i) => (
+              <span key={n.id} style={{ fontFamily: theme.fontMono, fontSize: 10, color: i === 0 ? theme.accent : theme.surfaceMuted }}>
+                {n.label}
+              </span>
+            ))}
+            captionRail={footerBar}
+          />
+        );
+
+      case "trading-terminal-grid": {
+        const quadTel = telemetryIds.length > 0 ? telemetryIds : ["step-line-throughput", "waterfall-delta-chart"];
+        return (
+          <TradingTerminalGrid
+            tickerTape={compactNavbar}
+            orderBook={
+              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                <div style={{ fontFamily: theme.fontMono, fontSize: 9.5, color: theme.accent }}>ORDER BOOK</div>
+                {features.map((f) => (
+                  <div key={f.id} style={{ display: "flex", justifyContent: "space-between", fontFamily: theme.fontMono, fontSize: 10 }}>
+                    <span>{f.id.toUpperCase()}</span>
+                    <span style={{ color: theme.accent }}>{f.metric}</span>
+                  </div>
+                ))}
+              </div>
+            }
+            primaryChart={
+              <>
+                {heroBlock}
+                <div style={{ marginTop: 10 }}>
+                  {renderTelemetryWidget(quadTel[0], { seed: telemetrySeed, reducedMotion })}
+                </div>
+              </>
+            }
+            executionTicket={
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                <div style={{ fontFamily: theme.fontMono, fontSize: 9.5, color: theme.accent }}>EXECUTION</div>
+                {renderTelemetryWidget(quadTel[1] ?? "bullet-target-bar", { seed: telemetrySeed, reducedMotion })}
+              </div>
+            }
+            positionsTable={primaryTelemetry}
+          />
+        );
+      }
+
+      case "comparison-matrix-split":
+        return (
+          <ComparisonMatrixSplit
+            header={
+              <>
+                {compactNavbar}
+                <div style={{ marginTop: 10 }}>{heroBlock}</div>
+              </>
+            }
+            tierCards={features.map((f) => (
+              <div key={f.id}>
+                <div style={{ fontFamily: theme.fontMono, fontSize: 9.5, color: theme.accent }}>{f.tag}</div>
+                <div style={{ fontWeight: 700, fontSize: 14, marginTop: 4 }}>{f.title}</div>
+                <div style={{ fontSize: 11, color: theme.surfaceMuted, marginTop: 3 }}>{f.metric}</div>
+              </div>
+            ))}
+            rows={[
+              { feature: "Zero-Dep Primitives", values: ["✓", "✓", "✓"] },
+              { feature: "Container Reflow", values: ["Basic", "Full", "Custom"] },
+              { feature: "Telemetry Suite", values: ["3", "19", "Unlimited"] },
+            ]}
+          />
+        );
+
+      case "editorial-index-preview":
+        return (
+          <EditorialIndexPreview
+            header={compactNavbar}
+            items={features.map((f, i) => ({
+              id: f.id,
+              index: `0${i + 1}`,
+              title: f.title,
+              meta: f.metric,
+              preview: (
+                <div>
+                  <div style={{ fontFamily: theme.fontMono, fontSize: 10, color: theme.accent }}>{f.tag}</div>
+                  <h2 style={{ margin: "6px 0", fontFamily: theme.fontHeading, fontSize: 17 }}>{f.title}</h2>
+                  <p style={{ margin: "0 0 10px", fontSize: 12, color: theme.surfaceMuted }}>{f.desc}</p>
+                  {primaryTelemetry}
+                </div>
+              ),
+            }))}
           />
         );
 

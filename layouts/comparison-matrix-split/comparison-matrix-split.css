@@ -1,0 +1,86 @@
+/* ui-vault // layout: comparison-matrix-split (production)
+ * Tier cards above a feature comparison matrix with @container collapse.
+ */
+
+.lay-comparison-matrix {
+  container-type: inline-size;
+  container-name: lay-cmp;
+  min-height: var(--lay-height, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--lay-gap, 14px);
+  padding: var(--lay-pad, 16px);
+  background: var(--lay-canvas, transparent);
+  color: var(--lay-ink, inherit);
+}
+
+.lay-cmp-header {
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  border-radius: var(--lay-radius, 6px);
+  padding: 12px 14px;
+}
+
+.lay-cmp-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--lay-gap, 12px);
+}
+
+.lay-cmp-tier {
+  min-width: 0;
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  border-radius: var(--lay-radius, 6px);
+  padding: 14px;
+}
+
+.lay-cmp-matrix {
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  border-radius: var(--lay-radius, 6px);
+  overflow: hidden;
+}
+
+.lay-cmp-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 1.3fr) minmax(0, 2fr);
+  align-items: center;
+  padding: 9px 12px;
+  border-top: 1px solid var(--lay-border, currentColor);
+  gap: 10px;
+}
+
+.lay-cmp-row:first-child {
+  border-top: none;
+}
+
+.lay-cmp-feature {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.lay-cmp-vals {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.lay-cmp-cell {
+  font-size: 11px;
+  color: var(--lay-muted, inherit);
+}
+
+@container lay-cmp (max-width: 620px) {
+  .lay-cmp-tiers {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .lay-cmp-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .lay-cmp-vals {
+    text-align: left;
+  }
+}

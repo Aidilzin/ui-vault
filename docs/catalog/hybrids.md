@@ -1,4 +1,4 @@
-← [README](../../README.md) · [Styles (36)](./styles.md) · [Animations (69)](./animations.md) · [Foundations (39)](./foundations.md) · [Hybrids (20)](./hybrids.md) · [Live Playground ↗](https://aidilzin.github.io/ui-vault/)
+← [README](../../README.md) · [Styles (43)](./styles.md) · [Animations (79)](./animations.md) · [Foundations (71)](./foundations.md) · [Hybrids (20)](./hybrids.md) · [Live Playground ↗](https://aidilzin.github.io/ui-vault/)
 
 # Proven Hybrid Recipes (20)
 

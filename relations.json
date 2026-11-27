@@ -140,7 +140,14 @@
     "sticky-scrollytelling",
     "floating-os-desktop",
     "command-hud-dashboard",
-    "masonry-archive"
+    "masonry-archive",
+    "docs-three-column",
+    "split-hero-feed",
+    "kanban-swimlanes",
+    "cinema-media-stage",
+    "trading-terminal-grid",
+    "comparison-matrix-split",
+    "editorial-index-preview"
   ],
   "telemetry": [
     "inline-sparkline",
@@ -152,7 +159,16 @@
     "live-oscilloscope",
     "segmented-quota-bar",
     "diff-delta-pill",
-    "node-topology-mini"
+    "node-topology-mini",
+    "bullet-target-bar",
+    "latency-whisker-band",
+    "horizon-band-sparkline",
+    "waffle-percent-grid",
+    "waterfall-delta-chart",
+    "compact-radar-polygon",
+    "step-line-throughput",
+    "funnel-conversion-strip",
+    "live-equalizer-bars"
   ],
   "nodes": [
     {
@@ -3376,7 +3392,9 @@
       "pairsWith": [
         "lamp-horizon-glow",
         "split-reveal",
-        "radial-vignette"
+        "radial-vignette",
+        "cinema-media-stage",
+        "editorial-didone"
       ],
       "clashesWith": [
         "pastel-playful",
@@ -3393,7 +3411,10 @@
       "path": "styles/05-modern-craft/kinetic-studio-white/STYLE.md",
       "pairsWith": [
         "spotlight-tabs",
-        "dot-matrix"
+        "dot-matrix",
+        "expandable-toolbar",
+        "slide-to-commit",
+        "neo-minimal-mono"
       ],
       "clashesWith": [
         "ditherpunk",
@@ -3410,7 +3431,11 @@
       "path": "styles/04-spatial-physics/velvet-chrome-prism/STYLE.md",
       "pairsWith": [
         "holographic-foil-card",
-        "border-beam"
+        "border-beam",
+        "target-bracket-cursor",
+        "optical-zoom-lens",
+        "concentric-radar-arcs",
+        "wide-kinetic-display"
       ],
       "clashesWith": [
         "warm-manuscript",
@@ -3427,7 +3452,10 @@
       "path": "styles/03-kinetic-rebel/risograph-print/STYLE.md",
       "pairsWith": [
         "halftone-screen",
-        "kinetic-brutal"
+        "kinetic-brutal",
+        "line-shadow-heading",
+        "mineral-terrazzo-speckle",
+        "editorial-index-preview"
       ],
       "clashesWith": [
         "liquid-glass",
@@ -3444,7 +3472,10 @@
       "path": "styles/02-retro-compute/blueprint-cyanotype/STYLE.md",
       "pairsWith": [
         "architect-grid",
-        "crosshair-field"
+        "crosshair-field",
+        "blueprint-margin-ruler",
+        "target-bracket-cursor",
+        "technical-superfamily"
       ],
       "clashesWith": [
         "warm-manuscript",
@@ -3461,7 +3492,12 @@
       "path": "styles/05-modern-craft/motion-slate-minimal/STYLE.md",
       "pairsWith": [
         "spotlight-tabs",
-        "precision-mono"
+        "precision-mono",
+        "text-morph-swap",
+        "before-after-curtain",
+        "expandable-toolbar",
+        "docs-three-column",
+        "neo-minimal-mono"
       ],
       "clashesWith": [
         "acid-y2k",
@@ -3478,7 +3514,12 @@
       "path": "styles/06-editorial-warm/gallery-curated-sand/STYLE.md",
       "pairsWith": [
         "editorial-serif",
-        "paper-fiber"
+        "paper-fiber",
+        "editorial-didone",
+        "mineral-terrazzo-speckle",
+        "split-hero-feed",
+        "editorial-index-preview",
+        "before-after-curtain"
       ],
       "clashesWith": [
         "phosphor-terminal",
@@ -3491,7 +3532,10 @@
       "kind": "animation",
       "tier": "viral",
       "mechanic": "cursor-reactive",
-      "engine": "react-css",
+      "engine": [
+        "react",
+        "css"
+      ],
       "perfTier": "low",
       "reducedMotion": "instant-snap",
       "registryItem": "target-bracket-cursor",
@@ -3512,7 +3556,10 @@
       "kind": "animation",
       "tier": "viral",
       "mechanic": "text-kinetic",
-      "engine": "react-css",
+      "engine": [
+        "react",
+        "css"
+      ],
       "perfTier": "low",
       "reducedMotion": "static-clear-text",
       "registryItem": "true-focus-frame",
@@ -3533,7 +3580,10 @@
       "kind": "animation",
       "tier": "production",
       "mechanic": "text-kinetic",
-      "engine": "react-css",
+      "engine": [
+        "react",
+        "css"
+      ],
       "perfTier": "low",
       "reducedMotion": "instant-swap",
       "registryItem": "text-morph-swap",
@@ -3553,7 +3603,9 @@
       "kind": "animation",
       "tier": "experimental",
       "mechanic": "text-kinetic",
-      "engine": "css-keyframes",
+      "engine": [
+        "css"
+      ],
       "perfTier": "low",
       "reducedMotion": "static-hatch-shadow",
       "registryItem": "line-shadow-heading",
@@ -3574,7 +3626,10 @@
       "kind": "animation",
       "tier": "production",
       "mechanic": "layout-morph",
-      "engine": "react-pointer",
+      "engine": [
+        "react",
+        "pointer"
+      ],
       "perfTier": "low",
       "reducedMotion": "direct-scrub",
       "registryItem": "before-after-curtain",
@@ -3594,7 +3649,10 @@
       "kind": "animation",
       "tier": "production",
       "mechanic": "layout-morph",
-      "engine": "react-css",
+      "engine": [
+        "react",
+        "css"
+      ],
       "perfTier": "low",
       "reducedMotion": "instant-expand",
       "registryItem": "expandable-toolbar",
@@ -3615,7 +3673,10 @@
       "kind": "animation",
       "tier": "viral",
       "mechanic": "layout-morph",
-      "engine": "react-css",
+      "engine": [
+        "react",
+        "css"
+      ],
       "perfTier": "low",
       "reducedMotion": "instant-fan",
       "registryItem": "folder-paper-fan",
@@ -3636,7 +3697,10 @@
       "kind": "animation",
       "tier": "viral",
       "mechanic": "physics-optics",
-      "engine": "react-pointer",
+      "engine": [
+        "react",
+        "pointer"
+      ],
       "perfTier": "medium",
       "reducedMotion": "direct-track",
       "registryItem": "optical-zoom-lens",
@@ -3657,7 +3721,9 @@
       "kind": "animation",
       "tier": "viral",
       "mechanic": "shader-canvas",
-      "engine": "canvas-2d",
+      "engine": [
+        "canvas-2d"
+      ],
       "perfTier": "medium",
       "reducedMotion": "static-grid-snapshot",
       "registryItem": "flickering-telemetry-grid",
@@ -3678,7 +3744,10 @@
       "kind": "animation",
       "tier": "production",
       "mechanic": "micro-feedback",
-      "engine": "react-pointer",
+      "engine": [
+        "react",
+        "pointer"
+      ],
       "perfTier": "low",
       "reducedMotion": "keyboard-click-toggle",
       "registryItem": "slide-to-commit",
@@ -3900,7 +3969,8 @@
       "pairsWith": [
         "gallery-curated-sand",
         "cinema-noir-motion",
-        "monochrome-gallery"
+        "monochrome-gallery",
+        "editorial-index-preview"
       ],
       "clashesWith": [
         "eight-bit-arcade",
@@ -3925,7 +3995,8 @@
       "pairsWith": [
         "blueprint-cyanotype",
         "code-forge",
-        "telemetry-fault"
+        "telemetry-fault",
+        "docs-three-column"
       ],
       "clashesWith": [
         "pastel-playful",
@@ -3948,7 +4019,8 @@
       "pairsWith": [
         "velvet-chrome-prism",
         "aurora-mesh",
-        "bento-grid"
+        "bento-grid",
+        "split-hero-feed"
       ],
       "clashesWith": [
         "warm-manuscript",
@@ -3998,7 +4070,8 @@
       "pairsWith": [
         "monochrome-stark",
         "motion-slate-minimal",
-        "transit-precision"
+        "transit-precision",
+        "docs-three-column"
       ],
       "clashesWith": [
         "acid-y2k",
@@ -4052,6 +4125,397 @@
       "clashesWith": [
         "warm-manuscript",
         "retro-web-96"
+      ]
+    },
+    {
+      "id": "docs-three-column",
+      "kind": "layout",
+      "name": "Docs Three Column",
+      "tier": "production",
+      "regions": [
+        "header",
+        "navTree",
+        "prose",
+        "toc"
+      ],
+      "breakpoints": [
+        "820px",
+        "560px"
+      ],
+      "registryItem": "layout-docs-three-column",
+      "path": "layouts/docs-three-column/LAYOUT.md",
+      "pairsWith": [
+        "motion-slate-minimal",
+        "code-forge",
+        "technical-superfamily",
+        "cjk-bilingual-precision"
+      ],
+      "clashesWith": [
+        "avant-poster",
+        "console-2001"
+      ]
+    },
+    {
+      "id": "split-hero-feed",
+      "kind": "layout",
+      "name": "Split Hero Feed",
+      "tier": "viral",
+      "regions": [
+        "pinnedHero",
+        "feedItems",
+        "footer"
+      ],
+      "breakpoints": [
+        "680px"
+      ],
+      "registryItem": "layout-split-hero-feed",
+      "path": "layouts/split-hero-feed/LAYOUT.md",
+      "pairsWith": [
+        "gallery-curated-sand",
+        "wide-kinetic-display",
+        "editorial-mono",
+        "dark-gallery-index"
+      ],
+      "clashesWith": [
+        "os-core",
+        "retro-web-96"
+      ]
+    },
+    {
+      "id": "kanban-swimlanes",
+      "kind": "layout",
+      "name": "Kanban Swimlanes",
+      "tier": "production",
+      "regions": [
+        "header",
+        "lanes"
+      ],
+      "breakpoints": [
+        "640px"
+      ],
+      "registryItem": "layout-kanban-swimlanes",
+      "path": "layouts/kanban-swimlanes/LAYOUT.md",
+      "pairsWith": [
+        "monolith-dark",
+        "perceptual-scale",
+        "kinetic-studio-white",
+        "bullet-target-bar"
+      ],
+      "clashesWith": [
+        "warm-manuscript",
+        "avant-poster"
+      ]
+    },
+    {
+      "id": "cinema-media-stage",
+      "kind": "layout",
+      "name": "Cinema Media Stage",
+      "tier": "viral",
+      "regions": [
+        "topBar",
+        "stage",
+        "utilityDock",
+        "captionRail"
+      ],
+      "breakpoints": [
+        "520px"
+      ],
+      "registryItem": "layout-cinema-media-stage",
+      "path": "layouts/cinema-media-stage/LAYOUT.md",
+      "pairsWith": [
+        "cinema-noir-motion",
+        "velvet-chrome-prism",
+        "orbital-ceramic",
+        "radial-vignette"
+      ],
+      "clashesWith": [
+        "retro-web-96",
+        "neo-swiss"
+      ]
+    },
+    {
+      "id": "trading-terminal-grid",
+      "kind": "layout",
+      "name": "Trading Terminal Grid",
+      "tier": "experimental",
+      "regions": [
+        "tickerTape",
+        "orderBook",
+        "primaryChart",
+        "executionTicket",
+        "positionsTable"
+      ],
+      "breakpoints": [
+        "780px",
+        "520px"
+      ],
+      "registryItem": "layout-trading-terminal-grid",
+      "path": "layouts/trading-terminal-grid/LAYOUT.md",
+      "pairsWith": [
+        "fui-tactical",
+        "telemetry-fault",
+        "pinstripe-ledger",
+        "step-line-throughput",
+        "waterfall-delta-chart"
+      ],
+      "clashesWith": [
+        "warm-manuscript",
+        "pastel-playful",
+        "tactile-soft"
+      ]
+    },
+    {
+      "id": "comparison-matrix-split",
+      "kind": "layout",
+      "name": "Comparison Matrix Split",
+      "tier": "production",
+      "regions": [
+        "header",
+        "tierCards",
+        "rows"
+      ],
+      "breakpoints": [
+        "620px"
+      ],
+      "registryItem": "layout-comparison-matrix-split",
+      "path": "layouts/comparison-matrix-split/LAYOUT.md",
+      "pairsWith": [
+        "mesh-craft",
+        "perceptual-scale",
+        "neo-display-saas",
+        "funnel-conversion-strip"
+      ],
+      "clashesWith": [
+        "ditherpunk",
+        "phosphor-terminal"
+      ]
+    },
+    {
+      "id": "editorial-index-preview",
+      "kind": "layout",
+      "name": "Editorial Index Preview",
+      "tier": "experimental",
+      "regions": [
+        "header",
+        "items",
+        "previewStage"
+      ],
+      "breakpoints": [
+        "640px"
+      ],
+      "registryItem": "layout-editorial-index-preview",
+      "path": "layouts/editorial-index-preview/LAYOUT.md",
+      "pairsWith": [
+        "gallery-curated-sand",
+        "risograph-print",
+        "wordmark-press",
+        "editorial-didone"
+      ],
+      "clashesWith": [
+        "liquid-glass",
+        "console-2001"
+      ]
+    },
+    {
+      "id": "bullet-target-bar",
+      "kind": "telemetry",
+      "name": "Bullet Target Bar",
+      "tier": "production",
+      "engine": [
+        "react",
+        "svg"
+      ],
+      "perfTier": "low",
+      "reducedMotion": "static-svg",
+      "registryItem": "telemetry-bullet-target-bar",
+      "path": "telemetry/bullet-target-bar.tsx",
+      "pairsWith": [
+        "monolith-dark",
+        "fui-tactical",
+        "kanban-swimlanes",
+        "perceptual-scale"
+      ],
+      "clashesWith": []
+    },
+    {
+      "id": "latency-whisker-band",
+      "kind": "telemetry",
+      "name": "Latency Whisker Band",
+      "tier": "production",
+      "engine": [
+        "react",
+        "svg"
+      ],
+      "perfTier": "low",
+      "reducedMotion": "static-svg",
+      "registryItem": "telemetry-latency-whisker-band",
+      "path": "telemetry/latency-whisker-band.tsx",
+      "pairsWith": [
+        "telemetry-fault",
+        "fui-tactical",
+        "trading-terminal-grid",
+        "command-hud-dashboard"
+      ],
+      "clashesWith": [
+        "pastel-playful"
+      ]
+    },
+    {
+      "id": "horizon-band-sparkline",
+      "kind": "telemetry",
+      "name": "Horizon Band Sparkline",
+      "tier": "experimental",
+      "engine": [
+        "react",
+        "svg"
+      ],
+      "perfTier": "low",
+      "reducedMotion": "static-svg",
+      "registryItem": "telemetry-horizon-band-sparkline",
+      "path": "telemetry/horizon-band-sparkline.tsx",
+      "pairsWith": [
+        "fui-tactical",
+        "trading-terminal-grid",
+        "telemetry-fault",
+        "monolith-dark"
+      ],
+      "clashesWith": [
+        "warm-manuscript"
+      ]
+    },
+    {
+      "id": "waffle-percent-grid",
+      "kind": "telemetry",
+      "name": "Waffle Percent Grid",
+      "tier": "production",
+      "engine": [
+        "react",
+        "svg"
+      ],
+      "perfTier": "low",
+      "reducedMotion": "static-svg",
+      "registryItem": "telemetry-waffle-percent-grid",
+      "path": "telemetry/waffle-percent-grid.tsx",
+      "pairsWith": [
+        "bento-grid",
+        "neo-swiss",
+        "monolith-dark",
+        "perceptual-scale"
+      ],
+      "clashesWith": []
+    },
+    {
+      "id": "waterfall-delta-chart",
+      "kind": "telemetry",
+      "name": "Waterfall Delta Chart",
+      "tier": "production",
+      "engine": [
+        "react",
+        "svg"
+      ],
+      "perfTier": "low",
+      "reducedMotion": "static-svg",
+      "registryItem": "telemetry-waterfall-delta-chart",
+      "path": "telemetry/waterfall-delta-chart.tsx",
+      "pairsWith": [
+        "trading-terminal-grid",
+        "monolith-dark",
+        "code-forge",
+        "telemetry-fault"
+      ],
+      "clashesWith": [
+        "retro-web-96"
+      ]
+    },
+    {
+      "id": "compact-radar-polygon",
+      "kind": "telemetry",
+      "name": "Compact Radar Polygon",
+      "tier": "viral",
+      "engine": [
+        "react",
+        "svg"
+      ],
+      "perfTier": "low",
+      "reducedMotion": "static-svg",
+      "registryItem": "telemetry-compact-radar-polygon",
+      "path": "telemetry/compact-radar-polygon.tsx",
+      "pairsWith": [
+        "velvet-chrome-prism",
+        "fui-tactical",
+        "bento-showcase",
+        "orbital-ceramic"
+      ],
+      "clashesWith": [
+        "retro-web-96"
+      ]
+    },
+    {
+      "id": "step-line-throughput",
+      "kind": "telemetry",
+      "name": "Step Line Throughput",
+      "tier": "production",
+      "engine": [
+        "react",
+        "svg"
+      ],
+      "perfTier": "low",
+      "reducedMotion": "static-svg",
+      "registryItem": "telemetry-step-line-throughput",
+      "path": "telemetry/step-line-throughput.tsx",
+      "pairsWith": [
+        "trading-terminal-grid",
+        "code-forge",
+        "fui-tactical",
+        "industrial-hardware"
+      ],
+      "clashesWith": []
+    },
+    {
+      "id": "funnel-conversion-strip",
+      "kind": "telemetry",
+      "name": "Funnel Conversion Strip",
+      "tier": "production",
+      "engine": [
+        "react",
+        "svg"
+      ],
+      "perfTier": "low",
+      "reducedMotion": "static-svg",
+      "registryItem": "telemetry-funnel-conversion-strip",
+      "path": "telemetry/funnel-conversion-strip.tsx",
+      "pairsWith": [
+        "comparison-matrix-split",
+        "bento-grid",
+        "mesh-craft",
+        "perceptual-scale"
+      ],
+      "clashesWith": [
+        "phosphor-terminal"
+      ]
+    },
+    {
+      "id": "live-equalizer-bars",
+      "kind": "telemetry",
+      "name": "Live Equalizer Bars",
+      "tier": "viral",
+      "engine": [
+        "react",
+        "svg"
+      ],
+      "perfTier": "medium",
+      "reducedMotion": "static-snapshot",
+      "registryItem": "telemetry-live-equalizer-bars",
+      "path": "telemetry/live-equalizer-bars.tsx",
+      "pairsWith": [
+        "industrial-hardware",
+        "fui-tactical",
+        "cinema-noir-motion",
+        "phosphor-terminal"
+      ],
+      "clashesWith": [
+        "warm-manuscript",
+        "archival-paper"
       ]
     }
   ],

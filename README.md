@@ -5,7 +5,7 @@
 <!-- VAULT:BADGES:START -->
 [![Live Playground](https://img.shields.io/badge/Playground-Live-38bdf8?style=flat-square&labelColor=0f1115)](https://aidilzin.github.io/ui-vault/)
 [![Deploy Playground](https://img.shields.io/github/actions/workflow/status/Aidilzin/ui-vault/deploy-playground.yml?branch=main&style=flat-square&label=Pages&labelColor=0f1115)](https://github.com/Aidilzin/ui-vault/actions/workflows/deploy-playground.yml)
-[![Registry Items](https://img.shields.io/badge/Registry-144%20items%20%C2%B7%206%20layers-34d399?style=flat-square&labelColor=0f1115)](./relations.json)
+[![Registry Items](https://img.shields.io/badge/Registry-193%20items%20%C2%B7%206%20layers-34d399?style=flat-square&labelColor=0f1115)](./relations.json)
 [![License: MIT](https://img.shields.io/badge/License-MIT-8b94a3?style=flat-square&labelColor=0f1115)](./LICENSE)
 <!-- VAULT:BADGES:END -->
 
@@ -24,12 +24,12 @@ A curated, zero-bloat registry of **144 design primitives** across 6 composable 
 <!-- VAULT:OVERVIEW:START -->
 | Layer | Items | CLI Prefix | What It Controls | Explore |
 | :--- | ---: | :--- | :--- | :--- |
-| **Styles** | 36 | `style-*` | Palette, surface elevation, borders, radii & anti-patterns (`STYLE.md` + `tokens.css`) | [Catalog](docs/catalog/styles.md) · [Playground ↗](https://aidilzin.github.io/ui-vault/?tab=styles) |
-| **Animations** | 69 | `<name>` | Strict-TS React/CSS/Canvas motion primitives with `prefers-reduced-motion` | [Catalog](docs/catalog/animations.md) · [Playground ↗](https://aidilzin.github.io/ui-vault/) |
-| **Textures** | 12 | `texture-*` | Zero-JS adaptive surface & overlay CSS layers (`--tx-color`, `--tx-opacity`) | [Catalog](docs/catalog/foundations.md#textures) · [Playground ↗](https://aidilzin.github.io/ui-vault/?tab=foundations) |
-| **Typography** | 9 | `type-*` | Scoped fluid `clamp()` pairings, `tabular-nums` & OpenType rules | [Catalog](docs/catalog/foundations.md#typography) · [Playground ↗](https://aidilzin.github.io/ui-vault/?tab=foundations) |
-| **Layouts** | 8 | `layout-*` | Container-query (`@container`) page shells driven by `--lay-*` tokens | [Catalog](docs/catalog/foundations.md#layouts) · [Playground ↗](https://aidilzin.github.io/ui-vault/?tab=foundations) |
-| **Telemetry** | 10 | `telemetry-*` | Zero-library SVG/React micro-charts with WCAG-safe `--tel-*` tokens | [Catalog](docs/catalog/foundations.md#telemetry) · [Playground ↗](https://aidilzin.github.io/ui-vault/?tab=foundations) |
+| **Styles** | 43 | `style-*` | Palette, surface elevation, borders, radii & anti-patterns (`STYLE.md` + `tokens.css`) | [Catalog](docs/catalog/styles.md) · [Playground ↗](https://aidilzin.github.io/ui-vault/?tab=styles) |
+| **Animations** | 79 | `<name>` | Strict-TS React/CSS/Canvas motion primitives with `prefers-reduced-motion` | [Catalog](docs/catalog/animations.md) · [Playground ↗](https://aidilzin.github.io/ui-vault/) |
+| **Textures** | 21 | `texture-*` | Zero-JS adaptive surface & overlay CSS layers (`--tx-color`, `--tx-opacity`) | [Catalog](docs/catalog/foundations.md#textures) · [Playground ↗](https://aidilzin.github.io/ui-vault/?tab=foundations) |
+| **Typography** | 16 | `type-*` | Scoped fluid `clamp()` pairings, `tabular-nums` & OpenType rules | [Catalog](docs/catalog/foundations.md#typography) · [Playground ↗](https://aidilzin.github.io/ui-vault/?tab=foundations) |
+| **Layouts** | 15 | `layout-*` | Container-query (`@container`) page shells driven by `--lay-*` tokens | [Catalog](docs/catalog/foundations.md#layouts) · [Playground ↗](https://aidilzin.github.io/ui-vault/?tab=foundations) |
+| **Telemetry** | 19 | `telemetry-*` | Zero-library SVG/React micro-charts with WCAG-safe `--tel-*` tokens | [Catalog](docs/catalog/foundations.md#telemetry) · [Playground ↗](https://aidilzin.github.io/ui-vault/?tab=foundations) |
 <!-- VAULT:OVERVIEW:END -->
 
 ---

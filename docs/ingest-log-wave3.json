@@ -1,0 +1,1250 @@
+{
+  "wave": 3,
+  "generatedAt": "2026-11-27T16:50:00+08:00",
+  "baseline": {
+    "version": "1.6.0",
+    "totalItems": 144,
+    "styles": 36,
+    "animations": 69,
+    "textures": 12,
+    "typography": 9,
+    "layouts": 8,
+    "telemetry": 10,
+    "hybrids": 20
+  },
+  "antiBloatRules": {
+    "textures": "100% pure CSS gradients or inline SVG mask-image referencing var(--tx-color, currentColor) + --tx-opacity + --tx-size; zero external images, zero JS",
+    "typography": "Scoped .type-<id> typography.css + TYPOGRAPHY.md with fluid clamp() scales, uppercase tracking >= 0.06em, verified Google Fonts or Fontshare CSS URL",
+    "layouts": "Container-queried (container-type: inline-size) React slot shells, zero hardcoded palette colors (--lay-*), zero 100vh/position:fixed traps, decoupled .tsx + .css + LAYOUT.md",
+    "telemetry": "Zero-dependency React + SVG (Canvas only when genuinely needed), responsive viewBox, tabular-nums, bounded tooltips, prefers-reduced-motion, adaptive --tel-* tokens",
+    "animations": "dependencies: [] preferred, strict TypeScript, compositor-friendly properties, mandatory prefers-reduced-motion",
+    "allowedLicenses": [
+      "MIT",
+      "Apache-2.0",
+      "ISC",
+      "CC-BY-4.0",
+      "clean-room"
+    ]
+  },
+  "bookmarksAudit": [
+    {
+      "name": "Hoverstat.es",
+      "url": "https://www.hoverstat.es/",
+      "httpStatus": "200 text/html",
+      "status": "harvested",
+      "notes": "Wave-1 harvested avant-poster; Wave-3 queues risograph-print, blueprint-cyanotype (Dembrandt MCP) and editorial-index-preview layout pattern."
+    },
+    {
+      "name": "Godly",
+      "url": "https://godly.website/",
+      "httpStatus": "200 text/html",
+      "status": "harvested",
+      "notes": "Wave-1 harvested dark-gallery-index; Wave-3 queues gallery-curated-sand (Dembrandt MCP) and split-hero-feed / cinema-media-stage layout patterns."
+    },
+    {
+      "name": "Cosmos",
+      "url": "https://www.cosmos.so/",
+      "httpStatus": "200 text/html",
+      "status": "already-covered",
+      "notes": "Wave-1 harvested tactile-studio-warm via Dembrandt MCP; used only as visual moodboard reference for blueprint-cyanotype."
+    },
+    {
+      "name": "Are.na",
+      "url": "https://www.are.na/",
+      "httpStatus": "200 text/html",
+      "status": "already-covered",
+      "notes": "Wave-1 harvested archival-paper via Dembrandt MCP; no additional overlapping shell style queued."
+    },
+    {
+      "name": "React Bits",
+      "url": "https://reactbits.dev/",
+      "registryEndpoint": "https://reactbits.dev/r/registry.json",
+      "httpStatus": "200 application/json (1286 items)",
+      "license": "MIT",
+      "status": "harvested",
+      "notes": "MIT open registry; Wave-3 queues 4 distinct TS-CSS animations (target-bracket-cursor, true-focus-frame, folder-paper-fan, slide-to-commit) plus velvet-chrome-prism style."
+    },
+    {
+      "name": "Motion Primitives",
+      "url": "https://motion-primitives.com/",
+      "registryEndpoint": "https://motion-primitives.com/c/registry.json",
+      "httpStatus": "200 application/json (33 items)",
+      "license": "MIT",
+      "status": "harvested",
+      "notes": "MIT open registry; Wave-3 queues 3 distinct animations (text-morph-swap, before-after-curtain, expandable-toolbar) plus motion-slate-minimal style."
+    },
+    {
+      "name": "Animate UI",
+      "url": "https://animate-ui.com/",
+      "registryEndpoint": "https://animate-ui.com/r/registry.json",
+      "httpStatus": "200 application/json (789 items)",
+      "license": "MIT + Commons Clause",
+      "status": "paid-skipped",
+      "notes": "imskyleen/animate-ui uses MIT + Commons Clause restricting component redistribution in a competing library/registry; zero direct code queued."
+    },
+    {
+      "name": "Magic UI",
+      "url": "https://magicui.design/",
+      "registryEndpoint": "https://magicui.design/r/registry.json",
+      "httpStatus": "200 application/json (258 items)",
+      "license": "MIT",
+      "status": "harvested",
+      "notes": "MIT open registry; Wave-3 queues 3 distinct animations (line-shadow-heading, optical-zoom-lens, flickering-telemetry-grid)."
+    },
+    {
+      "name": "Codrops",
+      "url": "https://tympanus.net/codrops/",
+      "httpStatus": "403 text/html (Cloudflare)",
+      "status": "blocked/unreachable",
+      "notes": "Direct HTTP fetch blocked (403); Wave-1 already harvested 6 Codrops GitHub MIT mechanics cleanly."
+    },
+    {
+      "name": "Made With GSAP",
+      "url": "https://madewithgsap.com/",
+      "httpStatus": "200 text/html",
+      "status": "harvested",
+      "notes": "GSAP proprietary plugin code excluded; Wave-3 queues cinema-noir-motion style via Dembrandt MCP (zero GSAP runtime dependency)."
+    },
+    {
+      "name": "60fps.design",
+      "url": "https://60fps.design/",
+      "httpStatus": "200 text/html",
+      "status": "harvested",
+      "notes": "Wave-1 harvested spotlight-tabs & progressive-blur-edge; Wave-3 queues kinetic-studio-white style via Dembrandt MCP and informed slide-to-commit interaction timing."
+    },
+    {
+      "name": "Ripplix",
+      "url": "https://www.ripplix.com/",
+      "httpStatus": "200 text/html",
+      "status": "harvested",
+      "notes": "Wave-1 harvested tactile-press-badge; Wave-3 references Ripplix interaction curves for slide-to-commit and gallery-curated-sand curation."
+    },
+    {
+      "name": "Awwwards Animation Collection",
+      "url": "https://www.awwwards.com/awwwards/collections/animation/",
+      "httpStatus": "timeout (aborted after 7s)",
+      "status": "blocked/unreachable",
+      "notes": "Direct fetch timed out under bot/WAF protection; skipped cleanly."
+    }
+  ],
+  "skippedSummary": {
+    "alreadyCoveredBookmarks": 2,
+    "blockedOrUnreachableBookmarks": 2,
+    "commonsClauseOrUnlicensedSkipped": {
+      "count": 3,
+      "items": [
+        "animate-ui.com (MIT + Commons Clause — restricts redistribution in a competing registry)",
+        "jayhyp/react-sparkline-chart (no explicit LICENSE file on GitHub)",
+        "fffuel.co verbatim SVG files (license forbids redistributing standalone SVG assets -> clean-room minimal mask only)"
+      ]
+    },
+    "duplicateRegistryItemsSkipped": {
+      "count": 24,
+      "examples": [
+        "reactbits/ScrambleText, BlurText, ShinyText, ClickSpark, CountUp, StarBorder, MagnetLines, Crosshair, Dock, ElasticSlider, PixelCard, GlareHover, AccordionGallery, FlipCard (already in vault)",
+        "motion-primitives/text-roll, scroll-progress, progressive-blur, dock, magnetic, tilt, border-trail (already in vault)",
+        "magicui/border-beam, marquee, meteors, number-ticker, animated-beam, dot-pattern, grid-pattern, noise-texture (already in vault)"
+      ]
+    },
+    "heavyWebglExcluded": {
+      "count": 6,
+      "examples": [
+        "reactbits/FluidGlass, Balatro, Ballpit, LiquidEther, Galaxy, Hyperspeed (heavy WebGL/Three.js shader runtimes)"
+      ]
+    }
+  },
+  "batches": {
+    "batch-i-bookmarks-styles": [
+      {
+        "id": "cinema-noir-motion",
+        "kind": "style",
+        "group": "04-spatial-physics",
+        "tier": "viral",
+        "sourceName": "Made With GSAP Showcase",
+        "sourceUrl": "https://madewithgsap.com/",
+        "extractionMethod": "dembrandt-mcp",
+        "license": "clean-room",
+        "distinctFromExisting": "Ultra-deep obsidian cinema ground (#060708) with tungsten spotlight amber (#f59e0b) and letterbox shutter framing, distinct from cyan-tech monolith-dark or translucent liquid-glass.",
+        "proposedPairsWith": [
+          "lamp-horizon-glow",
+          "split-reveal",
+          "cinema-media-stage",
+          "radial-vignette",
+          "editorial-didone"
+        ],
+        "proposedClashesWith": [
+          "pastel-playful",
+          "retro-web-96",
+          "eight-bit-arcade"
+        ]
+      },
+      {
+        "id": "kinetic-studio-white",
+        "kind": "style",
+        "group": "05-modern-craft",
+        "tier": "production",
+        "sourceName": "60fps.design Archive",
+        "sourceUrl": "https://60fps.design/",
+        "extractionMethod": "dembrandt-mcp",
+        "license": "clean-room",
+        "distinctFromExisting": "Pure alabaster (#fafafa) micro-interaction showcase canvas with whisper-soft 1px pill elevation and crisp iOS/macOS spring feedback tokens, distinct from stark black-white neo-swiss, rounded tactile-soft shadows, and 12-step enterprise perceptual-scale.",
+        "proposedPairsWith": [
+          "spotlight-tabs",
+          "expandable-toolbar",
+          "slide-to-commit",
+          "neo-minimal-mono",
+          "dot-matrix"
+        ],
+        "proposedClashesWith": [
+          "ditherpunk",
+          "acid-y2k",
+          "phosphor-terminal"
+        ]
+      },
+      {
+        "id": "velvet-chrome-prism",
+        "kind": "style",
+        "group": "04-spatial-physics",
+        "tier": "experimental",
+        "sourceName": "React Bits Showcase",
+        "sourceUrl": "https://reactbits.dev/",
+        "extractionMethod": "dembrandt-mcp",
+        "license": "clean-room",
+        "distinctFromExisting": "Deep ultraviolet-charcoal ground (#07050f) with iridescent violet-cyan prism border seams and dark optical cards, distinct from bright aurora-mesh gradients, clear liquid-glass, and matte stone orbital-ceramic.",
+        "proposedPairsWith": [
+          "holographic-foil-card",
+          "target-bracket-cursor",
+          "optical-zoom-lens",
+          "concentric-radar-arcs",
+          "wide-kinetic-display"
+        ],
+        "proposedClashesWith": [
+          "warm-manuscript",
+          "retro-web-96",
+          "neo-brutalism"
+        ]
+      },
+      {
+        "id": "risograph-print",
+        "kind": "style",
+        "group": "03-kinetic-rebel",
+        "tier": "experimental",
+        "sourceName": "Hoverstat.es Experimental Archive",
+        "sourceUrl": "https://www.hoverstat.es/",
+        "extractionMethod": "dembrandt-mcp",
+        "license": "clean-room",
+        "distinctFromExisting": "Warm uncoated cream stock (#f6f1e7) overprinted with soy-ink cobalt (#1d4ed8) and vermilion (#ef4444) misregistration offsets, distinct from primary-yellow hard-shadow neo-brutalism and monochrome avant-poster.",
+        "proposedPairsWith": [
+          "line-shadow-heading",
+          "halftone-screen",
+          "mineral-terrazzo-speckle",
+          "editorial-index-preview",
+          "kinetic-brutal"
+        ],
+        "proposedClashesWith": [
+          "liquid-glass",
+          "command-dark",
+          "monolith-dark"
+        ]
+      },
+      {
+        "id": "blueprint-cyanotype",
+        "kind": "style",
+        "group": "02-retro-compute",
+        "tier": "experimental",
+        "sourceName": "Hoverstat.es / Cosmos Technical Archive",
+        "sourceUrl": "https://www.hoverstat.es/",
+        "extractionMethod": "dembrandt-mcp",
+        "license": "clean-room",
+        "distinctFromExisting": "Prussian engineering cyanotype cobalt canvas (#0b2545) with crisp drafting-white 1px hairlines (#e8f1ff) and technical callout markers, distinct from green CRT phosphor-terminal and 1-bit ditherpunk.",
+        "proposedPairsWith": [
+          "architect-grid",
+          "blueprint-margin-ruler",
+          "crosshair-field",
+          "target-bracket-cursor",
+          "technical-superfamily"
+        ],
+        "proposedClashesWith": [
+          "warm-manuscript",
+          "pastel-playful",
+          "liquid-glass"
+        ]
+      },
+      {
+        "id": "motion-slate-minimal",
+        "kind": "style",
+        "group": "05-modern-craft",
+        "tier": "production",
+        "sourceName": "Motion Primitives Studio",
+        "sourceUrl": "https://motion-primitives.com/",
+        "extractionMethod": "dembrandt-mcp",
+        "license": "clean-room",
+        "distinctFromExisting": "Ultra-quiet neutral zinc documentation canvas (#ffffff / #18181b) with 1px hairline component frames and zero brand-hue distraction, distinct from dark-only monolith-dark, high-contrast black-border monochrome-stark, and Swiss grid neo-swiss.",
+        "proposedPairsWith": [
+          "text-morph-swap",
+          "before-after-curtain",
+          "expandable-toolbar",
+          "docs-three-column",
+          "neo-minimal-mono"
+        ],
+        "proposedClashesWith": [
+          "acid-y2k",
+          "console-2001",
+          "eight-bit-arcade"
+        ]
+      },
+      {
+        "id": "gallery-curated-sand",
+        "kind": "style",
+        "group": "06-editorial-warm",
+        "tier": "production",
+        "sourceName": "Godly / Ripplix Curated Exhibition",
+        "sourceUrl": "https://godly.website/",
+        "extractionMethod": "dembrandt-mcp",
+        "license": "clean-room",
+        "distinctFromExisting": "Sunlit limestone/travertine exhibition ground (#edeae3) with cool graphite ink and architectural index rules, distinct from terracotta-ink literary warm-manuscript, utilitarian archival-paper, and soft-pill tactile-studio-warm.",
+        "proposedPairsWith": [
+          "editorial-didone",
+          "mineral-terrazzo-speckle",
+          "split-hero-feed",
+          "editorial-index-preview",
+          "before-after-curtain"
+        ],
+        "proposedClashesWith": [
+          "phosphor-terminal",
+          "acid-y2k",
+          "telemetry-fault"
+        ]
+      }
+    ],
+    "batch-j-bookmarks-animations": [
+      {
+        "id": "target-bracket-cursor",
+        "kind": "animation",
+        "group": "cursor-reactive",
+        "tier": "viral",
+        "proposedLabSlot": "interactive-stage",
+        "sourceName": "React Bits (TargetCursor-TS-CSS)",
+        "sourceUrl": "https://reactbits.dev/r/TargetCursor-TS-CSS.json",
+        "extractionMethod": "open-registry-json",
+        "license": "MIT",
+        "distinctFromExisting": "Four animated corner-bracket reticles that magnetically snap and resize to wrap any hovered target element's bounding box, distinct from full-viewport coordinate lines in crosshair-reticle.",
+        "proposedPairsWith": [
+          "fui-tactical",
+          "blueprint-cyanotype",
+          "velvet-chrome-prism",
+          "industrial-hardware"
+        ],
+        "proposedClashesWith": [
+          "warm-manuscript",
+          "pastel-playful"
+        ]
+      },
+      {
+        "id": "true-focus-frame",
+        "kind": "animation",
+        "group": "text-kinetic",
+        "tier": "viral",
+        "proposedLabSlot": "hero-title",
+        "sourceName": "React Bits (TrueFocus-TS-CSS)",
+        "sourceUrl": "https://reactbits.dev/r/TrueFocus-TS-CSS.json",
+        "extractionMethod": "open-registry-json",
+        "license": "MIT",
+        "distinctFromExisting": "Animated corner-bracket focus frame stepping word-by-word across a headline while softly blurring unfocused sibling words, distinct from one-shot entrance blur-text.",
+        "proposedPairsWith": [
+          "fui-tactical",
+          "monolith-dark",
+          "cinema-noir-motion",
+          "editorial-mono"
+        ],
+        "proposedClashesWith": [
+          "retro-web-96",
+          "os-core"
+        ]
+      },
+      {
+        "id": "text-morph-swap",
+        "kind": "animation",
+        "group": "text-kinetic",
+        "tier": "production",
+        "proposedLabSlot": "hero-title",
+        "sourceName": "Motion Primitives (text-morph)",
+        "sourceUrl": "https://motion-primitives.com/c/text-morph.json",
+        "extractionMethod": "open-registry-json",
+        "license": "MIT",
+        "distinctFromExisting": "Character-preserving cross-layout morph that smoothly slides shared glyphs into new positions when labels change, distinct from random glyph-cycling scramble-text or vertical drum text-roll.",
+        "proposedPairsWith": [
+          "motion-slate-minimal",
+          "kinetic-studio-white",
+          "monolith-dark",
+          "perceptual-scale"
+        ],
+        "proposedClashesWith": [
+          "eight-bit-arcade"
+        ]
+      },
+      {
+        "id": "line-shadow-heading",
+        "kind": "animation",
+        "group": "text-kinetic",
+        "tier": "experimental",
+        "proposedLabSlot": "hero-title",
+        "sourceName": "Magic UI (line-shadow-text)",
+        "sourceUrl": "https://magicui.design/r/line-shadow-text.json",
+        "extractionMethod": "open-registry-json",
+        "license": "MIT",
+        "distinctFromExisting": "Animated diagonal hatch line-shadow offset projected behind bold display headings via CSS background-clip text, distinct from metallic specular sheen in shiny-text.",
+        "proposedPairsWith": [
+          "risograph-print",
+          "neo-brutalism",
+          "avant-poster",
+          "swiss-type-foundry"
+        ],
+        "proposedClashesWith": [
+          "liquid-glass",
+          "warm-manuscript"
+        ]
+      },
+      {
+        "id": "before-after-curtain",
+        "kind": "animation",
+        "group": "layout-morph",
+        "tier": "production",
+        "proposedLabSlot": "interactive-stage",
+        "sourceName": "Motion Primitives (image-comparison)",
+        "sourceUrl": "https://motion-primitives.com/c/image-comparison.json",
+        "extractionMethod": "open-registry-json",
+        "license": "MIT",
+        "distinctFromExisting": "Pointer- and keyboard-draggable vertical split-curtain slider for live before/after visual comparisons, distinct from text-only unified diff inline-code-diff.",
+        "proposedPairsWith": [
+          "motion-slate-minimal",
+          "gallery-curated-sand",
+          "dark-gallery-index",
+          "bento-grid"
+        ],
+        "proposedClashesWith": [
+          "retro-web-96"
+        ]
+      },
+      {
+        "id": "expandable-toolbar",
+        "kind": "animation",
+        "group": "layout-morph",
+        "tier": "production",
+        "proposedLabSlot": "nav",
+        "sourceName": "Motion Primitives (toolbar-expandable)",
+        "sourceUrl": "https://motion-primitives.com/c/toolbar-expandable.json",
+        "extractionMethod": "open-registry-json",
+        "license": "MIT",
+        "distinctFromExisting": "Compact icon toolbar that smoothly morphs height and width into contextual inline panels on selection, distinct from flat tab indicator spotlight-tabs or magnifying dock-magnify.",
+        "proposedPairsWith": [
+          "kinetic-studio-white",
+          "motion-slate-minimal",
+          "command-dark",
+          "monolith-dark"
+        ],
+        "proposedClashesWith": [
+          "neo-brutalism",
+          "retro-web-96"
+        ]
+      },
+      {
+        "id": "folder-paper-fan",
+        "kind": "animation",
+        "group": "layout-morph",
+        "tier": "viral",
+        "proposedLabSlot": "feature-cards",
+        "sourceName": "React Bits (FolderFloat-TS-CSS)",
+        "sourceUrl": "https://reactbits.dev/r/FolderFloat-TS-CSS.json",
+        "extractionMethod": "open-registry-json",
+        "license": "MIT",
+        "distinctFromExisting": "Tactile desktop folder container whose tucked document sheets fan outward in angled 3D perspective on hover/click, distinct from flat click-to-cycle stacked-card-deck.",
+        "proposedPairsWith": [
+          "tactile-soft",
+          "pastel-playful",
+          "tactile-studio-warm",
+          "os-core"
+        ],
+        "proposedClashesWith": [
+          "phosphor-terminal",
+          "telemetry-fault"
+        ]
+      },
+      {
+        "id": "optical-zoom-lens",
+        "kind": "animation",
+        "group": "physics-optics",
+        "tier": "viral",
+        "proposedLabSlot": "interactive-stage",
+        "sourceName": "Magic UI (lens)",
+        "sourceUrl": "https://magicui.design/r/lens.json",
+        "extractionMethod": "open-registry-json",
+        "license": "MIT",
+        "distinctFromExisting": "Circular pointer-tracking optical magnifying loupe enlarging underlying specimen details at 2x scale, distinct from SVG turbulence warp in liquid-glass-filter.",
+        "proposedPairsWith": [
+          "velvet-chrome-prism",
+          "dark-gallery-index",
+          "monochrome-gallery",
+          "orbital-ceramic"
+        ],
+        "proposedClashesWith": [
+          "retro-web-96",
+          "ditherpunk"
+        ]
+      },
+      {
+        "id": "flickering-telemetry-grid",
+        "kind": "animation",
+        "group": "shader-canvas",
+        "tier": "viral",
+        "proposedLabSlot": "hero-bg",
+        "sourceName": "Magic UI (flickering-grid)",
+        "sourceUrl": "https://magicui.design/r/flickering-grid.json",
+        "extractionMethod": "open-registry-json",
+        "license": "MIT",
+        "distinctFromExisting": "Full-bleed ambient Canvas hero backdrop of stochastically shimmering micro-squares, distinct from data-bound interactive pod-health buttons in led-status-matrix and pointer-triggered dissolve in pixel-hover-grid.",
+        "proposedPairsWith": [
+          "fui-tactical",
+          "monolith-dark",
+          "telemetry-fault",
+          "command-dark"
+        ],
+        "proposedClashesWith": [
+          "warm-manuscript",
+          "pastel-playful"
+        ]
+      },
+      {
+        "id": "slide-to-commit",
+        "kind": "animation",
+        "group": "micro-feedback",
+        "tier": "production",
+        "proposedLabSlot": "hero-cta",
+        "sourceName": "React Bits (SlideCommit-TS-CSS) / 60fps.design",
+        "sourceUrl": "https://reactbits.dev/r/SlideCommit-TS-CSS.json",
+        "extractionMethod": "open-registry-json",
+        "license": "MIT",
+        "distinctFromExisting": "Horizontal pointer-drag thumb across a confirmation rail with spring snap-back if released early and locked commit state, distinct from stationary press-and-hold fill in hold-to-confirm.",
+        "proposedPairsWith": [
+          "kinetic-studio-white",
+          "industrial-hardware",
+          "command-dark",
+          "perceptual-scale"
+        ],
+        "proposedClashesWith": [
+          "retro-web-96"
+        ]
+      }
+    ],
+    "batch-k-textures-and-typography": [
+      {
+        "id": "isometric-cube-grid",
+        "kind": "texture",
+        "group": "texture",
+        "tier": "experimental",
+        "sourceName": "Hero Patterns / PatternFills Isometric Geometry",
+        "sourceUrl": "https://github.com/iros/patternfills",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "30-degree isometric wireframe cube lattice via adaptive SVG mask-image, distinct from orthogonal architect-grid and 45-degree diagonal-hatch.",
+        "proposedPairsWith": [
+          "fui-tactical",
+          "blueprint-cyanotype",
+          "bento-grid",
+          "industrial-hardware"
+        ],
+        "proposedClashesWith": [
+          "warm-manuscript",
+          "pastel-playful"
+        ]
+      },
+      {
+        "id": "pcb-circuit-traces",
+        "kind": "texture",
+        "group": "texture",
+        "tier": "experimental",
+        "sourceName": "Hero Patterns Circuit Board Geometry",
+        "sourceUrl": "https://heropatterns.com/",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "45-degree routed printed-circuit traces and via pads via adaptive SVG mask-image, distinct from organic topographic-mesh contours.",
+        "proposedPairsWith": [
+          "phosphor-terminal",
+          "fui-tactical",
+          "telemetry-fault",
+          "blueprint-cyanotype"
+        ],
+        "proposedClashesWith": [
+          "warm-manuscript",
+          "tactile-soft",
+          "liquid-glass"
+        ]
+      },
+      {
+        "id": "hex-honeycomb-mesh",
+        "kind": "texture",
+        "group": "texture",
+        "tier": "viral",
+        "sourceName": "CSS Pattern / PatternFills Hex Lattice",
+        "sourceUrl": "https://css-pattern.com/",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Tessellated hexagonal honeycomb hairline mesh via adaptive SVG mask-image, distinct from square architect-grid and circular dot-matrix.",
+        "proposedPairsWith": [
+          "velvet-chrome-prism",
+          "orbital-ceramic",
+          "command-dark",
+          "fui-tactical"
+        ],
+        "proposedClashesWith": [
+          "warm-manuscript",
+          "retro-web-96"
+        ]
+      },
+      {
+        "id": "micro-plus-stitch",
+        "kind": "texture",
+        "group": "texture",
+        "tier": "production",
+        "sourceName": "CSS Pattern Fine Stitch Grid",
+        "sourceUrl": "https://css-pattern.com/",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Tightly pitched dashed textile/tailoring micro-stitch intersections in pure CSS gradients, distinct from sparse large-pitch HUD crosshair-field.",
+        "proposedPairsWith": [
+          "archival-paper",
+          "tactile-studio-warm",
+          "motion-slate-minimal",
+          "neo-swiss"
+        ],
+        "proposedClashesWith": [
+          "acid-y2k",
+          "eight-bit-arcade"
+        ]
+      },
+      {
+        "id": "concentric-radar-arcs",
+        "kind": "texture",
+        "group": "texture",
+        "tier": "viral",
+        "sourceName": "MagicPattern Concentric Radial Rings",
+        "sourceUrl": "https://www.magicpattern.design/tools/css-backgrounds",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Pure CSS repeating-radial-gradient concentric sonar/orbital distance rings, distinct from edge-scrim radial-vignette.",
+        "proposedPairsWith": [
+          "ambient-orbit",
+          "orbital-ceramic",
+          "velvet-chrome-prism",
+          "fui-tactical"
+        ],
+        "proposedClashesWith": [
+          "neo-brutalism",
+          "retro-web-96"
+        ]
+      },
+      {
+        "id": "pinstripe-ledger",
+        "kind": "texture",
+        "group": "texture",
+        "tier": "production",
+        "sourceName": "CSS Pattern Vertical Ledger Stripes",
+        "sourceUrl": "https://css-pattern.com/",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Crisp vertical editorial/financial ledger hairline pinstripes in pure CSS repeating-linear-gradient, distinct from horizontal crt-scanlines and 45-degree diagonal-hatch.",
+        "proposedPairsWith": [
+          "neo-swiss",
+          "monochrome-stark",
+          "swiss-type-foundry",
+          "monolith-dark"
+        ],
+        "proposedClashesWith": [
+          "pastel-playful",
+          "liquid-glass"
+        ]
+      },
+      {
+        "id": "blueprint-margin-ruler",
+        "kind": "texture",
+        "group": "texture",
+        "tier": "production",
+        "sourceName": "Technical Drafting Edge Ruler Pattern",
+        "sourceUrl": "https://css-pattern.com/",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Calibrated major/minor millimeter tick-mark ruler pinned strictly along top and left container margins, leaving the interior field uncluttered unlike full-canvas architect-grid.",
+        "proposedPairsWith": [
+          "blueprint-cyanotype",
+          "industrial-hardware",
+          "fui-tactical",
+          "transit-precision"
+        ],
+        "proposedClashesWith": [
+          "pastel-playful",
+          "warm-manuscript"
+        ]
+      },
+      {
+        "id": "mineral-terrazzo-speckle",
+        "kind": "texture",
+        "group": "texture",
+        "tier": "production",
+        "sourceName": "fffuel.co Organic Mineral Speckle (Clean-Room)",
+        "sourceUrl": "https://www.fffuel.co/",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Irregular scattered ceramic/stone mineral speckles via minimal original SVG mask-image, distinct from woven paper-fiber and high-frequency film-grain.",
+        "proposedPairsWith": [
+          "gallery-curated-sand",
+          "risograph-print",
+          "warm-manuscript",
+          "tactile-studio-warm"
+        ],
+        "proposedClashesWith": [
+          "phosphor-terminal",
+          "acid-y2k"
+        ]
+      },
+      {
+        "id": "carbon-twill-weave",
+        "kind": "texture",
+        "group": "texture",
+        "tier": "viral",
+        "sourceName": "CSS Pattern Carbon Fiber Twill",
+        "sourceUrl": "https://css-pattern.com/",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Interlocking diagonal carbon-fiber twill micro-weave built with layered CSS linear gradients, distinct from directional horizontal brushed-anodized.",
+        "proposedPairsWith": [
+          "industrial-hardware",
+          "command-dark",
+          "cinema-noir-motion",
+          "dark-gallery-index"
+        ],
+        "proposedClashesWith": [
+          "warm-manuscript",
+          "pastel-playful"
+        ]
+      },
+      {
+        "id": "editorial-didone",
+        "kind": "typography",
+        "group": "typography",
+        "tier": "viral",
+        "fonts": [
+          "Bodoni Moda",
+          "Plus Jakarta Sans",
+          "IBM Plex Mono"
+        ],
+        "stylesheetUrl": "https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Plus+Jakarta+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap",
+        "sourceName": "Typewolf / Google Fonts Didone Pairing",
+        "sourceUrl": "https://www.typewolf.com/",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Extreme hairline-thick Didone luxury fashion contrast (Bodoni Moda optical serif), far sharper and wider than condensed editorial-serif (Instrument Serif) or soft literary-humanist (Fraunces).",
+        "proposedPairsWith": [
+          "gallery-curated-sand",
+          "cinema-noir-motion",
+          "monochrome-gallery",
+          "editorial-index-preview"
+        ],
+        "proposedClashesWith": [
+          "eight-bit-arcade",
+          "phosphor-terminal",
+          "neo-brutalism"
+        ]
+      },
+      {
+        "id": "technical-superfamily",
+        "kind": "typography",
+        "group": "typography",
+        "tier": "production",
+        "fonts": [
+          "IBM Plex Sans",
+          "IBM Plex Serif",
+          "IBM Plex Mono"
+        ],
+        "stylesheetUrl": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap",
+        "sourceName": "Fontpair / IBM Plex Tri-Voice Superfamily",
+        "sourceUrl": "https://www.fontpair.co/",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Unified neo-grotesque engineering superfamily pairing matching x-height Sans, Serif, and Mono cuts from IBM Plex, distinct from Inter-based precision-mono.",
+        "proposedPairsWith": [
+          "blueprint-cyanotype",
+          "code-forge",
+          "telemetry-fault",
+          "docs-three-column"
+        ],
+        "proposedClashesWith": [
+          "pastel-playful",
+          "acid-y2k"
+        ]
+      },
+      {
+        "id": "wide-kinetic-display",
+        "kind": "typography",
+        "group": "typography",
+        "tier": "experimental",
+        "fonts": [
+          "Clash Display",
+          "Satoshi"
+        ],
+        "stylesheetUrl": "https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap",
+        "sourceName": "Fontshare (Clash Display + Satoshi)",
+        "sourceUrl": "https://www.fontshare.com/",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Modernist neo-grotesque display with sharp squared apertures (Clash Display + Satoshi via Fontshare API), cleaner and more contemporary than avant-garde eccentric kinetic-brutal (Syne).",
+        "proposedPairsWith": [
+          "velvet-chrome-prism",
+          "aurora-mesh",
+          "bento-grid",
+          "split-hero-feed"
+        ],
+        "proposedClashesWith": [
+          "warm-manuscript",
+          "retro-web-96"
+        ]
+      },
+      {
+        "id": "geometric-friendly",
+        "kind": "typography",
+        "group": "typography",
+        "tier": "production",
+        "fonts": [
+          "Plus Jakarta Sans",
+          "Nunito",
+          "DM Mono"
+        ],
+        "stylesheetUrl": "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Nunito:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap",
+        "sourceName": "Fontpair / Typoscale Warm Geometric",
+        "sourceUrl": "https://github.com/bilalmlkdev/typoscale",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Approachable rounded-terminal geometric system (Plus Jakarta Sans + Nunito + DM Mono) tailored for consumer apps and soft tactile UIs, distinct from sharper neo-display-saas.",
+        "proposedPairsWith": [
+          "tactile-soft",
+          "pastel-playful",
+          "mesh-craft",
+          "perceptual-scale"
+        ],
+        "proposedClashesWith": [
+          "fui-tactical",
+          "phosphor-terminal",
+          "neo-brutalism"
+        ]
+      },
+      {
+        "id": "cjk-bilingual-precision",
+        "kind": "typography",
+        "group": "typography",
+        "tier": "production",
+        "fonts": [
+          "Noto Sans JP",
+          "Inter",
+          "JetBrains Mono"
+        ],
+        "stylesheetUrl": "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
+        "sourceName": "Open-Design CJK Typography Craft Rules",
+        "sourceUrl": "https://github.com/nexu-io/open-design",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Bilingual Latin + CJK system enforcing relaxed display leading (>= 1.3), balanced ideographic/Latin baseline metrics, and strict tabular numerals—filling a completely uncovered i18n niche.",
+        "proposedPairsWith": [
+          "monochrome-stark",
+          "motion-slate-minimal",
+          "transit-precision",
+          "docs-three-column"
+        ],
+        "proposedClashesWith": [
+          "acid-y2k",
+          "pixel-arcade"
+        ]
+      },
+      {
+        "id": "architectural-slab",
+        "kind": "typography",
+        "group": "typography",
+        "tier": "production",
+        "fonts": [
+          "Zilla Slab",
+          "Inter",
+          "Space Mono"
+        ],
+        "stylesheetUrl": "https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Inter:wght@400;500&family=Space+Mono:wght@400;700&display=swap",
+        "sourceName": "Typewolf / Google Fonts Contemporary Slab",
+        "sourceUrl": "https://www.typewolf.com/",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Crisp journalistic slab-serif display voice (Zilla Slab + Inter + Space Mono) with sturdy bracketed serifs, distinct from high-contrast editorial-serif and sans swiss-grotesk.",
+        "proposedPairsWith": [
+          "archival-paper",
+          "neo-swiss",
+          "editorial-mono",
+          "risograph-print"
+        ],
+        "proposedClashesWith": [
+          "liquid-glass",
+          "aurora-mesh"
+        ]
+      },
+      {
+        "id": "neo-minimal-mono",
+        "kind": "typography",
+        "group": "typography",
+        "tier": "viral",
+        "fonts": [
+          "Geist",
+          "Geist Mono"
+        ],
+        "stylesheetUrl": "https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap",
+        "sourceName": "Vercel Geist Type System (Google Fonts)",
+        "sourceUrl": "https://fonts.google.com/specimen/Geist",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Minimalist developer-craft duo (Geist + Geist Mono) with tighter neo-grotesk geometry and cleaner zero-serif simplicity than Inter-based precision-mono or Space Grotesk neo-display-saas.",
+        "proposedPairsWith": [
+          "motion-slate-minimal",
+          "kinetic-studio-white",
+          "monolith-dark",
+          "monochrome-stark"
+        ],
+        "proposedClashesWith": [
+          "warm-manuscript",
+          "retro-web-96"
+        ]
+      }
+    ],
+    "batch-l-layouts-and-telemetry": [
+      {
+        "id": "docs-three-column",
+        "kind": "layout",
+        "group": "layout",
+        "tier": "production",
+        "sourceName": "shadcn / COSS Documentation Shell Pattern",
+        "sourceUrl": "https://ui.shadcn.com/r/registries.json",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Classic 3-column technical documentation shell (collapsible nav tree + readable max-ch prose + sticky right Table of Contents), distinct from queue/inspector triage-workbench.",
+        "proposedPairsWith": [
+          "motion-slate-minimal",
+          "code-forge",
+          "technical-superfamily",
+          "cjk-bilingual-precision"
+        ],
+        "proposedClashesWith": [
+          "avant-poster",
+          "console-2001"
+        ]
+      },
+      {
+        "id": "split-hero-feed",
+        "kind": "layout",
+        "group": "layout",
+        "tier": "viral",
+        "sourceName": "Godly Asymmetric Split Portfolio Pattern",
+        "sourceUrl": "https://godly.website/",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "50/50 asymmetric pinned editorial/product hero panel paired with an independent scrolling vertical feed, distinct from step-synchronized sticky-scrollytelling.",
+        "proposedPairsWith": [
+          "gallery-curated-sand",
+          "wide-kinetic-display",
+          "editorial-mono",
+          "dark-gallery-index"
+        ],
+        "proposedClashesWith": [
+          "os-core",
+          "retro-web-96"
+        ]
+      },
+      {
+        "id": "kanban-swimlanes",
+        "kind": "layout",
+        "group": "layout",
+        "tier": "production",
+        "sourceName": "Kibo UI / Linear Pipeline Board Pattern",
+        "sourceUrl": "https://ui.shadcn.com/r/registries.json",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Multi-column horizontal workflow/pipeline swimlane board with container-queried vertical collapse on narrow viewports, distinct from 3-pane triage-workbench.",
+        "proposedPairsWith": [
+          "monolith-dark",
+          "perceptual-scale",
+          "kinetic-studio-white",
+          "bullet-target-bar"
+        ],
+        "proposedClashesWith": [
+          "warm-manuscript",
+          "avant-poster"
+        ]
+      },
+      {
+        "id": "cinema-media-stage",
+        "kind": "layout",
+        "group": "layout",
+        "tier": "viral",
+        "sourceName": "Made With GSAP / Godly Media Showcase Pattern",
+        "sourceUrl": "https://madewithgsap.com/",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Edge-to-edge widescreen visual stage with a container-scoped floating bottom utility bar and compact caption rail, distinct from multi-window floating-os-desktop.",
+        "proposedPairsWith": [
+          "cinema-noir-motion",
+          "velvet-chrome-prism",
+          "orbital-ceramic",
+          "radial-vignette"
+        ],
+        "proposedClashesWith": [
+          "retro-web-96",
+          "neo-swiss"
+        ]
+      },
+      {
+        "id": "trading-terminal-grid",
+        "kind": "layout",
+        "group": "layout",
+        "tier": "experimental",
+        "sourceName": "Multi-Pane Financial Execution Desk Pattern",
+        "sourceUrl": "https://www.cosmos.so/",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Dense 5-region asymmetric trading/telemetry desk (top tape + order book + dominant primary chart + positions table + execution ticket), distinct from symmetric 2x2 command-hud-dashboard.",
+        "proposedPairsWith": [
+          "fui-tactical",
+          "telemetry-fault",
+          "pinstripe-ledger",
+          "step-line-throughput",
+          "waterfall-delta-chart"
+        ],
+        "proposedClashesWith": [
+          "warm-manuscript",
+          "pastel-playful",
+          "tactile-soft"
+        ]
+      },
+      {
+        "id": "comparison-matrix-split",
+        "kind": "layout",
+        "group": "layout",
+        "tier": "production",
+        "sourceName": "shadcn / COSS Pricing & Capability Matrix",
+        "sourceUrl": "https://ui.shadcn.com/r/registries.json",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Structured tier cards above a sticky-header feature comparison matrix with mobile card-stack collapse, distinct from asymmetric bento-showcase.",
+        "proposedPairsWith": [
+          "mesh-craft",
+          "perceptual-scale",
+          "neo-display-saas",
+          "funnel-conversion-strip"
+        ],
+        "proposedClashesWith": [
+          "ditherpunk",
+          "phosphor-terminal"
+        ]
+      },
+      {
+        "id": "editorial-index-preview",
+        "kind": "layout",
+        "group": "layout",
+        "tier": "experimental",
+        "sourceName": "Hoverstat.es Studio Index Pattern",
+        "sourceUrl": "https://www.hoverstat.es/",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Stark hairline typographic index rows paired with a live hover-preview specimen stage, distinct from card-based masonry-archive and 12-col swiss-editorial-grid.",
+        "proposedPairsWith": [
+          "gallery-curated-sand",
+          "risograph-print",
+          "wordmark-press",
+          "editorial-didone"
+        ],
+        "proposedClashesWith": [
+          "liquid-glass",
+          "console-2001"
+        ]
+      },
+      {
+        "id": "bullet-target-bar",
+        "kind": "telemetry",
+        "group": "telemetry",
+        "tier": "production",
+        "sourceName": "ganapativs/microcharts (MIT) Bullet Pattern",
+        "sourceUrl": "https://github.com/ganapativs/microcharts",
+        "extractionMethod": "mit-adapt",
+        "license": "MIT",
+        "distinctFromExisting": "Stephen Few bullet bar displaying actual value, vertical target threshold tick, and 3 qualitative performance bands, distinct from multi-series segmented-quota-bar.",
+        "proposedPairsWith": [
+          "monolith-dark",
+          "fui-tactical",
+          "kanban-swimlanes",
+          "perceptual-scale"
+        ],
+        "proposedClashesWith": []
+      },
+      {
+        "id": "latency-whisker-band",
+        "kind": "telemetry",
+        "group": "telemetry",
+        "tier": "production",
+        "sourceName": "Observability Whisker / Range Band Pattern",
+        "sourceUrl": "https://github.com/ganapativs/microcharts",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Horizontal min / p50 median / max whisker range bars comparing spread across multiple services/regions, distinct from single-series bucketed latency-histogram.",
+        "proposedPairsWith": [
+          "telemetry-fault",
+          "fui-tactical",
+          "trading-terminal-grid",
+          "command-hud-dashboard"
+        ],
+        "proposedClashesWith": [
+          "pastel-playful"
+        ]
+      },
+      {
+        "id": "horizon-band-sparkline",
+        "kind": "telemetry",
+        "group": "telemetry",
+        "tier": "experimental",
+        "sourceName": "Horizon Band Time-Series Pattern",
+        "sourceUrl": "https://github.com/ganapativs/microcharts",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "3-tier folded horizon area bands encoding high dynamic range in ultra-compact vertical height with pointer scrubbing, distinct from single-line inline-sparkline.",
+        "proposedPairsWith": [
+          "fui-tactical",
+          "trading-terminal-grid",
+          "telemetry-fault",
+          "monolith-dark"
+        ],
+        "proposedClashesWith": [
+          "warm-manuscript"
+        ]
+      },
+      {
+        "id": "waffle-percent-grid",
+        "kind": "telemetry",
+        "group": "telemetry",
+        "tier": "production",
+        "sourceName": "ganapativs/microcharts (MIT) Waffle Pattern",
+        "sourceUrl": "https://github.com/ganapativs/microcharts",
+        "extractionMethod": "mit-adapt",
+        "license": "MIT",
+        "distinctFromExisting": "Crisp 10x10 micro-cell percentage proportion grid with interactive category highlight, distinct from temporal activity-heatmap and 1D segmented-quota-bar.",
+        "proposedPairsWith": [
+          "bento-grid",
+          "neo-swiss",
+          "monolith-dark",
+          "perceptual-scale"
+        ],
+        "proposedClashesWith": []
+      },
+      {
+        "id": "waterfall-delta-chart",
+        "kind": "telemetry",
+        "group": "telemetry",
+        "tier": "production",
+        "sourceName": "Cumulative Bridge Waterfall Pattern",
+        "sourceUrl": "https://github.com/ganapativs/microcharts",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Floating cumulative positive/negative bridge bars attributing step-by-step latency or cost deltas to a final total, distinct from single scalar diff-delta-pill.",
+        "proposedPairsWith": [
+          "trading-terminal-grid",
+          "monolith-dark",
+          "code-forge",
+          "telemetry-fault"
+        ],
+        "proposedClashesWith": [
+          "retro-web-96"
+        ]
+      },
+      {
+        "id": "compact-radar-polygon",
+        "kind": "telemetry",
+        "group": "telemetry",
+        "tier": "viral",
+        "sourceName": "Multi-Axis Spider Polygon Pattern",
+        "sourceUrl": "https://github.com/ganapativs/microcharts",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Compact 6-axis SVG radar/spider polygon comparing multi-dimensional model/system scores with hover vertex inspection, distinct from single-metric radial-step-gauge.",
+        "proposedPairsWith": [
+          "velvet-chrome-prism",
+          "fui-tactical",
+          "bento-showcase",
+          "orbital-ceramic"
+        ],
+        "proposedClashesWith": [
+          "retro-web-96"
+        ]
+      },
+      {
+        "id": "step-line-throughput",
+        "kind": "telemetry",
+        "group": "telemetry",
+        "tier": "production",
+        "sourceName": "Discrete Step-After Series Pattern",
+        "sourceUrl": "https://github.com/ganapativs/microcharts",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Orthogonal step-after SVG line visualizing discrete replica counts, queue depths, or rate-limit steps, distinct from interpolated slope inline-sparkline.",
+        "proposedPairsWith": [
+          "trading-terminal-grid",
+          "code-forge",
+          "fui-tactical",
+          "industrial-hardware"
+        ],
+        "proposedClashesWith": []
+      },
+      {
+        "id": "funnel-conversion-strip",
+        "kind": "telemetry",
+        "group": "telemetry",
+        "tier": "production",
+        "sourceName": "Horizontal Multi-Stage Funnel Pattern",
+        "sourceUrl": "https://github.com/ganapativs/microcharts",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Horizontal tapered multi-stage drop-off funnel showing stage counts and step-to-step conversion percentages on hover, distinct from additive segmented-quota-bar.",
+        "proposedPairsWith": [
+          "comparison-matrix-split",
+          "bento-grid",
+          "mesh-craft",
+          "perceptual-scale"
+        ],
+        "proposedClashesWith": [
+          "phosphor-terminal"
+        ]
+      },
+      {
+        "id": "live-equalizer-bars",
+        "kind": "telemetry",
+        "group": "telemetry",
+        "tier": "viral",
+        "sourceName": "Hardware Peak-Hold Spectrum Meter Pattern",
+        "sourceUrl": "https://github.com/ganapativs/microcharts",
+        "extractionMethod": "clean-room",
+        "license": "clean-room",
+        "distinctFromExisting": "Multi-channel segmented compute/audio level bars with falling peak-hold caps and static reduced-motion snapshot, distinct from continuous time-domain Canvas live-oscilloscope.",
+        "proposedPairsWith": [
+          "industrial-hardware",
+          "fui-tactical",
+          "cinema-noir-motion",
+          "phosphor-terminal"
+        ],
+        "proposedClashesWith": [
+          "warm-manuscript",
+          "archival-paper"
+        ]
+      }
+    ]
+  },
+  "status": "ingested",
+  "ingestedAt": "2026-11-27T09:20:53.613Z",
+  "finalTotalItems": 193
+}

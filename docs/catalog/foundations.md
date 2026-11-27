@@ -1,12 +1,12 @@
-← [README](../../README.md) · [Styles (36)](./styles.md) · [Animations (69)](./animations.md) · [Foundations (39)](./foundations.md) · [Hybrids (20)](./hybrids.md) · [Live Playground ↗](https://aidilzin.github.io/ui-vault/)
+← [README](../../README.md) · [Styles (43)](./styles.md) · [Animations (79)](./animations.md) · [Foundations (71)](./foundations.md) · [Hybrids (20)](./hybrids.md) · [Live Playground ↗](https://aidilzin.github.io/ui-vault/)
 
-# Foundations Catalog (39)
+# Foundations Catalog (71)
 
-Jump to: [Textures (12)](#textures) · [Typography (9)](#typography) · [Layouts (8)](#layouts) · [Telemetry (10)](#telemetry)
+Jump to: [Textures (21)](#textures) · [Typography (16)](#typography) · [Layouts (15)](#layouts) · [Telemetry (19)](#telemetry)
 
 ## Textures
 
-12 zero-JS adaptive CSS surface layers parameterized by `--tx-color`, `--tx-opacity`, and `--tx-size`.
+21 zero-JS adaptive CSS surface layers parameterized by `--tx-color`, `--tx-opacity`, and `--tx-size`.
 
 | Texture | Tier | Layer | Mechanism | Key Pairings | `shadcn` Item |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -22,10 +22,19 @@ Jump to: [Textures (12)](#textures) · [Typography (9)](#typography) · [Layouts
 | **Topographic Mesh** (`topographic-mesh`) | `viral` | `ground` | `svg-mask` | `ambient-orbit`, `orbital-ceramic`, `aurora-mesh`, `fui-tactical` | `texture-topographic-mesh` |
 | **Radial Vignette** (`radial-vignette`) | `production` | `overlay` | `css-gradient` | `monolith-dark`, `aurora-mesh`, `command-dark`, `dark-gallery-index` | `texture-radial-vignette` |
 | **Checker Dither** (`checker-dither`) | `experimental` | `ground` | `css-gradient` | `ditherpunk`, `os-core`, `retro-web-96`, `eight-bit-arcade` | `texture-checker-dither` |
+| **isometric-cube-grid** (`isometric-cube-grid`) | `experimental` | `ground` | `css` | `fui-tactical`, `blueprint-cyanotype`, `bento-grid`, `industrial-hardware` | `texture-isometric-cube-grid` |
+| **pcb-circuit-traces** (`pcb-circuit-traces`) | `experimental` | `ground` | `css` | `phosphor-terminal`, `fui-tactical`, `telemetry-fault`, `blueprint-cyanotype` | `texture-pcb-circuit-traces` |
+| **hex-honeycomb-mesh** (`hex-honeycomb-mesh`) | `viral` | `ground` | `css` | `velvet-chrome-prism`, `orbital-ceramic`, `command-dark`, `fui-tactical` | `texture-hex-honeycomb-mesh` |
+| **micro-plus-stitch** (`micro-plus-stitch`) | `production` | `ground` | `css` | `archival-paper`, `tactile-studio-warm`, `motion-slate-minimal`, `neo-swiss` | `texture-micro-plus-stitch` |
+| **concentric-radar-arcs** (`concentric-radar-arcs`) | `viral` | `ground` | `css` | `ambient-orbit`, `orbital-ceramic`, `velvet-chrome-prism`, `fui-tactical` | `texture-concentric-radar-arcs` |
+| **pinstripe-ledger** (`pinstripe-ledger`) | `production` | `ground` | `css` | `neo-swiss`, `monochrome-stark`, `swiss-type-foundry`, `monolith-dark` | `texture-pinstripe-ledger` |
+| **blueprint-margin-ruler** (`blueprint-margin-ruler`) | `production` | `ground` | `css` | `blueprint-cyanotype`, `industrial-hardware`, `fui-tactical`, `transit-precision` | `texture-blueprint-margin-ruler` |
+| **mineral-terrazzo-speckle** (`mineral-terrazzo-speckle`) | `production` | `ground` | `css` | `gallery-curated-sand`, `risograph-print`, `warm-manuscript`, `tactile-studio-warm` | `texture-mineral-terrazzo-speckle` |
+| **carbon-twill-weave** (`carbon-twill-weave`) | `viral` | `ground` | `css` | `industrial-hardware`, `command-dark`, `cinema-noir-motion`, `dark-gallery-index` | `texture-carbon-twill-weave` |
 
 ## Typography
 
-9 scoped fluid typography systems with `clamp()` scales, `tabular-nums`, and on-demand Google Fonts.
+16 scoped fluid typography systems with `clamp()` scales, `tabular-nums`, and on-demand Google Fonts.
 
 | System | Tier | Font Stack | Voice | `shadcn` Item |
 | :--- | :--- | :--- | :--- | :--- |
@@ -38,10 +47,17 @@ Jump to: [Textures (12)](#textures) · [Typography (9)](#typography) · [Layouts
 | **Pixel Arcade** (`pixel-arcade`) | `experimental` | `Silkscreen` + `Space Mono` | Crisp stepped bitmap display headlines paired with readable monospace body copy | `type-pixel-arcade` |
 | **Neo Display SaaS** (`neo-display-saas`) | `viral` | `Space Grotesk` + `Inter` + `JetBrains Mono` | Clean, punchy modern launch-page and product marketing voice with geometric poise | `type-neo-display-saas` |
 | **Condensed Hardware** (`condensed-hardware`) | `viral` | `Barlow Condensed` + `Inter` + `IBM Plex Mono` | Uppercase industrial signage, rail-timetable clarity, and anodized hardware faceplate typography | `type-condensed-hardware` |
+| **editorial-didone** (`editorial-didone`) | `viral` | `Bodoni Moda` + `Plus Jakarta Sans` + `IBM Plex Mono` | High-contrast luxury fashion and exhibition serif with optical hairline contrast | `type-editorial-didone` |
+| **technical-superfamily** (`technical-superfamily`) | `production` | `IBM Plex Sans` + `IBM Plex Serif` + `IBM Plex Mono` | Unified engineering tri-voice superfamily pairing matching x-height Sans, Serif, and Mono cuts | `type-technical-superfamily` |
+| **wide-kinetic-display** (`wide-kinetic-display`) | `experimental` | `Clash Display` + `Satoshi` | Contemporary modernist display with sharp squared apertures and sleek geometric body voice | `type-wide-kinetic-display` |
+| **geometric-friendly** (`geometric-friendly`) | `production` | `Plus Jakarta Sans` + `Nunito` + `DM Mono` | Approachable rounded-terminal geometric system tailored for consumer apps and soft tactile UIs | `type-geometric-friendly` |
+| **cjk-bilingual-precision** (`cjk-bilingual-precision`) | `production` | `Noto Sans JP` + `Inter` + `JetBrains Mono` | Balanced Latin + CJK system enforcing relaxed display leading (>= 1.3) and strict tabular numerals | `type-cjk-bilingual-precision` |
+| **architectural-slab** (`architectural-slab`) | `production` | `Zilla Slab` + `Inter` + `Space Mono` | Crisp journalistic slab-serif display voice with sturdy bracketed serifs and clean sans prose | `type-architectural-slab` |
+| **neo-minimal-mono** (`neo-minimal-mono`) | `viral` | `Geist` + `Geist Mono` | Minimalist developer-craft neo-grotesk and companion monospace with razor-tight display tracking | `type-neo-minimal-mono` |
 
 ## Layouts
 
-8 container-query (`@container`) page shells driven by `--lay-*` tokens with zero hardcoded palettes.
+15 container-query (`@container`) page shells driven by `--lay-*` tokens with zero hardcoded palettes.
 
 | Layout | Tier | Pattern | Slots | `shadcn` Item |
 | :--- | :--- | :--- | :--- | :--- |
@@ -53,10 +69,17 @@ Jump to: [Textures (12)](#textures) · [Typography (9)](#typography) · [Layouts
 | **Floating OS Desktop** (`floating-os-desktop`) | `experimental` | Spatial / retro desktop canvas with menu bar, framed windows, and scoped bottom dock | `menuBar`, `primaryWindow`, `secondaryWindow`, `dock` | `layout-floating-os-desktop` |
 | **Command HUD Dashboard** (`command-hud-dashboard`) | `experimental` | Dense 4-quadrant FUI mission-control instrumentation grid | `ticker`, `quadrants`, `eventRail` | `layout-command-hud-dashboard` |
 | **Masonry Archive** (`masonry-archive`) | `production` | Curated catalog with sticky filter bar, multi-column waterfall grid, and detail rail | `header`, `filterBar`, `items`, `detailRail`, `footer` | `layout-masonry-archive` |
+| **Docs Three Column** (`docs-three-column`) | `production` |  |  | `layout-docs-three-column` |
+| **Split Hero Feed** (`split-hero-feed`) | `viral` |  |  | `layout-split-hero-feed` |
+| **Kanban Swimlanes** (`kanban-swimlanes`) | `production` |  |  | `layout-kanban-swimlanes` |
+| **Cinema Media Stage** (`cinema-media-stage`) | `viral` |  |  | `layout-cinema-media-stage` |
+| **Trading Terminal Grid** (`trading-terminal-grid`) | `experimental` |  |  | `layout-trading-terminal-grid` |
+| **Comparison Matrix Split** (`comparison-matrix-split`) | `production` |  |  | `layout-comparison-matrix-split` |
+| **Editorial Index Preview** (`editorial-index-preview`) | `experimental` |  |  | `layout-editorial-index-preview` |
 
 ## Telemetry
 
-10 zero-library SVG/React micro-charts driven by adaptive `--tel-*` tokens.
+19 zero-library SVG/React micro-charts driven by adaptive `--tel-*` tokens.
 
 | Telemetry | Tier | Engine | Perf Tier | Reduced Motion | `shadcn` Item |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -70,3 +93,12 @@ Jump to: [Textures (12)](#textures) · [Typography (9)](#typography) · [Layouts
 | **Segmented Quota Bar** (`segmented-quota-bar`) | `production` | `react`, `css` | `low` | `instant-highlight` | `telemetry-segmented-quota-bar` |
 | **Diff Delta Pill** (`diff-delta-pill`) | `production` | `svg`, `react` | `low` | `static-badge` | `telemetry-diff-delta-pill` |
 | **Node Topology Mini** (`node-topology-mini`) | `viral` | `svg`, `react` | `low` | `static-topology` | `telemetry-node-topology-mini` |
+| **Bullet Target Bar** (`bullet-target-bar`) | `production` | `react`, `svg` | `low` | `static-svg` | `telemetry-bullet-target-bar` |
+| **Latency Whisker Band** (`latency-whisker-band`) | `production` | `react`, `svg` | `low` | `static-svg` | `telemetry-latency-whisker-band` |
+| **Horizon Band Sparkline** (`horizon-band-sparkline`) | `experimental` | `react`, `svg` | `low` | `static-svg` | `telemetry-horizon-band-sparkline` |
+| **Waffle Percent Grid** (`waffle-percent-grid`) | `production` | `react`, `svg` | `low` | `static-svg` | `telemetry-waffle-percent-grid` |
+| **Waterfall Delta Chart** (`waterfall-delta-chart`) | `production` | `react`, `svg` | `low` | `static-svg` | `telemetry-waterfall-delta-chart` |
+| **Compact Radar Polygon** (`compact-radar-polygon`) | `viral` | `react`, `svg` | `low` | `static-svg` | `telemetry-compact-radar-polygon` |
+| **Step Line Throughput** (`step-line-throughput`) | `production` | `react`, `svg` | `low` | `static-svg` | `telemetry-step-line-throughput` |
+| **Funnel Conversion Strip** (`funnel-conversion-strip`) | `production` | `react`, `svg` | `low` | `static-svg` | `telemetry-funnel-conversion-strip` |
+| **Live Equalizer Bars** (`live-equalizer-bars`) | `viral` | `react`, `svg` | `medium` | `static-snapshot` | `telemetry-live-equalizer-bars` |

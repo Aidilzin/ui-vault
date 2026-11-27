@@ -1,0 +1,81 @@
+/* ui-vault // layout: trading-terminal-grid (experimental)
+ * Dense 5-region asymmetric trading/telemetry desk with @container collapse.
+ */
+
+.lay-trading-terminal {
+  container-type: inline-size;
+  container-name: lay-tt;
+  min-height: var(--lay-height, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--lay-gap, 10px);
+  padding: var(--lay-pad, 12px);
+  background: var(--lay-canvas, transparent);
+  color: var(--lay-ink, inherit);
+}
+
+.lay-tt-tape {
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  border-radius: var(--lay-radius, 4px);
+  padding: 7px 12px;
+}
+
+.lay-tt-grid {
+  display: grid;
+  grid-template-columns: minmax(140px, 210px) minmax(0, 1fr) minmax(150px, 220px);
+  grid-template-rows: minmax(150px, 1fr) auto;
+  gap: var(--lay-gap, 10px);
+  flex: 1;
+}
+
+.lay-tt-pane {
+  min-width: 0;
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  border-radius: var(--lay-radius, 4px);
+  padding: 12px;
+}
+
+.lay-tt-book {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.lay-tt-chart {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.lay-tt-ticket {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+
+.lay-tt-positions {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+@container lay-tt (max-width: 780px) {
+  .lay-tt-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+  }
+  .lay-tt-chart,
+  .lay-tt-positions {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+  .lay-tt-book,
+  .lay-tt-ticket {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+@container lay-tt (max-width: 520px) {
+  .lay-tt-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

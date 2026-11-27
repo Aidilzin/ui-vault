@@ -950,7 +950,9 @@ export function FoundationsView({
           <div className="fnd-textures-grid">
             {filteredTelemetry.map((tel) => {
               const needsLazy =
-                tel.id === "live-oscilloscope" || tel.id === "led-status-matrix";
+                tel.id === "live-oscilloscope" ||
+                tel.id === "led-status-matrix" ||
+                tel.id === "live-equalizer-bars";
               const widget = renderTelemetryWidget(tel.id, {
                 seed: simSeed,
                 reducedMotion,

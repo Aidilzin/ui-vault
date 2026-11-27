@@ -1,0 +1,71 @@
+/* ui-vault // layout: docs-three-column (production)
+ * 3-column technical documentation shell with @container responsive collapse.
+ */
+
+.lay-docs-three-col {
+  container-type: inline-size;
+  container-name: lay-docs;
+  min-height: var(--lay-height, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--lay-gap, 14px);
+  padding: var(--lay-pad, 16px);
+  background: var(--lay-canvas, transparent);
+  color: var(--lay-ink, inherit);
+}
+
+.lay-docs-header {
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  border-radius: var(--lay-radius, 6px);
+  padding: 10px 14px;
+}
+
+.lay-docs-body {
+  display: grid;
+  grid-template-columns: minmax(150px, 210px) minmax(0, 1fr) minmax(140px, 190px);
+  gap: var(--lay-gap, 14px);
+  align-items: start;
+  flex: 1;
+}
+
+.lay-docs-nav,
+.lay-docs-toc {
+  min-width: 0;
+  position: sticky;
+  top: 12px;
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  border-radius: var(--lay-radius, 6px);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lay-docs-prose {
+  min-width: 0;
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  border-radius: var(--lay-radius, 6px);
+  padding: 18px 20px;
+}
+
+@container lay-docs (max-width: 820px) {
+  .lay-docs-body {
+    grid-template-columns: minmax(140px, 190px) minmax(0, 1fr);
+  }
+  .lay-docs-toc {
+    grid-column: 1 / -1;
+    position: static;
+  }
+}
+
+@container lay-docs (max-width: 560px) {
+  .lay-docs-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .lay-docs-nav {
+    position: static;
+  }
+}

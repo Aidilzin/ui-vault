@@ -6,7 +6,10 @@
       "type": "registry:item",
       "title": "Inline Sparkline",
       "description": "Crisp zero-dependency SVG trend sparkline with subtle gradient fill and interactive pointer scrubber readout.",
-      "categories": ["telemetry", "production"],
+      "categories": [
+        "telemetry",
+        "production"
+      ],
       "dependencies": [],
       "files": [
         {
@@ -21,7 +24,10 @@
       "type": "registry:item",
       "title": "Uptime Strip",
       "description": "60-segment operational/degraded/outage strip with bounded inline hover inspection and uptime percentage.",
-      "categories": ["telemetry", "production"],
+      "categories": [
+        "telemetry",
+        "production"
+      ],
       "dependencies": [],
       "files": [
         {
@@ -36,7 +42,10 @@
       "type": "registry:item",
       "title": "Activity Heatmap",
       "description": "Compact 5-step perceptual intensity grid with interactive cell inspection readout.",
-      "categories": ["telemetry", "production"],
+      "categories": [
+        "telemetry",
+        "production"
+      ],
       "dependencies": [],
       "files": [
         {
@@ -51,7 +60,10 @@
       "type": "registry:item",
       "title": "Latency Histogram",
       "description": "Distribution bar chart with p50, p95, and p99 threshold markers and interactive bucket hover stats.",
-      "categories": ["telemetry", "production"],
+      "categories": [
+        "telemetry",
+        "production"
+      ],
       "dependencies": [],
       "files": [
         {
@@ -66,7 +78,10 @@
       "type": "registry:item",
       "title": "Radial Step Gauge",
       "description": "Segmented hardware and FUI circular arc gauge with centered tabular readout.",
-      "categories": ["telemetry", "viral"],
+      "categories": [
+        "telemetry",
+        "viral"
+      ],
       "dependencies": [],
       "files": [
         {
@@ -81,7 +96,10 @@
       "type": "registry:item",
       "title": "LED Status Matrix",
       "description": "Dense grid of cluster, pod, or agent health LEDs with cell inspection and reduced-motion support.",
-      "categories": ["telemetry", "experimental"],
+      "categories": [
+        "telemetry",
+        "experimental"
+      ],
       "dependencies": [],
       "files": [
         {
@@ -96,7 +114,10 @@
       "type": "registry:item",
       "title": "Live Oscilloscope",
       "description": "HiDPI ResizeObserver Canvas waveform trace with Pause toggle and static reduced-motion snapshot.",
-      "categories": ["telemetry", "experimental"],
+      "categories": [
+        "telemetry",
+        "experimental"
+      ],
       "dependencies": [],
       "files": [
         {
@@ -111,7 +132,10 @@
       "type": "registry:item",
       "title": "Segmented Quota Bar",
       "description": "Multi-series proportional horizontal stack bar with 1px gaps and interactive legend highlighting.",
-      "categories": ["telemetry", "production"],
+      "categories": [
+        "telemetry",
+        "production"
+      ],
       "dependencies": [],
       "files": [
         {
@@ -126,7 +150,10 @@
       "type": "registry:item",
       "title": "Diff Delta Pill",
       "description": "Precision trend delta badge (+14.2%, -3.8ms) with crisp vector indicator and semantic polarity.",
-      "categories": ["telemetry", "production"],
+      "categories": [
+        "telemetry",
+        "production"
+      ],
       "dependencies": [],
       "files": [
         {
@@ -141,13 +168,178 @@
       "type": "registry:item",
       "title": "Node Topology Mini",
       "description": "Compact SVG service and agent dependency graph with animated packet flow, health dots, and hop latency.",
-      "categories": ["telemetry", "viral"],
+      "categories": [
+        "telemetry",
+        "viral"
+      ],
       "dependencies": [],
       "files": [
         {
           "path": "node-topology-mini.tsx",
           "type": "registry:file",
           "target": "~/src/components/telemetry/node-topology-mini.tsx"
+        }
+      ]
+    },
+    {
+      "name": "telemetry-bullet-target-bar",
+      "type": "registry:item",
+      "title": "Bullet Target Bar",
+      "description": "Stephen Few bullet bar showing actual value, target marker, and 3 qualitative performance bands.",
+      "categories": [
+        "telemetry",
+        "production"
+      ],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "bullet-target-bar.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/telemetry/bullet-target-bar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "telemetry-latency-whisker-band",
+      "type": "registry:item",
+      "title": "Latency Whisker Band",
+      "description": "Horizontal min / p50 median / max whisker range bars comparing spread across services or regions.",
+      "categories": [
+        "telemetry",
+        "production"
+      ],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "latency-whisker-band.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/telemetry/latency-whisker-band.tsx"
+        }
+      ]
+    },
+    {
+      "name": "telemetry-horizon-band-sparkline",
+      "type": "registry:item",
+      "title": "Horizon Band Sparkline",
+      "description": "3-tier folded horizon area bands encoding high dynamic range in compact vertical height.",
+      "categories": [
+        "telemetry",
+        "experimental"
+      ],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "horizon-band-sparkline.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/telemetry/horizon-band-sparkline.tsx"
+        }
+      ]
+    },
+    {
+      "name": "telemetry-waffle-percent-grid",
+      "type": "registry:item",
+      "title": "Waffle Percent Grid",
+      "description": "Crisp 10x10 micro-cell percentage proportion grid with interactive category highlight.",
+      "categories": [
+        "telemetry",
+        "production"
+      ],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "waffle-percent-grid.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/telemetry/waffle-percent-grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "telemetry-waterfall-delta-chart",
+      "type": "registry:item",
+      "title": "Waterfall Delta Chart",
+      "description": "Floating cumulative bridge bars attributing step-by-step positive and negative deltas to a final total.",
+      "categories": [
+        "telemetry",
+        "production"
+      ],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "waterfall-delta-chart.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/telemetry/waterfall-delta-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "telemetry-compact-radar-polygon",
+      "type": "registry:item",
+      "title": "Compact Radar Polygon",
+      "description": "Compact 6-axis SVG radar polygon comparing multi-dimensional model or system scores.",
+      "categories": [
+        "telemetry",
+        "viral"
+      ],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "compact-radar-polygon.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/telemetry/compact-radar-polygon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "telemetry-step-line-throughput",
+      "type": "registry:item",
+      "title": "Step Line Throughput",
+      "description": "Orthogonal step-after SVG line visualizing discrete replica counts or queue depths.",
+      "categories": [
+        "telemetry",
+        "production"
+      ],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "step-line-throughput.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/telemetry/step-line-throughput.tsx"
+        }
+      ]
+    },
+    {
+      "name": "telemetry-funnel-conversion-strip",
+      "type": "registry:item",
+      "title": "Funnel Conversion Strip",
+      "description": "Horizontal tapered multi-stage drop-off funnel showing stage counts and conversion rates on hover.",
+      "categories": [
+        "telemetry",
+        "production"
+      ],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "funnel-conversion-strip.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/telemetry/funnel-conversion-strip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "telemetry-live-equalizer-bars",
+      "type": "registry:item",
+      "title": "Live Equalizer Bars",
+      "description": "Multi-channel segmented compute level bars with falling peak-hold caps and static reduced-motion snapshot.",
+      "categories": [
+        "telemetry",
+        "viral"
+      ],
+      "dependencies": [],
+      "files": [
+        {
+          "path": "live-equalizer-bars.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/telemetry/live-equalizer-bars.tsx"
         }
       ]
     }

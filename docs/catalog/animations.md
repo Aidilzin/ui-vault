@@ -1,10 +1,10 @@
-← [README](../../README.md) · [Styles (36)](./styles.md) · [Animations (69)](./animations.md) · [Foundations (39)](./foundations.md) · [Hybrids (20)](./hybrids.md) · [Live Playground ↗](https://aidilzin.github.io/ui-vault/)
+← [README](../../README.md) · [Styles (43)](./styles.md) · [Animations (79)](./animations.md) · [Foundations (71)](./foundations.md) · [Hybrids (20)](./hybrids.md) · [Live Playground ↗](https://aidilzin.github.io/ui-vault/)
 
-# Animations Catalog (69)
+# Animations Catalog (79)
 
-All 69 zero-bloat motion primitives grouped across 8 mechanics. Every component includes an explicit `prefers-reduced-motion` fallback. Install with `npx shadcn@latest add Aidilzin/ui-vault/<item>`.
+All 79 zero-bloat motion primitives grouped across 8 mechanics. Every component includes an explicit `prefers-reduced-motion` fallback. Install with `npx shadcn@latest add Aidilzin/ui-vault/<item>`.
 
-## `cursor-reactive` (9)
+## `cursor-reactive` (10)
 
 | Animation | Tier | Engine | Perf Tier | Reduced Motion | `shadcn` Item |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -17,8 +17,9 @@ All 69 zero-bloat motion primitives grouped across 8 mechanics. Every component 
 | Conic Border Beam | `viral` | `react`, `css` | `low` | `static-border` | `border-beam` |
 | Kinetic Card Trail | `experimental` | `react`, `css` | `low` | `disabled-trail` | `kinetic-card-trail` |
 | Rotary Typographic Dial | `experimental` | `react`, `css` | `low` | `stepped-dial` | `rotary-type-dial` |
+| Target Bracket Cursor | `viral` | `react`, `css` | `low` | `instant-snap` | `target-bracket-cursor` |
 
-## `text-kinetic` (8)
+## `text-kinetic` (11)
 
 | Animation | Tier | Engine | Perf Tier | Reduced Motion | `shadcn` Item |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -30,8 +31,11 @@ All 69 zero-bloat motion primitives grouped across 8 mechanics. Every component 
 | Optical Blur Text Reveal | `production` | `react`, `css` | `low` | `instant-visible` | `blur-text` |
 | Split-Flap Text Roll | `production` | `react`, `css` | `low` | `static-text` | `text-roll` |
 | 3D Split-Flap Display | `viral` | `react`, `css` | `low` | `instant-digit` | `split-flap-clock` |
+| True Focus Frame | `viral` | `react`, `css` | `low` | `static-clear-text` | `true-focus-frame` |
+| Text Morph Swap | `production` | `react`, `css` | `low` | `instant-swap` | `text-morph-swap` |
+| Line Shadow Heading | `experimental` | `css` | `low` | `static-hatch-shadow` | `line-shadow-heading` |
 
-## `layout-morph` (8)
+## `layout-morph` (11)
 
 | Animation | Tier | Engine | Perf Tier | Reduced Motion | `shadcn` Item |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -43,8 +47,11 @@ All 69 zero-bloat motion primitives grouped across 8 mechanics. Every component 
 | Z-Depth Stacked Card Deck | `viral` | `react`, `css` | `low` | `instant-cycle` | `stacked-card-deck` |
 | Flex Accordion Gallery | `viral` | `react`, `css` | `low` | `instant-flex` | `accordion-gallery` |
 | Velocity Drag-to-Dismiss Drawer | `production` | `react`, `css` | `low` | `instant-drawer` | `velocity-dismiss-drawer` |
+| Before After Curtain | `production` | `react`, `pointer` | `low` | `direct-scrub` | `before-after-curtain` |
+| Expandable Toolbar | `production` | `react`, `css` | `low` | `instant-expand` | `expandable-toolbar` |
+| Folder Paper Fan | `viral` | `react`, `css` | `low` | `instant-fan` | `folder-paper-fan` |
 
-## `shader-canvas` (10)
+## `shader-canvas` (11)
 
 | Animation | Tier | Engine | Perf Tier | Reduced Motion | `shadcn` Item |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -58,8 +65,9 @@ All 69 zero-bloat motion primitives grouped across 8 mechanics. Every component 
 | SVG Radar Ripple Pulse | `viral` | `svg`, `css` | `low` | `static-rings` | `svg-ripple-pulse` |
 | Nocturnal Meteor Shower | `viral` | `css` | `low` | `static-streaks` | `meteor-shower` |
 | Eclipse Corona Orb | `viral` | `css` | `low` | `static-orb` | `eclipse-orb` |
+| Flickering Telemetry Grid | `viral` | `canvas-2d` | `medium` | `static-grid-snapshot` | `flickering-telemetry-grid` |
 
-## `physics-optics` (11)
+## `physics-optics` (12)
 
 | Animation | Tier | Engine | Perf Tier | Reduced Motion | `shadcn` Item |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -74,6 +82,7 @@ All 69 zero-bloat motion primitives grouped across 8 mechanics. Every component 
 | Lamp Horizon Spotlight | `viral` | `react`, `css` | `low` | `static-glow` | `lamp-horizon-glow` |
 | Gooey Metaball Pill Nav | `experimental` | `svg`, `react`, `css` | `medium` | `instant-pill` | `gooey-pill-nav` |
 | 3D Perspective Hardcover Book | `viral` | `react`, `css` | `low` | `static-book` | `perspective-book` |
+| Optical Zoom Lens | `viral` | `react`, `pointer` | `medium` | `direct-track` | `optical-zoom-lens` |
 
 ## `scroll-driven` (6)
 
@@ -86,7 +95,7 @@ All 69 zero-bloat motion primitives grouped across 8 mechanics. Every component 
 | Scroll Sticky Scale Card | `viral` | `react`, `css` | `low` | `static-scale` | `scroll-sticky-scale` |
 | Vertical Tracing Scroll Beam | `viral` | `react`, `css` | `low` | `full-beam` | `tracing-scroll-beam` |
 
-## `micro-feedback` (10)
+## `micro-feedback` (11)
 
 | Animation | Tier | Engine | Perf Tier | Reduced Motion | `shadcn` Item |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -100,6 +109,7 @@ All 69 zero-bloat motion primitives grouped across 8 mechanics. Every component 
 | Bidirectional Spring Number Flow | `production` | `react`, `css` | `low` | `instant-value` | `spring-number-flow` |
 | Stacked Hover-Expand Toast Deck | `production` | `react`, `css` | `low` | `instant-stack` | `stacked-toast-deck` |
 | Magnetic Copy Checkmark Spell | `viral` | `svg`, `react`, `css` | `low` | `instant-check` | `magnetic-copy-spell` |
+| Slide To Commit | `production` | `react`, `pointer` | `low` | `keyboard-click-toggle` | `slide-to-commit` |
 
 ## `ai-agentic` (7)
 

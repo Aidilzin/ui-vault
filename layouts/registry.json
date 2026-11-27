@@ -6,7 +6,10 @@
       "type": "registry:item",
       "title": "Bento Showcase Layout",
       "description": "Asymmetric 12-column modular Bento grid with span-8 hero tile, metric column, and @container collapse.",
-      "categories": ["layout", "viral"],
+      "categories": [
+        "layout",
+        "viral"
+      ],
       "files": [
         {
           "path": "bento-showcase/bento-showcase.tsx",
@@ -30,7 +33,10 @@
       "type": "registry:item",
       "title": "Triage Workbench Layout",
       "description": "Linear/Superhuman-style 3-pane desktop shell with nav rail, queue pane, and detail inspector.",
-      "categories": ["layout", "production"],
+      "categories": [
+        "layout",
+        "production"
+      ],
       "files": [
         {
           "path": "triage-workbench/triage-workbench.tsx",
@@ -54,7 +60,10 @@
       "type": "registry:item",
       "title": "Swiss Editorial Grid Layout",
       "description": "Exposed 1px hairline 12-column International Typographic grid with sticky index rail.",
-      "categories": ["layout", "production"],
+      "categories": [
+        "layout",
+        "production"
+      ],
       "files": [
         {
           "path": "swiss-editorial-grid/swiss-editorial-grid.tsx",
@@ -78,7 +87,10 @@
       "type": "registry:item",
       "title": "Split AI IDE Layout",
       "description": "Agentic workspace shell with session rail, execution stream, container-sticky composer, and diff artifact pane.",
-      "categories": ["layout", "production"],
+      "categories": [
+        "layout",
+        "production"
+      ],
       "files": [
         {
           "path": "split-ai-ide/split-ai-ide.tsx",
@@ -102,7 +114,10 @@
       "type": "registry:item",
       "title": "Sticky Scrollytelling Layout",
       "description": "Sticky visual stage paired with scrolling narrative steps supporting custom scroll containers or standalone window scroll.",
-      "categories": ["layout", "viral"],
+      "categories": [
+        "layout",
+        "viral"
+      ],
       "files": [
         {
           "path": "sticky-scrollytelling/sticky-scrollytelling.tsx",
@@ -126,7 +141,10 @@
       "type": "registry:item",
       "title": "Floating OS Desktop Layout",
       "description": "Spatial and retro desktop canvas with menu bar, framed primary and secondary windows, and container-scoped bottom dock.",
-      "categories": ["layout", "experimental"],
+      "categories": [
+        "layout",
+        "experimental"
+      ],
       "files": [
         {
           "path": "floating-os-desktop/floating-os-desktop.tsx",
@@ -150,7 +168,10 @@
       "type": "registry:item",
       "title": "Command HUD Dashboard Layout",
       "description": "Dense FUI mission-control grid with top telemetry ticker, 4-quadrant hairline instrumentation panels, and bottom event rail.",
-      "categories": ["layout", "experimental"],
+      "categories": [
+        "layout",
+        "experimental"
+      ],
       "files": [
         {
           "path": "command-hud-dashboard/command-hud-dashboard.tsx",
@@ -174,7 +195,10 @@
       "type": "registry:item",
       "title": "Masonry Archive Layout",
       "description": "Curated gallery and catalog layout with sticky filter bar, multi-column waterfall grid, and slide-over detail rail.",
-      "categories": ["layout", "production"],
+      "categories": [
+        "layout",
+        "production"
+      ],
       "files": [
         {
           "path": "masonry-archive/masonry-archive.tsx",
@@ -188,6 +212,195 @@
         },
         {
           "path": "masonry-archive/LAYOUT.md",
+          "type": "registry:file",
+          "target": "~/LAYOUT.md"
+        }
+      ]
+    },
+    {
+      "name": "layout-docs-three-column",
+      "type": "registry:item",
+      "title": "Docs Three Column Layout",
+      "description": "Classic 3-column technical documentation shell with collapsible nav tree, max-ch prose, and sticky TOC.",
+      "categories": [
+        "layout",
+        "production"
+      ],
+      "files": [
+        {
+          "path": "docs-three-column/docs-three-column.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/layouts/docs-three-column.tsx"
+        },
+        {
+          "path": "docs-three-column/docs-three-column.css",
+          "type": "registry:file",
+          "target": "~/src/styles/layouts/docs-three-column.css"
+        },
+        {
+          "path": "docs-three-column/LAYOUT.md",
+          "type": "registry:file",
+          "target": "~/LAYOUT.md"
+        }
+      ]
+    },
+    {
+      "name": "layout-split-hero-feed",
+      "type": "registry:item",
+      "title": "Split Hero Feed Layout",
+      "description": "50/50 asymmetric pinned editorial or product hero panel paired with an independent vertical feed.",
+      "categories": [
+        "layout",
+        "viral"
+      ],
+      "files": [
+        {
+          "path": "split-hero-feed/split-hero-feed.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/layouts/split-hero-feed.tsx"
+        },
+        {
+          "path": "split-hero-feed/split-hero-feed.css",
+          "type": "registry:file",
+          "target": "~/src/styles/layouts/split-hero-feed.css"
+        },
+        {
+          "path": "split-hero-feed/LAYOUT.md",
+          "type": "registry:file",
+          "target": "~/LAYOUT.md"
+        }
+      ]
+    },
+    {
+      "name": "layout-kanban-swimlanes",
+      "type": "registry:item",
+      "title": "Kanban Swimlanes Layout",
+      "description": "Multi-column horizontal workflow swimlane board with container-queried vertical collapse.",
+      "categories": [
+        "layout",
+        "production"
+      ],
+      "files": [
+        {
+          "path": "kanban-swimlanes/kanban-swimlanes.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/layouts/kanban-swimlanes.tsx"
+        },
+        {
+          "path": "kanban-swimlanes/kanban-swimlanes.css",
+          "type": "registry:file",
+          "target": "~/src/styles/layouts/kanban-swimlanes.css"
+        },
+        {
+          "path": "kanban-swimlanes/LAYOUT.md",
+          "type": "registry:file",
+          "target": "~/LAYOUT.md"
+        }
+      ]
+    },
+    {
+      "name": "layout-cinema-media-stage",
+      "type": "registry:item",
+      "title": "Cinema Media Stage Layout",
+      "description": "Widescreen visual showcase stage with container-scoped floating bottom utility bar and caption rail.",
+      "categories": [
+        "layout",
+        "viral"
+      ],
+      "files": [
+        {
+          "path": "cinema-media-stage/cinema-media-stage.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/layouts/cinema-media-stage.tsx"
+        },
+        {
+          "path": "cinema-media-stage/cinema-media-stage.css",
+          "type": "registry:file",
+          "target": "~/src/styles/layouts/cinema-media-stage.css"
+        },
+        {
+          "path": "cinema-media-stage/LAYOUT.md",
+          "type": "registry:file",
+          "target": "~/LAYOUT.md"
+        }
+      ]
+    },
+    {
+      "name": "layout-trading-terminal-grid",
+      "type": "registry:item",
+      "title": "Trading Terminal Grid Layout",
+      "description": "Dense 5-region asymmetric financial and telemetry execution desk with @container collapse.",
+      "categories": [
+        "layout",
+        "experimental"
+      ],
+      "files": [
+        {
+          "path": "trading-terminal-grid/trading-terminal-grid.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/layouts/trading-terminal-grid.tsx"
+        },
+        {
+          "path": "trading-terminal-grid/trading-terminal-grid.css",
+          "type": "registry:file",
+          "target": "~/src/styles/layouts/trading-terminal-grid.css"
+        },
+        {
+          "path": "trading-terminal-grid/LAYOUT.md",
+          "type": "registry:file",
+          "target": "~/LAYOUT.md"
+        }
+      ]
+    },
+    {
+      "name": "layout-comparison-matrix-split",
+      "type": "registry:item",
+      "title": "Comparison Matrix Split Layout",
+      "description": "Structured tier cards above a multi-column feature comparison matrix with mobile stack collapse.",
+      "categories": [
+        "layout",
+        "production"
+      ],
+      "files": [
+        {
+          "path": "comparison-matrix-split/comparison-matrix-split.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/layouts/comparison-matrix-split.tsx"
+        },
+        {
+          "path": "comparison-matrix-split/comparison-matrix-split.css",
+          "type": "registry:file",
+          "target": "~/src/styles/layouts/comparison-matrix-split.css"
+        },
+        {
+          "path": "comparison-matrix-split/LAYOUT.md",
+          "type": "registry:file",
+          "target": "~/LAYOUT.md"
+        }
+      ]
+    },
+    {
+      "name": "layout-editorial-index-preview",
+      "type": "registry:item",
+      "title": "Editorial Index Preview Layout",
+      "description": "Stark hairline typographic index rows paired with a live hover-preview specimen stage.",
+      "categories": [
+        "layout",
+        "experimental"
+      ],
+      "files": [
+        {
+          "path": "editorial-index-preview/editorial-index-preview.tsx",
+          "type": "registry:file",
+          "target": "~/src/components/layouts/editorial-index-preview.tsx"
+        },
+        {
+          "path": "editorial-index-preview/editorial-index-preview.css",
+          "type": "registry:file",
+          "target": "~/src/styles/layouts/editorial-index-preview.css"
+        },
+        {
+          "path": "editorial-index-preview/LAYOUT.md",
           "type": "registry:file",
           "target": "~/LAYOUT.md"
         }

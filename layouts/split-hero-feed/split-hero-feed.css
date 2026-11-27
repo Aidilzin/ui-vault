@@ -1,0 +1,63 @@
+/* ui-vault // layout: split-hero-feed (viral)
+ * 50/50 pinned hero column paired with an independent scrolling vertical feed.
+ */
+
+.lay-split-hero-feed {
+  container-type: inline-size;
+  container-name: lay-shf;
+  min-height: var(--lay-height, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--lay-gap, 14px);
+  padding: var(--lay-pad, 16px);
+  background: var(--lay-canvas, transparent);
+  color: var(--lay-ink, inherit);
+}
+
+.lay-shf-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--lay-gap, 14px);
+  align-items: start;
+  flex: 1;
+}
+
+.lay-shf-pinned {
+  min-width: 0;
+  position: sticky;
+  top: 12px;
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  border-radius: var(--lay-radius, 6px);
+  padding: 20px;
+}
+
+.lay-shf-feed {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--lay-gap, 12px);
+}
+
+.lay-shf-card {
+  min-width: 0;
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  border-radius: var(--lay-radius, 6px);
+  padding: 16px;
+}
+
+.lay-shf-footer {
+  border-top: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  padding-top: 10px;
+  color: var(--lay-muted, inherit);
+}
+
+@container lay-shf (max-width: 680px) {
+  .lay-shf-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .lay-shf-pinned {
+    position: static;
+  }
+}

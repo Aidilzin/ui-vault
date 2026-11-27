@@ -1,0 +1,77 @@
+/* ui-vault // layout: cinema-media-stage (viral)
+ * Widescreen showcase stage with container-scoped floating utility dock.
+ */
+
+.lay-cinema-stage {
+  container-type: inline-size;
+  container-name: lay-cinema;
+  min-height: var(--lay-height, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--lay-gap, 12px);
+  padding: var(--lay-pad, 14px);
+  background: var(--lay-canvas, transparent);
+  color: var(--lay-ink, inherit);
+}
+
+.lay-cinema-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  border-radius: var(--lay-radius, 6px);
+  padding: 8px 12px;
+}
+
+.lay-cinema-viewport {
+  position: relative;
+  flex: 1;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--lay-surface, transparent);
+  border: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  border-radius: var(--lay-radius, 6px);
+  padding: 18px;
+}
+
+.lay-cinema-canvas {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lay-cinema-dock {
+  align-self: center;
+  margin-top: 14px;
+  background: var(--lay-elevated, var(--lay-surface, transparent));
+  border: var(--lay-border-width, 1px) solid var(--lay-border-strong, var(--lay-border, currentColor));
+  border-radius: 999px;
+  padding: 6px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.lay-cinema-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  border-top: var(--lay-border-width, 1px) solid var(--lay-border, currentColor);
+  padding-top: 8px;
+  color: var(--lay-muted, inherit);
+}
+
+@container lay-cinema (max-width: 520px) {
+  .lay-cinema-viewport {
+    padding: 12px;
+  }
+}
